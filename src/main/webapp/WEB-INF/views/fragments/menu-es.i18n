@@ -19,6 +19,9 @@ master.menu.sign-out = Salir
 
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous.favourite-link-guipacrod = 25629441N: Pacheco Rodrigues, Guillermo Alonso
+master.menu.anonymous.favourite-link-gabvacgoy = 77940667S: Vacaro Goytia, Gabriel María
+
 
 # master.menu.administrator ###################################################
 
@@ -33,7 +36,6 @@ master.menu.administrator.shut-down = Parar el sistema
 
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
-master.menu.anonymous.favourite-link-guipacrod = 25629441N: Pacheco Rodrigues, Guillermo Alonso
 
 # master.menu.consumer ##########################################################
 
