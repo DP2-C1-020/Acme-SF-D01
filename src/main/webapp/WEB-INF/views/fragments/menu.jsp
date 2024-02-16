@@ -23,7 +23,8 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-guipacrod" action="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-gabvacgoy" action="https://www.youtube.com/watch?v=1s4gpb2uoRM&ab_channel=PratiksEspa%C3%B1a"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-alvcarber1" action="https://www.instagram.com/salseodelaljarafe/?hl=es"/>
-			
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-jesmarver" action="https://www.youtube.com/watch?v=3o0ThauuN1E"/>
+		    <acme:menu-suboption code="master.menu.anonymous.favourite-link-diegonqui" action="https://www.youtube.com/watch?v=AWM5ZNdWlqw"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
