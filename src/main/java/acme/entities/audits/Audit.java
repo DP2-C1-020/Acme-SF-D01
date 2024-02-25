@@ -1,14 +1,16 @@
 
-package acme.entities.banner;
+package acme.entities.audits;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -20,33 +22,30 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Banner extends AbstractEntity {
+public class Audit extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Column(unique = true)
+	@NotBlank
+	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")//,  message = "{validation.audit.code}")
+	private String				code;
+
+	@Temporal(TemporalType.DATE)
 	@PastOrPresent
 	@NotNull
-	protected Date				moment;
+	private Date				execution;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				startDate;
+	private AuditType			type;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	protected Date				endDate;
+	@NotBlank
+	@Length(max = 100)
+	private String				correctiveActions;
 
 	@URL
-	@NotBlank
-	protected String			linkPhoto;
+	private String				link;
 
-	@NotBlank
-	@Length(max = 75)
-	protected String			slogan;
-
-	@URL
-	@NotBlank
-	protected String			linkDocument;
+	//TODO: Computed mark
 
 }
