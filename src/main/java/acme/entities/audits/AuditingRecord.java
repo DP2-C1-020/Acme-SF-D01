@@ -12,7 +12,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
@@ -22,30 +21,27 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Audit extends AbstractEntity {
+public class AuditingRecord extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "^[A-Z]{1,3}-[0-9]{3}$")//,  message = "{validation.audit.code}")
+	@Pattern(regexp = "^AU-[0-9]{4}-[0-9]{3}$")//, message = "{validation.record.code}")
 	private String				code;
 
-	@Temporal(TemporalType.DATE)
 	@PastOrPresent
+	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	private Date				execution;
+	protected Date				initialMoment;
 
+	//TODO: restricion, at least one hour
+	@PastOrPresent
+	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	private AuditType			type;
-
-	@NotBlank
-	@Length(max = 100)
-	private String				correctiveActions;
+	protected Date				finalMoment;
 
 	@URL
-	private String				link;
-
-	//TODO: Computed mark
+	protected String			link;
 
 }
