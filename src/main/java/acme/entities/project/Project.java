@@ -6,7 +6,7 @@ import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.AssertTrue;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -50,13 +50,26 @@ public class Project extends AbstractEntity {
 	@Column(nullable = true)
 	private String				link;
 
+	private boolean				draftMode			= this.fatalErrors;
 
-	@AssertTrue(message = "Projects containing fatal errors must be rejected")
-	public boolean isFatalErrorsValid() {
-		return this.fatalErrors == null || !this.fatalErrors;
-	}
 
 	// Derived attributes -----------------------------------------------------
+	@Transient
+	public boolean isPublished() {
+		boolean result;
+
+		result = !this.draftMode;
+
+		return result;
+	}
+
+	public Integer getCosteHU() {
+		Integer coste;
+
+		coste = this.userStories.stream().mapToInt(us -> us.getEstimatedCost()).sum();
+
+		return coste;
+	}
 
 	// Relationships ----------------------------------------------------------
 
