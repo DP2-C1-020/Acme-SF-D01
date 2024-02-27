@@ -10,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
 import acme.entities.project.Project;
@@ -44,6 +45,7 @@ public class UserStory extends AbstractEntity {
 
 	private Priority			priority;
 
+	@URL
 	@Column(nullable = true)
 	private String				link;
 

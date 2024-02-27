@@ -12,6 +12,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
 import acme.entities.userstory.UserStory;
@@ -47,10 +48,11 @@ public class Project extends AbstractEntity {
 	@Column(nullable = true)
 	private Integer				cost;
 
+	@URL
 	@Column(nullable = true)
 	private String				link;
 
-	private boolean				draftMode			= this.fatalErrors;
+	private boolean				draftMode;
 
 
 	// Derived attributes -----------------------------------------------------
