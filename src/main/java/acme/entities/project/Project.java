@@ -50,7 +50,7 @@ public class Project extends AbstractEntity {
 	@Column(nullable = true)
 	private String				link;
 
-	private boolean				draftMode			= this.fatalErrors;
+	private boolean				draftMode;
 
 
 	// Derived attributes -----------------------------------------------------
