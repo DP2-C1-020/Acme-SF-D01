@@ -1,0 +1,3 @@
+key,key:userAccount,firm,professionalID,certifications,link
+auditor-01,user-account-auditor-01,"Acme","Jorge Salvaje","CIA (Certified Internal Auditor),CISA (Certified Information Systems Auditor)","https://www.linkedin.com"
+auditor-02,user-account-auditor-02,"Acme","Gary Llaneza","CRMA (Certification in Risk Management Assurance),CFE (Certified Fraud Examiner)",null
