@@ -41,7 +41,7 @@ public class Audit extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	private String				correctiveActions;
+	private String				corrective_actions;
 
 	@URL
 	private String				link;
