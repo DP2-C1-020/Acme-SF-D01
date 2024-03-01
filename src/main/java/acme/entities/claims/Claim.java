@@ -1,32 +1,28 @@
 
-package acme.entities.contracts;
+package acme.entities.claims;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-import acme.client.data.datatypes.Money;
-import acme.entities.project.Project;
-import acme.roles.Client;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Contract extends AbstractEntity {
+public class Claim extends AbstractEntity {
 
 	// Serialisation identifier ----------------------------------------
 
@@ -36,7 +32,7 @@ public class Contract extends AbstractEntity {
 
 	@NotBlank
 	@Column(unique = true)
-	@Pattern(regexp = "^[A-Z]{1,3}[0-9]{3}$")
+	@Pattern(regexp = "C-[0-9]{4}")
 	protected String			code;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -45,31 +41,20 @@ public class Contract extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			providerName;
-
-	@NotBlank
-	@Length(max = 75)
-	protected String			customerName;
+	protected String			heading;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			goals;
+	protected String			description;
 
-	@NotNull
-	protected Money				budget;
+	@NotBlank
+	@Length(max = 100)
+	protected String			department;
 
-	protected boolean			draftMode;
+	@Email
+	protected String			emailAddress;
 
-	// Relationships ----------------------------------------------------
-
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Project			project;
-
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Client			client;
+	@URL
+	protected String			link;
 
 }
