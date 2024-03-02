@@ -64,7 +64,7 @@ public class Project extends AbstractEntity {
 
 		return result;
 	}
-
+	@Transient
 	public Integer getCosteHU() {
 		Integer coste;
 
