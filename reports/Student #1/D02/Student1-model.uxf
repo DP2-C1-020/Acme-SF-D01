@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>966</x>
+      <y>147</y>
+      <w>245</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+ManagerDashboard
+--
++ totalMust: Integer
++ totalShould: Integer
++ totalCould: Integer
++ totalWont: Integer
++ avgProjectCost: Double
++ minProjectCost: Double
++ maxProjectCost: Double
++ devProjectCost: Double
++ avgUserStoryCost: Double
++ minUserStoryCost: Double
++ maxUserStoryCost: Double
++ devUserStoryCost: Double
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>539</x>
+      <y>0</y>
+      <w>343</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Manager
+--
++ degree: String {NotBlank, Length(max=75)}
++ overview: String {NotBlank, Length(max=100)}
++ certifications: String{NotBlank, Length(max=100)}
++ link: String {Column(nullable=true), URL}
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>721</x>
+      <y>77</y>
+      <w>63</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+makes v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>539</x>
+      <y>182</y>
+      <w>385</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Project
+--
++ code: String {column(unique=true), NotBlank,Pattern(regexp = "[A-Z]{3}-[0-9]{4}"}
++ title: String {NotBlank, Length{max=75}}
++ abstracto: String {NotBlank, Lengrh(max=100)}
++ fatalErrors: Boolean 
++ cost: Integer {Column(nullable=true), Min(0)}
++ link: String {Column(nullable=true), URL}
++ draftMode boolean 
++ /isPublished() boolean
++ /getCostesHU() Integer
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>721</x>
+      <y>308</y>
+      <w>49</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=1..*
+has v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>539</x>
+      <y>378</y>
+      <w>406</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+UserStory
+--
++ title: String {NotBlank, Length(max=75)}
++ description: String {NotBlank, Lengrh(max=100)}
++ estimatedCost: Integer {NotNull, Min(0)}
++ acceptanceCriteria: String {NotBlank, Lengrh(max=100)}
++ priority: Priority 
++ link: String {Column(nullable=true), URL}
+
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>973</x>
+      <y>350</y>
+      <w>119</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Priority
+--
++ MUST
++ SHOULD
++ COULD
++ WONT
+bg=red
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
