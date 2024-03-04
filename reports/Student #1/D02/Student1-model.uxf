@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>966</x>
+      <x>630</x>
       <y>147</y>
       <w>245</w>
       <h>175</h>
@@ -31,7 +31,7 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>539</x>
+      <x>203</x>
       <y>0</y>
       <w>343</w>
       <h>84</h>
@@ -50,7 +50,7 @@ bg=green
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>721</x>
+      <x>385</x>
       <y>77</y>
       <w>63</w>
       <h>119</h>
@@ -64,7 +64,7 @@ makes v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>539</x>
+      <x>203</x>
       <y>182</y>
       <w>385</w>
       <h>133</h>
@@ -80,7 +80,6 @@ Project
 + link: String {Column(nullable=true), URL}
 + draftMode boolean 
 + /isPublished() boolean
-+ /getCostesHU() Integer
 bg=green
 </panel_attributes>
     <additional_attributes/>
@@ -88,7 +87,7 @@ bg=green
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>721</x>
+      <x>385</x>
       <y>308</y>
       <w>49</w>
       <h>84</h>
@@ -102,7 +101,7 @@ has v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>539</x>
+      <x>203</x>
       <y>378</y>
       <w>406</w>
       <h>112</h>
@@ -124,7 +123,7 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>973</x>
+      <x>637</x>
       <y>350</y>
       <w>119</w>
       <h>105</h>
