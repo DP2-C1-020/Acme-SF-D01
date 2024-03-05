@@ -11,4 +11,3 @@ user-account-client-01,true,"UserIdentity{name: 'Alvaro', surname: 'Client', ema
 user-account-client-02,true,"UserIdentity{name: 'Marta', surname: 'Sevilla', email: 'martsev@acme.com'}",client2,client2
 user-account-developer-01,true,"UserIdentity{name: 'Jesús', surname: 'Martín', email: 'jesmarver@acme.com'}",developer1,developer1
 user-account-developer-02,true,"UserIdentity{name: 'Paco', surname: 'Candela', email: 'pacandela@acme.com'}",developer2,developer2
-"",,,,
