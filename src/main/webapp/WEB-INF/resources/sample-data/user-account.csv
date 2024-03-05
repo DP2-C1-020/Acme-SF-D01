@@ -9,3 +9,6 @@ user-account-manager-01,true,"UserIdentity{name: 'Elena', surname: 'Manager', em
 user-account-manager-02,true,"UserIdentity{name: 'Gabriel', surname: 'su gnoma', email: 'gabri@acme.com'}",manager2,manager2
 user-account-client-01,true,"UserIdentity{name: 'Alvaro', surname: 'Client', email: 'alvcli@acme.com'}",client1,client1
 user-account-client-02,true,"UserIdentity{name: 'Marta', surname: 'Sevilla', email: 'martsev@acme.com'}",client2,client2
+user-account-developer-01,true,"UserIdentity{name: 'Jesús', surname: 'Martín', email: 'jesmarver@acme.com'}",developer1,developer1
+user-account-developer-02,true,"UserIdentity{name: 'Paco', surname: 'Candela', email: 'pacandela@acme.com'}",developer2,developer2
+"",,,,
