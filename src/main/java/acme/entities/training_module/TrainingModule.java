@@ -40,7 +40,7 @@ public class TrainingModule extends AbstractEntity {
 	@Length(max = 101)
 	private String				details;
 
-	private DifficultyLevel		difiDifficultyLevel;
+	private DifficultyLevel		difficultyLevel;
 
 	@Column(nullable = true)
 	@Temporal(TemporalType.TIMESTAMP)
