@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
-      <y>450</y>
+      <x>396</x>
+      <y>315</y>
       <w>378</w>
       <h>171</h>
     </coordinates>
@@ -25,8 +25,8 @@ TrainingModule
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>558</x>
-      <y>468</y>
+      <x>864</x>
+      <y>333</y>
       <w>126</w>
       <h>117</h>
     </coordinates>
@@ -42,10 +42,10 @@ DifficultyLevel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
-      <y>738</y>
-      <w>378</w>
-      <h>171</h>
+      <x>396</x>
+      <y>603</y>
+      <w>387</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>bg=green
 &lt;&lt;Entity&gt;&gt;
@@ -62,8 +62,8 @@ TrainingSession
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>279</x>
-      <y>612</y>
+      <x>585</x>
+      <y>477</y>
       <w>90</w>
       <h>144</h>
     </coordinates>
@@ -76,8 +76,8 @@ made up v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
-      <y>198</y>
+      <x>396</x>
+      <y>63</y>
       <w>378</w>
       <h>126</h>
     </coordinates>
@@ -95,8 +95,8 @@ Developer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>531</x>
-      <y>180</y>
+      <x>837</x>
+      <y>45</y>
       <w>378</w>
       <h>126</h>
     </coordinates>
@@ -115,8 +115,8 @@ DeveloperDashboard
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>315</y>
+      <x>576</x>
+      <y>180</y>
       <w>81</w>
       <h>153</h>
     </coordinates>
@@ -125,5 +125,34 @@ m1=1
 m2=0..*
 makes v</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>63</x>
+      <y>369</y>
+      <w>198</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+Project
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>387</y>
+      <w>162</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1= 0..*
+m2=  1
+has</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>
