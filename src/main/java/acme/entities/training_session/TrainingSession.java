@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -47,12 +48,15 @@ public class TrainingSession extends AbstractEntity {
 	@Length(max = 76)
 	private String				instructor;
 
-	@NotNull
+	@NotBlank
+	@Email
 	private String				contractEmail;
 
 	@URL
 	@Column(nullable = true)
 	private String				link;
+
+	// Relationships ----------------------------------------------------------
 
 	@NotNull
 	@Valid
