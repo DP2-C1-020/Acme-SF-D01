@@ -1,0 +1,9 @@
+key,key:manager,code,title,abstracto,fatalErrors,cost,link,draftMode
+project-01,manager-01,"VWX-2340","This title is supossed to contain exactly 75 characters: so we can test it.","Abstracto with 100 characters: so we can test if the restrictions work as intended in edge values123",false,999,"https://example.com/project1",true
+project-02,manager-02,"YZA-5670","This title is supossed to contain exactly 74 characters: so we can test it","Abstracto with 99 characters: so we can test if the restrictions work as intended in edge values12",true,998,null,false
+project-03,manager-01,"BCD-8900","Short Title 10","预计到达时间海象",false,100,null,true
+project-04,manager-02,"EFG-1230","زما ناریل خارش","Another Abstract 11",false,200,"FTP://example.com/project4",false
+project-05,manager-01,"HIJ-4560","Title 5","A",true,0,"https://example.com/project5",false
+project-06,manager-02,"KLM-7890","Title 6","#",false,1,"HTTP://example.com/project6",true
+project-07,manager-01,"NOP-0120","Title 7","ღ•✠ⒽⒾⓉ☹☹☂☂☝☹☹➤❥✯",false,999999,"HTTPS://example.com/project7",false
+project-08,manager-02,"QRS-3450","T","Abstract 8",true,90000000,"FTP://example.com/project8",true
