@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>7</zoom_level>
+  <zoom_level>12</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
-      <y>147</y>
-      <w>245</w>
-      <h>175</h>
+      <x>732</x>
+      <y>264</y>
+      <w>420</w>
+      <h>300</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 ManagerDashboard
@@ -31,10 +31,10 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>203</x>
-      <y>0</y>
-      <w>343</w>
-      <h>84</h>
+      <x>0</x>
+      <y>12</y>
+      <w>588</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Manager
@@ -50,24 +50,24 @@ bg=green
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>385</x>
-      <y>77</y>
-      <w>63</w>
-      <h>119</h>
+      <x>312</x>
+      <y>144</y>
+      <w>96</w>
+      <h>204</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
-m2=0..*
-makes v</panel_attributes>
+m2=1..*
+leads v</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>203</x>
-      <y>182</y>
-      <w>385</w>
-      <h>133</h>
+      <x>0</x>
+      <y>324</y>
+      <w>660</w>
+      <h>228</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Project
@@ -87,10 +87,10 @@ bg=green
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>385</x>
-      <y>308</y>
-      <w>49</w>
-      <h>84</h>
+      <x>312</x>
+      <y>540</y>
+      <w>84</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
@@ -101,10 +101,10 @@ has v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>203</x>
-      <y>378</y>
-      <w>406</w>
-      <h>112</h>
+      <x>0</x>
+      <y>660</y>
+      <w>696</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 UserStory
@@ -123,10 +123,10 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>637</x>
-      <y>350</y>
-      <w>119</w>
-      <h>105</h>
+      <x>744</x>
+      <y>612</y>
+      <w>204</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 Priority
