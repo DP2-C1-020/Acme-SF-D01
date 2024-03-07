@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text>&lt;&lt;Entity&gt;&gt;
+Contract
+--
++ code: String  {Unique, NotBlank, Length(5, 15)}
++ instantiationMoment: Date
++ providerName: String
++ customerName: String
++ goals: String
++ budget: Decimal
+</help_text>
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>348</y>
+      <w>282</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+Contract
+--
++ code: String {Unique, NotBlank, Pattern("[A-Z]{1,3}-[0-9]{3}")}
++ instantiationMoment: Date {NotNull, Past, Temporal(TIMESTAMP)}
++ providerName: String {NotBlank, Length(0, 75)}
++ customerName: String {NotBlank, Length(0, 75)}
++ goals: String {NotNull, NotBlank, Length(0, 100)}
++ budget: Money</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>162</y>
+      <w>276</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+ProgressLog
+--
+- recordId: String {Unique, NotBlank, Pattern("PG-[A-Z]{1,2}-[0-9]{4}")}
+- completeness: Double {Positive}
+- comment: String {NotBlank, Length(0, 100)}
+- registrationMoment: Date {NotNull, Past, Temporal(TIMESTAMP)}
+- responsiblePerson: String {NotBlank, Length(0, 75)}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>246</y>
+      <w>30</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-x
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>762</x>
+      <y>318</y>
+      <w>162</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Form&gt;&gt;
+Dashboard
+--
++ totalLogsBelow25: int
++ totalLogs25to50: int
++ totalLogs50to75: int
++ totalLogsAbove75: int
++ averageBudget: Decimal
++ budgetDeviation: Decimal
++ minBudget: Decimal
++ maxBudget: Decimal
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>348</y>
+      <w>282</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+Client
+--
++ identification: String {Unique, NotBlank, Pattern("CLI-[0-9]{4}")}
++ companyName: String {NotBlank, Length(0, 75)}
++ clientType: ClientType {NotNull}
++ email: String {NotBlank, Email}
++ link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>276</x>
+      <y>390</y>
+      <w>126</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+created by ^
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>102</x>
+      <y>246</y>
+      <w>72</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>bg=red
+&lt;&lt;Enum&gt;&gt;
+ClientType
+--
++ COMPANY
++ INDIVIDUAL</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>444</x>
+      <y>546</y>
+      <w>174</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Project
+--
+
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>444</y>
+      <w>30</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

@@ -11,7 +11,7 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 
@@ -39,14 +39,15 @@ public class ProgressLog extends AbstractEntity {
 	protected String			recordId;
 
 	@Positive
-	protected Integer			completeness;
+	protected double			completeness;
 
 	@NotBlank
 	@Length(max = 100)
 	protected String			comment;
 
-	@Past
+	@PastOrPresent
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	protected Date				registrationMoment;
 
 	@NotBlank
