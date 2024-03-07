@@ -15,7 +15,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 
@@ -34,7 +34,7 @@ public class Risk extends AbstractEntity {
 
 	// Serialisation identifier ----------------------------------------
 
-	protected static final long	serialVersionUID	= 1L;
+	private static final long	serialVersionUID	= 1L;
 
 	// Attributes ------------------------------------------------------
 
@@ -43,8 +43,8 @@ public class Risk extends AbstractEntity {
 	@Pattern(regexp = "R-[0-9]{3}")
 	private String				reference;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Past
+	@Temporal(TemporalType.DATE)
+	@PastOrPresent
 	@NotNull
 	private Date				identificationDate;
 
@@ -61,21 +61,28 @@ public class Risk extends AbstractEntity {
 	@NotBlank
 	@Length(max = 100)
 	private String				description;
-	
+
 	@URL
-	private String link;
-	
+	private String				link;
 
 	// Derived attributes -----------------------------------------------
 
+
 	@NotNull
 	@Transient
-	public double				value				= this.impact * this.probability;
+	public double getValue() {
+		double value;
+
+		value = this.impact * this.probability;
+
+		return value;
+	}
 
 	// Relationships ----------------------------------------------------
 
+
 	@NotNull
 	@Valid
-	@ManyToOne(optional = true)
-	protected Project			project;
+	@ManyToOne(optional = false)
+	private Project project;
 }

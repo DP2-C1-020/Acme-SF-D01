@@ -4,16 +4,21 @@ package acme.entities.objectives;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
+import acme.entities.project.Project;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,32 +29,57 @@ public class Objective extends AbstractEntity {
 
 	// Serialisation identifier ----------------------------------------
 
-	protected static final long	serialVersionUID	= 1L;
+	private static final long	serialVersionUID	= 1L;
 
 	// Attributes ------------------------------------------------------
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
-	protected Date				instantiationMoment;
+	@PastOrPresent
+	@NotNull
+	private Date				instantiationMoment;
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			title;
+	private String				title;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			description;
+	private String				description;
 
 	@NotNull
-	protected PriorityType		priority;
+	private PriorityType		priority;
 
-	protected boolean			status;
+	@NotNull
+	private boolean				status;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				duration;
+	private Date				startDate;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
+	private Date				endDate;
 
 	@URL
-	protected String			link;
+	private String				link;
+
+	// Derived attributes -----------------------------------------------
+
+
+	@Positive
+	@NotNull
+	@Transient
+	public Integer getDuration() {
+		//TODO implement in the future (difference between startDate and endDate)
+		return 1;
+	};
+
+	// Relationships ----------------------------------------------------
+
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Project project;
 
 }
