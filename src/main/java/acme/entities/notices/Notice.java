@@ -1,5 +1,5 @@
 
-package acme.entities.notice;
+package acme.entities.notices;
 
 import java.util.Date;
 
@@ -23,30 +23,34 @@ import lombok.Setter;
 @Setter
 public class Notice extends AbstractEntity {
 
-	protected static final long	serialVersionUID	= 1L;
+	// Serialisation identifier ----------------------------------------
+
+	private static final long	serialVersionUID	= 1L;
+
+	// Attributes ------------------------------------------------------
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
 	@NotNull
-	protected Date				moment;
+	private Date				instantiationMoment;
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			title;
+	private String				title;
 
-	//TODO Custom restriction or derived attribute==> author must be=〈username〉 - 〈surname, name〉
+	//TODO Custom restriction or derived attribute ==> author must be=〈username〉 - 〈surname, name〉
 	@NotBlank
 	@Length(max = 75)
-	protected String			author;
+	private String				author;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			message;
+	private String				message;
 
 	@Email
-	protected String			email;
+	private String				email;
 
 	@URL
-	protected String			link;
+	private String				link;
 
 }

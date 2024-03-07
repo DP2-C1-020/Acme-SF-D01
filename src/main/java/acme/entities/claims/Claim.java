@@ -9,7 +9,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -26,35 +27,36 @@ public class Claim extends AbstractEntity {
 
 	// Serialisation identifier ----------------------------------------
 
-	protected static final long	serialVersionUID	= 1L;
+	private static final long	serialVersionUID	= 1L;
 
 	// Attributes ------------------------------------------------------
 
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "C-[0-9]{4}")
-	protected String			code;
+	private String				code;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
-	protected Date				instantiationMoment;
+	@PastOrPresent
+	private Date				instantiationMoment;
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			heading;
+	private String				heading;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			description;
+	private String				description;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			department;
+	private String				department;
 
 	@Email
-	protected String			emailAddress;
+	private String				email;
 
 	@URL
-	protected String			link;
+	private String				link;
 
 }

@@ -1,11 +1,13 @@
 
-package acme.entities.banner;
+package acme.entities.banners;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -22,29 +24,47 @@ import lombok.Setter;
 @Setter
 public class Banner extends AbstractEntity {
 
-	protected static final long	serialVersionUID	= 1L;
+	// Serialisation identifier ----------------------------------------
+
+	private static final long	serialVersionUID	= 1L;
+
+	// Attributes ------------------------------------------------------
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
 	@NotNull
-	protected Date				moment;
+	private Date				instantiationMoment;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				startDate;
+	private Date				startDate;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				endDate;
+	private Date				endDate;
 
+	@NotBlank
 	@URL
-	protected String			linkPhoto;
+	private String				picture;
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			slogan;
+	private String				slogan;
 
+	@NotBlank
 	@URL
-	protected String			linkDocument;
+	private String				link;
+
+	// Derived attributes -----------------------------------------------
+
+
+	@Transient
+	@NotNull
+	@Min(7)
+	public Integer getDisplayPeriod() {
+		//TODO implement in the future (difference between startDate and endDate)
+		return 7;
+
+	}
 
 }
