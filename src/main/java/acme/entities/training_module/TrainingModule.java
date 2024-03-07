@@ -62,7 +62,7 @@ public class TrainingModule extends AbstractEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Project				project;
 
 }
