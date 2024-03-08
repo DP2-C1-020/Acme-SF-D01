@@ -23,6 +23,7 @@ import org.hibernate.validator.constraints.URL;
 import acme.client.data.AbstractEntity;
 import acme.client.data.datatypes.Money;
 import acme.entities.project.Project;
+import acme.roles.Sponsor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -89,6 +90,11 @@ public class Sponsorship extends AbstractEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Project project;
+	private Project	project;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Sponsor	sponsor;
 
 }

@@ -74,7 +74,7 @@ public class Objective extends AbstractEntity {
 	public Integer getDuration() {
 		//TODO implement in the future (difference between startDate and endDate)
 		return 1;
-	};
+	}
 
 	// Relationships ----------------------------------------------------
 

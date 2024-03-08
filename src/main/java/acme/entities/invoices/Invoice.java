@@ -23,7 +23,7 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
 import acme.client.data.datatypes.Money;
-import acme.entities.project.Project;
+import acme.entities.sponsorships.Sponsorship;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -72,7 +72,7 @@ public class Invoice extends AbstractEntity {
 
 	@Valid
 	@Positive
-	//@NotNull
+	@NotNull
 	@Transient
 	public Money getTotalAmount() {
 
@@ -89,5 +89,5 @@ public class Invoice extends AbstractEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Project project;
+	private Sponsorship sponsorship;
 }
