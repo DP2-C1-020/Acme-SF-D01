@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1080</x>
-      <y>192</y>
+      <x>952</x>
+      <y>176</y>
       <w>280</w>
       <h>176</h>
     </coordinates>
@@ -29,8 +29,8 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>464</x>
-      <y>192</y>
+      <x>512</x>
+      <y>176</y>
       <w>392</w>
       <h>96</h>
     </coordinates>
@@ -48,8 +48,8 @@ bg=green
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>656</x>
-      <y>280</y>
+      <x>704</x>
+      <y>264</y>
       <w>72</w>
       <h>136</h>
     </coordinates>
@@ -62,8 +62,8 @@ makes v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>440</x>
-      <y>400</y>
+      <x>488</x>
+      <y>384</y>
       <w>440</w>
       <h>120</h>
     </coordinates>
@@ -83,8 +83,8 @@ bg=green
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>656</x>
-      <y>512</y>
+      <x>704</x>
+      <y>496</y>
       <w>56</w>
       <h>96</h>
     </coordinates>
@@ -97,8 +97,8 @@ has v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>592</y>
+      <x>480</x>
+      <y>576</y>
       <w>464</w>
       <h>128</h>
     </coordinates>
@@ -118,8 +118,8 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>912</x>
-      <y>400</y>
+      <x>952</x>
+      <y>384</y>
       <w>136</w>
       <h>72</h>
     </coordinates>
@@ -135,10 +135,10 @@ bg=red
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>936</x>
-      <y>592</y>
+      <x>952</x>
+      <y>576</y>
       <w>136</w>
-      <h>120</h>
+      <h>128</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 Mark
@@ -156,8 +156,8 @@ bg=red
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>72</x>
-      <y>416</y>
+      <x>120</x>
+      <y>400</y>
       <w>232</w>
       <h>104</h>
     </coordinates>
@@ -172,8 +172,8 @@ bg=green
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>296</x>
-      <y>456</y>
+      <x>344</x>
+      <y>440</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -183,5 +183,32 @@ m2=0..*
 has v
 </panel_attributes>
     <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>480</y>
+      <w>40</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>30.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>272</x>
+      <y>520</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>computed as the mode of the marks
+in the corresponding auditing records;
+ties must be broken arbitrarily if necessary
+
+bg=green
+fontsize=12</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
