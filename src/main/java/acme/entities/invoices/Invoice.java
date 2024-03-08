@@ -17,7 +17,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.URL;
 
@@ -53,8 +52,8 @@ public class Invoice extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				dueDate;
 
+	//TODO Amount must be positive
 	@NotNull
-	@Positive
 	@Valid
 	private Money				quantity;
 
@@ -70,8 +69,8 @@ public class Invoice extends AbstractEntity {
 	// Derived attributes -----------------------------------------------
 
 
+	//TODO TotalAmount must be positive
 	@Valid
-	@Positive
 	@NotNull
 	@Transient
 	public Money getTotalAmount() {

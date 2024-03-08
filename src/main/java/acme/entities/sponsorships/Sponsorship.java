@@ -58,8 +58,8 @@ public class Sponsorship extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				endDate;
 
+	//TODO Amount must be positive
 	@Valid
-	@Positive
 	@NotNull
 	private Money				amount;
 

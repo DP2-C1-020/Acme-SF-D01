@@ -1,0 +1,16 @@
+key,code,registrationTime,dueDate,quantity,tax,link,key:sponsorship
+invoice-01,IN-1111-1111,2018/01/01 11:12,2018/03/01 11:12,EUR 123.45,21.00,https://www.google.com/,sponsorship-01
+invoice-02,IN-0000-0000,2018/01/01 11:12,2018/03/01 11:12,EUR 123.45,21.00,https://www.google.com/,sponsorship-02
+invoice-03,IN-0000-9999,2018/01/01 11:12,2018/03/01 11:12,EUR 123.45,21.00,https://www.google.com/,sponsorship-03
+invoice-04,IN-9999-9999,2018/01/01 11:12,2018/03/01 11:12,EUR 123.45,21.00,https://www.google.com/,sponsorship-04
+invoice-05,IN-9999-0000,2018/01/01 11:12,2018/03/01 11:12,EUR 123.45,21.00,https://www.google.com/,sponsorship-05
+invoice-06,IN-1111-1131,2018/07/30 00:00,2018/03/01 11:12,EUR 123.45,21.00,https://www.google.com/,sponsorship-06
+invoice-07,IN-1111-1112,2018/07/29 23:59,2018/03/01 11:12,EUR 123.45,21.00,https://www.google.com/,sponsorship-07
+invoice-08,IN-1111-1113,2018/01/01 11:12,2018/02/01 11:12,EUR 123.45,21.00,https://www.google.com/,sponsorship-06
+invoice-09,IN-1111-1114,2018/01/01 11:12,2018/03/01 11:12,USD 123.45,21.00,https://www.google.com/,sponsorship-05
+invoice-10,IN-1111-1115,2018/01/01 11:12,2018/03/01 11:12,GBP 123.45,21.00,https://www.google.com/,sponsorship-04
+invoice-11,IN-1111-1116,2018/01/01 11:12,2018/03/01 11:12,EUR 123.45,00.00,https://www.google.com/,sponsorship-03
+invoice-12,IN-1111-1117,2018/01/01 11:12,2018/03/01 11:12,EUR 123.45,100.00,https://www.google.com/,sponsorship-02
+invoice-13,IN-1111-1118,2018/01/01 11:12,2018/03/01 11:12,EUR 123.45,0,https://www.google.com/,sponsorship-01
+invoice-14,IN-1111-1119,2018/01/01 11:12,2018/03/01 11:12,EUR 123.45,100,https://www.google.com/,sponsorship-04
+invoice-15,IN-1111-1120,2018/01/01 11:12,2018/03/01 11:12,EUR 123.45,0,,sponsorship-03
