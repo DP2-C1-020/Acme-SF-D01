@@ -1,5 +1,5 @@
 
-package acme.entities.sponsorships;
+package acme.entities.invoices;
 
 import java.util.Date;
 
@@ -10,7 +10,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
-import javax.validation.constraints.Email;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -29,7 +30,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Sponsorship extends AbstractEntity {
+public class Invoice extends AbstractEntity {
 
 	// Serialisation identifier ----------------------------------------
 
@@ -39,34 +40,29 @@ public class Sponsorship extends AbstractEntity {
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
+	@Pattern(regexp = "IN-[0-9]{4}-[0-9]{4}")
 	private String				code;
 
 	@NotNull
 	@PastOrPresent
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				moment;
+	private Date				registrationTime;
 
-	//TODO startDate must be after the moment
+	//TODO dueDate must be at least one month ahead the registrationTime
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				startDate;
+	private Date				dueDate;
 
-	//TODO endDate must be after the startDate
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				endDate;
-
-	@Valid
 	@Positive
-	@NotNull
-	private Money				amount;
+	@Valid
+	private Money				quantity;
 
+	@Digits(integer = 3, fraction = 2)
+	@Min(0)
+	@Max(100)
 	@NotNull
-	private SponsorshipType		type;
-
-	@Email
-	private String				contact;
+	private double				tax;
 
 	@URL
 	private String				link;
@@ -74,13 +70,17 @@ public class Sponsorship extends AbstractEntity {
 	// Derived attributes -----------------------------------------------
 
 
+	@Valid
 	@Positive
-	@NotNull
+	//@NotNull
 	@Transient
-	@Min(30)
-	public Integer getDuration() {
-		//TODO implement in the future (difference between startDate and endDate)
-		return 30;
+	public Money getTotalAmount() {
+
+		Money totalAmount = new Money();
+
+		totalAmount.setAmount(this.quantity.getAmount() + this.quantity.getAmount() * this.tax);
+		totalAmount.setCurrency(this.quantity.getCurrency());
+		return totalAmount;
 	}
 
 	// Relationships ----------------------------------------------------
@@ -90,5 +90,4 @@ public class Sponsorship extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Project project;
-
 }
