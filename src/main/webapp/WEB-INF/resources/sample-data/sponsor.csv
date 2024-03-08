@@ -1,0 +1,8 @@
+key,name,benefits,web_page,email_contact,key:userAccount
+sponsor-01,The Sponsor,We invite sponsored people to restaurants,https://www.burgerking.es,sponsorawesome@acme.com,user-account-sponsor-01
+sponsor-02,Really Awesome Creative Solutions & Outstanding Online Marketing Management,We invite sponsored people to restaurants,https://www.burgerking.es,sponsorawesome@acme.com,user-account-sponsor-02
+sponsor-03,S,We invite sponsored people to restaurants,https://www.burgerking.es,sponsorawesome@acme.com,user-account-sponsor-03
+sponsor-04,The Sponsor,"Our name is 75 characters,we also have a very large experience doing awesome names for sponshorship",https://www.burgerking.es,sponsorawesome@acme.com,user-account-sponsor-04
+sponsor-05,The Sponsor,B,https://www.burgerking.es,sponsorawesome@acme.com,user-account-sponsor-05
+sponsor-06,The Sponsor,We invite sponsored people to restaurants,,sponsorawesome@acme.com,user-account-sponsor-06
+sponsor-07,The Sponsor,We invite sponsored people to restaurants,https://www.burgerking.es,,user-account-sponsor-07
