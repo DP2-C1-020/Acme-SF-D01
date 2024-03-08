@@ -35,10 +35,12 @@ public class Banner extends AbstractEntity {
 	@NotNull
 	private Date				instantiationMoment;
 
+	//TODO startDate must be after the instantiationMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	private Date				startDate;
 
+	//TODO endDate must be after the startDate
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	private Date				endDate;
