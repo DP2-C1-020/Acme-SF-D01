@@ -1,0 +1,16 @@
+administrator.objective.form.title = Objetivo
+administrator.objective.form.label.instantiationMoment = Momento de Instanciación:
+administrator.objective.form.label.title = Título:
+administrator.objective.form.label.description = Descripción:
+administrator.objective.form.label.priority = Prioridad:
+administrator.objective.form.label.project: Proyecto:
+administrator.objective.form.label.status = Estado:
+administrator.objective.form.label.startDate = Fecha de Inicio:
+administrator.objective.form.label.endDate = Fecha de Finalización:
+administrator.objective.form.label.link = Enlace:
+administrator.objective.form.label.confirmation = Confirmar que el objetivo es correcto
+
+administrator.objective.form.button.create = Crear
+
+
+administrator.objective.error.date.initialAfterFinal = La fecha de inicio debe ser anterior a la fecha de finalización
