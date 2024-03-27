@@ -49,6 +49,7 @@
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated">
 			<acme:menu-suboption code="master.menu.authenticated.list-objectives" action="/authenticated/objective/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.all-claims" action="/any/claim/list"/>	
 		</acme:menu-option>
 	</acme:menu-left>
 
