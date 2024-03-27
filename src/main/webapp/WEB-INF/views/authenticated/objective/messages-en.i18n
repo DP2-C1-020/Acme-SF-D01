@@ -1,0 +1,19 @@
+authenticated.objective.form.title = Objective
+authenticated.objective.form.label.instantiationMoment = Instantiation Moment:
+authenticated.objective.form.label.title = Title:
+authenticated.objective.form.label.description = Description:
+authenticated.objective.form.label.priority = Priority:
+authenticated.objective.form.label.status = Status:
+authenticated.objective.form.label.startDate = Start Date:
+authenticated.objective.form.label.enDate = End Date:
+authenticated.objective.form.label.link = Link:
+authenticated.objective.form.label.confirmation = Confirm that the objective is correct
+
+authenticated.objective.form.button.create = Create
+
+authenticated.objective.list.title = Objectives
+authenticated.objective.list.label.title = Title
+authenticated.objective.list.label.description = Description
+authenticated.objective.list.label.priority = Priority
+
+authenticated.objective.list.button.create = Create
