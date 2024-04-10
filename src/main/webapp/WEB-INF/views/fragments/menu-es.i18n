@@ -47,6 +47,11 @@ master.menu.authenticated.list-objectives = Objetivos
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
 
+# master.menu.client ##########################################################
+
+master.menu.client = Cliente
+master.menu.authenticated.my-contracts = Mis contratos
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor
