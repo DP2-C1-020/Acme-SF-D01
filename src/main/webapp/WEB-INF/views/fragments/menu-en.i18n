@@ -41,6 +41,7 @@ master.menu.administrator.create-objective = Create Objective
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.list-objectives = Objectives
+master.menu.authenticated.list-risks = Risks
 
 # master.menu.provider ########################################################
 

@@ -1,0 +1,20 @@
+authenticated.risk.form.title = Objetivo
+authenticated.risk.form.label.instantiationMoment = Momento de Instanciación:
+authenticated.risk.form.label.title = Título:
+authenticated.risk.form.label.description = Descripción:
+authenticated.risk.form.label.priority = Prioridad:
+authenticated.risk.form.label.project: Proyecto:
+authenticated.risk.form.label.status = Estado:
+authenticated.risk.form.label.startDate = Fecha de Inicio:
+authenticated.risk.form.label.endDate = Fecha de Finalización:
+authenticated.risk.form.label.link = Enlace:
+authenticated.risk.form.label.confirmation = Confirmar que el objetivo es correcto
+
+authenticated.risk.form.button.create = Crear
+
+authenticated.risk.list.title = Objetivos
+authenticated.risk.list.label.title = Título
+authenticated.risk.list.label.description = Descripción
+authenticated.risk.list.label.priority = Prioridad
+
+authenticated.risk.list.button.create = Crear
