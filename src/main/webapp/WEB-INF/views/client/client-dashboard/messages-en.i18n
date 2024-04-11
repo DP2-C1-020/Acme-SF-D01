@@ -1,0 +1,11 @@
+client.client-dashboard.form.title = Dashboard
+
+
+client.clientDashboard.form.label.averageBudget	= Average Budget
+client.clientDashboard.form.label.deviationBudget = Deviation Budget
+client.clientDashboard.form.label.minBudget	= Minimum Budget
+client.clientDashboard.form.label.maxBudget	= Maximum Budget
+client.clientDashboard.form.label.totalLogsBelow25Percent = Progress Log lower than 25
+client.clientDashboard.form.label.totalLogs25To50Percent = Progress Log between 25 and 50
+client.clientDashboard.form.label.totalLogs50To75Percent = Progress Log between 50 and 75
+client.clientDashboard.form.label.totalLogsAbove75Percent = Progress Log higher than 75

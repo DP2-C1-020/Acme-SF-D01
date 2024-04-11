@@ -50,7 +50,8 @@ master.menu.provider.favourite-link = Enlace favorito
 # master.menu.client ##########################################################
 
 master.menu.client = Cliente
-master.menu.authenticated.my-contracts = Mis contratos
+master.menu.client.my-contracts = Mis contratos
+master.menu.client.client-dashboard = Panel del Cliente
 
 # master.menu.consumer ##########################################################
 
