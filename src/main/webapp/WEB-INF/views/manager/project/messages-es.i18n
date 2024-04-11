@@ -8,33 +8,29 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-employer.job.form.title = Detalles de trabajo
-employer.job.list.title = Lista de trabajos
+manager.project.form.title = Detalles de proyecto
+manager.project.list.title = Lista de proyectos
 
-employer.job.list.label.reference = Referencia
-employer.job.list.label.deadline = Fecha límite
-employer.job.list.label.title = Título
+manager.project.list.label.title = Titulo
+manager.project.list.label.abstracto = Descripcion
 
-employer.job.list.button.create = Crear
+manager.project.list.button.create = Crear
 
-employer.job.form.label.reference = Referencia: 
-employer.job.form.label.contractor = Contratista: 
-employer.job.form.label.title = Título:
-employer.job.form.label.deadline = Fecha límite:
-employer.job.form.label.salary = Salario:
-employer.job.form.label.score = Puntuación:
-employer.job.form.label.moreInfo = Más información: (Opcional)
-employer.job.form.label.description = Descripción:
-
-employer.job.form.placeholder.score = 0,00 - 100,00
+manager.project.form.label.code = Codigo:
+manager.project.form.label.abstacto = Abstracto: 
+manager.project.form.label.title = Titulo:
+manager.project.form.label.fatalErrors = Errores fatales:
+manager.project.form.label.cost = Coste:
+manager.project.form.label.link = Link: (optional)
+manager.project.form.label.draftMode = Modo borrado 
 		
-employer.job.form.button.duties = Responsabilidades
-employer.job.form.button.update = Actualizar
-employer.job.form.button.delete = Borrar
-employer.job.form.button.publish = Publicar
-employer.job.form.button.create = Crear
+manager.project.form.button.userStories = Historias de usuario
+manager.project.form.button.update = Actualizar
+manager.project.form.button.delete = Borrar
+manager.project.form.button.publish = Publicar
+manager.project.form.button.create = Crear
 
-employer.job.form.error.duplicated = Esta referencia no está libre
-employer.job.form.error.too-close = La fecha límite debe ser en una semana como mínimo
-employer.job.form.error.bad-work-load = La carga de trabajo no es del 100%
-employer.job.form.error.negative-salary = El salario debe ser positivo
+manager.project.form.error.duplicated = Esta referencia no está libre
+manager.project.form.error.too-close = La fecha límite debe ser en una semana como mínimo
+manager.project.form.error.bad-work-load = La carga de trabajo no es del 100%
+manager.project.form.error.negative-salary = El salario debe ser positivo

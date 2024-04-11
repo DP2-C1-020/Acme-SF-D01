@@ -8,33 +8,30 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-employer.job.form.title = Job form 
-employer.job.list.title = Listing of jobs
+manager.project.form.title = Project form 
+manager.project.list.title = Listing of projects
 
-employer.job.form.label.reference = Reference:
-employer.job.form.label.contractor = Contractor: 
-employer.job.form.label.title = Title:
-employer.job.form.label.deadline = Deadline:
-employer.job.form.label.salary = Salary:
-employer.job.form.label.score = Score:
-employer.job.form.label.moreInfo = More info: (Optional)
-employer.job.form.label.description = Description:
+manager.project.form.label.code = Code:
+manager.project.form.label.abstacto = Abstract: 
+manager.project.form.label.title = Title:
+manager.project.form.label.fatalErrors = Fatal errors:
+manager.project.form.label.cost = Cost:
+manager.project.form.label.link = Link: (optional)
+manager.project.form.label.draftMode = Draft mode: 
 
-employer.job.form.placeholder.score = 0.00 - 100.00
 		
-employer.job.form.button.duties = Duties
-employer.job.form.button.update = Update
-employer.job.form.button.delete = Delete
-employer.job.form.button.publish = Publish
-employer.job.form.button.create = Create
+manager.project.form.button.userStories = User stories
+manager.project.form.button.update = Update
+manager.project.form.button.delete = Delete
+manager.project.form.button.publish = Publish
+manager.project.form.button.create = Create
 
-employer.job.form.error.duplicated = This reference is taken
-employer.job.form.error.too-close = Deadline must be at least one week ahead
-employer.job.form.error.bad-work-load = The work load is not 100%
-employer.job.form.error.negative-salary = The salary must be positive
+manager.project.form.error.duplicated = This reference is taken
+manager.project.form.error.too-close = Deadline must be at least one week ahead
+manager.project.form.error.bad-work-load = The work load is not 100%
+manager.project.form.error.negative-salary = The salary must be positive
 
-employer.job.list.label.reference = Reference
-employer.job.list.label.deadline = Deadline
-employer.job.list.label.title = Title
+manager.project.list.label.title = Title
+manager.project.list.label.abstracto = Abstract
 
-employer.job.list.button.create = Create
+manager.project.list.button.create = Create

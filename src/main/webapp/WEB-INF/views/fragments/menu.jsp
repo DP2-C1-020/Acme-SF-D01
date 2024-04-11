@@ -51,6 +51,10 @@
 			<acme:menu-suboption code="master.menu.authenticated.my-contracts" action="/client/contract/list"/>	
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
+			<acme:menu-suboption code="master.menu.authenticated.my-projects" action="/manager/project/list-mine"/>	
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated">
 			<acme:menu-suboption code="master.menu.authenticated.list-objectives" action="/authenticated/objective/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.all-claims" action="/any/claim/list"/>
