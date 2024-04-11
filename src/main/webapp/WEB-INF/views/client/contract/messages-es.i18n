@@ -1,0 +1,26 @@
+client.contract.list.label.code = Código
+client.contract.list.label.goals = Objetivos
+client.contract.list.label.draftMode = Modo borrador
+
+client.contract.list.title = Lista de mis contratos
+client.contract.form.title = Detalles
+
+client.contract.list.button.create = Nuevo Contrato
+client.contract.form.button.create = Crear Contrato
+client.contract.form.button.update = Actualizar
+client.contract.form.button.delete = Eliminar
+client.contract.form.button.publish = Publicar
+
+
+client.contract.form.label.code = Código
+client.contract.form.label.providerName = Nombre del Proveedor
+client.contract.form.label.customerName = Nombre del cliente
+client.contract.form.label.goals = Objetivos
+client.contract.form.label.budget = Presupuesto
+client.contract.form.label.instantiationMoment = Momento de instanciación
+client.contract.form.label.projects = Proyectos
+client.contract.form.label.projectCode = Código del proyecto
+
+client.contract.error.codeDuplicate = Código duplicado
+client.contract.error.projectBudget = El coste del contrato no podrá superar el coste total del proyecto
+client.contract.error.budget = El presupuesto no puede ser nulo
