@@ -1,0 +1,26 @@
+client.contract.list.label.code = Code
+client.contract.list.label.goals = Goals
+client.contract.list.label.draftMode = Draft Mode
+
+client.contract.list.title = My contracts list
+client.contract.form.title = Details
+
+client.contract.list.button.create = New Contract
+client.contract.form.button.create = Create Contract
+client.contract.form.button.update = Update
+client.contract.form.button.delete = Delete
+client.contract.form.button.publish = Publish
+
+
+client.contract.form.label.code = Code
+client.contract.form.label.providerName = Provider Name
+client.contract.form.label.customerName = Customer Name
+client.contract.form.label.goals = Goals
+client.contract.form.label.budget = Budget
+client.contract.form.label.instantiationMoment = Instantiation Moment
+client.contract.form.label.projects = Projects
+client.contract.form.label.projectCode = Project Code
+
+client.contract.error.codeDuplicate = Code Duplicate
+client.contract.error.projectBudget = The cost of the contract may not exceed the total cost of the project.
+client.contract.error.budget = Budget cannot be null
