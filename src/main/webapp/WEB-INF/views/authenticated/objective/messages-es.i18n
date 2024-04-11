@@ -1,0 +1,20 @@
+authenticated.objective.form.title = Objetivo
+authenticated.objective.form.label.instantiationMoment = Momento de Instanciación:
+authenticated.objective.form.label.title = Título:
+authenticated.objective.form.label.description = Descripción:
+authenticated.objective.form.label.priority = Prioridad:
+authenticated.objective.form.label.project: Proyecto:
+authenticated.objective.form.label.status = Estado:
+authenticated.objective.form.label.startDate = Fecha de Inicio:
+authenticated.objective.form.label.endDate = Fecha de Finalización:
+authenticated.objective.form.label.link = Enlace:
+authenticated.objective.form.label.confirmation = Confirmar que el objetivo es correcto
+
+authenticated.objective.form.button.create = Crear
+
+authenticated.objective.list.title = Objetivos
+authenticated.objective.list.label.title = Título
+authenticated.objective.list.label.description = Descripción
+authenticated.objective.list.label.priority = Prioridad
+
+authenticated.objective.list.button.create = Crear
