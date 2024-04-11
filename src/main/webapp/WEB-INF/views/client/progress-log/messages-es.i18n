@@ -1,0 +1,19 @@
+client.progressLog.list.label.recordId = Id de Registro
+client.progressLog.list.label.comment = Comentario
+client.progressLog.list.label.responsiblePerson = Persona Responsable
+client.progressLog.list.label.draftMode = Modo borrador
+
+client.progress-log.list.title = Registros de Progreso
+client.progressLog.list.button.create = Nuevo registro de progreso
+
+client.progressLog.form.label.recordId = Id de Registro
+client.progressLog.form.label.completeness = Completitud
+client.progressLog.form.label.comment = Comentario
+client.progressLog.form.label.registrationMoment = Momento de la inscripción
+client.progressLog.form.label.responsiblePerson = Persona Responsable
+
+client.progressLog.form.label.contractCode = Código del Contrato
+client.progressLog.form.button.update = Actualizar
+client.progressLog.form.button.delete = Eliminar
+client.progressLog.form.button.publish = Publicar
+client.progressLog.form.button.progressLog = Registros de Progreso

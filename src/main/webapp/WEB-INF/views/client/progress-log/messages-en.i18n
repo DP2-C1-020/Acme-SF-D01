@@ -1,0 +1,22 @@
+client.progressLog.list.label.recordId = Record Id
+client.progressLog.list.label.comment = Comment
+client.progressLog.list.label.responsiblePerson = Responsible Person
+client.progressLog.list.label.draftMode = Draft Mode
+
+client.progress-log.list.title = Progress Logs
+client.progressLog.list.button.create = New Progress Log
+
+client.progress-log.form.title = Details Progress Log
+
+client.progressLog.form.label.recordId = Record Id
+client.progressLog.form.label.completeness = Completeness
+client.progressLog.form.label.comment = Comment
+client.progressLog.form.label.registrationMoment = Registration Moment
+client.progressLog.form.label.responsiblePerson = Responsible Person
+
+client.progressLog.form.label.contractCode = Contract Code
+client.progressLog.form.button.update = Update
+client.progressLog.form.button.delete = Delete
+client.progressLog.form.button.publish = Publish
+
+client.progressLog.form.button.progressLog = Progress Logs
