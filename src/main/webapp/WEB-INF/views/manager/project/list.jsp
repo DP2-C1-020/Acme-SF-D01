@@ -8,8 +8,8 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="manager.project.list.label.title" path="title" width="20%"/>
-	<acme:list-column code="manager.project.list.label.abstracto" path="abstracto" width="80%"/>
+	<acme:list-column code="manager.project.list.label.title" path="title" width="30%"/>
+	<acme:list-column code="manager.project.list.label.abstracto" path="abstracto" width="70%"/>
 </acme:list>
 
 <jstl:if test="${_command == 'list-mine'}">

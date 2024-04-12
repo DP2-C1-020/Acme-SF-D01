@@ -12,7 +12,7 @@ manager.project.form.title = Project form
 manager.project.list.title = Listing of projects
 
 manager.project.form.label.code = Code:
-manager.project.form.label.abstacto = Abstract: 
+manager.project.form.label.abstracto = Abstract: 
 manager.project.form.label.title = Title:
 manager.project.form.label.fatalErrors = Fatal errors:
 manager.project.form.label.cost = Cost:
@@ -26,8 +26,8 @@ manager.project.form.button.delete = Delete
 manager.project.form.button.publish = Publish
 manager.project.form.button.create = Create
 
-manager.project.form.error.duplicated = This reference is taken
-manager.project.form.error.too-close = Deadline must be at least one week ahead
+manager.project.form.error.duplicated = This code is taken
+manager.project.form.error.notBlank =  It can not be empty
 manager.project.form.error.bad-work-load = The work load is not 100%
 manager.project.form.error.negative-salary = The salary must be positive
 
