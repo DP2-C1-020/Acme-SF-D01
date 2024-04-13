@@ -4,7 +4,6 @@ package acme.entities.project;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -54,22 +53,22 @@ public class Project extends AbstractEntity {
 
 	private boolean				draftMode;
 
-
 	// Derived attributes -----------------------------------------------------
-	@Transient
-	public boolean isPublished() {
-		boolean result;
 
-		result = !this.draftMode;
-
-		return result;
-	}
-
+	/*
+	 * @Transient
+	 * public boolean isPublished() {
+	 * boolean result;
+	 * 
+	 * result = !this.draftMode;
+	 * 
+	 * return result;
+	 * }
+	 */
 	// Relationships ----------------------------------------------------------
-
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Manager manager;
+	private Manager				manager;
 }

@@ -27,9 +27,7 @@ manager.project.form.button.publish = Publish
 manager.project.form.button.create = Create
 
 manager.project.form.error.duplicated = This code is taken
-manager.project.form.error.notBlank =  It can not be empty
-manager.project.form.error.bad-work-load = The work load is not 100%
-manager.project.form.error.negative-salary = The salary must be positive
+manager.project.form.error.negative-cost = The cost must be positive or zero
 
 manager.project.list.label.title = Title
 manager.project.list.label.abstracto = Abstract

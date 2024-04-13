@@ -31,6 +31,4 @@ manager.project.form.button.publish = Publicar
 manager.project.form.button.create = Crear
 
 manager.project.form.error.duplicated = Este código no está libre
-manager.project.form.error.notBlank = No puede estar vacío
-manager.project.form.error.bad-work-load = La carga de trabajo no es del 100%
-manager.project.form.error.negative-salary = El salario debe ser positivo
+manager.project.form.error.negative-cost = El coste debe ser positivo o cero.
