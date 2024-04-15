@@ -1,8 +1,7 @@
-/*
- * ManagerProjectPublishService.java
- */
 
 package acme.features.manager.project;
+
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Service;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.project.Project;
+import acme.entities.userstory.UserStory;
 import acme.roles.Manager;
 
 @Service
@@ -26,12 +26,12 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	@Override
 	public void authorise() {
 		boolean status;
-		int projectId;
+		int masterId;
 		Project project;
 		Manager manager;
 
-		projectId = super.getRequest().getData("id", int.class);
-		project = this.repository.findOneProjectById(projectId);
+		masterId = super.getRequest().getData("id", int.class);
+		project = this.repository.findOneProjectById(masterId);
 		manager = project == null ? null : project.getManager();
 		status = project != null && project.isDraftMode() && super.getRequest().getPrincipal().hasRole(manager);
 
@@ -53,38 +53,24 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	public void bind(final Project object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "abstracto", "fatalErrors", "cost", "link", "draftMode");
+		super.bind(object, "code", "title", "abstracto", "fatalErrors", "cost", "link");
 	}
 
 	@Override
 	public void validate(final Project object) {
-		/*
-		 * assert object != null;
-		 * 
-		 * if (!super.getBuffer().getErrors().hasErrors("deadline")) {
-		 * Date minimumDeadline;
-		 * 
-		 * minimumDeadline = MomentHelper.deltaFromCurrentMoment(7, ChronoUnit.DAYS);
-		 * super.state(MomentHelper.isAfter(object.getDeadline(), minimumDeadline), "deadline", "employer.job.form.error.too-close");
-		 * }
-		 * 
-		 * if (!super.getBuffer().getErrors().hasErrors("reference")) {
-		 * Job existing;
-		 * 
-		 * existing = this.repository.findOneJobByReference(object.getReference());
-		 * super.state(existing == null || existing.equals(object), "reference", "employer.job.form.error.duplicated");
-		 * }
-		 * 
-		 * if (!super.getBuffer().getErrors().hasErrors("salary"))
-		 * super.state(object.getSalary().getAmount() > 0, "salary", "employer.job.form.error.negative-salary");
-		 * 
-		 * {
-		 * Double workLoad;
-		 * 
-		 * workLoad = this.repository.computeWorkLoadByJobId(object.getId());
-		 * super.state(workLoad != null && workLoad == 100.0, "*", "employer.job.form.error.bad-work-load");
-		 * }
-		 */
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("fatalErrors"))
+			super.state(!object.getFatalErrors(), "fatalErrors", "manager.project.form.error.existing-fatal-errors");
+
+		{
+			Collection<UserStory> userStories;
+
+			userStories = this.repository.findManyUserStoriesByProjectId(object.getId());
+			super.state(!userStories.isEmpty(), "*", "manager.project.form.error.not-enough-user-stories");
+
+			super.state(userStories.stream().allMatch(UserStory::isPublished), "*", "manager.project.form.error.not-all-user-stories-published");
+		}
 	}
 
 	@Override
@@ -99,10 +85,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	public void unbind(final Project object) {
 		assert object != null;
 
-		int managerId;
 		Dataset dataset;
-
-		managerId = super.getRequest().getPrincipal().getActiveRoleId();
 
 		dataset = super.unbind(object, "code", "title", "abstracto", "fatalErrors", "cost", "link", "draftMode");
 

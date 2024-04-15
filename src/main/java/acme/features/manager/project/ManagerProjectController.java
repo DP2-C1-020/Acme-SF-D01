@@ -49,6 +49,7 @@ public class ManagerProjectController extends AbstractController<Manager, Projec
 
 		super.addCustomCommand("list-mine", "list", this.listMineService);
 		super.addCustomCommand("publish", "update", this.publishService);
+
 	}
 
 }

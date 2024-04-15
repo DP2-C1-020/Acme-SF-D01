@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.project.Project;
+import acme.entities.userstory.UserStory;
 import acme.roles.Manager;
 
 @Repository
@@ -28,9 +29,11 @@ public interface ManagerProjectRepository extends AbstractRepository {
 	 * @Query("select j from Job j where j.draftMode = false and j.deadline > :currentMoment")
 	 * Collection<Job> findManyJobsByAvailability(Date currentMoment);
 	 * 
-	 * @Query("select d from Duty d where d.job.id = :jobId")
-	 * Collection<Duty> findManyDutiesByJobId(int jobId);
-	 * 
+	 */
+	@Query("select p_us.userStory from ProjectUserStory p_us where p_us.project.id = :projectId")
+	Collection<UserStory> findManyUserStoriesByProjectId(int projectId);
+
+	/*
 	 * @Query("select sum(d.workLoad) from Duty d where d.job.id = :jobId")
 	 * Double computeWorkLoadByJobId(int jobId);
 	 * 

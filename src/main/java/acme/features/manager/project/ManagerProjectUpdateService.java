@@ -15,108 +15,87 @@ package acme.features.manager.project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.project.Project;
 import acme.roles.Manager;
 
 @Service
 public class ManagerProjectUpdateService extends AbstractService<Manager, Project> {
-
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	private ManagerProjectRepository repository;
 
-	// AbstractService<Employer, Job> -------------------------------------
+	// AbstractService interface ----------------------------------------------
 
-	/*
-	 * @Override
-	 * public void authorise() {
-	 * boolean status;
-	 * int masterId;
-	 * Job job;
-	 * Employer employer;
-	 * 
-	 * masterId = super.getRequest().getData("id", int.class);
-	 * job = this.repository.findOneJobById(masterId);
-	 * employer = job == null ? null : job.getEmployer();
-	 * status = job != null && job.isDraftMode() && super.getRequest().getPrincipal().hasRole(employer);
-	 * 
-	 * super.getResponse().setAuthorised(status);
-	 * }
-	 * 
-	 * @Override
-	 * public void load() {
-	 * Job object;
-	 * int id;
-	 * 
-	 * id = super.getRequest().getData("id", int.class);
-	 * object = this.repository.findOneJobById(id);
-	 * 
-	 * super.getBuffer().addData(object);
-	 * }
-	 * 
-	 * @Override
-	 * public void bind(final Job object) {
-	 * assert object != null;
-	 * 
-	 * int contractorId;
-	 * Company contractor;
-	 * 
-	 * contractorId = super.getRequest().getData("contractor", int.class);
-	 * contractor = this.repository.findOneContractorById(contractorId);
-	 * 
-	 * super.bind(object, "reference", "title", "deadline", "salary", "score", "moreInfo", "description");
-	 * object.setContractor(contractor);
-	 * }
-	 * 
-	 * @Override
-	 * public void validate(final Job object) {
-	 * assert object != null;
-	 * 
-	 * if (!super.getBuffer().getErrors().hasErrors("deadline")) {
-	 * Date minimumDeadline;
-	 * 
-	 * minimumDeadline = MomentHelper.deltaFromCurrentMoment(7, ChronoUnit.DAYS);
-	 * super.state(MomentHelper.isAfter(object.getDeadline(), minimumDeadline), "deadline", "employer.job.form.error.too-close");
-	 * }
-	 * 
-	 * if (!super.getBuffer().getErrors().hasErrors("reference")) {
-	 * Job existing;
-	 * 
-	 * existing = this.repository.findOneJobByReference(object.getReference());
-	 * super.state(existing == null || existing.equals(object), "reference", "employer.job.form.error.duplicated");
-	 * }
-	 * 
-	 * if (!super.getBuffer().getErrors().hasErrors("salary"))
-	 * super.state(object.getSalary().getAmount() > 0, "salary", "employer.job.form.error.negative-salary");
-	 * }
-	 * 
-	 * @Override
-	 * public void perform(final Job object) {
-	 * assert object != null;
-	 * 
-	 * this.repository.save(object);
-	 * }
-	 * 
-	 * @Override
-	 * public void unbind(final Job object) {
-	 * assert object != null;
-	 * 
-	 * int employerId;
-	 * Collection<Company> contractors;
-	 * SelectChoices choices;
-	 * Dataset dataset;
-	 * 
-	 * employerId = super.getRequest().getPrincipal().getActiveRoleId();
-	 * contractors = this.repository.findManyContractorsByEmployerId(employerId);
-	 * choices = SelectChoices.from(contractors, "name", object.getContractor());
-	 * 
-	 * dataset = super.unbind(object, "reference", "title", "deadline", "salary", "score", "moreInfo", "description", "draftMode");
-	 * dataset.put("contractor", choices.getSelected().getKey());
-	 * dataset.put("contractors", choices);
-	 * 
-	 * super.getResponse().addData(dataset);
-	 * }
-	 */
+
+	@Override
+	public void authorise() {
+		boolean status;
+		int masterId;
+		Project project;
+		Manager manager;
+
+		masterId = super.getRequest().getData("id", int.class);
+		project = this.repository.findOneProjectById(masterId);
+		manager = project == null ? null : project.getManager();
+		status = project != null && project.isDraftMode() && super.getRequest().getPrincipal().hasRole(manager);
+
+		super.getResponse().setAuthorised(status);
+	}
+
+	@Override
+	public void load() {
+		Project object;
+		int id;
+
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findOneProjectById(id);
+
+		super.getBuffer().addData(object);
+	}
+
+	@Override
+	public void bind(final Project object) {
+		assert object != null;
+
+		super.bind(object, "code", "title", "abstracto", "fatalErrors", "cost", "link");
+	}
+
+	@Override
+	public void validate(final Project object) {
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.isDraftMode(), "draftMode", "manager.project.form.error.already-published");
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Project existing;
+			Boolean duplicated;
+
+			existing = this.repository.findOneProjectByCode(object.getCode());
+			duplicated = existing != null && existing.getId() != object.getId();
+			super.state(!duplicated, "code", "manager.project.form.error.duplicate");
+		}
+
+	}
+
+	@Override
+	public void perform(final Project object) {
+		assert object != null;
+
+		this.repository.save(object);
+	}
+
+	@Override
+	public void unbind(final Project object) {
+		assert object != null;
+
+		Dataset dataset;
+
+		dataset = super.unbind(object, "code", "title", "abstracto", "fatalErrors", "cost", "link", "draftMode");
+
+		super.getResponse().addData(dataset);
+	}
 }

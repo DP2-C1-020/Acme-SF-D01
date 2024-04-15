@@ -46,12 +46,6 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 
 		object.setDraftMode(true);
 		object.setManager(manager);
-		object.setCode("");
-		object.setTitle("");
-		object.setAbstracto("");
-		object.setFatalErrors(false);
-		object.setCost(null);
-		object.setLink(null);
 		super.getBuffer().addData(object);
 	}
 
@@ -59,7 +53,7 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 	public void bind(final Project object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "abstracto", "cost", "link", "fatalErrors", "draftMode");
+		super.bind(object, "code", "title", "abstracto", "cost", "link", "fatalErrors");
 
 	}
 
@@ -75,10 +69,6 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 			super.state(existing == null, "code", "manager.project.form.error.duplicated");
 		}
 
-		/*
-		 * if (object.getCost() != null)
-		 * super.state(object.getCost() >= 0, "cost", "manager.project.form.error.negative-cost");
-		 */
 	}
 
 	@Override
@@ -93,10 +83,7 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 	public void unbind(final Project object) {
 		assert object != null;
 
-		int managerId;
 		Dataset dataset;
-
-		managerId = super.getRequest().getPrincipal().getActiveRoleId();
 
 		dataset = super.unbind(object, "code", "title", "abstracto", "fatalErrors", "cost", "link", "draftMode");
 

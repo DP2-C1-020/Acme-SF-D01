@@ -11,20 +11,24 @@
 manager.project.form.title = Detalles de proyecto
 manager.project.list.title = Lista de proyectos
 
+manager.project.list.label.code = Código
 manager.project.list.label.title = Titulo
 manager.project.list.label.abstracto = Descripcion
+manager.project.list.label.draftMode = Modo Borrador
+manager.project.list.label.fatalErrors = Errores fatales
 
 manager.project.list.button.create = Crear
 
+
 manager.project.form.label.code = Codigo:
-manager.project.form.label.abstacto = Abstracto: 
+manager.project.form.label.abstracto = Descripción: 
 manager.project.form.label.title = Titulo:
 manager.project.form.label.fatalErrors = Errores fatales:
 manager.project.form.label.cost = Coste:
 manager.project.form.label.link = Link: (optional)
-manager.project.form.label.draftMode = Modo borrado 
+manager.project.form.label.draftMode = Modo borrador
 		
-manager.project.form.button.userStories = Historias de usuario
+manager.project.form.button.user-stories = Historias de usuario
 manager.project.form.button.update = Actualizar
 manager.project.form.button.delete = Borrar
 manager.project.form.button.publish = Publicar
@@ -32,3 +36,10 @@ manager.project.form.button.create = Crear
 
 manager.project.form.error.duplicated = Este código no está libre
 manager.project.form.error.negative-cost = El coste debe ser positivo o cero.
+manager.project.form.error.existing-fatal-errors = Un proyecto que contanga errores fatales no puede ser publicado.
+manager.project.form.error.not-enough-user-stories = Un proyecto sin historias de usuario no puede ser publicado.
+manager.project.form.error.not-all-user-stories-published = Un proyecto sin todas sus historias de usuario publicadas no puede ser publicado.
+manager.project.form.error.already-published = EL proyecto ya está publicado.
+
+
+

@@ -8,12 +8,11 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="manager.project.list.label.title" path="title" width="30%"/>
-	<acme:list-column code="manager.project.list.label.abstracto" path="abstracto" width="70%"/>
+	<acme:list-column code="manager.project.list.label.code" path="code" width="10%"/>
+	<acme:list-column code="manager.project.list.label.title" path="title" width="60%"/>
+	<acme:list-column code="manager.project.list.label.draftMode" path="draftMode" width="15%"/>
+	<acme:list-column code="manager.project.list.label.fatalErrors" path="fatalErrors" width="15%"/>
 </acme:list>
 
-<jstl:if test="${_command == 'list-mine'}">
-	<acme:button code="manager.project.list.button.create" action="/manager/project/create"/>
-</jstl:if>		
-	
+<acme:button code="manager.project.list.button.create" action="/manager/project/create"/>
 

@@ -12,11 +12,15 @@
 
 package acme.features.manager.project;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.project.Project;
+import acme.entities.userstory.UserStory;
 import acme.roles.Manager;
 
 @Service
@@ -29,81 +33,66 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 
 	// AbstractService interface ----------------------------------------------
 
-	/*
-	 * @Override
-	 * public void authorise() {
-	 * boolean status;
-	 * int masterId;
-	 * Job job;
-	 * Employer employer;
-	 * 
-	 * masterId = super.getRequest().getData("id", int.class);
-	 * job = this.repository.findOneJobById(masterId);
-	 * employer = job == null ? null : job.getEmployer();
-	 * status = job != null && job.isDraftMode() && super.getRequest().getPrincipal().hasRole(employer);
-	 * 
-	 * super.getResponse().setAuthorised(status);
-	 * }
-	 * 
-	 * @Override
-	 * public void load() {
-	 * Job object;
-	 * int id;
-	 * 
-	 * id = super.getRequest().getData("id", int.class);
-	 * object = this.repository.findOneJobById(id);
-	 * 
-	 * super.getBuffer().addData(object);
-	 * }
-	 * 
-	 * @Override
-	 * public void bind(final Job object) {
-	 * assert object != null;
-	 * 
-	 * int contractorId;
-	 * Company contractor;
-	 * 
-	 * contractorId = super.getRequest().getData("contractor", int.class);
-	 * contractor = this.repository.findOneContractorById(contractorId);
-	 * 
-	 * super.bind(object, "reference", "title", "deadline", "salary", "score", "moreInfo", "description");
-	 * object.setContractor(contractor);
-	 * }
-	 * 
-	 * @Override
-	 * public void validate(final Job object) {
-	 * assert object != null;
-	 * }
-	 * 
-	 * @Override
-	 * public void perform(final Job object) {
-	 * assert object != null;
-	 * 
-	 * Collection<Duty> duties;
-	 * 
-	 * duties = this.repository.findManyDutiesByJobId(object.getId());
-	 * this.repository.deleteAll(duties);
-	 * this.repository.delete(object);
-	 * }
-	 * 
-	 * @Override
-	 * public void unbind(final Job object) {
-	 * assert object != null;
-	 * 
-	 * int employerId;
-	 * Collection<Company> contractors;
-	 * SelectChoices choices;
-	 * Dataset dataset;
-	 * 
-	 * employerId = super.getRequest().getPrincipal().getActiveRoleId();
-	 * contractors = this.repository.findManyContractorsByEmployerId(employerId);
-	 * choices = SelectChoices.from(contractors, "name", object.getContractor());
-	 * 
-	 * dataset = super.unbind(object, "reference", "title", "deadline", "salary", "score", "moreInfo", "description", "draftMode");
-	 * dataset.put("contractor", choices.getSelected().getKey());
-	 * dataset.put("contractors", choices);
-	 * 
-	 * super.getResponse().addData(dataset);
-	 * }
-	 */
+
+	@Override
+	public void authorise() {
+		boolean status;
+		int masterId;
+		Project project;
+		Manager manager;
+
+		masterId = super.getRequest().getData("id", int.class);
+		project = this.repository.findOneProjectById(masterId);
+		manager = project == null ? null : project.getManager();
+		status = project != null && project.isDraftMode() && super.getRequest().getPrincipal().hasRole(manager);
+
+		super.getResponse().setAuthorised(status);
+	}
+
+	@Override
+	public void load() {
+		Project object;
+		int id;
+
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findOneProjectById(id);
+
+		super.getBuffer().addData(object);
+	}
+
+	@Override
+	public void bind(final Project object) {
+		assert object != null;
+
+		super.bind(object, "code", "title", "abstracto", "fatalErrors", "cost", "link");
+	}
+
+	@Override
+	public void validate(final Project object) {
+		assert object != null;
+
+	}
+
+	@Override
+	public void perform(final Project object) {
+		assert object != null;
+
+		Collection<UserStory> userStories;
+
+		userStories = this.repository.findManyUserStoriesByProjectId(object.getId());
+		this.repository.deleteAll(userStories);
+		this.repository.delete(object);
+	}
+
+	@Override
+	public void unbind(final Project object) {
+		assert object != null;
+
+		int managerId;
+		Dataset dataset;
+
+		dataset = super.unbind(object, "code", "title", "abstracto", "fatalErrors", "cost", "link", "draftMode");
+		super.getResponse().addData(dataset);
+	}
+
 }
