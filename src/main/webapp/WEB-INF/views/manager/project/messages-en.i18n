@@ -33,6 +33,10 @@ manager.project.form.error.existing-fatal-errors = A project containing fatal er
 manager.project.form.error.not-enough-user-stories = A project without user stories can't be published.
 manager.project.form.error.not-all-user-stories-published = A project must have all it's user stories published in order to be published.
 manager.project.form.error.already-published = The project is already published.
+manager.project.form.error.children-audits = The project cannot be deleted because it has Audits that depend on it
+manager.project.form.error.children-contracts = The project cannot be deleted because it has Contracts that depend on it
+manager.project.form.error.children-sponsorships = The project cannot be deleted because it has Sponsorhips that depend on it
+manager.project.form.error.children-training-modules = The project cannot be deleted because it has Training modules that depend on it
 
 manager.project.list.label.code = Code
 manager.project.list.label.title = Title

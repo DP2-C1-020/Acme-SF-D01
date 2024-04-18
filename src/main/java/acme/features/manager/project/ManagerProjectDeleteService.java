@@ -19,7 +19,11 @@ import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.entities.audits.CodeAudit;
+import acme.entities.contracts.Contract;
 import acme.entities.project.Project;
+import acme.entities.sponsorships.Sponsorship;
+import acme.entities.training_module.TrainingModule;
 import acme.entities.userstory.UserStory;
 import acme.roles.Manager;
 
@@ -71,6 +75,25 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 	public void validate(final Project object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.isDraftMode(), "draftMode", "manager.project.form.error.already-published");
+
+		Collection<CodeAudit> codeAudits;
+		Collection<Contract> contracts;
+		Collection<Sponsorship> sponsorships;
+		Collection<TrainingModule> trainingModules;
+
+		codeAudits = this.repository.findManyCodeAuditsByProjectId(object.getId());
+		super.state(codeAudits.isEmpty(), "*", "manager.project.form.error.children-audits");
+
+		contracts = this.repository.findManyContractsByProjectId(object.getId());
+		super.state(contracts.isEmpty(), "*", "manager.project.form.error.children-contracts");
+
+		sponsorships = this.repository.findManySponsorshipsByProjectId(object.getId());
+		super.state(sponsorships.isEmpty(), "*", "manager.project.form.error.children-sponsorships");
+
+		trainingModules = this.repository.findManyTrainingModulesByProjectId(object.getId());
+		super.state(trainingModules.isEmpty(), "*", "manager.project.form.error.children-training-modules");
 	}
 
 	@Override
@@ -88,7 +111,6 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 	public void unbind(final Project object) {
 		assert object != null;
 
-		int managerId;
 		Dataset dataset;
 
 		dataset = super.unbind(object, "code", "title", "abstracto", "fatalErrors", "cost", "link", "draftMode");

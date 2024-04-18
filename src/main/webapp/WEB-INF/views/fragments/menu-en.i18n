@@ -60,7 +60,9 @@ master.menu.authenticated.my-contracts = My contracts
 # master.menu.manager ##########################################################
 
 master.menu.manager = Manager
-master.menu.authenticated.my-projects = My projects
+master.menu.manager.my-projects = My projects
+master.menu.manager.list-my-user-stories = My user stories
+master.menu.manager.show-dashboard = My Dashboard
 
 # master.menu.user-account ####################################################
 

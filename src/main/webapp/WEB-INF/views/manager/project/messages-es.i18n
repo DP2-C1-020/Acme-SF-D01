@@ -40,6 +40,9 @@ manager.project.form.error.existing-fatal-errors = Un proyecto que contanga erro
 manager.project.form.error.not-enough-user-stories = Un proyecto sin historias de usuario no puede ser publicado.
 manager.project.form.error.not-all-user-stories-published = Un proyecto sin todas sus historias de usuario publicadas no puede ser publicado.
 manager.project.form.error.already-published = EL proyecto ya está publicado.
-
+manager.project.form.error.children-audits = El proyecto no puede ser eliminado porque tiene Auditorías que dependen de él
+manager.project.form.error.children-contracts = El proyecto no puede ser eliminado porque tiene Contratos que dependen de él
+manager.project.form.error.children-sponsorships = El proyecto no puede ser eliminado porque tiene Patrocinios que dependen de él
+manager.project.form.error.children-training-modules = El proyecto no puede ser eliminado porque tiene Módulos de entrenamiento que dependen de él
 
 

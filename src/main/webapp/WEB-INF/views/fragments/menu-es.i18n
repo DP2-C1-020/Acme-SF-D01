@@ -55,7 +55,9 @@ master.menu.authenticated.my-contracts = Mis contratos
 # master.menu.manager ##########################################################
 
 master.menu.manager = Manager
-master.menu.authenticated.my-projects = Mis proyectos
+master.menu.manager.my-projects = Mis proyectos
+master.menu.manager.list-my-user-stories = Mis historias de usuario
+master.menu.manager.show-dashboard = Mi panel
 
 # master.menu.consumer ##########################################################
 
