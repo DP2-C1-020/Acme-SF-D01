@@ -54,6 +54,8 @@ public class ProgressLog extends AbstractEntity {
 	@Length(max = 75)
 	protected String			responsiblePerson;
 
+	protected boolean			draftMode;
+
 	// Relationships ----------------------------------------------------
 
 	@NotNull
