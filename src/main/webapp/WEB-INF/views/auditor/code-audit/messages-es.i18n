@@ -1,0 +1,26 @@
+auditor.codeaudit.list.label.code = Código
+auditor.codeaudit.list.label.execution = Ejecución
+auditor.codeaudit.list.label.type = Tipo
+
+auditor.code-audit.list.title = Mi lista de auditorías de código
+auditor.codeaudit.form.title = Detalles
+
+auditor.codeaudit.list.button.create = Nueva Auditoría de Código
+auditor.codeaudit.form.button.create = Crear Auditoría de Código
+auditor.codeaudit.form.button.update = Actualizar
+auditor.codeaudit.form.button.delete = Eliminar
+auditor.codeaudit.form.button.publish = Publicar
+auditor.code-audit.form.title = Auditoría de Código
+
+auditor.codeaudit.form.label.code = Código
+auditor.codeaudit.form.label.execution = Ejecución
+auditor.codeaudit.form.label.correctiveActions = Acciones Correctivas
+auditor.codeaudit.form.label.modeMark = Nota
+auditor.codeaudit.form.label.type = Tipo
+auditor.codeaudit.form.label.link = Enlace
+auditor.contract.form.label.projects = Proyecto
+
+auditor.codeaudit.error.codeDuplicate = Código duplicado
+
+validation.codeaudit.mode.empty = Esta auditoría de código no tiene registros de auditoría
+validation.codeaudit.mode-less-than-c = La nota debe ser como mínimo C para ser publicada

@@ -52,6 +52,10 @@
 			<acme:menu-suboption code="master.menu.client.client-dashboard" action="/client/client-dashboard/show"/>
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.my-code_audits" action="/auditor/code-audit/list"/>
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated">
 			<acme:menu-suboption code="master.menu.authenticated.list-objectives" action="/authenticated/objective/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.all-claims" action="/any/claim/list"/>

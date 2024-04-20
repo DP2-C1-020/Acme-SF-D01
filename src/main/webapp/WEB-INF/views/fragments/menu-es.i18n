@@ -53,6 +53,11 @@ master.menu.client = Cliente
 master.menu.client.my-contracts = Mis contratos
 master.menu.client.client-dashboard = Panel del Cliente
 
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.my-code_audits = Mis Auditorías de Código
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor

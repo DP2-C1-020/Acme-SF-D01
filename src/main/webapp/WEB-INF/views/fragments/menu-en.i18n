@@ -58,6 +58,11 @@ master.menu.client = Client
 master.menu.client.my-contracts = My contracts
 master.menu.client.client-dashboard = Dashboard
 
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.my-code_audits = My Code Audits
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
