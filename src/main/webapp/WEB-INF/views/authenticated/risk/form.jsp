@@ -9,6 +9,6 @@
     <acme:input-textbox code="authenticated.risk.form.label.impact" path="impact"/>  
     <acme:input-textbox code="authenticated.risk.form.label.probability" path="probability"/>  
     <acme:input-textarea code="authenticated.risk.form.label.description" path="description"/>
-    <acme:input-url code="authenticated.risk.form.label.link" path="link"/> 
-    <acme:input-textbox code="authenticated.risk.form.label.project" path="project"/>   
+    <acme:input-url code="authenticated.risk.form.label.link" path="link"/>
+    <acme:input-textbox code="authenticated.risk.form.label.projectCode" path="projectCode"/>  
 </acme:form>

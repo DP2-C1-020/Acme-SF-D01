@@ -3,7 +3,7 @@ authenticated.risk.form.label.instantiationMoment = Momento de Instanciación:
 authenticated.risk.form.label.title = Título:
 authenticated.risk.form.label.description = Descripción:
 authenticated.risk.form.label.priority = Prioridad:
-authenticated.risk.form.label.project: Proyecto:
+authenticated.risk.form.label.projectCode: Código del Proyecto:
 authenticated.risk.form.label.status = Estado:
 authenticated.risk.form.label.startDate = Fecha de Inicio:
 authenticated.risk.form.label.endDate = Fecha de Finalización:

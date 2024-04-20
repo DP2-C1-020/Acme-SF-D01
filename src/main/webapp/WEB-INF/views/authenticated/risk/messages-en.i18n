@@ -5,7 +5,7 @@ authenticated.risk.form.label.description = Description
 authenticated.risk.form.label.impact = Impact
 authenticated.risk.form.label.probability = Probability
 authenticated.risk.form.label.link = Link
-authenticated.risk.form.label.project = Project
+authenticated.risk.form.label.projectCode = Project Code
 
 authenticated.risk.form.button.create = Create
 
