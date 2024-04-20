@@ -83,7 +83,7 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 			boolean date2;
 			date1 = MomentHelper.isAfterOrEqual(object.getStartDate(), iniDate);
 			date2 = MomentHelper.isBeforeOrEqual(object.getEndDate(), limitDate);
-			super.state(date1 && date2, "startDate", "administrator.baner.form.error.limit.date");
+			super.state(date1 && date2, "startDate", "administrator.banner.form.error.limit.date");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("startDate")) {
