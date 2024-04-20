@@ -1,6 +1,6 @@
 client.progressLog.list.label.recordId = Id de Registro
 client.progressLog.list.label.comment = Comentario
-client.progressLog.list.label.responsiblePerson = Persona Responsable
+client.progressLog.list.label.completeness = Completitud
 client.progressLog.list.label.draftMode = Modo borrador
 
 client.progress-log.list.title = Registros de Progreso
@@ -17,3 +17,22 @@ client.progressLog.form.button.update = Actualizar
 client.progressLog.form.button.delete = Eliminar
 client.progressLog.form.button.publish = Publicar
 client.progressLog.form.button.progressLog = Registros de Progreso
+
+
+
+validation.ContractCode = El código introducido debe contener una letra mayúscula seguida de hasta tres letras mayúsculas y luego tres números..
+validation.ProgressLogRecord = El código debe seguir el formato "PG-" seguido de una letra mayúscula una o dos veces, seguido de un guion y luego cuatro dígitos numéricos.
+validation.ClientIdentification = El código ingresado debe seguir el formato: "CLI-" seguido de cuatro dígitos numéricos.
+validation.CodeAuditCode = Formato inválido. Por favor, ingresa un código que comience con una a tres letras mayúsculas, seguido de un guion medio, y luego seguido por exactamente tres dígitos.
+validation.ProjectCode = El código del proyecto debe seguir el patrón de tres letras mayúsculas seguidas de un guion y cuatro dígitos.
+validation.trainingModule.reference	= La referencia debe contener de 1 a 3 letras y 3 dígitos, separados por un guión
+validation.trainingSession.reference = La referencia debe empezar por "TS-" y contener de 1 a 3 letras y 3 dígitos, separados por un guión
+validation.trainingModule.reference	= La referencia debe contener de 1 a 3 letras y 3 dígitos, separados por un guión
+validation.trainingSession.reference = La referencia debe empezar por "TS-" y contener de 1 a 3 letras y 3 dígitos, separados por un guión
+validation.ContractCode = El código introducido debe contener una letra mayúscula seguida de hasta tres letras mayúsculas y luego tres números..
+validation.ProgressLogRecord = El código debe seguir el formato "PG-" seguido de una letra mayúscula una o dos veces, seguido de un guion y luego cuatro dígitos numéricos.
+validation.ClientIdentification = El código ingresado debe seguir el formato: "CLI-" seguido de cuatro dígitos numéricos.
+validation.CodeAuditCode = Formato inválido. Por favor, ingresa un código que comience con una a tres letras mayúsculas, seguido de un guion medio, y luego seguido por exactamente tres dígitos.
+validation.invoiceCode = El código de factura debe comenzar con IN-, 4 dígitos, otro guión y 4 dígitos (como IN-9999-9999).
+validation.sponsorshipCode = El código de patrocinio debe comenzar con 1 hasta 3 letras, seguido de un guión y exactamente 3 dígitos al final.
+validation.Progresscompleteness = El porcentaje debe ser un número del 0 al 100 y permitir solo dos decimales
