@@ -1,0 +1,24 @@
+auditor.audit-record.form.title = Registro de Auditoría
+auditor.auditrecord.form.label.codeAuditCode = Código de Auditoría de Código
+auditor.auditrecord.form.label.code = Código
+auditor.auditrecord.form.label.initialMoment = Momento Inicial
+auditor.auditrecord.form.label.finalMoment = Momento Final
+auditor.auditrecord.form.label.link = Enlace
+auditor.auditrecord.form.label.mark = Nota
+
+auditor.audit-record.list.title = Registros de Auditoría
+auditor.auditrecord.list.label.code = Código
+auditor.auditrecord.list.label.mark = Nota
+auditor.auditrecord.list.label.draftmode = Modo Borrador
+
+auditor.auditrecord.list.button.create = Nuevo Registro de Auditoría
+
+auditor.auditrecord.form.button.update = Actualizar
+auditor.auditrecord.form.button.delete = Eliminar
+auditor.auditrecord.form.button.publish = Publicar
+auditor.auditrecord.form.button.create = Crear Auditoría de Código
+
+validation.auditrecord.code.duplicate = Código duplicado
+validation.auditrecord.initial-after-final = El momento inicial debe ser anterior al final
+validation.auditrecord.moment.minimum-one-hour = El momento final debe ser al menos una hora después del inicial
+validation.auditrecord.error.code.duplicated = Código duplicado

@@ -14,14 +14,16 @@
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|publish|delete') && draftMode == true}">
-			<acme:input-textbox code="auditor.contract.form.label.projects" path="project" readonly="true"/>
+			<acme:input-textbox code="auditor.codeaudit.form.label.projects" path="project" readonly="true"/>
 			<acme:submit code="auditor.codeaudit.form.button.update" action="/auditor/code-audit/update"/>
 			<acme:submit code="auditor.codeaudit.form.button.delete" action="/auditor/code-audit/delete"/>
 			<acme:submit code="auditor.codeaudit.form.button.publish" action="/auditor/code-audit/publish"/>
+			<acme:button code="auditor.codeaudit.form.button.auditrecords" action="/auditor/audit-record/list?codeAuditId=${id}"/>
 		</jstl:when>
 	
 		<jstl:when test="${acme:anyOf(_command, 'show|update') && draftMode == false}">
 			<acme:input-textbox code="auditor.contract.form.label.projects" path="project" readonly="true"/>
+			<acme:button code="auditor.codeaudit.form.button.auditrecords" action="/auditor/audit-record/list?codeAuditId=${id}"/>
 		</jstl:when>
 		
 		<jstl:when test="${_command == 'create'}">
@@ -29,4 +31,7 @@
 			<acme:submit code="auditor.codeaudit.form.button.create" action="/auditor/code-audit/create"/>
 		</jstl:when>		
 	</jstl:choose>
+	
+	
+	
 </acme:form>

@@ -49,6 +49,8 @@ public class AuditRecord extends AbstractEntity {
 	@URL
 	protected String			link;
 
+	private boolean				draftMode;
+
 	// Relationships ----------------------------------------------------------
 
 	@NotNull

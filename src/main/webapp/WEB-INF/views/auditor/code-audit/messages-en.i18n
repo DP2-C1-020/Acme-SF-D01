@@ -11,6 +11,7 @@ auditor.codeaudit.form.button.update = Update
 auditor.codeaudit.form.button.delete = Delete
 auditor.codeaudit.form.button.publish = Publish
 auditor.code-audit.form.title = Code Audit
+auditor.codeaudit.form.button.auditrecords = AuditRecords
 
 auditor.codeaudit.form.label.code = Code
 auditor.codeaudit.form.label.execution = Execution

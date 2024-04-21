@@ -11,6 +11,7 @@ auditor.codeaudit.form.button.update = Actualizar
 auditor.codeaudit.form.button.delete = Eliminar
 auditor.codeaudit.form.button.publish = Publicar
 auditor.code-audit.form.title = Auditoría de Código
+auditor.codeaudit.form.button.auditrecords = Registros de Auditoría
 
 auditor.codeaudit.form.label.code = Código
 auditor.codeaudit.form.label.execution = Ejecución
@@ -21,6 +22,5 @@ auditor.codeaudit.form.label.link = Enlace
 auditor.contract.form.label.projects = Proyecto
 
 auditor.codeaudit.error.codeDuplicate = Código duplicado
-
 validation.codeaudit.mode.empty = Esta auditoría de código no tiene registros de auditoría
 validation.codeaudit.mode-less-than-c = La nota debe ser como mínimo C para ser publicada
