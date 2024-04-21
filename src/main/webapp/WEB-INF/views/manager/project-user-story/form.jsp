@@ -20,12 +20,12 @@
 	
 	<jstl:choose>
 		<jstl:when test="${_command == 'create' }">
-			<acme:input-select code="manager.project-user-story.form.label.unlinked-project" path="projectId" choices="${projectCodes}"/>
-			<acme:submit code="manager.project-user-story.form.button.link" action="/manager/project-user-story/create?userStoryId=${userStory.id}"/>
+			<acme:input-select code="manager.project-user-story.form.label.unassociate-project" path="projectId" choices="${projectCodes}"/>
+			<acme:submit code="manager.project-user-story.form.button.associate" action="/manager/project-user-story/create?userStoryId=${userStory.id}"/>
 		</jstl:when>	
 		<jstl:when test="${_command == 'delete'  }">
-			<acme:input-select code="manager.project-user-story.form.label.linked-project" path="projectId" choices="${projectCodes}"/>
-			<acme:submit code="manager.project-user-story.form.button.unlink" action="/manager/project-user-story/delete?userStoryId=${userStory.id}"/>
+			<acme:input-select code="manager.project-user-story.form.label.associate-project" path="projectId" choices="${projectCodes}"/>
+			<acme:submit code="manager.project-user-story.form.button.unassociate" action="/manager/project-user-story/delete?userStoryId=${userStory.id}"/>
 		</jstl:when>
 	</jstl:choose>
 </acme:form>

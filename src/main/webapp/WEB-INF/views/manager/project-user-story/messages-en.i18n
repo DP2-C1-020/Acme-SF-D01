@@ -11,13 +11,13 @@
 manager.project-user-story.form.title = Connection Projects - User stories
 
 manager.project-user-story.form.label.user-story = User story
-manager.project-user-story.form.label.unlinked-project = Unlinked project
-manager.project-user-story.form.label.linked-project = Linked project
+manager.project-user-story.form.label.unassociate-project = Unassociated project
+manager.project-user-story.form.label.associate-project = Associated project
 
-manager.project-user-story.form.button.link = Link
-manager.project-user-story.form.button.unlink = Unlink
+manager.project-user-story.form.button.associate = associate
+manager.project-user-story.form.button.unassociate = unassociate
 
 manager.project-user-story.form.error.published = A published project cannot be updated
-manager.project-user-story.form.error.no-project = There is no project to unlink
+manager.project-user-story.form.error.no-project = There is no project to unassociate
 
-manager.project-user-story.form.error.manager = The project and the user story must belong to the same manager
+manager.project-user-story.form.error.manager = The project and the user story should be under the same manager

@@ -26,8 +26,8 @@
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
 			<jstl:if test="${_command== 'show'}">
-				<acme:button code="manager.user-story.form.button.link-project" action="/manager/project-user-story/create?userStoryId=${id}"/>
-				<acme:button code="manager.user-story.form.button.unlink-project" action="/manager/project-user-story/delete?userStoryId=${id}"/>	
+				<acme:button code="manager.user-story.form.button.associate-project" action="/manager/project-user-story/create?userStoryId=${id}"/>
+				<acme:button code="manager.user-story.form.button.unassociate-project" action="/manager/project-user-story/delete?userStoryId=${id}"/>	
 			</jstl:if>
 			<jstl:if test="${published == false}">
 				<acme:submit code="manager.user-story.form.button.update" action="/manager/user-story/update"/>

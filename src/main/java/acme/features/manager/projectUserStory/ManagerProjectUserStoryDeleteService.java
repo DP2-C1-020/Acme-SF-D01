@@ -75,7 +75,7 @@ public class ManagerProjectUserStoryDeleteService extends AbstractService<Manage
 			if (!project.isDraftMode())
 				super.state(false, "project", "manager.project-user-story.form.error.published");
 		} else
-			super.state(false, "project", "manager.project-user-story.form.error.published");
+			super.state(false, "project", "manager.project-user-story.form.error.no-project");
 	}
 
 	@Override
@@ -101,7 +101,7 @@ public class ManagerProjectUserStoryDeleteService extends AbstractService<Manage
 
 		userStoryId = super.getRequest().getData("userStoryId", int.class);
 		userStory = this.repository.findOneUserStoryById(userStoryId);
-		availableProjects = this.repository.findManyUnpublishedProjectsLinkedToUserStory(userStoryId);
+		availableProjects = this.repository.findManyUnpublishedProjectsAssociatedToUserStory(userStoryId);
 		choices = SelectChoices.from(availableProjects, "code", object.getProject());
 
 		dataset = super.unbind(object, "project", "userStory");

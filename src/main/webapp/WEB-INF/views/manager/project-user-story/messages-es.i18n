@@ -11,12 +11,13 @@
 manager.project-user-story.form.title = Conexión Proyectos - Historias de usuario
 
 manager.project-user-story.form.label.user-story = Historia de usuario
-manager.project-user-story.form.label.unlinked-project = Proyecto sin conectar
-manager.project-user-story.form.label.linked-project = Proyecto conectado
+manager.project-user-story.form.label.unassociate-project = Proyecto sin vincular
+manager.project-user-story.form.label.associate-project = Proyecto vinculado
 
-manager.project-user-story.form.button.link = Conectar
-manager.project-user-story.form.button.unlink = Desconectar
+manager.project-user-story.form.button.associate = Vincular
+manager.project-user-story.form.button.unassociate = Desvincular
 
 manager.project-user-story.form.error.published = No se puede editar un proyecto ya publicado
-manager.project-user-story.form.error.no-project = No hay proyecto que desconectar
+manager.project-user-story.form.error.no-project = No hay proyecto que desvincular
+
 manager.project-user-story.form.error.manager =  El proyecto y la historia de usuario deben pertenecer al mismo manager
