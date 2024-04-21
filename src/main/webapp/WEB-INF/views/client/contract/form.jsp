@@ -19,9 +19,10 @@
 			<acme:submit code="client.contract.form.button.publish" action="/client/contract/publish"/>
 		</jstl:when>
 	
-		<jstl:when test="${acme:anyOf(_command, 'show|update') && draftMode == false}">
+		<jstl:when test="${acme:anyOf(_command, 'show') && draftMode == false}">
 			<acme:input-moment code="client.contract.form.label.instantiationMoment" path="instantiationMoment"/>
 			<acme:input-textbox code="client.contract.form.label.projectCode" path="projectCode"/>
+			<acme:button code="client.progressLog.form.button.progressLog" action="/client/progress-log/list?contractId=${id}"/>
 		</jstl:when>
 		
 		<jstl:when test="${_command == 'create'}">
