@@ -57,6 +57,7 @@ master.menu.client.client-dashboard = Panel del Cliente
 
 master.menu.auditor = Auditor
 master.menu.auditor.my-code_audits = Mis Auditorías de Código
+master.menu.auditor.auditor-dashboard = Dashboard
 
 # master.menu.consumer ##########################################################
 

@@ -62,6 +62,7 @@ master.menu.client.client-dashboard = Dashboard
 
 master.menu.auditor = Auditor
 master.menu.auditor.my-code_audits = My Code Audits
+master.menu.auditor.auditor-dashboard = Dashboard
 
 # master.menu.user-account ####################################################
 

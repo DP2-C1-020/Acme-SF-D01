@@ -2,6 +2,7 @@
 package acme.features.auditor.audit_record;
 
 import java.time.temporal.ChronoUnit;
+import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,10 +74,16 @@ public class AuditorAuditRecordUpdateService extends AbstractService<Auditor, Au
 	public void validate(final AuditRecord object) {
 		assert object != null;
 
+		boolean isCodeChanged = false;
+		Collection<String> allCodes;
+		AuditRecord auditRecord;
+
+		allCodes = this.repository.findAllAuditRecordsCode();
+		auditRecord = this.repository.findOneAuditRecordById(object.getId());
+
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			AuditRecord isCodeUnique;
-			isCodeUnique = this.repository.findAuditRecordByCode(object.getCode());
-			super.state(isCodeUnique == null, "code", "validation.auditrecord.code.duplicate");
+			isCodeChanged = !auditRecord.getCode().equals(object.getCode());
+			super.state(!isCodeChanged || !allCodes.contains(object.getCode()), "code", "validation.auditrecord.error.code.duplicated");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("initialMoment"))

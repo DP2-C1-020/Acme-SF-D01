@@ -54,6 +54,7 @@
 		
 		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
 			<acme:menu-suboption code="master.menu.auditor.my-code_audits" action="/auditor/code-audit/list"/>
+			<acme:menu-suboption code="master.menu.auditor.auditor-dashboard" action="/auditor/auditor-dashboard/show"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated">
