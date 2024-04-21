@@ -41,6 +41,7 @@ master.menu.administrator.create-objective = Create Objective
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.list-objectives = Objectives
+master.menu.authenticated.list-risks = Risks
 
 # master.menu.provider ########################################################
 
@@ -55,7 +56,8 @@ master.menu.consumer.favourite-link = Favourite link
 # master.menu.client ##########################################################
 
 master.menu.client = Client
-master.menu.authenticated.my-contracts = My contracts
+master.menu.client.my-contracts = My contracts
+master.menu.client.client-dashboard = Dashboard
 
 # master.menu.manager ##########################################################
 
@@ -72,3 +74,5 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.client = Client data
+master.menu.user-account.become-client = Become a client
