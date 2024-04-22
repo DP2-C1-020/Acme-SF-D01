@@ -1,0 +1,23 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+manager.project-user-story.form.title = Conexión Proyectos - Historias de usuario
+
+manager.project-user-story.form.label.user-story = Historia de usuario
+manager.project-user-story.form.label.unassociate-project = Proyecto sin vincular
+manager.project-user-story.form.label.associate-project = Proyecto vinculado
+
+manager.project-user-story.form.button.associate = Vincular
+manager.project-user-story.form.button.unassociate = Desvincular
+
+manager.project-user-story.form.error.published = No se puede editar un proyecto ya publicado
+manager.project-user-story.form.error.no-project = No hay proyecto que desvincular
+
+manager.project-user-story.form.error.manager =  El proyecto y la historia de usuario deben pertenecer al mismo manager

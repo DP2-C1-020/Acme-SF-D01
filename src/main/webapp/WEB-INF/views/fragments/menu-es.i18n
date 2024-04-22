@@ -54,6 +54,13 @@ master.menu.client = Cliente
 master.menu.client.my-contracts = Mis contratos
 master.menu.client.client-dashboard = Panel del Cliente
 
+# master.menu.manager ##########################################################
+
+master.menu.manager = Manager
+master.menu.manager.my-projects = Mis proyectos
+master.menu.manager.list-my-user-stories = Mis historias de usuario
+master.menu.manager.show-dashboard = Mi panel
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor

@@ -59,6 +59,13 @@ master.menu.client = Client
 master.menu.client.my-contracts = My contracts
 master.menu.client.client-dashboard = Dashboard
 
+# master.menu.manager ##########################################################
+
+master.menu.manager = Manager
+master.menu.manager.my-projects = My projects
+master.menu.manager.list-my-user-stories = My user stories
+master.menu.manager.show-dashboard = My Dashboard
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
