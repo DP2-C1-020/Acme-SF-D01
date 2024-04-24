@@ -22,12 +22,12 @@
 		</jstl:when>
 	
 		<jstl:when test="${acme:anyOf(_command, 'show|update') && draftMode == false}">
-			<acme:input-textbox code="auditor.contract.form.label.projects" path="project" readonly="true"/>
+			<acme:input-textbox code="auditor.codeaudit.form.label.projects" path="project" readonly="true"/>
 			<acme:button code="auditor.codeaudit.form.button.auditrecords" action="/auditor/audit-record/list?codeAuditId=${id}"/>
 		</jstl:when>
 		
 		<jstl:when test="${_command == 'create'}">
-			<acme:input-select code="client.contract.form.label.projects" path="project" choices="${projects}"/>
+			<acme:input-select code="auditor.codeaudit.form.label.projects" path="project" choices="${projects}"/>
 			<acme:submit code="auditor.codeaudit.form.button.create" action="/auditor/code-audit/create"/>
 		</jstl:when>		
 	</jstl:choose>

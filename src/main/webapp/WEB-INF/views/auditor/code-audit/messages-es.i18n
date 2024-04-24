@@ -19,7 +19,7 @@ auditor.codeaudit.form.label.correctiveActions = Acciones Correctivas
 auditor.codeaudit.form.label.modeMark = Nota
 auditor.codeaudit.form.label.type = Tipo
 auditor.codeaudit.form.label.link = Enlace
-auditor.contract.form.label.projects = Proyecto
+auditor.codeaudit.form.label.projects = Proyecto
 
 auditor.codeaudit.error.codeDuplicate = Código duplicado
 validation.codeaudit.mode.empty = Esta auditoría de código no tiene registros de auditoría

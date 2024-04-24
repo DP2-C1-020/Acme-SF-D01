@@ -6,14 +6,14 @@
 <acme:form>
 	<acme:input-textbox code="auditor.auditrecord.form.label.codeAuditCode" path="codeAuditCode" readonly="true"/>
 	<acme:input-textbox code="auditor.auditrecord.form.label.code" path="code"/>
-	<acme:input-textbox code="auditor.auditrecord.form.label.initialMoment" path="initialMoment"/>
-	<acme:input-textbox code="auditor.auditrecord.form.label.finalMoment" path="finalMoment"/>
+	<acme:input-textbox code="auditor.auditrecord.form.label.initialMoment" path="initialMoment" placeholder="yyyy/MM/dd HH:mm"/>
+	<acme:input-textbox code="auditor.auditrecord.form.label.finalMoment" path="finalMoment" placeholder="yyyy/MM/dd HH:mm"/>
 	<acme:input-url code="auditor.auditrecord.form.label.link" path="link"/>
 	
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|publish|delete') && draftMode == true}">
-		<acme:input-textbox code="auditor.auditrecord.form.label.mark" path="mark"/>
+		<acme:input-select code="auditor.auditrecord.form.label.mark" path="mark" choices="${marks}"/>
 			<acme:submit code="auditor.auditrecord.form.button.update" action="/auditor/audit-record/update"/>
 			<acme:submit code="auditor.auditrecord.form.button.delete" action="/auditor/audit-record/delete"/>
 			<acme:submit code="auditor.auditrecord.form.button.publish" action="/auditor/audit-record/publish"/>

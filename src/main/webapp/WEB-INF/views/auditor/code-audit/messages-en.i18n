@@ -19,7 +19,7 @@ auditor.codeaudit.form.label.correctiveActions = Corrective Actions
 auditor.codeaudit.form.label.modeMark = Mark
 auditor.codeaudit.form.label.type = Type
 auditor.codeaudit.form.label.link = Link
-auditor.contract.form.label.projects = Project
+auditor.codeaudit.form.label.projects = Project
 
 auditor.codeaudit.error.codeDuplicate = Code Duplicate
 
