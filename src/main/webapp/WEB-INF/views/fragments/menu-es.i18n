@@ -66,6 +66,11 @@ master.menu.manager.show-dashboard = Mi panel
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.developer ##########################################################
+
+master.menu.developer = Desarrollador
+master.menu.developer.my-training-modules = Mis módulos de entrenamiento
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
