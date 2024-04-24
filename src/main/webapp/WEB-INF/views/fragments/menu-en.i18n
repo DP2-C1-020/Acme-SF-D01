@@ -41,6 +41,7 @@ master.menu.administrator.create-objective = Create Objective
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.list-objectives = Objectives
+master.menu.authenticated.list-risks = Risks
 
 # master.menu.provider ########################################################
 
@@ -63,6 +64,12 @@ master.menu.client.client-dashboard = Dashboard
 master.menu.auditor = Auditor
 master.menu.auditor.my-code_audits = My Code Audits
 master.menu.auditor.auditor-dashboard = Dashboard
+# master.menu.manager ##########################################################
+
+master.menu.manager = Manager
+master.menu.manager.my-projects = My projects
+master.menu.manager.list-my-user-stories = My user stories
+master.menu.manager.show-dashboard = My Dashboard
 
 # master.menu.user-account ####################################################
 

@@ -57,9 +57,15 @@
 			<acme:menu-suboption code="master.menu.auditor.auditor-dashboard" action="/auditor/auditor-dashboard/show"/>
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
+			<acme:menu-suboption code="master.menu.manager.my-projects" action="/manager/project/list-mine"/>	
+			<acme:menu-suboption code="master.menu.manager.list-my-user-stories" action="/manager/user-story/list-mine"/>
+			<acme:menu-suboption code="master.menu.manager.show-dashboard" action="/manager/manager-dashboard/show"/>
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated">
 			<acme:menu-suboption code="master.menu.authenticated.list-objectives" action="/authenticated/objective/list"/>
-			<acme:menu-suboption code="master.menu.anonymous.all-claims" action="/any/claim/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.list-risks" action="/authenticated/risk/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
