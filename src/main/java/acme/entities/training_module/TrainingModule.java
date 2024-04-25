@@ -56,8 +56,10 @@ public class TrainingModule extends AbstractEntity {
 	@Column(nullable = true)
 	private String				link;
 
-	@Temporal(TemporalType.TIME)
-	private Date				totalTime;
+	@NotNull
+	private Integer				totalTime;
+
+	private Boolean				draftMode;
 
 	// Relationships ----------------------------------------------------------
 

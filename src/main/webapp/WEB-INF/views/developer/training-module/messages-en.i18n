@@ -1,6 +1,18 @@
+developer.training-module.list.title = Training modules
+
 developer.training-module.list.label.code = Code
 developer.training-module.list.label.details = Details
 developer.training-module.list.label.difficultyLevel = Difficulty Level
 developer.training-module.list.label.link = Link
 
 developer.training-module.form.title = Form
+
+developer.training-module.form.label.code = Code
+developer.training-module.form.label.creation-moment = Creation moment
+developer.training-module.form.label.details = Details
+developer.training-module.form.label.difficulty-level = Difficulty level
+developer.training-module.form.label.update-moment = Update moment
+developer.training-module.form.label.optional-link = Link
+developer.training-module.form.label.total-time = Total time
+developer.training-module.form.label.draft-mode = Draft mode
+developer.training-module.form.button.training-sessions = Training sessions

@@ -21,8 +21,6 @@ public class DeveloperTrainingModuleListService extends AbstractService<Develope
 	@Override
 	public void authorise() {
 		boolean status;
-		int developerId;
-		TrainingModule trainingModule;
 
 		status = super.getRequest().getPrincipal().hasRole(Developer.class);
 
@@ -45,11 +43,10 @@ public class DeveloperTrainingModuleListService extends AbstractService<Develope
 	@Override
 	public void unbind(final TrainingModule object) {
 		assert object != null;
-		System.out.println("HOla");
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "code", "creationMoment", "details", "updateMoment", "difficultyLevel", "link", "totalTime");
+		dataset = super.unbind(object, "code", "details", "difficultyLevel", "link");
 
 		super.getResponse().addData(dataset);
 	}
