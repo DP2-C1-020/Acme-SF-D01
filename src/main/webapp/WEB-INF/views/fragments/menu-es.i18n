@@ -14,6 +14,7 @@ master.menu.home = Inicio
 master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
+master.menu.any.contract = Contratos
 
 # master.menu.anonymous #######################################################
 
@@ -41,6 +42,7 @@ master.menu.administrator.create-objective = Crear Objetivo
 
 master.menu.authenticated = Autentificado
 master.menu.authenticated.list-objectives = Objetivos
+master.menu.authenticated.list-risks = Riesgos
 
 # master.menu.provider ########################################################
 
@@ -50,9 +52,15 @@ master.menu.provider.favourite-link = Enlace favorito
 # master.menu.client ##########################################################
 
 master.menu.client = Cliente
-master.menu.authenticated.my-contracts = Mis contratos
-master.menu.any.client = Cliente
-master.menu.any.contract = Contratos
+master.menu.client.my-contracts = Mis contratos
+master.menu.client.client-dashboard = Panel del Cliente
+
+# master.menu.manager ##########################################################
+
+master.menu.manager = Manager
+master.menu.manager.my-projects = Mis proyectos
+master.menu.manager.list-my-user-stories = Mis historias de usuario
+master.menu.manager.show-dashboard = Mi panel
 
 # master.menu.consumer ##########################################################
 

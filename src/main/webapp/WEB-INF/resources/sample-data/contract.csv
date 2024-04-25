@@ -10,15 +10,15 @@ contract-08,PQR123,2018/01/01 11:12,Provider3,Provider name,Customer name,EUR 50
 contract-09,DEF124,2018/01/01 11:12,Provider1,Yet another customer name,This is a very long goal that goes beyond the limit of 100 characters.,EUR 5000.0,true,project-01,client-01
 contract-10,GHI124,2018/01/01 11:12,Provider4,Customer1,Voici un objectif en français qui devrait passer la validation de la taille de 100 caractères!,EUR 7200.0,true,project-06,client-02
 contract-11,JKL124,2018/01/01 11:12,Provider1,Yet another very long customer name,a,EUR 9876.54,true,project-05,client-01
-contract-12,MNO124,2018/01/01 00:00,Provider5,Customer1,Project goals description,EUR 0.0,true,project-04,client-02
+contract-12,MNO124,2018/01/01 00:00,Provider5,Customer1,Project goals description,EUR 1000.0,true,project-04,client-02
 contract-13,PQR124,2018/01/01 00:00,Provider1,Another customer name,<script>alert("This is a very long goal that goes beyond the limit of 100 characters");</script>,EUR 5000.0,true,project-03,client-01
 contract-14,NEG124,2018/01/01 11:12,Short,Customer1,This is a short goal,EUR -1000.0,true,project-02,client-02
 contract-15,NON124,2018/01/01 00:00,x,Customer1,هذا هو الهدف باللغة الفرنسية الذي يجب أن يمر عبر التحقق من الحجم المحدد ل 100 حرف!,EUR 7000.0,true,project-01,client-01
 contract-16,TOO124,2018/01/01 11:12,Provider1,x,This is a very long goal that goes beyond the limit of 100 characters.,EUR 1000.12,true,project-08,client-02
-contract-17,ZER124,2018/01/01 00:00,Provider1,这是一个法语目标，应该通过 100 个字符的大小验证！,This is a short goal,EUR 0.0,true,project-07,client-01
+contract-17,ZER124,2018/01/01 00:00,Provider1,这是一个法语目标，应该通过 100 个字符的大小验证！,This is a short goal,EUR 500.0,true,project-07,client-01
 contract-18,OUT134,2018/01/01 11:12,这是一个法语目标，应该通过 100 个字符的大小验证！,Customer1,This is a very long goal that goes beyond the limit of 100 characters.,EUR 1000.00,true,project-06,client-02
-contract-19,CUR124,2018/01/01 00:00,x,Customer1,This is a short goal,EUR 0.0,true,project-05,client-01
-contract-20,BOO134,2018/01/01 11:12,Provider1,x,This is a short goal,EUR 0.0,true,project-04,client-02
+contract-19,CUR124,2018/01/01 00:00,x,Customer1,This is a short goal,EUR 20.0,true,project-05,client-01
+contract-20,BOO134,2018/01/01 11:12,Provider1,x,This is a short goal,EUR 10.0,true,project-04,client-02
 contract-21,INV124,2018/01/01 11:12,Provider1,Customer1,This is a short goal,EUR 7000.0,true,project-01,client-01
 contract-22,NP134,2018/01/01 11:12,Provider1,Customer1,This is a short goal,EUR 7000.0,false,project-02,client-02
 contract-23,M124,2018/01/01 11:12,Provider1,Customer1,This is a short goal,EUR 7000,true,project-03,client-01

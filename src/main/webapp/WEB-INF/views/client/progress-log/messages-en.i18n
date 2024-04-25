@@ -1,0 +1,39 @@
+client.progressLog.list.label.recordId = Record Id
+client.progressLog.list.label.comment = Comment
+client.progressLog.list.label.completeness = Completeness
+client.progressLog.list.label.draftMode = Draft Mode
+
+client.progress-log.list.title = Progress Logs
+client.progressLog.list.button.create = New Progress Log
+
+client.progress-log.form.title = Details Progress Log
+
+client.progressLog.form.label.recordId = Record Id
+client.progressLog.form.label.completeness = Completeness
+client.progressLog.form.label.comment = Comment
+client.progressLog.form.label.registrationMoment = Registration Moment
+client.progressLog.form.label.responsiblePerson = Responsible Person
+
+client.progressLog.form.label.contractCode = Contract Code
+client.progressLog.form.button.update = Update
+client.progressLog.form.button.delete = Delete
+client.progressLog.form.button.publish = Publish
+
+client.progressLog.form.button.progressLog = Progress Logs
+
+
+
+validation.referenceRisk = The code must begin with 'R-' followed by three numeric digits.
+validation.trainingModule.reference	= The reference must have 1 to 3 letters and 3 digits, separated by a hyphen
+validation.trainingSession.reference = The reference must begin with "TS-" and must have 1 to 3 letters and 3 digits, separated by a hyphen
+validation.ContractCode = The code entered must contain a capital letter followed by up to three capital letters and then three numbers.
+validation.ProgressLogRecord = The code must follow the format "PG-" followed by a capital letter once or twice, followed by a hyphen and then four numeric digits.
+validation.ClientIdentification = The code entered must follow the format: "CLI-" followed by four numeric digits.
+validation.CodeAuditCode = Invalid format. Please enter a code that starts with one to three uppercase letters, followed by a hyphen, and then followed by exactly three digits.
+validation.invoiceCode = The invoice code must begin with IN-, 4 digits, another - and another 4 digits (like IN-9999-9999).
+validation.sponsorshipCode = The sponsorship code must start with 1 up to 3 letters, following by a hyphen and exactly 3 digits at the end.
+validation.CodeAuditCode = Invalid format. Please enter a code that starts with one to three uppercase letters, followed by a hyphen, and then followed by exactly three digits.
+validation.ProjectCode = The project code must follow the pattern of three uppercase letters followed by a hyphen and four digits.
+validation.trainingModule.reference	= The reference must have 1 to 3 letters and 3 digits, separated by a hyphen
+validation.trainingSession.reference = The reference must begin with "TS-" and must have 1 to 3 letters and 3 digits, separated by a hyphen
+validation.Progresscompleteness = The percentage must be a number from 0 to 100 and allow only two decimal places

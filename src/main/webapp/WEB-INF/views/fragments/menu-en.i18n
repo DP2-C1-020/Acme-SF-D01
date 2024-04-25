@@ -14,6 +14,7 @@ master.menu.home = Home
 master.menu.sign-up = Sign up
 master.menu.sign-in = Sign in
 master.menu.sign-out = Sign out
+master.menu.any.contract = Contracts
 
 # master.menu.anonymous #######################################################
 
@@ -41,6 +42,7 @@ master.menu.administrator.create-objective = Create Objective
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.list-objectives = Objectives
+master.menu.authenticated.list-risks = Risks
 
 # master.menu.provider ########################################################
 
@@ -55,9 +57,15 @@ master.menu.consumer.favourite-link = Favourite link
 # master.menu.client ##########################################################
 
 master.menu.client = Client
-master.menu.authenticated.my-contracts = My contracts
-master.menu.any.client = Client
-master.menu.any.contract = Contracts
+master.menu.client.my-contracts = My contracts
+master.menu.client.client-dashboard = Dashboard
+
+# master.menu.manager ##########################################################
+
+master.menu.manager = Manager
+master.menu.manager.my-projects = My projects
+master.menu.manager.list-my-user-stories = My user stories
+master.menu.manager.show-dashboard = My Dashboard
 
 # master.menu.user-account ####################################################
 

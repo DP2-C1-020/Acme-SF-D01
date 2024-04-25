@@ -26,6 +26,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-jesmarver" action="https://www.youtube.com/watch?v=3o0ThauuN1E"/>
 		    <acme:menu-suboption code="master.menu.anonymous.favourite-link-diegonqui" action="https://www.youtube.com/watch?v=AWM5ZNdWlqw"/>
 		    <acme:menu-suboption code="master.menu.anonymous.all-claims" action="/any/claim/list"/>	
+		    <acme:menu-option code="master.menu.any.contract" action="/any/contract/list"></acme:menu-option>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -48,17 +49,22 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.client" access="hasRole('Client')">
-			<acme:menu-suboption code="master.menu.authenticated.my-contracts" action="/client/contract/list"/>	
+			<acme:menu-suboption code="master.menu.client.my-contracts" action="/client/contract/list"/>	
+			<acme:menu-suboption code="master.menu.client.client-dashboard" action="/client/client-dashboard/show"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
+			<acme:menu-suboption code="master.menu.manager.my-projects" action="/manager/project/list-mine"/>	
+			<acme:menu-suboption code="master.menu.manager.list-my-user-stories" action="/manager/user-story/list-mine"/>
+			<acme:menu-suboption code="master.menu.manager.show-dashboard" action="/manager/manager-dashboard/show"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated">
 			<acme:menu-suboption code="master.menu.authenticated.list-objectives" action="/authenticated/objective/list"/>
-			<acme:menu-suboption code="master.menu.anonymous.all-claims" action="/any/claim/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.list-risks" action="/authenticated/risk/list"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.any.client">
-			<acme:menu-suboption code="master.menu.any.contract" action="/any/contract/list"/>
-		</acme:menu-option>
+		
 	</acme:menu-left>
 
 	<acme:menu-right>

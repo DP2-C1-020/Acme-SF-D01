@@ -1,0 +1,24 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+manager.manager-dashboard.form.title = Tablero del manager
+
+manager.dashboard.form.label.totalNumberUserStoriesPriorityMust = Número de historias de usuario "Obligarotias"
+manager.dashboard.form.label.totalNumberUserStoriesPriorityShould = Número de historias de usuario "Debería"
+manager.dashboard.form.label.totalNumberUserStoriesPriorityCould = Número de historias de usuario "Podría"
+manager.dashboard.form.label.totalNumberUserStoriesPriorityWont = Número de historias de usuario "Prohibida"
+manager.dashboard.form.label.avgUserStoryCost = Coste medio de historias de usuario (estimado)
+manager.dashboard.form.label.devUserStoryCost = Coste de desviación mínima de historias de usuario (estimado)
+manager.dashboard.form.label.minUserStoryCost = Coste mínimo de historias de usuario (estimado)
+manager.dashboard.form.label.maxUserStoryCost = Coste máximo de historias de usuario (estimado)
+manager.dashboard.form.label.avgProjectCost = Coste medio de los proyectos
+manager.dashboard.form.label.devProjectCost = Coste de desviación mínima de los proyectos
+manager.dashboard.form.label.minProjectCost =Coste mínimo de los proyectos
+manager.dashboard.form.label.maxProjectCost = Coste máximo de los proyectos
