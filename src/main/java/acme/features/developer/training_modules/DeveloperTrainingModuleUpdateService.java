@@ -1,21 +1,19 @@
 
 package acme.features.developer.training_modules;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.training_module.DifficultyLevel;
 import acme.entities.training_module.TrainingModule;
-import acme.entities.training_session.TrainingSession;
 import acme.roles.Developer;
 
 @Service
-public class DeveloperTrainingModuleDeleteService extends AbstractService<Developer, TrainingModule> {
+public class DeveloperTrainingModuleUpdateService extends AbstractService<Developer, TrainingModule> {
 
 	@Autowired
 	private DeveloperTrainingModuleRepository repository;
@@ -23,7 +21,6 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 
 	@Override
 	public void authorise() {
-
 		Boolean status;
 		int trainingModuleId;
 		Developer developer;
@@ -40,10 +37,11 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 
 	@Override
 	public void load() {
-		int trainingModuleId;
 		TrainingModule trainingModule;
+		int trainingModuleId;
 
 		trainingModuleId = super.getRequest().getData("id", int.class);
+
 		trainingModule = this.repository.findTrainingModuleById(trainingModuleId);
 
 		super.getBuffer().addData(trainingModule);
@@ -60,20 +58,18 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 	public void validate(final TrainingModule object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.getDraftMode(), "draftMode", "developer.training-module.form.error.draftMode");
+
+		if (!super.getBuffer().getErrors().hasErrors("updateMoment") && !super.getBuffer().getErrors().hasErrors("creationMoment") && object.getUpdateMoment() != null)
+			super.state(MomentHelper.isAfter(object.getUpdateMoment(), object.getCreationMoment()), "updateMoment", "developer.training-module.form.error.updateBeforeCreate");
 	}
 
 	@Override
 	public void perform(final TrainingModule object) {
 		assert object != null;
 
-		int trainingModuleId;
-		Collection<TrainingSession> trainingSessions;
-
-		trainingModuleId = super.getRequest().getData("id", int.class);
-		trainingSessions = this.repository.findTrainingSessionsByTrainingModuleId(trainingModuleId);
-
-		this.repository.deleteAll(trainingSessions);
-		this.repository.delete(object);
+		this.repository.save(object);
 
 	}
 
@@ -89,7 +85,6 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 		dataset.put("difficultyLevels", choices);
 
 		super.getBuffer().addData(dataset);
-
 	}
 
 }
