@@ -1,0 +1,12 @@
+any.code-audit.list.title = Listado de auditorías de código
+any.code-audit.form.title = Detalles de la auditoría de código
+
+any.codeaudit.label.code = Código
+any.codeaudit.label.execution = Ejecución
+any.codeaudit.label.type = Tipo
+any.codeaudit.label.markMode = Modo de Marca
+any.codeaudit.label.modeMark = Modo de Marca
+any.codeaudit.label.correctiveActions = Acciones Correctivas
+any.codeaudit.label.link = Enlace
+any.codeaudit.label.project = Proyecto
+any.codeaudit.form.button.auditrecords = Registros de Auditoría

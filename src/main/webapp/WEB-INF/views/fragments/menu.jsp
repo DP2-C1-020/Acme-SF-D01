@@ -27,6 +27,10 @@
 		    <acme:menu-suboption code="master.menu.anonymous.favourite-link-diegonqui" action="https://www.youtube.com/watch?v=AWM5ZNdWlqw"/>
 		    <acme:menu-suboption code="master.menu.anonymous.all-claims" action="/any/claim/list"/>	
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.any">
+			<acme:menu-suboption code="master.menu.any.codeaudits" action="/any/code-audit/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.create-objective" action="/administrator/objective/create"/>		

@@ -5,12 +5,13 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.yaml.snakeyaml.error.Mark;
 
 import acme.client.data.accounts.Any;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.audits.CodeAudit;
+import acme.entities.audits.Mark;
+import acme.features.auditor.code_audit.MarkMode;
 
 @Service
 public class AnyCodeAuditListService extends AbstractService<Any, CodeAudit> {
@@ -42,13 +43,13 @@ public class AnyCodeAuditListService extends AbstractService<Any, CodeAudit> {
 		assert object != null;
 
 		Dataset dataset;
-		String modeMark;
+		String markMode;
 
 		Collection<Mark> marks = this.repository.findMarksByAuditId(object.getId());
-		modeMark = EnumMode.mode(marks);
+		markMode = MarkMode.findMode(marks);
 
 		dataset = super.unbind(object, "code", "type", "execution");
-		dataset.put("modeMark", modeMark);
+		dataset.put("markMode", markMode);
 
 		super.getResponse().addData(dataset);
 	}
