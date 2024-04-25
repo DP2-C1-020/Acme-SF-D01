@@ -1,0 +1,27 @@
+auditor.codeaudit.list.label.code = Code
+auditor.codeaudit.list.label.execution = Execution
+auditor.codeaudit.list.label.type = Type
+
+auditor.code-audit.list.title = My code audit list
+auditor.codeaudit.form.title = Details
+
+auditor.codeaudit.list.button.create = New Code Audit
+auditor.codeaudit.form.button.create = Create Code Audit
+auditor.codeaudit.form.button.update = Update
+auditor.codeaudit.form.button.delete = Delete
+auditor.codeaudit.form.button.publish = Publish
+auditor.code-audit.form.title = Code Audit
+auditor.codeaudit.form.button.auditrecords = AuditRecords
+
+auditor.codeaudit.form.label.code = Code
+auditor.codeaudit.form.label.execution = Execution
+auditor.codeaudit.form.label.correctiveActions = Corrective Actions
+auditor.codeaudit.form.label.modeMark = Mark
+auditor.codeaudit.form.label.type = Type
+auditor.codeaudit.form.label.link = Link
+auditor.codeaudit.form.label.projects = Project
+
+auditor.codeaudit.error.codeDuplicate = Code Duplicate
+
+validation.codeaudit.mode.empty = This code audit does not have any audit records
+validation.codeaudit.mode-less-than-c = The mark must be at least C to be published
