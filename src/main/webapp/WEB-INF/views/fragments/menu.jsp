@@ -56,7 +56,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.all-claims" action="/any/claim/list"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.any">
+		<acme:menu-option code="master.menu.any.client">
 			<acme:menu-suboption code="master.menu.any.contract" action="/any/contract/list"/>
 		</acme:menu-option>
 	</acme:menu-left>

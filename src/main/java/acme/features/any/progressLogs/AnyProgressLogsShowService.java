@@ -25,7 +25,7 @@ public class AnyProgressLogsShowService extends AbstractService<Any, ProgressLog
 		ProgressLog object;
 		int id;
 
-		id = super.getRequest().getData("id", int.class);
+		id = super.getRequest().getData("contractId", int.class);
 		object = this.repository.findProgressLogsById(id);
 
 		super.getResponse().setAuthorised(!object.isDraftMode());
@@ -36,7 +36,7 @@ public class AnyProgressLogsShowService extends AbstractService<Any, ProgressLog
 		ProgressLog object;
 		int id;
 
-		id = super.getRequest().getData("id", int.class);
+		id = super.getRequest().getData("contractId", int.class);
 		object = this.repository.findProgressLogsById(id);
 
 		super.getBuffer().addData(object);

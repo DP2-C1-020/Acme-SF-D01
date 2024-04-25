@@ -56,6 +56,8 @@ master.menu.consumer.favourite-link = Favourite link
 
 master.menu.client = Client
 master.menu.authenticated.my-contracts = My contracts
+master.menu.any.client = Client
+master.menu.any.contract = Contracts
 
 # master.menu.user-account ####################################################
 

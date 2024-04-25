@@ -1,0 +1,14 @@
+any.contract.list.title = Contrato
+any.contract.form.title = Contrato
+
+any.contract.list.label.code = Código
+any.contract.list.label.providerName = Nombre del Proveedor
+any.contract.list.label.budget = Presupuesto
+
+any.contract.form.label.code = Código
+any.contract.form.label.providerName = Nombre del Proveedor
+any.contract.form.label.customerName = Nombre del cliente
+any.contract.form.label.goals = Objetivos
+any.contract.form.label.budget = Presupuesto
+
+any.progressLog.form.button.progressLog = Registro de Progresos
