@@ -1,0 +1,7 @@
+developer.training-session.list.title = Sesiones de entrenamiento
+
+developer.training-session.list.label.code = Código
+developer.training-session.list.label.instructor = Instructor
+developer.training-session.list.label.location = Localización
+
+developer.training-session.list.button.create = Crear
