@@ -56,6 +56,8 @@ public class TrainingSession extends AbstractEntity {
 	@Column(nullable = true)
 	private String				link;
 
+	private Boolean				draftMode;
+
 	// Relationships ----------------------------------------------------------
 
 	@NotNull
