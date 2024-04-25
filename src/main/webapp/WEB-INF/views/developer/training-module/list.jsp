@@ -8,6 +8,7 @@
 	<acme:list-column code="developer.training-module.list.label.details" path="details" width="20%"/>
 	<acme:list-column code="developer.training-module.list.label.difficultyLevel" path="difficultyLevel" width="20%"/>	
 	<acme:list-column code="developer.training-module.list.label.link" path="link" width="40%"/>	
+	<acme:list-column code="developer.training-module.form.label.draft-mode" path="draftMode" width="10%"/>	
 </acme:list>
 
 

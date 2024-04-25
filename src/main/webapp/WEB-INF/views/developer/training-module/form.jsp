@@ -5,13 +5,12 @@
 
 <acme:form>
 	<acme:input-textbox code="developer.training-module.form.label.code" path="code"/>	
-	<acme:input-moment code="developer.training-module.form.label.creation-moment" path="creationMoment"/>
+	<acme:input-moment code="developer.training-module.form.label.creation-moment" path="creationMoment" readonly="true"/>
 	<acme:input-textbox code="developer.training-module.form.label.details" path="details"/>
 	<acme:input-select code="developer.training-module.form.label.difficulty-level" path="difficultyLevel" choices="${difficultyLevels}"/>
 	<acme:input-moment code="developer.training-module.form.label.update-moment" path="updateMoment"/>	
 	<acme:input-url code="developer.training-module.form.label.optional-link" path="link"/>
 	<acme:input-integer code="developer.training-module.form.label.total-time" path="totalTime"/>
-	<acme:input-checkbox code="developer.training-module.form.label.draft-mode" path="draftMode"/>	
 	
 	<jstl:choose>
 		<jstl:when test="${_command == 'show' && draftMode == false}">
@@ -24,6 +23,7 @@
 			<acme:submit code="developer.training-module.form.button.publish" action="/developer/training-module/publish"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
+			<acme:input-select code="client.contract.form.label.projects" path="project" choices="${projects}"/>
 			<acme:submit code="developer.training-module.form.button.create" action="/developer/training-module/create"/>
 		</jstl:when>	
 	</jstl:choose>

@@ -46,7 +46,7 @@ public class DeveloperTrainingModuleListService extends AbstractService<Develope
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "code", "details", "difficultyLevel", "link");
+		dataset = super.unbind(object, "code", "details", "difficultyLevel", "link", "draftMode");
 
 		super.getResponse().addData(dataset);
 	}
