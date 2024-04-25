@@ -28,6 +28,9 @@ public class DeveloperTrainingModuleController extends AbstractController<Develo
 	@Autowired
 	private DeveloperTrainingModuleCreateService	createService;
 
+	@Autowired
+	private DeveloperTrainingModulePublishService	publishService;
+
 
 	@PostConstruct
 	protected void initialise() {
@@ -36,6 +39,8 @@ public class DeveloperTrainingModuleController extends AbstractController<Develo
 		super.addBasicCommand("delete", this.deleteService);
 		super.addBasicCommand("update", this.updateService);
 		super.addBasicCommand("create", this.createService);
+
+		super.addCustomCommand("publish", "update", this.publishService);
 	}
 
 }

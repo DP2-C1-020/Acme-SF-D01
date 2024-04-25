@@ -27,3 +27,5 @@ developer.training-module.list.button.create = Crear
 developer.training-module.form.error.draftMode = El módulo de entrenaminto debe estar en modo edición
 developer.training-module.form.error.updateBeforeCreate = La fecha de actualización debe ser posterior a la fecha de creación
 developer.training-module.form.error.duplicateCode = Ya hay un módulo de entrenamiento con este código
+
+developer.training-module.form.error.training-session = El módulo de entrenamiento tiene que tener al menos una sesión de entrenamiento
