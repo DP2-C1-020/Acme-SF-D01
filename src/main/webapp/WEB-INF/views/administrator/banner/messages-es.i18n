@@ -1,0 +1,22 @@
+administrator.banner.list.label.startDate = Fecha inicial
+administrator.banner.list.label.endDate = Fecha final
+administrator.banner.list.label.slogan = Slogan
+administrator.banner.list.label.button.create = Crear Banner
+
+
+administrator.banner.form.label.instantiationMoment = Momento de Creación/Modificación
+administrator.banner.form.label.startDate = Fecha inicial
+administrator.banner.form.label.endDate = Fecha final
+administrator.banner.form.label.picture = Link foto
+administrator.banner.form.label.slogan = Slogan
+administrator.banner.form.label.link = Link Documento
+administrator.banner.form.label.button.update = Actualizar
+administrator.banner.form.label.button.delete = Eliminar
+administrator.banner.form.label.button.create = Crear
+
+administrator.banner.form.error.startDate-past = Fecha de Inicio debe ser futura
+administrator.banner.form.error.endDate-not-long-enough = Fecha final debe ser al menos 1 semana mas tarde a fecha de inicio
+administrator.banner.form.error.limit.date = Las fechas límite son el 1 de enero del 2000 a las 00:00 UTC y el 31 de diciembre del 2100 a las 23:59 UTC
+
+administrator.banner.list.title = Banners
+administrator.banner.form.title = Detalles de los banners

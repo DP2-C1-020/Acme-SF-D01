@@ -1,0 +1,21 @@
+administrator.banner.list.label.startDate = Start Date
+administrator.banner.list.label.endDate = End Date
+administrator.banner.list.label.slogan = Slogan
+administrator.banner.list.label.button.create = Create Banner
+
+administrator.banner.form.label.instantiationMoment = Creation/Modification moment
+administrator.banner.form.label.startDate = Start Date
+administrator.banner.form.label.endDate = End Date
+administrator.banner.form.label.picture = Link Picture
+administrator.banner.form.label.slogan = Slogan
+administrator.banner.form.label.link = Link Document
+administrator.banner.form.label.button.update = Update
+administrator.banner.form.label.button.delete = Delete
+administrator.banner.form.label.button.create = Create
+
+administrator.banner.form.error.startDate-past = Start date must be a future date
+administrator.banner.form.error.endDate-not-long-enough = End Date must be at least 1 week after Start Date
+administrator.banner.form.error.limit.date = Deadlines are January 1, 2000 at 00:00 UTC and December 31, 2100 at 23:59 UTC.
+
+administrator.banner.list.title = Banners
+administrator.banner.form.title = Banners details
