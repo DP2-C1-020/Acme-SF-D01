@@ -5,3 +5,24 @@ developer.training-session.list.label.instructor = Instructor
 developer.training-session.list.label.location = Location
 
 developer.training-session.list.button.create = Create
+
+developer.training-session.form.title = Trainig session
+
+developer.training-session.form.label.code = Code
+developer.training-session.form.label.start-moment = Start Moment
+developer.training-session.form.label.finish-moment = Finish Moment
+developer.training-session.form.label.location = Location
+developer.training-session.form.label.instructor = Instructor
+developer.training-session.form.label.contact-email = Contact Email
+developer.training-session.form.label.optional-link = Link
+developer.training-session.form.label.draft-mode = Draft mode
+
+developer.training-session.form.button.update = Update
+developer.training-session.form.button.delete = Delete
+developer.training-session.form.button.publish = Publish
+developer.training-session.form.button.create = Create
+
+developer.training-session.form.error.duplicateCode = The code you entered already exists
+developer.training-session.form.error.startBeforeCreate = The training session start moment must be after the training module's creation
+developer.training-session.form.error.finishBeforeStart = The finish moment must be later than the start moment
+developer.training-session.form.error.periodTooShort = The fininsh moment must be at least one week after the start moment

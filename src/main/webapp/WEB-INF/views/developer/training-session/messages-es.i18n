@@ -5,3 +5,24 @@ developer.training-session.list.label.instructor = Instructor
 developer.training-session.list.label.location = Localización
 
 developer.training-session.list.button.create = Crear
+
+developer.training-session.form.title = Sesión de entrenamiento
+
+developer.training-session.form.label.code = Código
+developer.training-session.form.label.start-moment = Fecha de inicio
+developer.training-session.form.label.finish-moment = Fecha de finalizado
+developer.training-session.form.label.location = Localización
+developer.training-session.form.label.instructor = Instructor
+developer.training-session.form.label.contact-email = Email de contacto
+developer.training-session.form.label.optional-link = Enlace
+developer.training-session.form.label.draft-mode = Modo edición
+
+developer.training-session.form.button.update = Actualizar
+developer.training-session.form.button.delete = Eliminar
+developer.training-session.form.button.publish = Publicar
+developer.training-session.form.button.create = Crear
+
+developer.training-session.form.error.duplicateCode = El código que has introducido ya existe
+developer.training-session.form.error.startBeforeCreate = La fecha de inicio de la sesión de entrenamiento debe ser posterior a la fecha de creación del módulo de entrenamiento
+developer.training-session.form.error.finishBeforeStart = La fecha de finalización debe ser posterior a la fecha de inicio
+developer.training-session.form.error.periodTooShort = La fecha de finalización debe ser al menos una semana posterior a la fecha de inicio

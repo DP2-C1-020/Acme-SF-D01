@@ -6,12 +6,11 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -37,8 +36,13 @@ public class TrainingSession extends AbstractEntity {
 	@Column(unique = true)
 	private String				code;
 
-	@Temporal(TemporalType.TIME)
-	private Date				period;
+	@Past
+	@NotNull
+	private Date				startMoment;
+
+	@Past
+	@NotNull
+	private Date				finishMoment;
 
 	@NotBlank
 	@Length(max = 76)
@@ -50,7 +54,7 @@ public class TrainingSession extends AbstractEntity {
 
 	@NotBlank
 	@Email
-	private String				contractEmail;
+	private String				contactEmail;
 
 	@URL
 	@Column(nullable = true)
