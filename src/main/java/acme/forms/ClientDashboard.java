@@ -9,16 +9,16 @@ import lombok.Setter;
 @Setter
 public class ClientDashboard extends AbstractForm {
 
-	private static final long	serialVersionUID	= 1L;
+	protected static final long	serialVersionUID	= 1L;
 
-	private int					totalLogsBelow25Percent;
-	private int					totalLogs25To50Percent;
-	private int					totalLogs50To75Percent;
-	private int					totalLogsAbove75Percent;
+	int							totalLogsBelow25Percent;
+	int							totalLogs25To50Percent;
+	int							totalLogs50To75Percent;
+	int							totalLogsAbove75Percent;
 
-	private double				averageBudget;
-	private double				deviationBudget;
-	private double				minBudget;
-	private double				maxBudget;
+	Double						averageBudget;
+	Double						deviationBudget;
+	Double						minBudget;
+	Double						maxBudget;
 
 }

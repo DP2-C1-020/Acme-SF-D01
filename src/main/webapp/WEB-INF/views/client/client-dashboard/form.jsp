@@ -6,6 +6,38 @@
 <table class="table table-sm">
 	<tr>
 		<th scope="row">
+			<acme:message code="client.clientDashboard.form.label.totalLogsBelow25Percent"/>
+		</th>
+		<td>
+			<acme:print value="${totalLogsBelow25Percent}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="client.clientDashboard.form.label.totalLogs25To50Percent"/>
+		</th>
+		<td>
+			<acme:print value="${totalLogs25To50Percent}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="client.clientDashboard.form.label.totalLogs50To75Percent"/>
+		</th>
+		<td>
+			<acme:print value="${totalLogs50To75Percent}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="client.clientDashboard.form.label.totalLogsAbove75Percent"/>
+		</th>
+		<td>
+			<acme:print value="${totalLogsAbove75Percent}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
 			<acme:message code="client.clientDashboard.form.label.averageBudget"/>
 		</th>
 		<td>
@@ -36,38 +68,7 @@
 			<acme:print value="${maxBudget}"/>
 		</td>
 	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="client.clientDashboard.form.label.totalLogsBelow25Percent"/>
-		</th>
-		<td>
-			<acme:print value="${totalLogsBelow25Percent}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="client.clientDashboard.form.label.totalLogs25To50Percent"/>
-		</th>
-		<td>
-			<acme:print value="${totalLogs25To50Percent}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="client.clientDashboard.form.label.totalLogs50To75Percent"/>
-		</th>
-		<td>
-			<acme:print value="${totalLogs50To75Percent}"/>
-		</td>
-	</tr>	
-	<tr>
-		<th scope="row">
-			<acme:message code="client.clientDashboard.form.label.totalLogsAbove75Percent"/>
-		</th>
-		<td>
-			<acme:print value="${totalLogsAbove75Percent}"/>
-		</td>
-	</tr>	
+	
 </table>
 
 

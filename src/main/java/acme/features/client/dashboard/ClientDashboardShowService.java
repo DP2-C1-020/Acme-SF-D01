@@ -23,7 +23,18 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		Principal principal;
+		int id;
+		Client client;
+
+		principal = super.getRequest().getPrincipal();
+		id = principal.getAccountId();
+
+		client = this.repository.findOneClientByUserAccountId(id);
+		status = client != null && principal.hasRole(Client.class);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -37,10 +48,10 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 		userAccountId = principal.getAccountId();
 		client = this.repository.findOneClientByUserAccountId(userAccountId);
 
-		Integer totalLogsBelow25Percent;
-		Integer totalLogs25To50Percent;
-		Integer totalLogs50To75Percent;
-		Integer totalLogsAbove75Percent;
+		int totalLogsBelow25Percent;
+		int totalLogs25To50Percent;
+		int totalLogs50To75Percent;
+		int totalLogsAbove75Percent;
 		Double averageBudget;
 		Double deviationBudget;
 		Double minBudget;
