@@ -13,4 +13,4 @@
 	<acme:input-select code="any.codeaudit.label.project" path="project" choices="${projects}"/>
 </acme:form>
 
-	<acme:button code="any.codeaudit.form.button.auditrecords" action="/any/audit-record/list-for-code-audits?codeAuditId=${id}"/>
+	<acme:button code="any.codeaudit.form.button.auditrecords" action="/any/audit-record/list?codeAuditId=${id}"/>
