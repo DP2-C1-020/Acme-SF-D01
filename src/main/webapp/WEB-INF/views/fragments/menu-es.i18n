@@ -16,6 +16,11 @@ master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 master.menu.any.contract = Contratos
 
+# master.menu.any #######################################################
+
+master.menu.any = Cualquiera
+master.menu.any.codeaudits = Listar auditorías de código
+
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo

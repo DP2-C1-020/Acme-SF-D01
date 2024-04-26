@@ -1,0 +1,12 @@
+any.code-audit.list.title = Listing of published code audits
+any.code-audit.form.title = Code audit details
+
+any.codeaudit.label.code = Code
+any.codeaudit.label.execution = Execution
+any.codeaudit.label.type = Type
+any.codeaudit.label.markMode = Mark Mode
+any.codeaudit.label.modeMark = Mark Mode
+any.codeaudit.label.correctiveActions = Corrective Actions
+any.codeaudit.label.link = Link
+any.codeaudit.label.project = Project
+any.codeaudit.form.button.auditrecords = Audit Records
