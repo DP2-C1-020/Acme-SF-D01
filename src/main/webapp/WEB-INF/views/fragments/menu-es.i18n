@@ -20,6 +20,7 @@ master.menu.any.contract = Contratos
 
 master.menu.any = Cualquiera
 master.menu.any.codeaudits = Listar auditorías de código
+master.menu.any.projects = Listar proyectos
 
 # master.menu.anonymous #######################################################
 
@@ -95,3 +96,5 @@ master.menu.user-account.client = Datos de cliente
 master.menu.user-account.become-client = Hazte cliente
 master.menu.user-account.become-auditor = Hazte auditor
 master.menu.user-account.auditor = Datos de auditor
+master.menu.user-account.become-manager = Hazte manager
+master.menu.user-account.manager = Datos de manager
