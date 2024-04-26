@@ -1,0 +1,31 @@
+developer.training-module.list.title = Módulos de entrenamiento
+
+developer.training-module.list.label.code = Código
+developer.training-module.list.label.details = Detalles
+developer.training-module.list.label.difficultyLevel = Nivel de dificultad
+developer.training-module.list.label.link = Enlace
+
+developer.training-module.form.title = Formulario
+
+developer.training-module.form.label.code = Código
+developer.training-module.form.label.creation-moment = Fecha de creación
+developer.training-module.form.label.details = Detalles
+developer.training-module.form.label.difficulty-level = Nivel de dificultad
+developer.training-module.form.label.update-moment = Fecha de actualización
+developer.training-module.form.label.optional-link = Enlace
+developer.training-module.form.label.total-time = Tiempo total
+developer.training-module.form.label.draft-mode = Modo edición
+
+
+developer.training-module.form.button.training-sessions = Sesiones de entrenamiento
+developer.training-module.form.button.update = Actualizar
+developer.training-module.form.button.delete = Eliminar
+developer.training-module.form.button.publish = Publicar
+developer.training-module.form.button.create = Crear
+developer.training-module.list.button.create = Crear
+
+developer.training-module.form.error.draftMode = El módulo de entrenaminto debe estar en modo edición
+developer.training-module.form.error.updateBeforeCreate = La fecha de actualización debe ser posterior a la fecha de creación
+developer.training-module.form.error.duplicateCode = Ya hay un módulo de entrenamiento con este código
+
+developer.training-module.form.error.training-session = El módulo de entrenamiento tiene que tener al menos una sesión de entrenamiento

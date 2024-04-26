@@ -1,0 +1,8 @@
+key,key:trainingModule,code,startMoment,finishMoment,location,instructor,contactEmail,link,draftMode
+training-session-01,training-module-01,TS-X-001,2021/06/21 20:00,2021/07/21 20:00,Sevilla,Martin,jmartin@gmail.com,https://www.google.es,true
+training-session-02,training-module-01,TS-B-002,2020/01/21 22:00,2020/02/21 22:00,Cádiz,Guillermo,guille@gmail.com,https://www.youtube.es,true
+training-session-03,training-module-02,TS-R-003,2018/02/21 21:30,2018/03/21 21:30,Málaga,Pablo,pablo@gmail.com,https://www.x.com,true
+training-session-04,training-module-03,TS-L-004,2020/12/21 18:10,2020/12/30 18:10,Jaén,Alejandro,ale@gmail.com,https://www.chess.com,true
+training-session-05,training-module-02,TS-K-005,2019/10/21 23:14,2019/11/21 23:14,Almería,Xiaomi,xiaomi@gmail.com,https://www.instagram.com,true
+training-session-06,training-module-03,TS-E-006,2020/04/21 15:40,2020/05/21 15:40,Huelva,Paco,paco@gmail.com,https://www.amazon.es,true
+training-session-07,training-module-01,TS-G-007,2021/07/21 19:47,2021/08/21 19:47,Málaga,Manuel,manu@gmail.com,https://www.whatsapp.com,true
