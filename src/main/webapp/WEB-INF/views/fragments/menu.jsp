@@ -18,6 +18,7 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
+		<acme:menu-option code="master.menu.any.contract" action="/any/contract/list"></acme:menu-option>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-guipacrod" action="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
@@ -26,7 +27,6 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-jesmarver" action="https://www.youtube.com/watch?v=3o0ThauuN1E"/>
 		    <acme:menu-suboption code="master.menu.anonymous.favourite-link-diegonqui" action="https://www.youtube.com/watch?v=AWM5ZNdWlqw"/>
 		    <acme:menu-suboption code="master.menu.anonymous.all-claims" action="/any/claim/list"/>	
-		    <acme:menu-option code="master.menu.any.contract" action="/any/contract/list"></acme:menu-option>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
