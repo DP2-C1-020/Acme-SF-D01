@@ -1,0 +1,10 @@
+developer.developer-dashboard.form.title = Panel
+
+developer.dashboard.form.title.general-indicators = Indicadores
+
+developer.dashboard.form.label.num-tm-updated = Módulos de entrenamiento actualizados
+developer.dashboard.form.label.num-ts-link = Sesiones de entrenamiento con enlaces
+developer.dashboard.form.label.avg-tm-time = Media del tiempo de módulos de entrenamiento
+developer.dashboard.form.label.dev-tm-time =  Desviación estándar del tiempo de módulos de entrenamiento
+developer.dashboard.form.label.min-tm-time =  Tiempo mínimo de módulos de entrenamiento
+developer.dashboard.form.label.max-tm-time =  Tiempo máximo de módulos de entrenamiento
