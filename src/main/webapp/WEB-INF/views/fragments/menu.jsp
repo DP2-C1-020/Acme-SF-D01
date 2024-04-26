@@ -18,7 +18,7 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
-		<acme:menu-option code="master.menu.any.contract" action="/any/contract/list"></acme:menu-option>
+		
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-guipacrod" action="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
@@ -32,6 +32,7 @@
 		<acme:menu-option code="master.menu.any">
 			<acme:menu-suboption code="master.menu.any.codeaudits" action="/any/code-audit/list"/>
 			<acme:menu-suboption code="master.menu.any.projects" action="/any/project/list"/>
+			<acme:menu-suboption code="master.menu.any.contract" action="/any/contract/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -72,7 +73,8 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.developer" access="hasRole('Developer')">
-			<acme:menu-suboption code="master.menu.developer.my-training-modules" action="/developer/training-module/list"/>	
+			<acme:menu-suboption code="master.menu.developer.my-training-modules" action="/developer/training-module/list"/>
+			<acme:menu-suboption code="master.menu.developer.dashboard" action="/developer/developer-dashboard/show"/>	
 			
 		</acme:menu-option>
 		
