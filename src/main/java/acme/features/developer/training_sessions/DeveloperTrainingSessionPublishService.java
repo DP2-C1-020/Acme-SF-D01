@@ -10,7 +10,7 @@ import acme.entities.training_session.TrainingSession;
 import acme.roles.Developer;
 
 @Service
-public class DeveloperTrainingSessionDeleteService extends AbstractService<Developer, TrainingSession> {
+public class DeveloperTrainingSessionPublishService extends AbstractService<Developer, TrainingSession> {
 
 	@Autowired
 	private DeveloperTrainingSessionRepository repository;
@@ -45,17 +45,20 @@ public class DeveloperTrainingSessionDeleteService extends AbstractService<Devel
 
 		super.bind(object, "code", "startMoment", "finishMoment", "location", "instructor", "contactEmail", "link", "draftMode");
 	}
+
 	@Override
 	public void validate(final TrainingSession object) {
 		assert object != null;
+
 	}
 
 	@Override
 	public void perform(final TrainingSession object) {
 		assert object != null;
 
-		this.repository.delete(object);
+		object.setDraftMode(false);
 
+		this.repository.save(object);
 	}
 
 	@Override
