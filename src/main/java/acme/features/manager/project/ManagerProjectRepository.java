@@ -10,6 +10,7 @@ import acme.client.repositories.AbstractRepository;
 import acme.entities.audits.CodeAudit;
 import acme.entities.contracts.Contract;
 import acme.entities.project.Project;
+import acme.entities.project.ProjectUserStory;
 import acme.entities.sponsorships.Sponsorship;
 import acme.entities.training_module.TrainingModule;
 import acme.entities.userstory.UserStory;
@@ -45,4 +46,6 @@ public interface ManagerProjectRepository extends AbstractRepository {
 	@Query("select tm from TrainingModule tm where tm.project.id = :projectId")
 	Collection<TrainingModule> findManyTrainingModulesByProjectId(int projectId);
 
+	@Query("select p_us from ProjectUserStory p_us where p_us.project.id = :projectId")
+	Collection<ProjectUserStory> findManyProjectUserStoryTablesByProjectId(int projectId);
 }

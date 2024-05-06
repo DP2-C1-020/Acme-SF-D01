@@ -7,3 +7,11 @@ project-05,manager-01,"HIJ-4560","Title 5","A",true,0,"https://example.com/proje
 project-06,manager-02,"KLM-7890","Title 6","#",false,1,"HTTP://example.com/project6",true
 project-07,manager-01,"NOP-0120","Title 7","ღ•✠ⒽⒾⓉ☹☹☂☂☝☹☹➤❥✯",false,999999,"HTTPS://example.com/project7",false
 project-08,manager-02,"QRS-3450","T","Abstract 8",true,90000000,"FTP://example.com/project8",true
+project-09,manager-01,"TUV-2345","Social Media Strategy","Developing a comprehensive social media strategy to increase brand awareness and engagement.",true,5500,null,true
+project-10,manager-02,"WXY-6789","Product Development","Bringing a new product concept from ideation.",false,11000,"https://example.com/project10",true
+project-11,manager-01,"XYZ-0123","Content Creation","Producing engaging content for various digital.",true,7800,"https://example.com/project11",true
+project-12,manager-02,"ABC-4567","Market Research","Conducting market research to identify consumer",false,6300,null,true
+project-13,manager-01,"DEF-8901","Training Program Development","Designing a training program for.",false,9200,null,true
+project-14,manager-02,"GHI-2345","E-commerce Website Development","C",false,8800,"https://example.com/project14",false
+project-15,manager-01,"JKL-6789","Customer Satisfaction Survey","Gathering feedback from customers to improve products.",false,7200,null,false
+project-16,manager-02,"MNO-0123","Digital Marketing Campaign","Launching a targeted digital marketing campaign.",false,10500,"https://example.com/project16",false
