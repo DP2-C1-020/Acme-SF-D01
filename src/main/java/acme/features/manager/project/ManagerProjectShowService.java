@@ -32,7 +32,8 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 		manager = project == null ? null : project.getManager();
 		status = super.getRequest().getPrincipal().hasRole(manager) || project != null && !project.isDraftMode();
 
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
+
 	}
 
 	@Override
