@@ -50,7 +50,6 @@ public class ManagerUserStoryCreateService extends AbstractService<Manager, User
 	@Override
 	public void validate(final UserStory object) {
 		assert object != null;
-		System.out.println("mogus");
 	}
 
 	@Override
