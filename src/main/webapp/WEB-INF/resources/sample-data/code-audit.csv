@@ -1,21 +1,21 @@
 key,key:auditor,key:project,code,execution,type,corrective_actions,link,draft-mode
-code-audit-01,auditor-01,project-01,A-123,2003/05/17 15:32,STATIC,"Check variable naming conventions-Update outdated comments-Optimize code for performance",https://examplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta2.com,false
-code-audit-02,auditor-02,project-01,XY-456,2021/11/28 09:45,STATIC,"Refactor long methods and classes-Fix null pointer exception-Improve error handling",https://example.net,true
-code-audit-03,auditor-01,project-01,ABC-789,2020/01/10 13:20,DYNAMIC,"Add missing unit tests-Improve documentation-Fix code formatting issues",https://example.org,false
-code-audit-04,auditor-02,project-01,X-234,2021/09/05 10:00,DYNAMIC,"Update third-party dependencies-Remove unused imports-Enhance security measures",https://examplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta2.com,true
-code-audit-05,auditor-01,project-01,YZ-567,2021/07/22 14:18,STATIC,"Optimize database queries-Improve logging mechanism-Update version control system",https://example.net,true
-code-audit-06,auditor-02,project-02,ABC-890,2020/12/03 08:55,STATIC,"Refactor codebase structure-Enhance user authentication process-Improve user interface design",https://example.org,true
-code-audit-07,auditor-01,project-02,Z-321,2004/02/14 11:40,DYNAMIC,"Implement code review process-Fix memory leaks-Update error handling mechanisms",https://example.com,true
-code-audit-08,auditor-02,project-02,ABC-654,2002/10/20 17:03,DYNAMIC,"Optimize database schema-Enhance code documentation-Implement continuous integration",https://example.net,true
-code-audit-09,auditor-01,project-02,XZ-987,2003/08/09 12:10,STATIC,"Improve exception handling-Optimize database indexing-Update API documentation",https://example.org,true
-code-audit-10,auditor-02,project-01,BC-456,2002/07/31 09:27,STATIC,"Refactor legacy code-Improve error reporting-Enhance code readability",https://example.com,true
-code-audit-11,auditor-01,project-01,XYZ-111,2018/04/16 16:55,DYNAMIC,"Implement unit testing framework-Refactor database queries-Improve user interface responsiveness",https://examplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta2.com,true
-code-audit-12,auditor-02,project-01,BC-222,2019/11/09 14:20,DYNAMIC,"Update libraries to latest versions-Improve error handling-Optimize network requests",https://example.org,true
-code-audit-13,auditor-01,project-01,XYZ-333,2020/03/05 10:30,STATIC,"Fix code smells reported by static analysis tools-Update outdated documentation",https://example.com,true
-code-audit-14,auditor-02,project-02,ABC-444,2021/09/22 11:10,STATIC,"Implement caching mechanism-Enhance user input validation-Optimize database transactions",https://example.net,true
-code-audit-15,auditor-01,project-02,Z-555,2020/07/01 08:45,DYNAMIC,"Refactor error handling mechanisms-Improve code modularity-Update security protocols",https://example.org,true
-code-audit-16,auditor-02,project-02,AC-666,2019/05/12 13:15,DYNAMIC,"Optimize database queries-Refactor codebase structure-Improve logging mechanisms",https://example.com,true
-code-audit-17,auditor-01,project-02,XYZ-777,2018/11/19 15:20,STATIC,"Implement automated testing suite-Update version control practices-Optimize network requests",https://examplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta250caracteresexamplehasta2.com,true
-code-audit-18,auditor-02,project-01,ABC-888,2019/08/27 09:00,STATIC,"Enhance code documentation-Improve error handling-Optimize database indexing",https://example.org,true
-code-audit-19,auditor-01,project-01,XYZ-999,2020/01/25 14:50,DYNAMIC,"Refactor legacy code-Update third-party dependencies-Optimize memory usage",https://example.com,true
-code-audit-20,auditor-02,project-02,BC-000,2021/06/08 10:05,DYNAMIC,"Implement code review process-Enhance user authentication mechanisms-Optimize database transactions",https://example.net,true
+code-audit-01,auditor-01,project-01,A-123,2022/07/29 23:00,STATIC,Check variable naming conventions-Update outdated comments-Optimize code for performance,http://www.lorem-ipsum.org,false
+code-audit-02,auditor-02,project-01,A-456,2000/01/01 00:00,STATIC,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",ftp://a,true
+code-audit-03,auditor-01,project-01,ABC-789,2000/01/01 00:01,DYNAMIC,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore*",ftp://a.b,false
+code-audit-04,auditor-02,project-01,AA-234,2022/07/29 23:59,DYNAMIC,<h1>!</h1>,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",true
+code-audit-05,auditor-01,project-01,YZ-567,2020/02/28 00:00,STATIC,' or 'A'='A,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",true
+code-audit-06,auditor-02,project-02,ABC-890,2022/07/29 23:00,STATIC,국민경제의 발전을,https://www.lorem-ipsum.org,true
+code-audit-07,auditor-01,project-02,Z-321,2000/01/01 00:00,DYNAMIC,العظمى واعتلاء,ftp://www.lorem-ipsum.org,true
+code-audit-08,auditor-02,project-02,ABC-654,2000/01/01 00:01,DYNAMIC,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",http://www.lorem-ipsum.org/dolor/sit.html,true
+code-audit-09,auditor-01,project-02,XZ-987,2022/07/29 23:59,STATIC,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore*",http://www.lorem-ipsum.org/dolor/sit.html#dolor,true
+code-audit-10,auditor-02,project-01,BC-456,2020/02/28 00:00,STATIC,<h1>!</h1>,http://example.org?a=1&b=2,true
+code-audit-11,auditor-01,project-01,XYZ-111,2022/07/29 23:00,DYNAMIC,국민경제의 발전을,http://example.org?,true
+code-audit-12,auditor-02,project-01,BC-222,2000/01/01 00:00,DYNAMIC,Update libraries to latest versions-Improve error handling-Optimize network requests,http://example.org?a,true
+code-audit-13,auditor-01,project-01,XYZ-333,2020/02/28 00:00,STATIC,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",http://example.org?a&b,true
+code-audit-14,auditor-02,project-02,ABC-444,2022/07/29 23:59,STATIC,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore*",http://example.org/,true
+code-audit-15,auditor-01,project-02,Z-555,2022/07/30 00:00,DYNAMIC,<h1>!</h1>,http://example.org/a,true
+code-audit-16,auditor-02,project-02,AC-666,2022/07/29 23:00,DYNAMIC,국민경제의 발전을,http://example.org/a/b,true
+code-audit-17,auditor-01,project-02,XYZ-777,2020/02/28 00:00,STATIC,العظمى واعتلاء,http://example.org/a/b?,true
+code-audit-18,auditor-02,project-01,ABC-888,2000/01/01 00:01,STATIC,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",http://example.org/a/b?a&b,true
+code-audit-19,auditor-01,project-01,XYZ-999,2022/07/29 23:59,DYNAMIC,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore*",http://www.lorem-ipsum.org/dolor/sit.html#dolor,true
+code-audit-20,auditor-02,project-02,BC-000,2021/06/08 10:05,DYNAMIC,<h1>!</h1>,https://www.lorem-ipsum.org,true
