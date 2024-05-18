@@ -46,9 +46,12 @@ public class AuditorAuditRecordListService extends AbstractService<Auditor, Audi
 
 		codeAuditId = super.getRequest().getData("codeAuditId", int.class);
 		objects = this.repository.findAllAuditRecordsByCodeAuditId(codeAuditId);
+		CodeAudit codeAudit = this.repository.findOneCodeAuditById(codeAuditId);
+		boolean codeAuditDraftMode = codeAudit.isDraftMode();
 
 		super.getBuffer().addData(objects);
 		super.getResponse().addGlobal("codeAuditId", codeAuditId);
+		super.getResponse().addGlobal("codeAuditDraftMode", codeAuditDraftMode);
 	}
 
 	@Override
@@ -56,9 +59,13 @@ public class AuditorAuditRecordListService extends AbstractService<Auditor, Audi
 		assert object != null;
 
 		Dataset dataset;
+		int codeAuditId;
+		codeAuditId = super.getRequest().getData("codeAuditId", int.class);
+		CodeAudit codeAudit = this.repository.findOneCodeAuditById(codeAuditId);
+		boolean codeAuditDraftMode = codeAudit.isDraftMode();
 
 		dataset = super.unbind(object, "code", "mark", "draftMode");
-
+		dataset.put("codeAuditDraftMode", codeAuditDraftMode);
 		super.getResponse().addData(dataset);
 	}
 
