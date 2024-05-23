@@ -30,9 +30,10 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 
 		trainingModule = this.repository.findTrainingModuleById(trainingModuleId);
 		developer = trainingModule != null ? trainingModule.getDeveloper() : null;
-		status = trainingModule != null && trainingModule.getDraftMode() && super.getRequest().getPrincipal().hasRole(developer);
 
+		status = trainingModule != null && trainingModule.getDraftMode() && super.getRequest().getPrincipal().hasRole(developer);
 		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
@@ -43,15 +44,14 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 		trainingModuleId = super.getRequest().getData("id", int.class);
 
 		trainingModule = this.repository.findTrainingModuleById(trainingModuleId);
-
 		super.getBuffer().addData(trainingModule);
 	}
 
 	@Override
 	public void bind(final TrainingModule object) {
 		assert object != null;
+		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime");
 
-		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime", "draftMode");
 	}
 
 	@Override
@@ -85,6 +85,7 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 		dataset.put("difficultyLevels", choices);
 
 		super.getBuffer().addData(dataset);
+
 	}
 
 }

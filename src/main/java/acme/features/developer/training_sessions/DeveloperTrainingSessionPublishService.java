@@ -1,10 +1,13 @@
 
 package acme.features.developer.training_sessions;
 
+import java.time.temporal.ChronoUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.training_session.TrainingSession;
 import acme.roles.Developer;
@@ -49,6 +52,19 @@ public class DeveloperTrainingSessionPublishService extends AbstractService<Deve
 	@Override
 	public void validate(final TrainingSession object) {
 		assert object != null;
+
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.getDraftMode(), "draftMode", "developer.training-session.form.error.draftMode");
+
+		if (!super.getBuffer().getErrors().hasErrors("startMoment"))
+			super.state(MomentHelper.isAfter(object.getStartMoment(), object.getTrainingModule().getCreationMoment()), "startMoment", "developer.training-session.form.error.startBeforeCreate");
+
+		if (!super.getBuffer().getErrors().hasErrors("startMoment") && !super.getBuffer().getErrors().hasErrors("finishMoment")) {
+			super.state(MomentHelper.isAfter(object.getFinishMoment(), object.getStartMoment()), "finishMoment", "developer.training-session.form.error.finishBeforeStart");
+			super.state(MomentHelper.isAfter(object.getFinishMoment(), MomentHelper.deltaFromMoment(object.getStartMoment(), 7, ChronoUnit.DAYS)), "finishMoment", "developer.training-session.form.error.periodTooShort");
+		}
 
 	}
 
