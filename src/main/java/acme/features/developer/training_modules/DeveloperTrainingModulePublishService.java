@@ -1,18 +1,16 @@
 
 package acme.features.developer.training_modules;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.training_module.DifficultyLevel;
 import acme.entities.training_module.TrainingModule;
-import acme.entities.training_session.TrainingSession;
 import acme.roles.Developer;
 
 @Service
@@ -60,13 +58,26 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 	@Override
 	public void validate(final TrainingModule object) {
 		assert object != null;
-		int trainingModuleId;
-		Collection<TrainingSession> trainingSessions;
+		int moduleId;
+		Integer trainingSessionInTrainingModule, publishedTrainigModules;
 
-		trainingModuleId = super.getRequest().getData("id", int.class);
-		trainingSessions = this.repository.findTrainingSessionsByTrainingModuleId(trainingModuleId);
-		if (trainingSessions.isEmpty())
-			super.state(false, "sessions", "developer.training-module.form.error.training-session");
+		moduleId = super.getRequest().getData("id", int.class);
+
+		if (!super.getBuffer().getErrors().hasErrors("sessions")) {
+			Integer numSessions = this.repository.findTrainingSessionsByTrainingModuleId(moduleId).size();
+			super.state(numSessions > 0, "*", "developer.training-module.form.error.training-session");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			TrainingModule existing;
+
+			existing = this.repository.findTrainingModuleByCode(object.getCode());
+			super.state(existing == null || existing.equals(object), "code", "developer.training-module.form.error.duplicateCode");
+		}
+
+		trainingSessionInTrainingModule = this.repository.findTrainingSessionsByTrainingModuleId(object.getId()).size();
+		publishedTrainigModules = this.repository.findPublishedTrainingSessionsByTrainingModuleId(object.getId()).size();
+		super.state(trainingSessionInTrainingModule != null && publishedTrainigModules == trainingSessionInTrainingModule, "*", "developer.training-module.form.error.not-published-trainingSessions");
 
 	}
 
@@ -74,7 +85,7 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 	public void perform(final TrainingModule object) {
 
 		assert object != null;
-
+		object.setUpdateMoment(MomentHelper.getCurrentMoment());
 		object.setDraftMode(false);
 
 		this.repository.save(object);
