@@ -1,6 +1,8 @@
 
 package acme.features.developer.training_modules;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,13 +27,18 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 		int trainingModuleId;
 		Developer developer;
 		TrainingModule trainingModule;
+		int developerId;
+		Collection<TrainingModule> mytrainingModules;
+
+		developerId = super.getRequest().getPrincipal().getActiveRoleId();
+		mytrainingModules = this.repository.findAllTrainingModulesByDeveloperId(developerId);
 
 		trainingModuleId = super.getRequest().getData("id", int.class);
 
 		trainingModule = this.repository.findTrainingModuleById(trainingModuleId);
 		developer = trainingModule != null ? trainingModule.getDeveloper() : null;
 
-		status = trainingModule != null && trainingModule.getDraftMode() && super.getRequest().getPrincipal().hasRole(developer);
+		status = trainingModule != null && trainingModule.getDraftMode() && super.getRequest().getPrincipal().hasRole(developer) && mytrainingModules.contains(trainingModule);
 		super.getResponse().setAuthorised(status);
 
 	}
