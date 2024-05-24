@@ -104,9 +104,14 @@ public class AuditorCodeAuditPublishService extends AbstractService<Auditor, Cod
 
 		choicesType = SelectChoices.from(CodeAuditType.class, object.getType());
 
+		String modeMark;
+		Collection<Mark> marks = this.repository.findMarksByCodeAuditId(object.getId());
+		modeMark = MarkMode.findMode(marks);
+
 		dataset = super.unbind(object, "code", "execution", "type", "correctiveActions", "link", "draftMode");
 		dataset.put("project", objectProject.getTitle());
 		dataset.put("types", choicesType);
+		dataset.put("modeMark", modeMark);
 
 		super.getResponse().addData(dataset);
 	}
