@@ -24,15 +24,14 @@ public class DeveloperTrainingModuleShowService extends AbstractService<Develope
 	public void authorise() {
 		Boolean status;
 		int trainingModuleId;
-		int developerId;
 		TrainingModule trainingModule;
+		int developerId;
 		Collection<TrainingModule> mytrainingModules;
 
 		developerId = super.getRequest().getPrincipal().getActiveRoleId();
+		mytrainingModules = this.repository.findAllTrainingModulesByDeveloperId(developerId);
 		trainingModuleId = super.getRequest().getData("id", int.class);
 		trainingModule = this.repository.findTrainingModuleById(trainingModuleId);
-
-		mytrainingModules = this.repository.findAllTrainingModulesByDeveloperId(developerId);
 
 		status = trainingModule != null && super.getRequest().getPrincipal().hasRole(Developer.class) && mytrainingModules.contains(trainingModule);
 
