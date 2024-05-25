@@ -52,6 +52,7 @@ public class UserStory extends AbstractEntity {
 
 	@URL
 	@Column(nullable = true)
+	@Length(max = 250)
 	private String				link;
 
 	private boolean				published;
