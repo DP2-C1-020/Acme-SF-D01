@@ -3,7 +3,9 @@ package acme.entities.project;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -21,6 +23,12 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "draft_mode"), //
+	@Index(columnList = "manager_id"), //
+	@Index(columnList = "code"), //
+	@Index(columnList = "id, manager_id, draft_mode")
+})
 public class Project extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------
 
@@ -49,22 +57,14 @@ public class Project extends AbstractEntity {
 
 	@URL
 	@Column(nullable = true)
+	@Length(max = 250)
 	private String				link;
 
+	@Column(name = "draft_mode")
 	private boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
-	/*
-	 * @Transient
-	 * public boolean isPublished() {
-	 * boolean result;
-	 * 
-	 * result = !this.draftMode;
-	 * 
-	 * return result;
-	 * }
-	 */
 	// Relationships ----------------------------------------------------------
 
 	@NotNull

@@ -4,6 +4,8 @@ package acme.entities.banners;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Index;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
@@ -22,6 +24,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "startDate, endDate")
+})
 public class Banner extends AbstractEntity {
 
 	// Serialisation identifier ----------------------------------------
@@ -47,6 +52,7 @@ public class Banner extends AbstractEntity {
 
 	@NotBlank
 	@URL
+	@Length(max = 250)
 	private String				picture;
 
 	@NotBlank
@@ -55,6 +61,7 @@ public class Banner extends AbstractEntity {
 
 	@NotBlank
 	@URL
+	@Length(max = 250)
 	private String				link;
 
 	// Derived attributes -----------------------------------------------

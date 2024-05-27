@@ -2,7 +2,6 @@
 package acme.features.administrator.banner;
 
 import java.time.temporal.ChronoUnit;
-import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,39 +58,34 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 	public void validate(final Banner object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("startDate")) {
+		String dateString = "2100/01/01 00:00";
+		Date maxDate = MomentHelper.parse(dateString, "yyyy/MM/dd HH:mm");
 
-			final Calendar calendar1 = Calendar.getInstance();
-			calendar1.set(Calendar.YEAR, 2000);
-			calendar1.set(Calendar.MONTH, Calendar.JANUARY);
-			calendar1.set(Calendar.DAY_OF_MONTH, 1);
-			calendar1.set(Calendar.HOUR_OF_DAY, 00);
-			calendar1.set(Calendar.MINUTE, 00);
-			calendar1.set(Calendar.SECOND, 00);
-			calendar1.set(Calendar.MILLISECOND, 0);
-			final Date iniDate = calendar1.getTime();
-			final Calendar calendar = Calendar.getInstance();
-			calendar.set(Calendar.YEAR, 2100);
-			calendar.set(Calendar.MONTH, Calendar.DECEMBER);
-			calendar.set(Calendar.DAY_OF_MONTH, 31);
-			calendar.set(Calendar.HOUR_OF_DAY, 23);
-			calendar.set(Calendar.MINUTE, 59);
-			calendar.set(Calendar.SECOND, 00);
-			calendar.set(Calendar.MILLISECOND, 0);
-			final Date limitDate = calendar.getTime();
-			boolean date1;
-			boolean date2;
-			date1 = MomentHelper.isAfterOrEqual(object.getStartDate(), iniDate);
-			date2 = MomentHelper.isBeforeOrEqual(object.getEndDate(), limitDate);
-			super.state(date1 && date2, "startDate", "administrator.banner.form.error.limit.date");
+		if (object.getStartDate() != null) {
+
+			if (!super.getBuffer().getErrors().hasErrors("startDate"))
+				super.state(MomentHelper.isAfter(object.getStartDate(), object.getInstantiationMoment()), "startDate", "administrator.banner.form.error.startDate");
+
+			if (!super.getBuffer().getErrors().hasErrors("startDate"))
+				super.state(MomentHelper.isBefore(object.getStartDate(), maxDate), "startMoment", "administrator.banner.form.error.limit.date");
+
+			if (object.getStartDate() != null) {
+
+				if (!super.getBuffer().getErrors().hasErrors("endDate"))
+					super.state(MomentHelper.isLongEnough(object.getStartDate(), object.getEndDate(), 1, ChronoUnit.WEEKS), "endDate", "administrator.banner.form.error.endDate-not-long-enough");
+				if (!super.getBuffer().getErrors().hasErrors("endDate"))
+					super.state(MomentHelper.isAfter(object.getEndDate(), object.getStartDate()), "endDate", "administrator.banner.form.error.endDate-not-long-enough");
+			}
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("startDate")) {
-			final boolean b = object.getStartDate().after(MomentHelper.getCurrentMoment());
-			super.state(b, "startDate", "administrator.banner.form.error.startDate-past");
+		if (object.getStartDate() != null) {
+
+			if (!super.getBuffer().getErrors().hasErrors("endDate"))
+				super.state(MomentHelper.isAfter(object.getEndDate(), object.getInstantiationMoment()), "endDate", "administrator.banner.form.error.endDate-not-long-enough");
+
+			if (!super.getBuffer().getErrors().hasErrors("endDate"))
+				super.state(MomentHelper.isBefore(object.getEndDate(), maxDate), "endDate", "administrator.banner.form.error.limit.date");
 		}
-		if (!super.getBuffer().getErrors().hasErrors("endDate"))
-			super.state(MomentHelper.isLongEnough(object.getStartDate(), object.getEndDate(), 7, ChronoUnit.DAYS) && object.getStartDate().before(object.getEndDate()), "endDate", "administrator.banner.form.error.endDate-not-long-enough");
 
 	}
 
