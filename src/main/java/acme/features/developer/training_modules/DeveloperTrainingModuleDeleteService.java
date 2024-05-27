@@ -6,7 +6,10 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.client.views.SelectChoices;
+import acme.entities.training_module.DifficultyLevel;
 import acme.entities.training_module.TrainingModule;
 import acme.entities.training_session.TrainingSession;
 import acme.roles.Developer;
@@ -25,17 +28,12 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 		int trainingModuleId;
 		Developer developer;
 		TrainingModule trainingModule;
-		int developerId;
-		Collection<TrainingModule> mytrainingModules;
-
-		developerId = super.getRequest().getPrincipal().getActiveRoleId();
-		mytrainingModules = this.repository.findAllTrainingModulesByDeveloperId(developerId);
 
 		trainingModuleId = super.getRequest().getData("id", int.class);
 
 		trainingModule = this.repository.findTrainingModuleById(trainingModuleId);
 		developer = trainingModule != null ? trainingModule.getDeveloper() : null;
-		status = trainingModule != null && trainingModule.getDraftMode() && super.getRequest().getPrincipal().hasRole(developer) && mytrainingModules.contains(trainingModule);
+		status = trainingModule != null && trainingModule.getDraftMode() && super.getRequest().getPrincipal().hasRole(developer);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -76,6 +74,21 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 
 		this.repository.deleteAll(trainingSessions);
 		this.repository.delete(object);
+
+	}
+
+	@Override
+	public void unbind(final TrainingModule object) {
+		assert object != null;
+
+		Dataset dataset;
+		SelectChoices choices;
+
+		dataset = super.unbind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime", "draftMode");
+		choices = SelectChoices.from(DifficultyLevel.class, object.getDifficultyLevel());
+		dataset.put("difficultyLevels", choices);
+
+		super.getBuffer().addData(dataset);
 
 	}
 

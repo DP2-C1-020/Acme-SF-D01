@@ -29,4 +29,3 @@ developer.training-module.form.error.updateBeforeCreate = The update moment must
 developer.training-module.form.error.duplicateCode = There is already a training module with this code
 
 developer.training-module.form.error.training-session = The training module must have at least one training session
-developer.training-module.form.error.not-published-trainingSessions = The training sessions of this trainig module must be published

@@ -1,8 +1,6 @@
 
 package acme.features.developer.training_modules;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,20 +25,14 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 		int trainingModuleId;
 		Developer developer;
 		TrainingModule trainingModule;
-		int developerId;
-		Collection<TrainingModule> mytrainingModules;
-
-		developerId = super.getRequest().getPrincipal().getActiveRoleId();
-		mytrainingModules = this.repository.findAllTrainingModulesByDeveloperId(developerId);
 
 		trainingModuleId = super.getRequest().getData("id", int.class);
 
 		trainingModule = this.repository.findTrainingModuleById(trainingModuleId);
 		developer = trainingModule != null ? trainingModule.getDeveloper() : null;
+		status = trainingModule != null && trainingModule.getDraftMode() && super.getRequest().getPrincipal().hasRole(developer);
 
-		status = trainingModule != null && trainingModule.getDraftMode() && super.getRequest().getPrincipal().hasRole(developer) && mytrainingModules.contains(trainingModule);
 		super.getResponse().setAuthorised(status);
-
 	}
 
 	@Override
@@ -51,14 +43,15 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 		trainingModuleId = super.getRequest().getData("id", int.class);
 
 		trainingModule = this.repository.findTrainingModuleById(trainingModuleId);
+
 		super.getBuffer().addData(trainingModule);
 	}
 
 	@Override
 	public void bind(final TrainingModule object) {
 		assert object != null;
-		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime");
 
+		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime", "draftMode");
 	}
 
 	@Override
@@ -92,7 +85,6 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 		dataset.put("difficultyLevels", choices);
 
 		super.getBuffer().addData(dataset);
-
 	}
 
 }

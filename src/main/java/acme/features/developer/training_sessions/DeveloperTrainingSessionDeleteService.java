@@ -1,13 +1,11 @@
 
 package acme.features.developer.training_sessions;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
-import acme.entities.training_module.TrainingModule;
 import acme.entities.training_session.TrainingSession;
 import acme.roles.Developer;
 
@@ -23,19 +21,10 @@ public class DeveloperTrainingSessionDeleteService extends AbstractService<Devel
 		Boolean status;
 		int trainingSessionId;
 		TrainingSession trainingSession;
-		TrainingModule trainingModule;
-		Collection<TrainingModule> myTrainingModules;
-		int developerId;
 
 		trainingSessionId = super.getRequest().getData("id", int.class);
 		trainingSession = this.repository.findTrainingSessionById(trainingSessionId);
-
-		developerId = super.getRequest().getPrincipal().getActiveRoleId();
-		trainingModule = trainingSession.getTrainingModule();
-		myTrainingModules = this.repository.findAllTrainingModulesByDeveloperId(developerId);
-
-		status = trainingSession != null && trainingSession.getDraftMode() && super.getRequest().getPrincipal().hasRole(Developer.class) && myTrainingModules.contains(trainingModule);
-		;
+		status = trainingSession != null && trainingSession.getDraftMode() && super.getRequest().getPrincipal().hasRole(Developer.class);
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -67,6 +56,16 @@ public class DeveloperTrainingSessionDeleteService extends AbstractService<Devel
 
 		this.repository.delete(object);
 
+	}
+
+	@Override
+	public void unbind(final TrainingSession object) {
+		assert object != null;
+
+		Dataset dataset;
+		dataset = super.unbind(object, "code", "startMoment", "finishMoment", "location", "instructor", "contactEmail", "link", "draftMode");
+
+		super.getResponse().addData(dataset);
 	}
 
 }
