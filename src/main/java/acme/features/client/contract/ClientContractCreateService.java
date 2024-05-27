@@ -29,16 +29,10 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 
 	@Override
 	public void authorise() {
-		boolean status = false;
-
 		Principal principal = super.getRequest().getPrincipal();
-
-		if (principal.hasRole(Client.class))
-			status = true;
-
+		boolean status = principal.hasRole(Client.class);
 		super.getResponse().setAuthorised(status);
 	}
-
 	@Override
 	public void load() {
 		Contract object;
@@ -70,20 +64,53 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 	}
 
 	@Override
-	public void validate(final Contract object) {
-		final Collection<String> allCodes = this.repository.findAllContractsCode();
+	public void validate(final Contract contract) {
+		assert contract != null;
+		boolean isValid = true;
 
-		Project project = object.getProject();
+		// Validate Project
+		Project project = contract.getProject();
+		if (project == null) {
+			super.state(false, "project", "client.contract.error.project");
+			isValid = false;
+		}
 
-		if (!super.getBuffer().getErrors().hasErrors("code"))
-			super.state(!allCodes.contains(object.getCode()), "code", "client.contract.error.codeDuplicate");
+		// Validate Budget
+		if (isValid) {
+			double totalBudget = 0.0;
+			Collection<Contract> allContractsByProject = this.repository.findAllContractsWithProject(project.getId());
 
-		if (object.getBudget() == null)
-			super.state(false, "budget", "client.contract.error.budget");
+			for (Contract c : allContractsByProject)
+				if (c.getBudget() != null && c.getBudget().getAmount() != null)
+					totalBudget += c.getBudget().getAmount();
 
-		if (object.getBudget() != null && object.getBudget().getAmount() > project.getCost())
-			super.state(false, "budget", "client.contract.error.projectBudget");
+			if (contract.getBudget() != null && contract.getBudget().getAmount() != null)
+				totalBudget += contract.getBudget().getAmount();
 
+			if (contract.getBudget() == null || contract.getBudget().getAmount() == null) {
+				super.state(false, "budget", "client.contract.error.budget");
+				isValid = false;
+			} else {
+				double budgetAmount = contract.getBudget().getAmount();
+				if (budgetAmount < 0.0) {
+					super.state(false, "budget", "client.contract.error.negativeBudget");
+					isValid = false;
+				} else if (budgetAmount == 0.0) {
+					super.state(false, "budget", "client.contract.error.zeroBudget");
+					isValid = false;
+				} else if (totalBudget > project.getCost()) {
+					super.state(false, "budget", "client.contract.error.projectBudgetTotal");
+					isValid = false;
+				}
+			}
+		}
+
+		// Validate Code Uniqueness
+		if (isValid) {
+			Collection<String> allCodes = this.repository.findAllContractsCode();
+			boolean isCodeUnique = !allCodes.contains(contract.getCode());
+			super.state(isCodeUnique, "code", "client.contract.error.codeDuplicate");
+		}
 	}
 
 	@Override
