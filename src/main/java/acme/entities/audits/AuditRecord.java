@@ -16,6 +16,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
@@ -53,6 +54,7 @@ public class AuditRecord extends AbstractEntity {
 	private Mark				mark;
 
 	@URL
+	@Length(max = 255)
 	protected String			link;
 
 	private boolean				draftMode;
