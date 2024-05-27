@@ -1,11 +1,14 @@
 
 package acme.features.developer.training_sessions;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.entities.training_module.TrainingModule;
 import acme.entities.training_session.TrainingSession;
 import acme.roles.Developer;
 
@@ -21,10 +24,18 @@ public class DeveloperTrainingSessionShowService extends AbstractService<Develop
 		Boolean status;
 		int trainingSessionId;
 		TrainingSession trainingSession;
+		TrainingModule trainingModule;
+		Collection<TrainingModule> myTrainingModules;
+		int developerId;
 
 		trainingSessionId = super.getRequest().getData("id", int.class);
 		trainingSession = this.repository.findTrainingSessionById(trainingSessionId);
-		status = trainingSession != null && super.getRequest().getPrincipal().hasRole(Developer.class);
+
+		developerId = super.getRequest().getPrincipal().getActiveRoleId();
+		trainingModule = trainingSession.getTrainingModule();
+		myTrainingModules = this.repository.findAllTrainingModulesByDeveloperId(developerId);
+
+		status = trainingSession != null && super.getRequest().getPrincipal().hasRole(Developer.class) && myTrainingModules.contains(trainingModule);
 
 		super.getResponse().setAuthorised(status);
 
