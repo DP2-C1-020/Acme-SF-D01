@@ -47,12 +47,10 @@ public class Invoice extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				registrationTime;
 
-	//TODO dueDate must be at least one month ahead the registrationTime
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				dueDate;
 
-	//TODO Amount must be positive
 	@NotNull
 	@Valid
 	private Money				quantity;
@@ -66,10 +64,11 @@ public class Invoice extends AbstractEntity {
 	@URL
 	private String				link;
 
+	private boolean				draftMode;
+
 	// Derived attributes -----------------------------------------------
 
 
-	//TODO TotalAmount must be positive
 	@Valid
 	@NotNull
 	@Transient
@@ -77,7 +76,9 @@ public class Invoice extends AbstractEntity {
 
 		Money totalAmount = new Money();
 
-		totalAmount.setAmount(this.quantity.getAmount() + this.quantity.getAmount() * this.tax);
+		double amount = this.quantity.getAmount() * (1 + this.tax / 100);
+		double roundedAmount = Math.round(amount * 100.0) / 100.0;
+		totalAmount.setAmount(roundedAmount);
 		totalAmount.setCurrency(this.quantity.getCurrency());
 		return totalAmount;
 	}

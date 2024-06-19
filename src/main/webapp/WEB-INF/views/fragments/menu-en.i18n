@@ -85,6 +85,11 @@ master.menu.developer = Developer
 master.menu.developer.my-training-modules = My training modules
 master.menu.developer.dashboard = Dashboard
 
+# master.menu.sponsor ##########################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.list-sponsorships = My Sponsorships
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
