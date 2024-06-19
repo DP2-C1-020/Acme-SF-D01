@@ -1,0 +1,42 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+sponsor.sponsorship.list.title = Listing of my Sponsorships
+
+sponsor.sponsorship.list.label.duration = Duration 
+sponsor.sponsorship.list.label.amount = Amount 
+sponsor.sponsorship.list.label.code = Code 
+
+sponsor.sponsorship.form.title = Sponsorship
+sponsor.sponsorship.form.label.code = Code
+sponsor.sponsorship.form.placeholder.code = [A-Z]{1,3}-[0-9]{3}
+sponsor.sponsorship.form.label.startDate = Start date
+sponsor.sponsorship.form.label.endDate = End date
+sponsor.sponsorship.form.label.moment = Moment of creation
+sponsor.sponsorship.form.label.amount = Amount
+sponsor.sponsorship.form.label.type = Type
+sponsor.sponsorship.form.label.contact = Contact email
+sponsor.sponsorship.form.label.link = Link
+sponsor.sponsorship.form.label.project = Sponsored Project
+
+sponsor.sponsorship.form.button.update = Update
+sponsor.sponsorship.form.button.delete = Delete
+sponsor.sponsorship.form.button.publish = Publish
+sponsor.sponsorship.form.button.create = Create
+sponsor.sponsorship.list.button.create = Create
+sponsor.sponsorship.form.button.invoices = Invoices
+
+sponsor.sponsorship.form.error.duplicated = This code is taken
+sponsor.sponsorship.form.error.too-close = Start date must be after the moment of creation
+sponsor.sponsorship.form.error.less-than-month = End date must be at least one month ahead of start date
+sponsor.sponsorship.form.error.too-late = Start date must be before the end date
+sponsor.sponsorship.form.error.negative-amount = The amount must be positive
+sponsor.sponsorship.form.error.enter-start-date = You must enter first a start date
+sponsor.sponsorship.form.error.bad-amount = The amount of Sponsorship must be equal to the sum of its Invoices

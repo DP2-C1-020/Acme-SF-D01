@@ -1,3 +1,4 @@
+
 # menu-es.i18n
 #
 # Copyright (C) 2012-2024 Rafael Corchuelo.
@@ -84,6 +85,11 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.developer = Desarrollador
 master.menu.developer.my-training-modules = Mis módulos de entrenamiento
 master.menu.developer.dashboard = Panel
+
+# master.menu.sponsor ##########################################################
+
+master.menu.sponsor = Patrocinador
+master.menu.sponsor.list-sponsorships = Mis Patrocinios
 
 # master.menu.user-account ####################################################
 

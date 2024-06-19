@@ -11,12 +11,10 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.URL;
 
@@ -48,17 +46,14 @@ public class Sponsorship extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				moment;
 
-	//TODO startDate must be after the moment
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				startDate;
 
-	//TODO endDate must be after the startDate
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				endDate;
 
-	//TODO Amount must be positive
 	@Valid
 	@NotNull
 	private Money				amount;
@@ -72,16 +67,21 @@ public class Sponsorship extends AbstractEntity {
 	@URL
 	private String				link;
 
+	private boolean				draftMode;
+
 	// Derived attributes -----------------------------------------------
 
 
-	@Positive
 	@NotNull
 	@Transient
-	@Min(30)
-	public Integer getDuration() {
-		//TODO implement in the future (difference between startDate and endDate)
-		return 30;
+	public String getDuration() {
+
+		String dateOfStart;
+		String dateOfEnd;
+
+		dateOfStart = String.valueOf(this.startDate);
+		dateOfEnd = String.valueOf(this.endDate);
+		return dateOfStart + " - " + dateOfEnd;
 	}
 
 	// Relationships ----------------------------------------------------
