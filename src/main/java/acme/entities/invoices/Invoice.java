@@ -69,8 +69,6 @@ public class Invoice extends AbstractEntity {
 	// Derived attributes -----------------------------------------------
 
 
-	@Valid
-	@NotNull
 	@Transient
 	public Money getTotalAmount() {
 

@@ -1,8 +1,6 @@
 
 package acme.features.authenticated.objectives;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +10,6 @@ import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.objectives.Objective;
 import acme.entities.objectives.PriorityType;
-import acme.entities.project.Project;
 
 @Service
 public class AuthenticatedObjectiveShowService extends AbstractService<Authenticated, Objective> {
@@ -46,12 +43,8 @@ public class AuthenticatedObjectiveShowService extends AbstractService<Authentic
 		assert object != null;
 
 		SelectChoices choices;
-		Collection<Project> projects;
 		SelectChoices projectsChoices;
 		Dataset dataset;
-
-		projects = this.repository.findAllProjects();
-		projectsChoices = SelectChoices.from(projects, "title", object.getProject());
 
 		choices = SelectChoices.from(PriorityType.class, object.getPriority());
 
@@ -59,7 +52,6 @@ public class AuthenticatedObjectiveShowService extends AbstractService<Authentic
 		dataset.put("confirmation", false);
 		dataset.put("readonly", true);
 		dataset.put("statuses", choices);
-		dataset.put("projects", projectsChoices);
 
 		super.getResponse().addData(dataset);
 	}

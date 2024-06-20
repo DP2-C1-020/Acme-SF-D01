@@ -80,7 +80,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 		if (!super.getBuffer().getErrors().hasErrors("startDate")) {
 			Date minimumStartDate;
 
-			minimumStartDate = MomentHelper.getCurrentMoment();
+			minimumStartDate = sponsorship.getMoment();
 			super.state(MomentHelper.isAfter(sponsorship.getStartDate(), minimumStartDate), "startDate", "sponsor.sponsorship.form.error.too-close");
 		}
 

@@ -3,7 +3,6 @@ administrator.objective.form.label.instantiationMoment = Momento de Instanciaci�
 administrator.objective.form.label.title = Título:
 administrator.objective.form.label.description = Descripción:
 administrator.objective.form.label.priority = Prioridad:
-administrator.objective.form.label.project: Proyecto:
 administrator.objective.form.label.status = Estado:
 administrator.objective.form.label.startDate = Fecha de Inicio:
 administrator.objective.form.label.endDate = Fecha de Finalización:
