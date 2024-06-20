@@ -1,7 +1,6 @@
 
 package acme.features.administrator.objectives;
 
-import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,7 +57,6 @@ public class AdministratorObjectiveCreateService extends AbstractService<Adminis
 		project = this.repository.findProjectById(projectId);
 
 		super.bind(object, "instantiationMoment", "title", "description", "priority", "status", "startDate", "endDate", "link");
-		object.setProject(project);
 	}
 
 	@Override
@@ -92,19 +90,13 @@ public class AdministratorObjectiveCreateService extends AbstractService<Adminis
 		assert object != null;
 
 		SelectChoices choices;
-		Collection<Project> projects;
-		SelectChoices projectsChoices;
 		Dataset dataset;
-
-		projects = this.repository.findAllProjects();
-		projectsChoices = SelectChoices.from(projects, "title", object.getProject());
 
 		choices = SelectChoices.from(PriorityType.class, object.getPriority());
 
 		dataset = super.unbind(object, "instantiationMoment", "title", "description", "priority", "status", "startDate", "endDate", "link");
 		dataset.put("confirmation", false);
 		dataset.put("statuses", choices);
-		dataset.put("projects", projectsChoices);
 
 		super.getResponse().addData(dataset);
 	}

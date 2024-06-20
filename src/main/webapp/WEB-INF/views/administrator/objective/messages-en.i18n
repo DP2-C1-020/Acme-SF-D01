@@ -3,7 +3,6 @@ administrator.objective.form.label.instantiationMoment = Instantiation Moment:
 administrator.objective.form.label.title = Title:
 administrator.objective.form.label.description = Description:
 administrator.objective.form.label.priority = Priority:
-administrator.objective.form.label.project: Project:
 administrator.objective.form.label.status = Status:
 administrator.objective.form.label.startDate = Start Date:
 administrator.objective.form.label.endDate = End Date:

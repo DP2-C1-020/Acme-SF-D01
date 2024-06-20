@@ -19,14 +19,14 @@ public class SponsorDashboard extends AbstractForm {
 
 	private Integer				totalSponsorshipHasLink;
 
-	private double				avgAmountSponsorship;
-	private double				devAmountSponsorship;
-	private double				minAmountSponsorship;
-	private double				maxAmountSponsorship;
+	private Double				avgAmountSponsorship;
+	private Double				devAmountSponsorship;
+	private Double				minAmountSponsorship;
+	private Double				maxAmountSponsorship;
 
-	private double				avgQuantityInvoice;
-	private double				devQuantityInvoice;
-	private double				minQuantityInvoice;
-	private double				maxQuantityInvoice;
+	private Double				avgQuantityInvoice;
+	private Double				devQuantityInvoice;
+	private Double				minQuantityInvoice;
+	private Double				maxQuantityInvoice;
 
 }

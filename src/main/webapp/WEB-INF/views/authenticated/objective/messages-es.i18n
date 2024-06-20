@@ -3,7 +3,6 @@ authenticated.objective.form.label.instantiationMoment = Momento de Instanciaci�
 authenticated.objective.form.label.title = Título:
 authenticated.objective.form.label.description = Descripción:
 authenticated.objective.form.label.priority = Prioridad:
-authenticated.objective.form.label.project: Proyecto:
 authenticated.objective.form.label.status = Estado:
 authenticated.objective.form.label.startDate = Fecha de Inicio:
 authenticated.objective.form.label.endDate = Fecha de Finalización:

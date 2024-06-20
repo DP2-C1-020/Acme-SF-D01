@@ -18,7 +18,8 @@
 <acme:list>
 	<acme:list-column code="sponsor.sponsorship.list.label.code" path="code" width="25%"/>
 	<acme:list-column code="sponsor.sponsorship.list.label.amount" path="amount" width="25%"/>
-	<acme:list-column code="sponsor.sponsorship.list.label.duration" path="duration" width="50%"/>
+	<acme:list-column code="sponsor.sponsorship.list.label.duration" path="duration" width="25%"/>
+	<acme:list-column code="sponsor.sponsorship.list.label.project" path="project" width="25%"/>
 </acme:list>
 
 <jstl:if test="${_command == 'list'}">

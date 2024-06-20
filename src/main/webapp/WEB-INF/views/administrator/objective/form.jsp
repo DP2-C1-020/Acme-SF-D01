@@ -8,7 +8,6 @@
     <acme:input-textbox code="administrator.objective.form.label.title" path="title"/>  
     <acme:input-textarea code="administrator.objective.form.label.description" path="description"/>  
     <acme:input-select code="administrator.objective.form.label.priority" path="priority" choices="${statuses}"/> 
-    <acme:input-select code="administrator.objective.form.label.project" path="project" choices="${projects}"/>  
     <acme:input-textbox code="administrator.objective.form.label.status" path="status"/>
     <acme:input-textbox code="administrator.objective.form.label.startDate" path="startDate"/>  
     <acme:input-textbox code="administrator.objective.form.label.endDate" path="endDate"/>   

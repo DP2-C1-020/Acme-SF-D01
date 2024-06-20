@@ -1,6 +1,7 @@
 
 package acme.entities.banners;
 
+import java.time.Duration;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -9,7 +10,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -18,6 +18,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
+import acme.client.helpers.MomentHelper;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -68,12 +69,11 @@ public class Banner extends AbstractEntity {
 
 
 	@Transient
-	@NotNull
-	@Min(7)
 	public Integer getDisplayPeriod() {
-		//TODO implement in the future (difference between startDate and endDate)
-		return 7;
 
+		Duration displayPeriod;
+		displayPeriod = MomentHelper.computeDuration(this.startDate, this.endDate);
+		return (int) displayPeriod.toDays();
 	}
 
 }
