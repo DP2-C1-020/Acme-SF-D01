@@ -8,10 +8,13 @@ import org.springframework.stereotype.Service;
 
 import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
+import acme.client.views.SelectChoices;
 import acme.entities.contracts.Contract;
 import acme.entities.project.Project;
 import acme.roles.Client;
+import acme.validators.ValidatorMoney;
 
 @Service
 public class ClientContractPublishService extends AbstractService<Client, Contract> {
@@ -19,7 +22,10 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected ClientContractRepository repository;
+	protected ClientContractRepository	repository;
+
+	@Autowired
+	protected ValidatorMoney			validator;
 
 	// Contructors ------------------------------------------------------------
 
@@ -56,57 +62,49 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 	public void bind(final Contract object) {
 		assert object != null;
 
-		super.bind(object, "code", "instantiationMoment", "providerName", "customerName", "goals", "budget");
+		super.bind(object, "code", "providerName", "customerName", "goals", "budget");
 	}
 
 	@Override
-	public void validate(final Contract contract) {
-		assert contract != null;
-		boolean isValid = true;
+	public void validate(final Contract object) {
+		boolean isCodeValid = false;
 
-		// Validate Project
-		Project project = contract.getProject();
-		if (project == null) {
-			super.state(false, "project", "client.contract.error.project");
-			isValid = false;
+		final Collection<String> allContractCodes = this.repository.findAllContractsCode();
+		final Contract contract = this.repository.findContractById(object.getId());
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			isCodeValid = !contract.getCode().equals(contract.getCode());
+			super.state(!isCodeValid || !allContractCodes.contains(contract.getCode()), "code", "client.contract.error.duplicated");
 		}
 
-		// Validate Budget
-		if (isValid) {
-			double totalBudget = 0.0;
-			Collection<Contract> allContractsByProject = this.repository.findAllContractsWithProject(project.getId());
-
-			for (Contract c : allContractsByProject)
-				if (c.getBudget() != null && c.getBudget().getAmount() != null)
-					totalBudget += c.getBudget().getAmount();
-
-			if (contract.getBudget() != null && contract.getBudget().getAmount() != null)
-				totalBudget += contract.getBudget().getAmount();
-
-			if (contract.getBudget() == null || contract.getBudget().getAmount() == null) {
-				super.state(false, "budget", "client.contract.error.budget");
-				isValid = false;
-			} else {
-				double budgetAmount = contract.getBudget().getAmount();
-				if (budgetAmount < 0.0) {
-					super.state(false, "budget", "client.contract.error.negativeBudget");
-					isValid = false;
-				} else if (budgetAmount == 0.0) {
-					super.state(false, "budget", "client.contract.error.zeroBudget");
-					isValid = false;
-				} else if (totalBudget > project.getCost()) {
-					super.state(false, "budget", "client.contract.error.projectBudgetTotal");
-					isValid = false;
-				}
-			}
+		if (!super.getBuffer().getErrors().hasErrors("budget")) {
+			double amount = contract.getBudget().getAmount();
+			if (amount < 0.0)
+				super.state(false, "budget", "client.contract.error.negativeBudget");
+			if (amount > 1000000.0)
+				super.state(false, "budget", "client.contract.error.excededBudget");
+			super.state(this.validator.moneyValidator(contract.getBudget().getCurrency()), "budget", "client.contract.error.moneyValidator");
+			super.state(this.checkBudgetLessThanProjectCost(object), "budget", "client.contract.error.excededProjectBudget");
 		}
 
-		// Validate Code Uniqueness
-		if (isValid) {
-			Collection<String> allCodes = this.repository.findAllContractsCode();
-			boolean isCodeUnique = !allCodes.contains(contract.getCode());
-			super.state(isCodeUnique, "code", "client.contract.error.codeDuplicate");
+	}
+
+	private boolean checkBudgetLessThanProjectCost(final Contract object) {
+		assert object != null;
+
+		if (object.getProject() != null) {
+			Collection<Contract> allContracts = this.repository.findAllContractsWithProject(object.getProject().getId());
+
+			double budgetTotal = 0.0;
+			for (Contract contract : allContracts)
+				if (!contract.isDraftMode())
+					budgetTotal += contract.getBudget().getAmount();
+
+			double projectCost = object.getProject().getCost();
+			return projectCost >= budgetTotal + object.getBudget().getAmount();
+
 		}
+		return true;
 	}
 
 	@Override
@@ -122,10 +120,17 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 		assert object != null;
 
 		Dataset dataset;
-		Project objectProject = object.getProject();
+		Collection<Project> projects;
+		SelectChoices choices;
 
-		dataset = super.unbind(object, "code", "instantiationMoment", "providerName", "customerName", "goals", "budget", "draftMode");
-		dataset.put("projectCode", objectProject.getCode());
+		projects = this.repository.findAllProjectsWithoutDraftMode();
+		choices = SelectChoices.from(projects, "code", object.getProject());
+
+		dataset = super.unbind(object, "code", "providerName", "customerName", "goals", "budget", "draftMode");
+
+		dataset.put("instantiationMoment", MomentHelper.getCurrentMoment());
+		dataset.put("project", choices.getSelected().getKey());
+		dataset.put("projects", choices);
 
 		super.getResponse().addData(dataset);
 	}

@@ -25,4 +25,7 @@ public interface ClientProgressLogsRepository extends AbstractRepository {
 	@Query("select pl.recordId from ProgressLog pl")
 	Collection<String> findAllProgressLogCodes();
 
+	@Query("select pl.contract from ProgressLog pl where pl.id = :id")
+	Contract findContractByProgressLogId(int id);
+
 }

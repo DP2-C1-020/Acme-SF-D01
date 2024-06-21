@@ -21,6 +21,8 @@ client.contract.form.label.instantiationMoment = Instantiation Moment
 client.contract.form.label.projects = Projects
 client.contract.form.label.projectCode = Project Code
 
+client.contract.form.error.duplicated = Code Duplicate
 client.contract.error.codeDuplicate = Code Duplicate
 client.contract.error.projectBudget = The cost of the contract may not exceed the total cost of the project.
 client.contract.error.budget = Budget cannot be null
+client.contract.error.project = Project cannot be null

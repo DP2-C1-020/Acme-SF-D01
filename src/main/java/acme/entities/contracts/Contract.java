@@ -36,7 +36,7 @@ public class Contract extends AbstractEntity {
 
 	@NotBlank
 	@Column(unique = true)
-	@Pattern(regexp = "^[A-Z]{1,3}[0-9]{3}$")
+	@Pattern(regexp = "^[A-Z]{1,3}-[0-9]{3}$")
 	protected String			code;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -57,7 +57,6 @@ public class Contract extends AbstractEntity {
 	protected String			goals;
 
 	@NotNull
-	@Valid
 	protected Money				budget;
 
 	protected boolean			draftMode;

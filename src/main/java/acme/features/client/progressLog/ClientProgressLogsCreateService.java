@@ -69,7 +69,8 @@ public class ClientProgressLogsCreateService extends AbstractService<Client, Pro
 		id = super.getRequest().getData("contractId", int.class);
 		contract = this.repository.findContractById(id);
 
-		super.bind(object, "recordId", "completeness", "comment", "registrationMoment", "responsiblePerson");
+		super.bind(object, "recordId", "completeness", "comment", "responsiblePerson");
+		object.setRegistrationMoment(MomentHelper.getCurrentMoment());
 		object.setContract(contract);
 	}
 
@@ -101,11 +102,12 @@ public class ClientProgressLogsCreateService extends AbstractService<Client, Pro
 		assert object != null;
 
 		Dataset dataset;
-		Contract objectContract = object.getContract();
 
-		dataset = super.unbind(object, "recordId", "completeness", "comment", "registrationMoment", "responsiblePerson", "draftMode");
-		dataset.put("contractCode", objectContract.getCode());
-		dataset.put("contractId", objectContract.getId());
+		dataset = super.unbind(object, "recordId", "completeness", "comment", "responsiblePerson", "draftMode");
+
+		dataset.put("registrationMoment", MomentHelper.getCurrentMoment());
+		dataset.put("contractCode", object.getContract().getCode());
+		dataset.put("contractId", object.getContract().getId());
 
 		super.getResponse().addData(dataset);
 	}

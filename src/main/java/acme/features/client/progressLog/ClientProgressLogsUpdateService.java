@@ -6,7 +6,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.contracts.Contract;
@@ -27,23 +26,16 @@ public class ClientProgressLogsUpdateService extends AbstractService<Client, Pro
 	@Override
 	public void authorise() {
 		boolean status;
-		ProgressLog progressLog;
-		Contract contract = null;
-		Principal principal;
-		int id;
-		int contractId;
+		int progressLogId;
+		Contract contract;
 
-		id = super.getRequest().getData("id", int.class);
-		progressLog = this.repository.findProgressLogById(id);
-		contractId = progressLog.getContract().getId();
+		progressLogId = super.getRequest().getData("id", int.class);
+		contract = this.repository.findContractByProgressLogId(progressLogId);
+		ProgressLog pl = this.repository.findProgressLogById(progressLogId);
+		status = pl.isDraftMode() && contract != null && !contract.isDraftMode() && super.getRequest().getPrincipal().hasRole(contract.getClient());
 
-		if (progressLog != null)
-			contract = this.repository.findContractById(contractId);
-
-		principal = super.getRequest().getPrincipal();
-
-		status = progressLog != null && contract.getClient().getId() == principal.getActiveRoleId() && progressLog.isDraftMode();
 		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
@@ -61,7 +53,12 @@ public class ClientProgressLogsUpdateService extends AbstractService<Client, Pro
 	public void bind(final ProgressLog object) {
 		assert object != null;
 
+		int progressLogId;
+		progressLogId = super.getRequest().getData("id", int.class);
+		Contract contract = this.repository.findContractByProgressLogId(progressLogId);
+
 		super.bind(object, "recordId", "completeness", "comment", "registrationMoment", "responsiblePerson");
+		object.setContract(contract);
 	}
 
 	@Override
@@ -93,7 +90,8 @@ public class ClientProgressLogsUpdateService extends AbstractService<Client, Pro
 		Dataset dataset;
 		Contract objectContract = object.getContract();
 
-		dataset = super.unbind(object, "recordId", "completeness", "comment", "registrationMoment", "responsiblePerson", "draftMode");
+		dataset = super.unbind(object, "recordId", "completeness", "comment", "responsiblePerson", "draftMode");
+		dataset.put("registrationMoment", object.getRegistrationMoment());
 		dataset.put("contractCode", objectContract.getCode());
 
 		super.getResponse().addData(dataset);
