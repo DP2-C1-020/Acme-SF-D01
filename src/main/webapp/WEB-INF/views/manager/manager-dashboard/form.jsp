@@ -15,18 +15,85 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
-<acme:form>
-	<acme:input-integer code="manager.dashboard.form.label.totalNumberUserStoriesPriorityMust" path="totalNumberUserStoriesPriorityMust" readonly="true"/>
-	<acme:input-integer code="manager.dashboard.form.label.totalNumberUserStoriesPriorityShould" path="totalNumberUserStoriesPriorityShould" readonly="true"/>
-	<acme:input-integer code="manager.dashboard.form.label.totalNumberUserStoriesPriorityCould" path="totalNumberUserStoriesPriorityCould" readonly="true"/>
-	<acme:input-integer code="manager.dashboard.form.label.totalNumberUserStoriesPriorityWont" path="totalNumberUserStoriesPriorityWont" readonly="true"/>
-	
-	<acme:input-double code="manager.dashboard.form.label.avgUserStoryCost" path="avgUserStoryCost" readonly="true" placeholder="--"/>
-	<acme:input-double code="manager.dashboard.form.label.devUserStoryCost" path="devUserStoryCost" readonly="true" placeholder="--"/>
-	<acme:input-integer code="manager.dashboard.form.label.minUserStoryCost" path="minUserStoryCost" readonly="true" placeholder="--"/>
-	<acme:input-integer code="manager.dashboard.form.label.maxUserStoryCost" path="maxUserStoryCost" readonly="true" placeholder="--"/>
-	<acme:input-double code="manager.dashboard.form.label.avgProjectCost" path="avgProjectCost" readonly="true" placeholder="--"/>
-	<acme:input-double code="manager.dashboard.form.label.devProjectCost" path="devProjectCost" readonly="true" placeholder="--"/>
-	<acme:input-integer code="manager.dashboard.form.label.minProjectCost" path="minProjectCost" readonly="true" placeholder="--"/>
-	<acme:input-integer code="manager.dashboard.form.label.maxProjectCost" path="maxProjectCost" readonly="true" placeholder="--"/>
-</acme:form>
+
+
+<h2>
+	<acme:message code="client.dashboard.form.title.general-indicators"/>
+</h2>
+
+<table class="table table-sm">
+	<tr>
+		<th scope="row">
+			<acme:message code="manager.dashboard.form.label.total-must-priority-user-stories"/>
+		</th>
+		<td>
+			<acme:print value="${totalUserStoriesWithPriorityMust}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="manager.dashboard.form.label.total-should-priority-user-stories"/>
+		</th>
+		<td>
+			<acme:print value="${totalUserStoriesWithPriorityShould}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="manager.dashboard.form.label.total-could-priority-user-stories"/>
+		</th>
+		<td>
+			<acme:print value="${totalUserStoriesWithPriorityCould}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="manager.dashboard.form.label.total-wont-priority-user-stories"/>
+		</th>
+		<td>
+			<acme:print value="${totalUserStoriesWithPriorityWont}"/>
+		</td>
+	</tr>
+	</table>
+
+<jstl:forEach var="currency" items="${supportedCurrencies}">
+    <h2>
+        <acme:message code="manager.dashboard.form.label.project-indicators"/>
+        <acme:message code="${currency}"/>
+    </h2>
+
+    <table class="table table-sm">
+        <tr>
+            <th scope="row">
+                <acme:message code="manager.dashboard.form.label.project-average"/>
+            </th>
+            <td>
+                <acme:print value="${averageProjectCostPerCurrency[currency]}"/>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <acme:message code="manager.dashboard.form.label.project-deviation"/>
+            </th>
+            <td>
+                <acme:print value="${deviationProjectCostPerCurrency[currency]}"/>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <acme:message code="manager.dashboard.form.label.project-minimum"/>
+            </th>
+            <td>
+                <acme:print value="${minimumProjectCostPerCurrency[currency]}"/>
+            </td>
+        </tr>   
+        <tr>
+            <th scope="row">
+                <acme:message code="manager.dashboard.form.label.project-maximum"/>
+            </th>
+            <td>
+                <acme:print value="${maximumProjectCostPerCurrency[currency]}"/>
+            </td>
+        </tr>
+    </table>
+</jstl:forEach>
