@@ -92,7 +92,7 @@ public class ClientContractUpdateService extends AbstractService<Client, Contrac
 				} else if (budgetAmount == 0.0) {
 					super.state(false, "budget", "client.contract.error.zeroBudget");
 					isValid = false;
-				} else if (totalBudget > project.getCost()) {
+				} else if (totalBudget > project.getCost().getAmount()) {
 					super.state(false, "budget", "client.contract.error.projectBudgetTotal");
 					isValid = false;
 				}

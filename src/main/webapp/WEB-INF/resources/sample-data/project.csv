@@ -1,17 +1,20 @@
 key,key:manager,code,title,abstracto,fatalErrors,cost,link,draftMode
-project-01,manager-01,"VWX-2340","This title is supossed to contain exactly 75 characters: so we can test it.","Abstracto with 100 characters: so we can test if the restrictions work as intended in edge values123",false,999,"https://example.com/project1",true
-project-02,manager-02,"YZA-5670","This title is supossed to contain exactly 74 characters: so we can test it","Abstracto with 99 characters: so we can test if the restrictions work as intended in edge values12",true,998,null,false
-project-03,manager-01,"BCD-8900","Short Title 10","预计到达时间海象",false,100,null,true
-project-04,manager-02,"EFG-1230","زما ناریل خارش","Another Abstract 11",false,200,"FTP://example.com/project4",false
-project-05,manager-01,"HIJ-4560","Title 5","A",true,0,"https://example.com/project5",false
-project-06,manager-02,"KLM-7890","Title 6","#",false,1,"HTTP://example.com/project6",true
-project-07,manager-01,"NOP-0120","Title 7","ღ•✠ⒽⒾⓉ☹☹☂☂☝☹☹➤❥✯",false,999999,"HTTPS://example.com/project7",false
-project-08,manager-02,"QRS-3450","T","Abstract 8",true,90000000,"FTP://example.com/project8",true
-project-09,manager-01,"TUV-2345","Social Media Strategy","Developing a comprehensive social media strategy to increase brand awareness and engagement.",true,5500,null,true
-project-10,manager-02,"WXY-6789","Product Development","Bringing a new product concept from ideation.",false,11000,"https://example.com/project10",true
-project-11,manager-01,"XYZ-0123","Content Creation","Producing engaging content for various digital.",true,7800,"https://example.com/project11",true
-project-12,manager-02,"ABC-4567","Market Research","Conducting market research to identify consumer",false,6300,null,true
-project-13,manager-01,"DEF-8901","Training Program Development","Designing a training program for.",false,9200,null,true
-project-14,manager-02,"GHI-2345","E-commerce Website Development","C",false,8800,"https://example.com/project14",false
-project-15,manager-01,"JKL-6789","Customer Satisfaction Survey","Gathering feedback from customers to improve products.",false,7200,null,false
-project-16,manager-02,"MNO-0123","Digital Marketing Campaign","Launching a targeted digital marketing campaign.",false,10500,"https://example.com/project16",false
+project-01,manager-01,"VWX-2340","This title is supossed to contain exactly 75 characters: so we can test it.","Abstracto with 100 characters: so we can test if the restrictions work as intended in edge values123",false,EUR 0.01,"https://example.com/project1",true
+project-02,manager-02,"YZA-5670","This title is supossed to contain exactly 74 characters: so we can test it","Abstracto with 99 characters: so we can test if the restrictions work as intended in edge values12",true,EUR 9999999.99,null,false
+project-03,manager-01,"BCD-8900","Short Title 10","预计到达时间海象",false,USD 0.01,null,true
+project-04,manager-02,"EFG-1230","زما ناریل خارش","Another Abstract 11",false,USD 9999999.99,"FTP://example.com/project4",false
+project-05,manager-01,"HIJ-4560","Title 5","A",true,GBP 0.01,"https://example.com/project5",false
+project-06,manager-02,"KLM-7890","Title 6","#",false,GBP 9999999.99,"HTTP://example.com/project6",true
+project-07,manager-01,"NOP-0120","Title 7","ღ•✠ⒽⒾⓉ☹☹☂☂☝☹☹➤❥✯",false,EUR 123456.78,"HTTPS://example.com/project7",false
+project-08,manager-02,"QRS-3450","T","Abstract 8",true,EUR 2345678.90,"FTP://example.com/project8",true
+project-09,manager-01,"TUV-2345","Social Media Strategy","Developing a comprehensive social media strategy to increase brand awareness and engagement.",true,USD 987654.32,null,true
+project-10,manager-02,"WXY-6789","Product Development","Bringing a new product concept from ideation.",false,GBP 8765432.10,"https://example.com/project10",true
+project-11,manager-01,"XYZ-0123","Content Creation","Producing engaging content for various digital.",true,EUR 345678.90,"https://example.com/project11",true
+project-12,manager-02,"ABC-4567","Market Research","Conducting market research to identify consumer",false,USD 456789.01,null,true
+project-13,manager-01,"DEF-8901","Training Program Development","Designing a training program for.",false,GBP 567890.12,null,true
+project-14,manager-02,"GHI-2345","E-commerce Website Development","C",false,EUR 678901.23,"https://example.com/project14",false
+project-15,manager-01,"JKL-6789","Customer Satisfaction Survey","Gathering feedback from customers to improve products.",false,USD 789012.34,null,false
+project-16,manager-02,"MNO-0123","Digital Marketing Campaign","Launching a targeted digital marketing campaign.",false,GBP 890123.45,"https://example.com/project16",false
+project-17,manager-01,"MNA-0123","Digital Marketing Campaign02","Launching a targeted digital marketing campaign02.",false,EUR 823.45,"https://example.com/project17",false
+project-18,manager-01,"MSA-0123","T18","A18",false,EUR 0.01,"https://example.com/project18",false
+project-19,manager-01,"MAA-0123","T19","A19",false,USD 40.01,"https://example.com/project19",false

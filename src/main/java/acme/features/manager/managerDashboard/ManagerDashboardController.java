@@ -13,17 +13,12 @@ import acme.roles.Manager;
 @Controller
 public class ManagerDashboardController extends AbstractController<Manager, ManagerDashboard> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	private ManagerDashboardShowService showService;
-
-	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("show", this.showService);
 	}
-
 }

@@ -8,17 +8,26 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-manager.manager-dashboard.form.title = Manager dashboard
+#titulo grande
 
-manager.dashboard.form.label.totalNumberUserStoriesPriorityMust = "Must" - User story number
-manager.dashboard.form.label.totalNumberUserStoriesPriorityShould = "Should" - User story number
-manager.dashboard.form.label.totalNumberUserStoriesPriorityCould = "Could" - User story number
-manager.dashboard.form.label.totalNumberUserStoriesPriorityWont = "Won't" - User story number
-manager.dashboard.form.label.avgUserStoryCost = Average cost of user stories (estimated)
-manager.dashboard.form.label.devUserStoryCost = Deviation cost of user stories (estimated)
-manager.dashboard.form.label.minUserStoryCost = Minimum cost of user stories (estimated)
-manager.dashboard.form.label.maxUserStoryCost = Maximum cost of user stories (estimated)
-manager.dashboard.form.label.avgProjectCost = Average cost of projects
-manager.dashboard.form.label.devProjectCost = Deviation cost of projects
-manager.dashboard.form.label.minProjectCost = Minimum cost of projects
-manager.dashboard.form.label.maxProjectCost = Maximum cost of projects
+manager.manager-dashboard.form.title = Manager Dashboard
+
+#subtitulo
+
+manager.dashboard.form.title.general-indicators = General indicators for user stories
+manager.dashboard.form.label.project-indicators = General indicators for published projects with currency 
+
+
+
+#valores del form
+
+manager.dashboard.form.label.total-must-priority-user-stories = Number of published user stories with MUST priority
+manager.dashboard.form.label.total-should-priority-user-stories = Number of published user stories with SHOULD priority
+manager.dashboard.form.label.total-could-priority-user-stories = Number of published user stories with COULD priority
+manager.dashboard.form.label.total-wont-priority-user-stories = Number of published user stories with WONT priority
+
+
+manager.dashboard.form.label.project-average = Average cost of projects
+manager.dashboard.form.label.project-deviation = Deviation of projects
+manager.dashboard.form.label.project-minimum = Minimum cost of every project
+manager.dashboard.form.label.project-maximum = Maximum cost of every project
