@@ -8,17 +8,25 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-manager.manager-dashboard.form.title = Tablero del manager
+#titulo grande
 
-manager.dashboard.form.label.totalNumberUserStoriesPriorityMust = Número de historias de usuario "Obligarotias"
-manager.dashboard.form.label.totalNumberUserStoriesPriorityShould = Número de historias de usuario "Debería"
-manager.dashboard.form.label.totalNumberUserStoriesPriorityCould = Número de historias de usuario "Podría"
-manager.dashboard.form.label.totalNumberUserStoriesPriorityWont = Número de historias de usuario "Prohibida"
-manager.dashboard.form.label.avgUserStoryCost = Coste medio de historias de usuario (estimado)
-manager.dashboard.form.label.devUserStoryCost = Coste de desviación mínima de historias de usuario (estimado)
-manager.dashboard.form.label.minUserStoryCost = Coste mínimo de historias de usuario (estimado)
-manager.dashboard.form.label.maxUserStoryCost = Coste máximo de historias de usuario (estimado)
-manager.dashboard.form.label.avgProjectCost = Coste medio de los proyectos
-manager.dashboard.form.label.devProjectCost = Coste de desviación mínima de los proyectos
-manager.dashboard.form.label.minProjectCost =Coste mínimo de los proyectos
-manager.dashboard.form.label.maxProjectCost = Coste máximo de los proyectos
+manager.manager-dashboard.form.title = Manager Dashboard
+
+#subtitulo
+
+manager.dashboard.form.title.general-indicators = Indicadores generales para las historias de ususario
+manager.dashboard.form.label.project-indicators = Indicadores generales para los proyectos publicados con divisa
+
+
+
+#valores del form
+
+manager.dashboard.form.label.total-must-priority-user-stories = Número de historias de usuario publicadas con prioridad MUST
+manager.dashboard.form.label.total-should-priority-user-stories = Número de historias de usuario publicadas con prioridad SHOULD
+manager.dashboard.form.label.total-could-priority-user-stories = Número de historias de usuario publicadas con prioridad COULD
+manager.dashboard.form.label.total-wont-priority-user-stories = Número de historias de usuario publicadas con prioridad WONT
+
+manager.dashboard.form.label.project-average = Coste promedio de los proyectos
+manager.dashboard.form.label.project-deviation = Desviación de los proyectos
+manager.dashboard.form.label.project-minimum = Coste mínimo de cada proyecto
+manager.dashboard.form.label.project-maximum = Coste máximo de cada proyecto

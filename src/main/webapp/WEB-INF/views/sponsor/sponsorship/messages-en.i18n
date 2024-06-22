@@ -10,9 +10,10 @@
 
 sponsor.sponsorship.list.title = Listing of my Sponsorships
 
-sponsor.sponsorship.list.label.duration = Duration 
+sponsor.sponsorship.list.label.duration = Duration (in days)
 sponsor.sponsorship.list.label.amount = Amount 
 sponsor.sponsorship.list.label.code = Code 
+sponsor.sponsorship.list.label.project = Project associated
 
 sponsor.sponsorship.form.title = Sponsorship
 sponsor.sponsorship.form.label.code = Code
@@ -22,8 +23,8 @@ sponsor.sponsorship.form.label.endDate = End date
 sponsor.sponsorship.form.label.moment = Moment of creation
 sponsor.sponsorship.form.label.amount = Amount
 sponsor.sponsorship.form.label.type = Type
-sponsor.sponsorship.form.label.contact = Contact email
-sponsor.sponsorship.form.label.link = Link
+sponsor.sponsorship.form.label.contact = Contact email (optional)
+sponsor.sponsorship.form.label.link = Link (optional)
 sponsor.sponsorship.form.label.project = Sponsored Project
 
 sponsor.sponsorship.form.button.update = Update
@@ -38,5 +39,5 @@ sponsor.sponsorship.form.error.too-close = Start date must be after the moment o
 sponsor.sponsorship.form.error.less-than-month = End date must be at least one month ahead of start date
 sponsor.sponsorship.form.error.too-late = Start date must be before the end date
 sponsor.sponsorship.form.error.negative-amount = The amount must be positive
-sponsor.sponsorship.form.error.enter-start-date = You must enter first a start date
+sponsor.sponsorship.form.error.enter-start-date = You must enter first a start date to validate the end date
 sponsor.sponsorship.form.error.bad-amount = The amount of Sponsorship must be equal to the sum of its Invoices

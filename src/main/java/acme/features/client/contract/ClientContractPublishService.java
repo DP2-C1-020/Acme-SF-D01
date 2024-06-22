@@ -73,8 +73,8 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 		final Contract contract = this.repository.findContractById(object.getId());
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			isCodeValid = !contract.getCode().equals(contract.getCode());
-			super.state(!isCodeValid || !allContractCodes.contains(contract.getCode()), "code", "client.contract.error.duplicated");
+			isCodeValid = !allContractCodes.contains(object.getCode());
+			super.state(isCodeValid || contract.equals(object), "code", "client.contract.error.duplicated");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("budget")) {
@@ -86,7 +86,6 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 			super.state(this.validator.moneyValidator(contract.getBudget().getCurrency()), "budget", "client.contract.error.moneyValidator");
 			super.state(this.checkBudgetLessThanProjectCost(object), "budget", "client.contract.error.excededProjectBudget");
 		}
-
 	}
 
 	private boolean checkBudgetLessThanProjectCost(final Contract object) {
@@ -100,9 +99,8 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 				if (!contract.isDraftMode())
 					budgetTotal += contract.getBudget().getAmount();
 
-			double projectCost = object.getProject().getCost();
+			double projectCost = object.getProject().getCost().getAmount();
 			return projectCost >= budgetTotal + object.getBudget().getAmount();
-
 		}
 		return true;
 	}

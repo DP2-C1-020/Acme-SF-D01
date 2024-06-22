@@ -1,6 +1,7 @@
 
 package acme.entities.sponsorships;
 
+import java.time.Duration;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -20,6 +21,7 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
 import acme.client.data.datatypes.Money;
+import acme.client.helpers.MomentHelper;
 import acme.entities.project.Project;
 import acme.roles.Sponsor;
 import lombok.Getter;
@@ -72,16 +74,12 @@ public class Sponsorship extends AbstractEntity {
 	// Derived attributes -----------------------------------------------
 
 
-	@NotNull
 	@Transient
-	public String getDuration() {
+	public Integer getDuration() {
 
-		String dateOfStart;
-		String dateOfEnd;
-
-		dateOfStart = String.valueOf(this.startDate);
-		dateOfEnd = String.valueOf(this.endDate);
-		return dateOfStart + " - " + dateOfEnd;
+		Duration duration;
+		duration = MomentHelper.computeDuration(this.startDate, this.endDate);
+		return (int) duration.toDays();
 	}
 
 	// Relationships ----------------------------------------------------

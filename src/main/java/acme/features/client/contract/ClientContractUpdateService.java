@@ -90,6 +90,7 @@ public class ClientContractUpdateService extends AbstractService<Client, Contrac
 				super.state(false, "budget", "client.contract.error.excededBudget");
 			super.state(this.validator.moneyValidator(contract.getBudget().getCurrency()), "budget", "client.contract.error.moneyValidator");
 			super.state(this.checkBudgetLessThanProjectCost(object), "budget", "client.contract.error.excededProjectBudget");
+
 		}
 
 	}
@@ -105,7 +106,7 @@ public class ClientContractUpdateService extends AbstractService<Client, Contrac
 				if (!contract.isDraftMode())
 					budgetTotal += contract.getBudget().getAmount();
 
-			double projectCost = object.getProject().getCost();
+			double projectCost = object.getProject().getCost().getAmount();
 			return projectCost >= budgetTotal + object.getBudget().getAmount();
 
 		}

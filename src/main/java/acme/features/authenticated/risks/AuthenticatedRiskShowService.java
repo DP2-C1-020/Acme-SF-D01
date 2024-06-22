@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import acme.client.data.accounts.Authenticated;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
-import acme.entities.project.Project;
 import acme.entities.risks.Risk;
 
 @Service
@@ -42,10 +41,8 @@ public class AuthenticatedRiskShowService extends AbstractService<Authenticated,
 		assert object != null;
 
 		Dataset dataset;
-		Project objectProject = object.getProject();
 
 		dataset = super.unbind(object, "reference", "identificationDate", "impact", "probability", "description", "link");
-		dataset.put("projectCode", objectProject.getCode());
 
 		super.getResponse().addData(dataset);
 	}

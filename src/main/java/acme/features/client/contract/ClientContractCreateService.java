@@ -82,7 +82,6 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 				super.state(false, "budget", "client.contract.error.excededBudget");
 			super.state(this.validator.moneyValidator(contract.getBudget().getCurrency()), "budget", "client.contract.error.moneyValidator");
 		}
-
 	}
 
 	@Override

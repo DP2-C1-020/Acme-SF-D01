@@ -80,7 +80,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		if (!super.getBuffer().getErrors().hasErrors("startDate")) {
 			Date minimumStartDate;
 
-			minimumStartDate = MomentHelper.getCurrentMoment();
+			minimumStartDate = sponsorship.getMoment();
 			super.state(MomentHelper.isAfter(sponsorship.getStartDate(), minimumStartDate), "startDate", "sponsor.sponsorship.form.error.too-close");
 		}
 
@@ -95,12 +95,13 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			}
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("amount"))
-			super.state(sponsorship.getAmount().getAmount() > 0, "amount", "sponsor.sponsorship.form.error.negative-amount");
-		{
-			Double sumTotalAmount;
+		if (!super.getBuffer().getErrors().hasErrors("amount")) {
 
-			sumTotalAmount = this.repository.computeTotalAmountBySponsorshipId(sponsorship.getId());
+			Double tempAmount = this.repository.computeTotalAmountBySponsorshipId(sponsorship.getId());
+			Double sumTotalAmount = tempAmount != null ? tempAmount : 0.0;
+
+			super.state(sponsorship.getAmount().getAmount() > 0, "amount", "sponsor.sponsorship.form.error.negative-amount");
+
 			super.state(sumTotalAmount.equals(sponsorship.getAmount().getAmount()), "*", "sponsor.sponsorship.form.error.bad-amount");
 		}
 	}
