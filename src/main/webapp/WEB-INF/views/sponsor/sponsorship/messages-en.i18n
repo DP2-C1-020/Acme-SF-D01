@@ -34,7 +34,7 @@ sponsor.sponsorship.form.button.create = Create
 sponsor.sponsorship.list.button.create = Create
 sponsor.sponsorship.form.button.invoices = Invoices
 
-sponsor.sponsorship.form.error.duplicated = This code is taken
+sponsor.sponsorship.form.error.duplicated = This code is taken by another Sponsorship
 sponsor.sponsorship.form.error.too-close = Start date must be after the moment of creation
 sponsor.sponsorship.form.error.less-than-month = End date must be at least one month ahead of start date
 sponsor.sponsorship.form.error.too-late = Start date must be before the end date
