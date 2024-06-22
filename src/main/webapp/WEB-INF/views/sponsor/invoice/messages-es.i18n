@@ -1,0 +1,34 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+sponsor.invoice.list.title = Lista de mis Recibos
+
+sponsor.invoice.list.label.dueDate = Fecha límite
+sponsor.invoice.list.label.totalAmount = Cantidad total (impuesto aplicado) 
+sponsor.invoice.list.label.code = Código
+
+sponsor.invoice.form.title = Recibo
+sponsor.invoice.form.label.code = Código
+sponsor.invoice.form.placeholder.code = IN-[0-9]{4}-[0-9]{4}
+sponsor.invoice.form.label.registrationTime = Momento de registro
+sponsor.invoice.form.label.dueDate = Fecha límite
+sponsor.invoice.form.label.quantity = Cantidad
+sponsor.invoice.form.label.tax = Impuesto
+sponsor.invoice.form.label.link = Link (opcional)
+
+sponsor.invoice.form.button.update = Actualizar
+sponsor.invoice.form.button.delete = Borrar
+sponsor.invoice.form.button.publish = Publicar
+sponsor.invoice.form.button.create = Crear
+sponsor.invoice.list.button.create = Crear
+
+sponsor.invoice.form.error.duplicated = Ya existe un Recibo con el mismo código
+sponsor.invoice.form.error.less-than-month = La fecha de vencimiento debe ser, al menos, un mes posterior a la de registro
+sponsor.invoice.form.error.negative-quantity = La cantidad de dinero debe ser positiva

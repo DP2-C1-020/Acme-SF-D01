@@ -114,7 +114,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 		Collection<Project> projects;
 		SelectChoices typeChoices;
 		SelectChoices projectChoices;
-
+	
 		typeChoices = SelectChoices.from(SponsorshipType.class, sponsorship.getType());
 		projects = this.repository.findAvailableProjects();
 		projectChoices = SelectChoices.from(projects, "code", sponsorship.getProject());
