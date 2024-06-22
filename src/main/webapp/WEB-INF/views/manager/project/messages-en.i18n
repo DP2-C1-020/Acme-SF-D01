@@ -27,6 +27,7 @@ manager.project.form.button.delete = Delete
 manager.project.form.button.publish = Publish
 manager.project.form.button.create = Create
 
+
 manager.project.form.error.duplicated = This code is taken
 manager.project.form.error.negative-cost = The cost must be positive or zero
 manager.project.form.error.existing-fatal-errors = A project containing fatal errors can't be published.

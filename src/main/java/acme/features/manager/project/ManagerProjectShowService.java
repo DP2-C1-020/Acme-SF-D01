@@ -30,12 +30,10 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 		masterId = super.getRequest().getData("id", int.class);
 		project = this.repository.findOneProjectById(masterId);
 		manager = project == null ? null : project.getManager();
-		status = super.getRequest().getPrincipal().hasRole(manager) || project != null && !project.isDraftMode();
+		status = project != null && super.getRequest().getPrincipal().hasRole(manager);
 
-		super.getResponse().setAuthorised(true);
-
+		super.getResponse().setAuthorised(status);
 	}
-
 	@Override
 	public void load() {
 		Project object;
