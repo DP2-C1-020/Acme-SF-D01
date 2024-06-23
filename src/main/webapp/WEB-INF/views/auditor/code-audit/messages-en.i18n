@@ -25,3 +25,5 @@ auditor.codeaudit.error.codeDuplicate = Code Duplicate
 
 validation.codeaudit.mode.empty = This code audit does not have any audit records
 validation.codeaudit.mode-less-than-c = The mark must be at least C to be published
+validation.codeaudit.form.notAllAuditRecordArePublished = Not all Audit Records are published
+validation.codeaudit.error.publish = You cannot delete a published Code Audit

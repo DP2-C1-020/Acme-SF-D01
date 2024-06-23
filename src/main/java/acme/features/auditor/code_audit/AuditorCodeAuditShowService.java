@@ -32,13 +32,15 @@ public class AuditorCodeAuditShowService extends AbstractService<Auditor, CodeAu
 		boolean status;
 		CodeAudit object;
 		Principal principal;
+		Auditor auditor;
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findOneCodeAuditById(id);
 		principal = super.getRequest().getPrincipal();
+		auditor = object == null ? null : object.getAuditor();
 
-		status = object != null && object.getAuditor().getId() == principal.getActiveRoleId();
+		status = object != null && principal.hasRole(auditor);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -62,7 +64,11 @@ public class AuditorCodeAuditShowService extends AbstractService<Auditor, CodeAu
 
 		SelectChoices choicesType;
 		choicesType = SelectChoices.from(CodeAuditType.class, object.getType());
-		Project objectProject = object.getProject();
+
+		Collection<Project> allProjects;
+		SelectChoices projects;
+		allProjects = this.repository.findAllProjectsWithoutDraftMode();
+		projects = SelectChoices.from(allProjects, "code", object.getProject());
 
 		String modeMark;
 		Collection<Mark> marks = this.repository.findMarksByCodeAuditId(object.getId());
@@ -70,7 +76,8 @@ public class AuditorCodeAuditShowService extends AbstractService<Auditor, CodeAu
 
 		dataset = super.unbind(object, "code", "execution", "type", "correctiveActions", "link", "draftMode");
 		dataset.put("modeMark", modeMark);
-		dataset.put("project", objectProject.getTitle());
+		dataset.put("project", projects.getSelected().getKey());
+		dataset.put("projects", projects);
 		dataset.put("types", choicesType);
 
 		super.getResponse().addData(dataset);

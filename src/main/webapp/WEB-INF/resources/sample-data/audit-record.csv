@@ -8,7 +8,7 @@ audit-record-06,code-audit-02,AU-2345-006,2000/01/01 00:01,2000/01/01 01:02,F,ht
 audit-record-07,code-audit-03,AU-6789-007,2000/01/01 00:01,2000/01/01 01:01,B,ftp://www.lorem-ipsum.org,false
 audit-record-08,code-audit-04,AU-0123-008,2021/10/20 14:30,2021/10/20 15:45,C,http://www.lorem-ipsum.org/dolor/sit.html,true
 audit-record-09,code-audit-01,AU-4567-009,2000/01/01 00:00,2000/01/01 01:00,B,http://www.lorem-ipsum.org/dolor/sit.html#dolor,false
-audit-record-10,code-audit-10,AU-8901-010,2000/01/01 00:01,2021/07/31 08:45,F,http://example.org?a=1&b=2,true
+audit-record-10,code-audit-10,AU-8901-010,2000/01/01 00:01,2021/07/31 08:45,F,http://example.org?a=1&b=2,false
 audit-record-11,code-audit-03,AU-2345-011,2000/01/01 00:01,2000/01/01 01:01,F,http://example.org?,false
 audit-record-12,code-audit-04,AU-6789-012,2021/11/09 11:30,2021/11/09 12:45,C,http://example.org?a,true
 audit-record-13,code-audit-01,AU-0123-013,2000/01/01 00:00,2000/01/01 01:01,A_PLUS,http://example.org?a&b,false

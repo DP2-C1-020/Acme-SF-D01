@@ -24,3 +24,5 @@ auditor.codeaudit.form.label.projects = Proyecto
 auditor.codeaudit.error.codeDuplicate = Código duplicado
 validation.codeaudit.mode.empty = Esta auditoría de código no tiene registros de auditoría
 validation.codeaudit.mode-less-than-c = La nota debe ser como mínimo C para ser publicada
+validation.codeaudit.form.notAllAuditRecordArePublished = No todos los registros de auditoría se han publicado
+validation.codeaudit.error.publish = No puedes eliminar una Auditoría de Código ya publicada

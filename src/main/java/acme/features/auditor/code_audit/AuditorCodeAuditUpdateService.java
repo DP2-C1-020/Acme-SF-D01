@@ -1,15 +1,20 @@
 
 package acme.features.auditor.code_audit;
 
+import java.util.Collection;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.audits.CodeAudit;
 import acme.entities.audits.CodeAuditType;
+import acme.entities.audits.Mark;
 import acme.entities.project.Project;
 import acme.roles.Auditor;
 
@@ -27,15 +32,18 @@ public class AuditorCodeAuditUpdateService extends AbstractService<Auditor, Code
 	@Override
 	public void authorise() {
 		boolean status;
+
 		CodeAudit object;
 		Principal principal;
+		Auditor auditor;
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findOneCodeAuditById(id);
 		principal = super.getRequest().getPrincipal();
 
-		status = object != null && object.getAuditor().getId() == principal.getActiveRoleId();
+		auditor = object.getAuditor();
+		status = object != null && object.isDraftMode() && principal.hasRole(auditor);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -54,12 +62,25 @@ public class AuditorCodeAuditUpdateService extends AbstractService<Auditor, Code
 	public void bind(final CodeAudit object) {
 		assert object != null;
 
-		super.bind(object, "code", "execution", "type", "correctiveActions", "link");
+		//		int projectId;
+		//		Project project;
+		//
+		//		projectId = super.getRequest().getData("project", int.class);
+		//		project = this.repository.findProjectById(projectId);
+		//
+		//		object.setProject(project);
+		super.bind(object, "code", "execution", "type", "correctiveActions", "link", "project");
 	}
 
 	@Override
 	public void validate(final CodeAudit object) {
 		assert object != null;
+
+		Date minimumDate = MomentHelper.parse("2000/01/01 00:00", "yyyy/MM/dd HH:mm");
+
+		if (object.getExecution() != null && !super.getBuffer().getErrors().hasErrors("execution"))
+			super.state(MomentHelper.isAfterOrEqual(object.getExecution(), minimumDate), "execution", "validation.auditrecord.moment.minimum-date");
+
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			CodeAudit exists;
 			exists = this.repository.findOneCodeAuditByCode(object.getCode());
@@ -81,13 +102,22 @@ public class AuditorCodeAuditUpdateService extends AbstractService<Auditor, Code
 		assert object != null;
 
 		Dataset dataset;
-		Project objectProject = object.getProject();
 
 		SelectChoices choicesType;
 		choicesType = SelectChoices.from(CodeAuditType.class, object.getType());
 
+		SelectChoices projects;
+		Collection<Project> allProjects = this.repository.findAllProjectsWithoutDraftMode();
+		projects = SelectChoices.from(allProjects, "code", object.getProject());
+
+		String modeMark;
+		Collection<Mark> marks = this.repository.findMarksByCodeAuditId(object.getId());
+		modeMark = MarkMode.findMode(marks);
+
 		dataset = super.unbind(object, "code", "execution", "type", "correctiveActions", "link", "draftMode");
-		dataset.put("project", objectProject.getTitle());
+		dataset.put("modeMark", modeMark);
+		dataset.put("project", projects.getSelected().getKey());
+		dataset.put("projects", projects);
 		dataset.put("types", choicesType);
 
 		super.getResponse().addData(dataset);

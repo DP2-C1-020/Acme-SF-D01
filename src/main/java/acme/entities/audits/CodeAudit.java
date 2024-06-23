@@ -60,10 +60,6 @@ public class CodeAudit extends AbstractEntity {
 
 	private boolean				draftMode;
 
-	// Derived attributes -----------------------------------------------------
-
-	//TODO: Computed mark
-
 	// Relationships ----------------------------------------------------------
 
 	@NotNull
