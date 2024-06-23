@@ -78,10 +78,10 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("budget")) {
-			super.state(contract.getBudget().getAmount() >= 0.0, "budget", "client.contract.error.negativeBudget");
-			super.state(contract.getBudget().getAmount() <= 1000000.0, "budget", "client.contract.error.excededBudget");
+			super.state(object.getBudget().getAmount() >= 0, "budget", "client.contract.error.negativeBudget");
+			super.state(object.getBudget().getAmount() <= 1000000, "budget", "client.contract.error.excededBudget");
 			super.state(this.checkBudgetLessThanProjectCost(object), "budget", "client.contract.error.excededProjectBudget", object.getProject().getCost());
-			super.state(this.validator.moneyValidator(contract.getBudget().getCurrency()), "budget", "client.contract.error.moneyValidator");
+			super.state(this.validator.moneyValidator(object.getBudget().getCurrency()), "budget", "client.contract.error.moneyValidator");
 		}
 	}
 
