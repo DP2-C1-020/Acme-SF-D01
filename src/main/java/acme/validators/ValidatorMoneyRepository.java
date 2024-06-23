@@ -9,7 +9,7 @@ import acme.client.repositories.AbstractRepository;
 @Repository
 public interface ValidatorMoneyRepository extends AbstractRepository {
 
-	@Query("select c.acceptedCurrencies from Configuration c")
+	@Query("select c.acceptedCurrencies from SystemConfiguration c")
 	String findAcceptedCurrencies();
 
 }

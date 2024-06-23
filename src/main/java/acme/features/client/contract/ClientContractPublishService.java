@@ -74,17 +74,14 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			isCodeValid = !allContractCodes.contains(object.getCode());
-			super.state(isCodeValid || contract.equals(object), "code", "client.contract.error.duplicated");
+			super.state(!isCodeValid || contract.equals(object), "code", "client.contract.error.duplicated");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("budget")) {
-			double amount = contract.getBudget().getAmount();
-			if (amount < 0.0)
-				super.state(false, "budget", "client.contract.error.negativeBudget");
-			if (amount > 1000000.0)
-				super.state(false, "budget", "client.contract.error.excededBudget");
+			super.state(contract.getBudget().getAmount() >= 0.0, "budget", "client.contract.error.negativeBudget");
+			super.state(contract.getBudget().getAmount() <= 1000000.0, "budget", "client.contract.error.excededBudget");
+			super.state(this.checkBudgetLessThanProjectCost(object), "budget", "client.contract.error.excededProjectBudget", object.getProject().getCost());
 			super.state(this.validator.moneyValidator(contract.getBudget().getCurrency()), "budget", "client.contract.error.moneyValidator");
-			super.state(this.checkBudgetLessThanProjectCost(object), "budget", "client.contract.error.excededProjectBudget");
 		}
 	}
 
@@ -129,6 +126,7 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 		dataset.put("instantiationMoment", MomentHelper.getCurrentMoment());
 		dataset.put("project", choices.getSelected().getKey());
 		dataset.put("projects", choices);
+		dataset.put("projectCode", object.getProject().getCode());
 
 		super.getResponse().addData(dataset);
 	}

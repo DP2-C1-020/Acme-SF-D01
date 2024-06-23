@@ -5,12 +5,15 @@ client.contract.list.label.draftMode = Modo borrador
 client.contract.list.title = Lista de mis contratos
 client.contract.form.title = Detalles
 
-client.contract.list.button.create = Nuevo Contrato
+#botones
+
+client.contract.list.button.create = Crear Contrato
 client.contract.form.button.create = Crear Contrato
 client.contract.form.button.update = Actualizar
 client.contract.form.button.delete = Eliminar
 client.contract.form.button.publish = Publicar
 
+#detalles
 
 client.contract.form.label.code = Código
 client.contract.form.label.providerName = Nombre del Proveedor
@@ -21,8 +24,15 @@ client.contract.form.label.instantiationMoment = Momento de instanciación
 client.contract.form.label.projects = Proyectos
 client.contract.form.label.projectCode = Código del proyecto
 
+#errores
+
 client.contract.form.error.duplicated = Código duplicado
 client.contract.error.codeDuplicate = Código duplicado
-client.contract.error.projectBudget = El coste del contrato no podrá superar el coste total del proyecto
+
+client.contract.error.excededProjectBudget = El coste del contrato no podrá superar el coste total del proyecto
 client.contract.error.budget = El presupuesto no puede ser nulo
+client.contract.error.negativeBudget = El presupuesto debe ser mayor que 0.0
+client.contract.error.excededBudget = El presupuesto debe ser menor que 1000000.0
+client.contract.error.moneyValidator = La moneda introducida no es válida. Monedas soportadas: EUR, GBP, USD
+
 client.contract.error.project = El proyecto no puede ser nulo

@@ -17,10 +17,13 @@ public class ValidatorMoney {
 	public Boolean moneyValidator(final String currency) {
 		String acceptedCurrencies = this.repository.findAcceptedCurrencies();
 
-		if (acceptedCurrencies == null || acceptedCurrencies.trim().isEmpty())
-			throw new IllegalArgumentException("Accepted currencies are not configured properly.");
-
 		List<String> listAcceptedCurrencies = Arrays.asList(acceptedCurrencies.split(",\\s*"));
-		return listAcceptedCurrencies.stream().anyMatch(currency::equalsIgnoreCase);
+
+		for (String acceptedCurrency : listAcceptedCurrencies)
+			if (acceptedCurrency.equalsIgnoreCase(currency))
+				return true;
+
+		return false;
 	}
+
 }
