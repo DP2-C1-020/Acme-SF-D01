@@ -2,6 +2,8 @@
 package acme.features.manager.project;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Service;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.project.Project;
+import acme.entities.sys_config.SystemConfiguration;
 import acme.entities.userstory.UserStory;
 import acme.roles.Manager;
 
@@ -60,6 +63,13 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	public void validate(final Project object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Project existing;
+
+			existing = this.repository.findOneProjectByCode(object.getCode());
+			super.state(existing == null || existing.equals(object), "code", "manager.project.form.error.duplicated");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("fatalErrors"))
 			super.state(!object.getFatalErrors(), "fatalErrors", "manager.project.form.error.existing-fatal-errors");
 
@@ -70,6 +80,13 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 			super.state(!userStories.isEmpty(), "*", "manager.project.form.error.not-enough-user-stories");
 
 			super.state(userStories.stream().allMatch(UserStory::isPublished), "*", "manager.project.form.error.not-all-user-stories-published");
+		}
+		if (!super.getBuffer().getErrors().hasErrors("cost")) {
+			super.state(object.getCost().getAmount() > 0, "cost", "manager.project.form.error.negative-cost");
+
+			List<SystemConfiguration> sc = this.repository.findSystemConfiguration();
+			final boolean foundCurrency = Stream.of(sc.get(0).acceptedCurrencies.split(",")).anyMatch(c -> c.equals(object.getCost().getCurrency()));
+			super.state(foundCurrency, "cost", "manager.project.form.error.currency-not-supported");
 		}
 	}
 

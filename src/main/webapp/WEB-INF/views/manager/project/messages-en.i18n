@@ -38,6 +38,7 @@ manager.project.form.error.children-audits = The project cannot be deleted becau
 manager.project.form.error.children-contracts = The project cannot be deleted because it has Contracts that depend on it
 manager.project.form.error.children-sponsorships = The project cannot be deleted because it has Sponsorhips that depend on it
 manager.project.form.error.children-training-modules = The project cannot be deleted because it has Training modules that depend on it
+manager.project.form.error.currency-not-supported= The currency is not supported
 
 manager.project.list.label.code = Code
 manager.project.list.label.title = Title

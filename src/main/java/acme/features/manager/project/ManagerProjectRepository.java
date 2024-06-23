@@ -2,6 +2,7 @@
 package acme.features.manager.project;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -12,6 +13,7 @@ import acme.entities.contracts.Contract;
 import acme.entities.project.Project;
 import acme.entities.project.ProjectUserStory;
 import acme.entities.sponsorships.Sponsorship;
+import acme.entities.sys_config.SystemConfiguration;
 import acme.entities.training_module.TrainingModule;
 import acme.entities.userstory.UserStory;
 import acme.roles.Manager;
@@ -48,4 +50,7 @@ public interface ManagerProjectRepository extends AbstractRepository {
 
 	@Query("select p_us from ProjectUserStory p_us where p_us.project.id = :projectId")
 	Collection<ProjectUserStory> findManyProjectUserStoryTablesByProjectId(int projectId);
+
+	@Query("select sc from SystemConfiguration sc")
+	List<SystemConfiguration> findSystemConfiguration();
 }
