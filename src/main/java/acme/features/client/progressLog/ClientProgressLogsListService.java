@@ -36,7 +36,7 @@ public class ClientProgressLogsListService extends AbstractService<Client, Progr
 		object = this.repository.findContractById(contractId);
 		principal = super.getRequest().getPrincipal();
 
-		status = object.getClient().getId() == principal.getActiveRoleId() && object.isDraftMode() == false;
+		status = object.getClient().getId() == principal.getActiveRoleId() && !object.isDraftMode();
 		super.getResponse().setAuthorised(status);
 	}
 

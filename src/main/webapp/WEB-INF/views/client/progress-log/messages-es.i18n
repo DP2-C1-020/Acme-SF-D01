@@ -18,5 +18,8 @@ client.progressLog.form.button.delete = Eliminar
 client.progressLog.form.button.publish = Publicar
 client.progressLog.form.button.progressLog = Registros de Progreso
 
+client.progressLog.error.completenessNotIncremental = El porcentaje de completitud debe ser incremental para el siguiente registro
+client.progressLog.error.recordIdDuplicate = Record Id duplicado
+
 validation.ProgressLogRecord = El código debe seguir el formato "PG-" seguido de una letra mayúscula una o dos veces, seguido de un guion y luego cuatro dígitos numéricos.
 validation.ProgressCompleteness = El porcentaje debe ser un número del 0 al 100 y permitir solo dos decimales

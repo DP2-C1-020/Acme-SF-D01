@@ -18,8 +18,10 @@ client.progressLog.form.label.contractCode = Contract Code
 client.progressLog.form.button.update = Update
 client.progressLog.form.button.delete = Delete
 client.progressLog.form.button.publish = Publish
-
 client.progressLog.form.button.progressLog = Progress Logs
+
+client.progressLog.error.completenessNotIncremental = The percentage of completeness must be incremental for the following record
+client.progressLog.error.recordIdDuplicate = Duplicate Record Id
 
 validation.ProgressLogRecord = The code must follow the format "PG-" followed by a capital letter once or twice, followed by a hyphen and then four numeric digits
 validation.ProgressCompleteness = The percentage must be a number from 0 to 100 and allow only two decimal places
