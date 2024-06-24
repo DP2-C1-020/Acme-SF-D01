@@ -37,6 +37,7 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 		boolean status = principal.hasRole(Client.class);
 		super.getResponse().setAuthorised(status);
 	}
+
 	@Override
 	public void load() {
 		Contract object;

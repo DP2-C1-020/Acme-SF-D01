@@ -64,14 +64,13 @@ public class ClientContractUpdateService extends AbstractService<Client, Contrac
 
 	@Override
 	public void validate(final Contract object) {
-		boolean isCodeValid = false;
-
+		assert object != null;
 		final Collection<String> allContractCodes = this.repository.findAllContractsCode();
 		final Contract contract = this.repository.findContractById(object.getId());
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			isCodeValid = !allContractCodes.contains(object.getCode());
-			super.state(!isCodeValid || contract.equals(object), "code", "client.contract.error.duplicated");
+			boolean isCodeValid = !allContractCodes.contains(object.getCode()) || contract.getCode().equals(object.getCode());
+			super.state(isCodeValid, "code", "client.contract.error.codeDuplicate");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("budget")) {

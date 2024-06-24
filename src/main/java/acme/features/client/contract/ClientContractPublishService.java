@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.contracts.Contract;
@@ -39,10 +38,9 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 
 		contractId = super.getRequest().getData("id", int.class);
 		object = this.repository.findContractById(contractId);
-
 		principal = super.getRequest().getPrincipal();
 
-		status = object != null && object.getClient().getId() == principal.getActiveRoleId() && object.isDraftMode();
+		status = object != null && object.getClient().getId() == principal.getActiveRoleId();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -62,19 +60,18 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 	public void bind(final Contract object) {
 		assert object != null;
 
-		super.bind(object, "code", "providerName", "customerName", "goals", "budget");
+		super.bind(object, "code", "instantiationMoment", "providerName", "customerName", "goals", "budget");
 	}
 
 	@Override
 	public void validate(final Contract object) {
-		boolean isCodeValid = false;
-
+		assert object != null;
 		final Collection<String> allContractCodes = this.repository.findAllContractsCode();
 		final Contract contract = this.repository.findContractById(object.getId());
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			isCodeValid = !allContractCodes.contains(object.getCode());
-			super.state(!isCodeValid || contract.equals(object), "code", "client.contract.error.duplicated");
+			boolean isCodeValid = !allContractCodes.contains(object.getCode()) || contract.getCode().equals(object.getCode());
+			super.state(isCodeValid, "code", "client.contract.error.codeDuplicate");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("budget")) {
@@ -114,19 +111,18 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 	public void unbind(final Contract object) {
 		assert object != null;
 
-		Dataset dataset;
 		Collection<Project> projects;
 		SelectChoices choices;
 
 		projects = this.repository.findAllProjectsWithoutDraftMode();
 		choices = SelectChoices.from(projects, "code", object.getProject());
 
-		dataset = super.unbind(object, "code", "providerName", "customerName", "goals", "budget", "draftMode");
+		Dataset dataset;
 
-		dataset.put("instantiationMoment", MomentHelper.getCurrentMoment());
+		dataset = super.unbind(object, "code", "providerName", "customerName", "goals", "budget");
+		dataset.put("instantiationMoment", object.getInstantiationMoment());
 		dataset.put("project", choices.getSelected().getKey());
 		dataset.put("projects", choices);
-		dataset.put("projectCode", object.getProject().getCode());
 
 		super.getResponse().addData(dataset);
 	}
