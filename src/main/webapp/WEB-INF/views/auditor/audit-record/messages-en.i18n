@@ -23,3 +23,5 @@ validation.auditrecord.initial-after-final = Initial moment must be before the f
 validation.auditrecord.moment.minimum-one-hour = Final moment must be at least one hour after the initial moment
 validation.auditrecord.moment.minimum-date = The minimum date is 2000/01/01 00:00
 validation.auditrecord.error.code.duplicated = Duplicated code
+validation.auditrecord.initialMoment.invalid-format = Incorrect format. The correct format is dd/MM/yyyy HH:mm
+validation.auditrecord.finalMoment.invalid-format = Incorrect format. The correct format is dd/MM/yyyy HH:mm

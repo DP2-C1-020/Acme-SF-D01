@@ -43,15 +43,15 @@ public class AuditorCodeAuditCreateService extends AbstractService<Auditor, Code
 	@Override
 	public void load() {
 		CodeAudit object;
-		//		Date moment;
+		Date moment;
 		Auditor auditor;
 
 		object = new CodeAudit();
 		auditor = this.repository.findAuditorById(super.getRequest().getPrincipal().getActiveRoleId());
 
 		object.setAuditor(auditor);
-		//		moment = MomentHelper.getCurrentMoment();
-		//		object.setExecution(moment);
+		moment = MomentHelper.getCurrentMoment();
+		object.setExecution(moment);
 
 		super.getBuffer().addData(object);
 
@@ -68,11 +68,6 @@ public class AuditorCodeAuditCreateService extends AbstractService<Auditor, Code
 	public void validate(final CodeAudit object) {
 		final Collection<String> allCodes = this.repository.findAllCodeAuditsCode();
 
-		Date minimumDate = MomentHelper.parse("2000/01/01 00:00", "yyyy/MM/dd HH:mm");
-
-		if (object.getExecution() != null && !super.getBuffer().getErrors().hasErrors("execution"))
-			super.state(MomentHelper.isAfterOrEqual(object.getExecution(), minimumDate), "execution", "validation.auditrecord.moment.minimum-date");
-
 		if (!super.getBuffer().getErrors().hasErrors("code"))
 			super.state(!allCodes.contains(object.getCode()), "code", "auditor.codeaudit.error.codeDuplicate");
 
@@ -81,11 +76,11 @@ public class AuditorCodeAuditCreateService extends AbstractService<Auditor, Code
 	@Override
 	public void perform(final CodeAudit object) {
 		assert object != null;
-		//		Date moment;
-		//
-		//		moment = MomentHelper.getCurrentMoment();
-		//		object.setExecution(moment);
-		//		object.setDraftMode(true);
+		Date moment;
+
+		moment = MomentHelper.getCurrentMoment();
+		object.setExecution(moment);
+		object.setDraftMode(true);
 
 		this.repository.save(object);
 	}

@@ -6,8 +6,8 @@
 <acme:form>
 	<acme:input-textbox code="auditor.auditrecord.form.label.codeAuditCode" path="codeAuditCode" readonly="true"/>
 	<acme:input-textbox code="auditor.auditrecord.form.label.code" path="code"/>
-	<acme:input-textbox code="auditor.auditrecord.form.label.initialMoment" path="initialMoment" placeholder="yyyy/MM/dd HH:mm"/>
-	<acme:input-textbox code="auditor.auditrecord.form.label.finalMoment" path="finalMoment" placeholder="yyyy/MM/dd HH:mm"/>
+	<acme:input-textbox code="auditor.auditrecord.form.label.initialMoment" path="initialMoment" placeholder="dd/MM/yyyy HH:mm"/>
+	<acme:input-textbox code="auditor.auditrecord.form.label.finalMoment" path="finalMoment" placeholder="dd/MM/yyyy HH:mm"/>
 	<acme:input-url code="auditor.auditrecord.form.label.link" path="link"/>
 	
 	

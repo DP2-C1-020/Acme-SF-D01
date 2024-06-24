@@ -2,14 +2,12 @@
 package acme.features.auditor.code_audit;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.audits.CodeAudit;
@@ -75,11 +73,6 @@ public class AuditorCodeAuditUpdateService extends AbstractService<Auditor, Code
 	@Override
 	public void validate(final CodeAudit object) {
 		assert object != null;
-
-		Date minimumDate = MomentHelper.parse("2000/01/01 00:00", "yyyy/MM/dd HH:mm");
-
-		if (object.getExecution() != null && !super.getBuffer().getErrors().hasErrors("execution"))
-			super.state(MomentHelper.isAfterOrEqual(object.getExecution(), minimumDate), "execution", "validation.auditrecord.moment.minimum-date");
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			CodeAudit exists;
