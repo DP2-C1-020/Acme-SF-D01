@@ -60,13 +60,6 @@ public class AuditorCodeAuditUpdateService extends AbstractService<Auditor, Code
 	public void bind(final CodeAudit object) {
 		assert object != null;
 
-		//		int projectId;
-		//		Project project;
-		//
-		//		projectId = super.getRequest().getData("project", int.class);
-		//		project = this.repository.findProjectById(projectId);
-		//
-		//		object.setProject(project);
 		super.bind(object, "code", "execution", "type", "correctiveActions", "link", "project");
 	}
 

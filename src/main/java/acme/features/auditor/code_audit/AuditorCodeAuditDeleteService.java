@@ -81,11 +81,9 @@ public class AuditorCodeAuditDeleteService extends AbstractService<Auditor, Code
 	public void perform(final CodeAudit object) {
 		assert object != null;
 
-		// Primero eliminar todos los registros de auditoría relacionados
 		Collection<AuditRecord> auditRecords = this.auditRecordRepository.findAllAuditRecordsByCodeAuditId(object.getId());
 		this.repository.deleteAll(auditRecords);
 
-		// Luego eliminar el CodeAudit
 		this.repository.delete(object);
 	}
 
