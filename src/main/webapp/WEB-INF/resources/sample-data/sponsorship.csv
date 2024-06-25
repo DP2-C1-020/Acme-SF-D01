@@ -1,6 +1,6 @@
 key,code,moment,start_date,end_date,amount,type,contact,link,draft_mode,key:project,key:sponsor
 sponsorship-01,AAA-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,EUR 123.45,FINANCIAL,contact@acme.com,https://www.google.com/,true,project-02,sponsor-02
-sponsorship-02,AA-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,EUR 123.45,FINANCIAL,contact@acme.com,https://www.google.com/,false,project-05,sponsor-01
+sponsorship-02,AA-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,EUR 123.45,FINANCIAL,contact@acme.com,https://www.google.com/,true,project-05,sponsor-01
 sponsorship-03,A-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,EUR 123.45,FINANCIAL,contact@acme.com,https://www.google.com/,true,project-07,sponsor-03
 sponsorship-04,B-111,2022/07/29 23:59,2022/07/31 11:12,2023/03/01 11:12,EUR 123.45,FINANCIAL,contact@acme.com,https://www.google.com/,false,project-02,sponsor-04
 sponsorship-05,C-111,2022/07/30 00:00,2022/07/31 11:12,2023/03/01 11:12,EUR 123.45,FINANCIAL,contact@acme.com,https://www.google.com/,true,project-05,sponsor-05
@@ -12,6 +12,6 @@ sponsorship-10,H-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,EUR 123.
 sponsorship-11,I-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,EUR 123.45,FINANCIAL,,https://www.google.com/,true,project-04,sponsor-05
 sponsorship-12,J-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,EUR 123.45,FINANCIAL,contact@acme.com,,false,project-07,sponsor-02
 sponsorship-13,K-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,EUR 123.45,FINANCIAL,,,true,project-05,sponsor-01
-sponsorship-14,Z-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,EUR 123.45,FINANCIAL,contact@acme.com,https://www.google.com/,false,project-07,sponsor-01
-sponsorship-15,ZZZ-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,EUR 400.00,FINANCIAL,contact@acme.com,https://www.google.com/,true,project-05,sponsor-01
-sponsorship-16,XYZ-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,EUR 123.45,FINANCIAL,contact@acme.com,https://www.google.com/,true,project-07,sponsor-01
+sponsorship-14,Z-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,GPB 100.00,FINANCIAL,contact@acme.com,https://www.google.com/,false,project-07,sponsor-01
+sponsorship-15,ZZZ-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,USD 100.00,FINANCIAL,contact@acme.com,https://www.google.com/,false,project-05,sponsor-01
+sponsorship-16,XYZ-111,2018/01/01 11:12,2018/01/02 11:12,2018/03/01 11:12,EUR 100.00,FINANCIAL,contact@acme.com,https://www.google.com/,false,project-07,sponsor-01
