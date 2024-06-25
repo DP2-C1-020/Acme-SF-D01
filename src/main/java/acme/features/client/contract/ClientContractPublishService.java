@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
-import acme.client.views.SelectChoices;
 import acme.entities.contracts.Contract;
 import acme.entities.project.Project;
 import acme.roles.Client;
@@ -40,7 +39,7 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 		object = this.repository.findContractById(contractId);
 		principal = super.getRequest().getPrincipal();
 
-		status = object != null && object.getClient().getId() == principal.getActiveRoleId();
+		status = object != null && object.getClient().getId() == principal.getActiveRoleId() && object.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -111,18 +110,11 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 	public void unbind(final Contract object) {
 		assert object != null;
 
-		Collection<Project> projects;
-		SelectChoices choices;
-
-		projects = this.repository.findAllProjectsWithoutDraftMode();
-		choices = SelectChoices.from(projects, "code", object.getProject());
-
 		Dataset dataset;
+		Project objectProject = object.getProject();
 
-		dataset = super.unbind(object, "code", "providerName", "customerName", "goals", "budget");
-		dataset.put("instantiationMoment", object.getInstantiationMoment());
-		dataset.put("project", choices.getSelected().getKey());
-		dataset.put("projects", choices);
+		dataset = super.unbind(object, "code", "instantiationMoment", "providerName", "customerName", "goals", "budget", "draftMode");
+		dataset.put("projectCode", objectProject.getCode());
 
 		super.getResponse().addData(dataset);
 	}
