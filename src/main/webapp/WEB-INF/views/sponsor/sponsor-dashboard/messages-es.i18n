@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-sponsor.sponsor-dashboard.form.title =  Panel de Patrocinador
+sponsor.sponsor-dashboard.form.title =  Panel de Patrocinador (Sólo Patrocinios y Recibos Publicados)
 
 sponsor.dashboard.form.title.general-indicators = Indicadores Generales
 sponsor.dashboard.form.title.amount-sponsorship-indicators = Indicadores de Importe de Patrocinio 

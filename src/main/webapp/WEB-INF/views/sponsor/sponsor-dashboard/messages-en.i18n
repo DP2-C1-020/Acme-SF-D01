@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-sponsor.sponsor-dashboard.form.title =  Sponsor Dashboard
+sponsor.sponsor-dashboard.form.title =  Sponsor Dashboard (Only Published Sponsorships and Invoices)
 
 sponsor.dashboard.form.title.general-indicators = General Indicators
 sponsor.dashboard.form.title.amount-sponsorship-indicators = Sponsorships' Amount Indicators

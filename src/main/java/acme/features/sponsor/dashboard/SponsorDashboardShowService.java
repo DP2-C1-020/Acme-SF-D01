@@ -38,18 +38,20 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 		Double devQuantityInvoice;
 		Double minQuantityInvoice;
 		Double maxQuantityInvoice;
-		//Integer sponsorId;
+		Integer sponsorId;
 
-		totalInvoiceHasTaxLessEqual21 = this.repository.totalInvoiceHasTaxLessEqual21();
-		totalSponsorshipHasLink = this.repository.totalSponsorshipHasLink();
-		avgAmountSponsorship = this.repository.avgAmountSponsorship();
-		devAmountSponsorship = this.repository.devAmountSponsorship();
-		minAmountSponsorship = this.repository.minAmountSponsorship();
-		maxAmountSponsorship = this.repository.maxAmountSponsorship();
-		avgQuantityInvoice = this.repository.avgQuantityInvoice();
-		devQuantityInvoice = this.repository.devQuantityInvoice();
-		minQuantityInvoice = this.repository.minQuantityInvoice();
-		maxQuantityInvoice = this.repository.maxQuantityInvoice();
+		sponsorId = super.getRequest().getPrincipal().getActiveRoleId();
+
+		totalInvoiceHasTaxLessEqual21 = this.repository.totalInvoiceHasTaxLessEqual21(sponsorId);
+		totalSponsorshipHasLink = this.repository.totalSponsorshipHasLink(sponsorId);
+		avgAmountSponsorship = this.repository.avgAmountSponsorship(sponsorId);
+		devAmountSponsorship = this.repository.devAmountSponsorship(sponsorId);
+		minAmountSponsorship = this.repository.minAmountSponsorship(sponsorId);
+		maxAmountSponsorship = this.repository.maxAmountSponsorship(sponsorId);
+		avgQuantityInvoice = this.repository.avgQuantityInvoice(sponsorId);
+		devQuantityInvoice = this.repository.devQuantityInvoice(sponsorId);
+		minQuantityInvoice = this.repository.minQuantityInvoice(sponsorId);
+		maxQuantityInvoice = this.repository.maxQuantityInvoice(sponsorId);
 
 		sponsorDashboard = new SponsorDashboard();
 		sponsorDashboard.setTotalInvoiceHasTaxLessEqual21(totalInvoiceHasTaxLessEqual21);
