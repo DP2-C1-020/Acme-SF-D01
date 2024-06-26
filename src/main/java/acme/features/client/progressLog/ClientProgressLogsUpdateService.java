@@ -26,23 +26,21 @@ public class ClientProgressLogsUpdateService extends AbstractService<Client, Pro
 
 	@Override
 	public void authorise() {
-		boolean status;
-		ProgressLog progressLog;
-		Contract contract = null;
 		Principal principal;
+		ProgressLog progressLog;
+		Contract contract;
+		boolean status;
 		int id;
-		int contractId;
 
 		id = super.getRequest().getData("id", int.class);
 		progressLog = this.repository.findProgressLogById(id);
-		contractId = progressLog.getContract().getId();
-
-		if (progressLog != null)
-			contract = this.repository.findContractById(contractId);
-
 		principal = super.getRequest().getPrincipal();
 
-		status = progressLog != null && contract.getClient().getId() == principal.getActiveRoleId() && progressLog.isDraftMode();
+		if (progressLog != null && (contract = progressLog.getContract()) != null)
+			status = contract.getClient().getId() == principal.getActiveRoleId() && progressLog.isDraftMode();
+		else
+			status = false;
+
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -61,21 +59,36 @@ public class ClientProgressLogsUpdateService extends AbstractService<Client, Pro
 	public void bind(final ProgressLog object) {
 		assert object != null;
 
+		int progressLogId;
+		progressLogId = super.getRequest().getData("id", int.class);
+		Contract contract = this.repository.findContractByProgressLogId(progressLogId);
+
 		super.bind(object, "recordId", "completeness", "comment", "registrationMoment", "responsiblePerson");
+		object.setContract(contract);
 	}
 
 	@Override
 	public void validate(final ProgressLog object) {
-		boolean isCodeChanged = false;
-		Collection<String> allCodes;
-		ProgressLog progressLog;
+		assert object != null;
 
-		allCodes = this.repository.findAllProgressLogCodes();
-		progressLog = this.repository.findProgressLogById(object.getId());
+		Collection<String> allCodes = this.repository.findAllProgressLogCodes();
+		ProgressLog existingProgressLog = this.repository.findProgressLogById(object.getId());
 
-		if (!super.getBuffer().getErrors().hasErrors("recordId")) {
-			isCodeChanged = !progressLog.getRecordId().equals(object.getRecordId());
-			super.state(!isCodeChanged || !allCodes.contains(object.getRecordId()), "recordId", "client.progressLog.error.recordIdDuplicate");
+		if (existingProgressLog != null && !super.getBuffer().getErrors().hasErrors("recordId")) {
+			boolean isCodeChanged = !existingProgressLog.getRecordId().equals(object.getRecordId());
+			boolean isDuplicate = allCodes.contains(object.getRecordId());
+
+			super.state(!isCodeChanged || !isDuplicate, "recordId", "client.progressLog.error.recordIdDuplicate");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("completeness")) {
+			Contract contract = object.getContract();
+			ProgressLog lastProgressLog = this.repository.findLastProgressLogByContractId(contract.getId());
+
+			if (lastProgressLog != null) {
+				boolean isCompletenessIncremental = object.getCompleteness() > lastProgressLog.getCompleteness();
+				super.state(isCompletenessIncremental, "completeness", "client.progressLog.error.completenessNotIncremental");
+			}
 		}
 	}
 
@@ -91,10 +104,10 @@ public class ClientProgressLogsUpdateService extends AbstractService<Client, Pro
 		assert object != null;
 
 		Dataset dataset;
-		Contract objectContract = object.getContract();
 
 		dataset = super.unbind(object, "recordId", "completeness", "comment", "registrationMoment", "responsiblePerson", "draftMode");
-		dataset.put("contractCode", objectContract.getCode());
+		dataset.put("registrationMoment", object.getRegistrationMoment());
+		dataset.put("contractCode", object.getContract().getCode());
 
 		super.getResponse().addData(dataset);
 	}

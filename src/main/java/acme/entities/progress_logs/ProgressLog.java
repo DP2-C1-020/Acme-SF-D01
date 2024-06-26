@@ -37,12 +37,12 @@ public class ProgressLog extends AbstractEntity {
 
 	@NotBlank
 	@Column(unique = true)
-	@Pattern(regexp = "PG-[A-Z]{1,2}-[0-9]{4}", message = "{validation.ProgressLogRecord}")
+	@Pattern(regexp = "^PG-[A-Z]{1,2}-[0-9]{4}$", message = "{validation.ProgressLogRecord}")
 	protected String			recordId;
 
-	@DecimalMin(value = "0", inclusive = true, message = "{validation.Progresscompleteness}")
-	@DecimalMax(value = "100", message = "{validation.Progresscompleteness}")
-	@Digits(integer = 3, fraction = 2, message = "{validation.Progresscompleteness}")
+	@DecimalMin(value = "0", message = "{validation.ProgressCompleteness}")
+	@DecimalMax(value = "100", message = "{validation.ProgressCompleteness}")
+	@Digits(fraction = 2, integer = 3, message = "{validation.ProgressCompleteness}")
 	protected double			completeness;
 
 	@NotBlank
