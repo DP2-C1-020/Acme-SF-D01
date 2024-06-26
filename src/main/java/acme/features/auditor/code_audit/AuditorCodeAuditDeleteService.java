@@ -7,14 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.accounts.Principal;
-import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
-import acme.client.views.SelectChoices;
 import acme.entities.audits.AuditRecord;
 import acme.entities.audits.CodeAudit;
-import acme.entities.audits.CodeAuditType;
-import acme.entities.audits.Mark;
-import acme.entities.project.Project;
 import acme.features.auditor.audit_record.AuditorAuditRecordRepository;
 import acme.roles.Auditor;
 
@@ -45,7 +40,7 @@ public class AuditorCodeAuditDeleteService extends AbstractService<Auditor, Code
 		principal = super.getRequest().getPrincipal();
 		auditor = object.getAuditor();
 
-		status = object != null && object.getAuditor().getId() == principal.getActiveRoleId() && principal.hasRole(auditor);
+		status = object != null && principal.hasRole(auditor) && object.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -89,27 +84,7 @@ public class AuditorCodeAuditDeleteService extends AbstractService<Auditor, Code
 
 	@Override
 	public void unbind(final CodeAudit object) {
-		Dataset dataset;
-
-		Collection<Project> allProjects;
-		SelectChoices projects;
-		allProjects = this.repository.findAllProjectsWithoutDraftMode();
-		projects = SelectChoices.from(allProjects, "code", object.getProject());
-
-		SelectChoices choicesType;
-		choicesType = SelectChoices.from(CodeAuditType.class, object.getType());
-
-		String modeMark;
-		Collection<Mark> marks = this.repository.findMarksByCodeAuditId(object.getId());
-		modeMark = MarkMode.findMode(marks);
-
-		dataset = super.unbind(object, "code", "execution", "type", "correctiveActions", "link", "draftMode");
-		dataset.put("project", projects.getSelected().getKey());
-		dataset.put("projects", projects);
-		dataset.put("types", choicesType);
-		dataset.put("modeMark", modeMark);
-
-		super.getResponse().addData(dataset);
+		assert object != null;
 	}
 
 }

@@ -1,7 +1,7 @@
 key,key:auditor,key:project,code,execution,type,corrective_actions,link,draft-mode
 code-audit-01,auditor-01,project-04,A-123,2022/07/29 23:00,STATIC,Check variable naming conventions-Update outdated comments-Optimize code for performance,http://www.lorem-ipsum.org,false
 code-audit-02,auditor-02,project-02,A-456,2000/01/01 00:00,STATIC,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",ftp://a,true
-code-audit-03,auditor-01,project-05,ABC-789,2000/01/01 00:01,DYNAMIC,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore*",ftp://a.b,false
+code-audit-03,auditor-01,project-05,ABC-789,2000/01/01 00:01,DYNAMIC,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore*",ftp://a.b,true
 code-audit-04,auditor-02,project-02,AA-234,2022/07/29 23:59,DYNAMIC,<h1>!</h1>,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",true
 code-audit-05,auditor-01,project-05,YZ-567,2020/02/28 00:00,STATIC,' or 'A'='A,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",false
 code-audit-06,auditor-02,project-02,ABC-890,2022/07/29 23:00,STATIC,국민경제의 발전을,https://www.lorem-ipsum.org,true

@@ -67,13 +67,10 @@ public class AuditorCodeAuditUpdateService extends AbstractService<Auditor, Code
 	public void validate(final CodeAudit object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			CodeAudit exists;
-			exists = this.repository.findOneCodeAuditByCode(object.getCode());
-			final CodeAudit cA2 = object.getCode().equals("") || object.getCode().equals(null) ? null : this.repository.findOneCodeAuditById(object.getId());
-			super.state(exists == null || cA2.equals(exists), "code", "auditor.codeaudit.error.codeDuplicate");
-		}
+		final Collection<String> allCodes = this.repository.findAllCodeAuditsCode();
 
+		if (!super.getBuffer().getErrors().hasErrors("code"))
+			super.state(!allCodes.contains(object.getCode()), "code", "auditor.codeaudit.error.codeDuplicate");
 	}
 
 	@Override
