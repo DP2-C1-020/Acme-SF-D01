@@ -15,6 +15,7 @@ import acme.client.views.SelectChoices;
 import acme.entities.contracts.Contract;
 import acme.entities.project.Project;
 import acme.roles.Client;
+import acme.validators.ValidatorMoney;
 
 @Service
 public class ClientContractCreateService extends AbstractService<Client, Contract> {
@@ -22,7 +23,10 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected ClientContractRepository repository;
+	protected ClientContractRepository	repository;
+
+	@Autowired
+	protected ValidatorMoney			validator;
 
 	// Contructors ------------------------------------------------------------
 
@@ -33,6 +37,7 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 		boolean status = principal.hasRole(Client.class);
 		super.getResponse().setAuthorised(status);
 	}
+
 	@Override
 	public void load() {
 		Contract object;
@@ -65,51 +70,18 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 
 	@Override
 	public void validate(final Contract contract) {
-		assert contract != null;
-		boolean isValid = true;
+		final Collection<String> allContractCodes = this.repository.findAllContractsCode();
 
-		// Validate Project
-		Project project = contract.getProject();
-		if (project == null) {
-			super.state(false, "project", "client.contract.error.project");
-			isValid = false;
-		}
+		if (!super.getBuffer().getErrors().hasErrors("code"))
+			super.state(!allContractCodes.contains(contract.getCode()), "code", "client.contract.form.error.duplicated");
 
-		// Validate Budget
-		if (isValid) {
-			double totalBudget = 0.0;
-			Collection<Contract> allContractsByProject = this.repository.findAllContractsWithProject(project.getId());
-
-			for (Contract c : allContractsByProject)
-				if (c.getBudget() != null && c.getBudget().getAmount() != null)
-					totalBudget += c.getBudget().getAmount();
-
-			if (contract.getBudget() != null && contract.getBudget().getAmount() != null)
-				totalBudget += contract.getBudget().getAmount();
-
-			if (contract.getBudget() == null || contract.getBudget().getAmount() == null) {
-				super.state(false, "budget", "client.contract.error.budget");
-				isValid = false;
-			} else {
-				double budgetAmount = contract.getBudget().getAmount();
-				if (budgetAmount < 0.0) {
-					super.state(false, "budget", "client.contract.error.negativeBudget");
-					isValid = false;
-				} else if (budgetAmount == 0.0) {
-					super.state(false, "budget", "client.contract.error.zeroBudget");
-					isValid = false;
-				} else if (totalBudget > project.getCost().getAmount()) {
-					super.state(false, "budget", "client.contract.error.projectBudgetTotal");
-					isValid = false;
-				}
-			}
-		}
-
-		// Validate Code Uniqueness
-		if (isValid) {
-			Collection<String> allCodes = this.repository.findAllContractsCode();
-			boolean isCodeUnique = !allCodes.contains(contract.getCode());
-			super.state(isCodeUnique, "code", "client.contract.error.codeDuplicate");
+		if (!super.getBuffer().getErrors().hasErrors("budget")) {
+			double amount = contract.getBudget().getAmount();
+			if (amount < 0.0)
+				super.state(false, "budget", "client.contract.error.negativeBudget");
+			if (amount > 1000000.0)
+				super.state(false, "budget", "client.contract.error.excededBudget");
+			super.state(this.validator.moneyValidator(contract.getBudget().getCurrency()), "budget", "client.contract.error.moneyValidator");
 		}
 	}
 
@@ -136,7 +108,9 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 		projects = this.repository.findAllProjectsWithoutDraftMode();
 		choices = SelectChoices.from(projects, "code", object.getProject());
 
-		dataset = super.unbind(object, "code", "instantiationMoment", "providerName", "customerName", "goals", "budget", "draftMode");
+		dataset = super.unbind(object, "code", "providerName", "customerName", "goals", "budget", "draftMode");
+
+		dataset.put("instantiationMoment", MomentHelper.getCurrentMoment());
 		dataset.put("project", choices.getSelected().getKey());
 		dataset.put("projects", choices);
 

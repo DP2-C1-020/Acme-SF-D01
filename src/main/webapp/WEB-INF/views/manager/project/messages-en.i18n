@@ -27,6 +27,7 @@ manager.project.form.button.delete = Delete
 manager.project.form.button.publish = Publish
 manager.project.form.button.create = Create
 
+
 manager.project.form.error.duplicated = This code is taken
 manager.project.form.error.negative-cost = The cost must be positive or zero
 manager.project.form.error.existing-fatal-errors = A project containing fatal errors can't be published.
@@ -37,6 +38,7 @@ manager.project.form.error.children-audits = The project cannot be deleted becau
 manager.project.form.error.children-contracts = The project cannot be deleted because it has Contracts that depend on it
 manager.project.form.error.children-sponsorships = The project cannot be deleted because it has Sponsorhips that depend on it
 manager.project.form.error.children-training-modules = The project cannot be deleted because it has Training modules that depend on it
+manager.project.form.error.currency-not-supported= The currency is not supported
 
 manager.project.list.label.code = Code
 manager.project.list.label.title = Title

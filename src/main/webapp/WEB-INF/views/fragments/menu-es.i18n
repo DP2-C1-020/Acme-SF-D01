@@ -90,6 +90,7 @@ master.menu.developer.dashboard = Panel
 
 master.menu.sponsor = Patrocinador
 master.menu.sponsor.list-sponsorships = Mis Patrocinios
+master.menu.sponsor.show-dashboard = Panel de Patrocinador
 
 # master.menu.user-account ####################################################
 

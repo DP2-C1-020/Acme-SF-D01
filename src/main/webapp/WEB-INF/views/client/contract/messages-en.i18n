@@ -5,12 +5,15 @@ client.contract.list.label.draftMode = Draft Mode
 client.contract.list.title = My contracts list
 client.contract.form.title = Details
 
-client.contract.list.button.create = New Contract
+#submits
+
+client.contract.list.button.create = Create Contract
 client.contract.form.button.create = Create Contract
 client.contract.form.button.update = Update
 client.contract.form.button.delete = Delete
 client.contract.form.button.publish = Publish
 
+#details
 
 client.contract.form.label.code = Code
 client.contract.form.label.providerName = Provider Name
@@ -21,6 +24,15 @@ client.contract.form.label.instantiationMoment = Instantiation Moment
 client.contract.form.label.projects = Projects
 client.contract.form.label.projectCode = Project Code
 
+#errors
+
+client.contract.form.error.duplicated = Code Duplicate
 client.contract.error.codeDuplicate = Code Duplicate
-client.contract.error.projectBudget = The cost of the contract may not exceed the total cost of the project.
+
+client.contract.error.excededProjectBudget = The cost of the contract may not exceed the total cost of the project.
 client.contract.error.budget = Budget cannot be null
+client.contract.error.negativeBudget = Budget must be greater than 0.0
+client.contract.error.excededBudget = Budget must be less than 1000000.0
+client.contract.error.moneyValidator = The currency entered is not valid. Supported currencies: EUR, GBP, USD
+
+client.contract.error.project = Project cannot be null

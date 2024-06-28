@@ -18,7 +18,7 @@
 
 
 <h2>
-	<acme:message code="client.dashboard.form.title.general-indicators"/>
+	<acme:message code="manager.dashboard.form.title.general-indicators"/>
 </h2>
 
 <table class="table table-sm">

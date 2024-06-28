@@ -44,5 +44,5 @@ manager.project.form.error.children-audits = El proyecto no puede ser eliminado 
 manager.project.form.error.children-contracts = El proyecto no puede ser eliminado porque tiene Contratos que dependen de él
 manager.project.form.error.children-sponsorships = El proyecto no puede ser eliminado porque tiene Patrocinios que dependen de él
 manager.project.form.error.children-training-modules = El proyecto no puede ser eliminado porque tiene Módulos de entrenamiento que dependen de él
-
+manager.project.form.error.currency-not-supported = Divisa no admitida.
 

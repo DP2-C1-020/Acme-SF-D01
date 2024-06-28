@@ -1,0 +1,26 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+sponsor.sponsor-dashboard.form.title =  Panel de Patrocinador (Sólo Patrocinios y Recibos Publicados)
+
+sponsor.dashboard.form.title.general-indicators = Indicadores Generales
+sponsor.dashboard.form.title.amount-sponsorship-indicators = Indicadores de Importe de Patrocinio 
+sponsor.dashboard.form.title.quantity-invoice-indicators =  Indicadores de Cantidad de Recibos
+
+sponsor.dashboard.form.label.total-invoice-has-tax-less-equal-21 = Número de Recibos con un impuesto menor o igual al 21.00%
+sponsor.dashboard.form.label.total-sponsorship-has-link = Número de Patrocinios con un link 
+sponsor.dashboard.form.label.avg-amount-sponsorship = Media de Importes de Patrocinios
+sponsor.dashboard.form.label.dev-amount-sponsorship = Desviacón de Importes de Patrocinios
+sponsor.dashboard.form.label.min-amount-sponsorship = Mínimo Importe de Patrocinios
+sponsor.dashboard.form.label.max-amount-sponsorship = Máximo Importe de Patrocinios
+sponsor.dashboard.form.label.avg-quantity-invoice = Media de Cantidades de Recibos
+sponsor.dashboard.form.label.dev-quantity-invoice = Desviación de Cantidades de Recibos
+sponsor.dashboard.form.label.min-quantity-invoice =  Mínima Cantidad de Recibos
+sponsor.dashboard.form.label.max-quantity-invoice =  Máxima Cantidad de Recibos

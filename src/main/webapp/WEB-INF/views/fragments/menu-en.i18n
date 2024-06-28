@@ -89,6 +89,8 @@ master.menu.developer.dashboard = Dashboard
 
 master.menu.sponsor = Sponsor
 master.menu.sponsor.list-sponsorships = My Sponsorships
+master.menu.sponsor.show-dashboard = Sponsor Dashboard
+
 
 # master.menu.user-account ####################################################
 
