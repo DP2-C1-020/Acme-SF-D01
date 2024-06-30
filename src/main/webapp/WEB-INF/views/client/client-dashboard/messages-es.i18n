@@ -1,0 +1,12 @@
+client.client-dashboard.form.title.Contract = Panel de Control
+client.client-dashboard.form.title = Panel de Control
+
+
+client.clientDashboard.form.label.averageBudget	= Presupuesto Promedio
+client.clientDashboard.form.label.deviationBudget = Desviación del Presupuesto
+client.clientDashboard.form.label.minBudget	= Presupuesto Mínimo
+client.clientDashboard.form.label.maxBudget	= Presupuesto Máximo
+client.clientDashboard.form.label.totalLogsBelow25Percent = Registro de Progreso Menor al 25%
+client.clientDashboard.form.label.totalLogs25To50Percent = Registro de Progreso entre 25% y 50%
+client.clientDashboard.form.label.totalLogs50To75Percent = Registro de Progreso entre 50% y 75%
+client.clientDashboard.form.label.totalLogsAbove75Percent = Registro de Progreso Mayor al 75%
