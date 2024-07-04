@@ -19,6 +19,10 @@ auditor.auditrecord.form.button.publish = Publicar
 auditor.auditrecord.form.button.create = Crear Auditoría de Código
 
 validation.auditrecord.code.duplicate = Código duplicado
-validation.auditrecord.initial-after-final = El momento inicial debe ser anterior al final
+validation.auditrecord.moment.initial-after-final = El momento inicial debe ser anterior al final
+validation.auditrecord.moment.initial-after-final = El momento inicial debe ser anterior al final
 validation.auditrecord.moment.minimum-one-hour = El momento final debe ser al menos una hora después del inicial
+validation.auditrecord.moment.minimum-date = La fecha mínima es 2000/01/01 00:00
 validation.auditrecord.error.code.duplicated = Código duplicado
+validation.auditrecord.initialMoment.invalid-format = Formato incorrecto. El formato correcto es dd/MM/yyyy HH:mm
+validation.auditrecord.finalMoment.invalid-format = Formato incorrecto. El formato correcto es dd/MM/yyyy HH:mm

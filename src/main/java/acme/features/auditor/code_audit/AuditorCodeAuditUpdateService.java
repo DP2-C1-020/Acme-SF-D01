@@ -1,6 +1,8 @@
 
 package acme.features.auditor.code_audit;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,7 @@ import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.audits.CodeAudit;
 import acme.entities.audits.CodeAuditType;
+import acme.entities.audits.Mark;
 import acme.entities.project.Project;
 import acme.roles.Auditor;
 
@@ -27,15 +30,18 @@ public class AuditorCodeAuditUpdateService extends AbstractService<Auditor, Code
 	@Override
 	public void authorise() {
 		boolean status;
+
 		CodeAudit object;
 		Principal principal;
+		Auditor auditor;
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findOneCodeAuditById(id);
 		principal = super.getRequest().getPrincipal();
 
-		status = object != null && object.getAuditor().getId() == principal.getActiveRoleId();
+		auditor = object.getAuditor();
+		status = object != null && object.isDraftMode() && principal.hasRole(auditor);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -54,19 +60,17 @@ public class AuditorCodeAuditUpdateService extends AbstractService<Auditor, Code
 	public void bind(final CodeAudit object) {
 		assert object != null;
 
-		super.bind(object, "code", "execution", "type", "correctiveActions", "link");
+		super.bind(object, "code", "execution", "type", "correctiveActions", "link", "project");
 	}
 
 	@Override
 	public void validate(final CodeAudit object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			CodeAudit exists;
-			exists = this.repository.findOneCodeAuditByCode(object.getCode());
-			final CodeAudit cA2 = object.getCode().equals("") || object.getCode().equals(null) ? null : this.repository.findOneCodeAuditById(object.getId());
-			super.state(exists == null || cA2.equals(exists), "code", "auditor.codeaudit.error.codeDuplicate");
-		}
 
+		final Collection<String> allCodes = this.repository.findAllCodeAuditsCode();
+
+		if (!super.getBuffer().getErrors().hasErrors("code"))
+			super.state(!allCodes.contains(object.getCode()), "code", "auditor.codeaudit.error.codeDuplicate");
 	}
 
 	@Override
@@ -81,13 +85,22 @@ public class AuditorCodeAuditUpdateService extends AbstractService<Auditor, Code
 		assert object != null;
 
 		Dataset dataset;
-		Project objectProject = object.getProject();
 
 		SelectChoices choicesType;
 		choicesType = SelectChoices.from(CodeAuditType.class, object.getType());
 
+		SelectChoices projects;
+		Collection<Project> allProjects = this.repository.findAllProjectsWithoutDraftMode();
+		projects = SelectChoices.from(allProjects, "code", object.getProject());
+
+		String modeMark;
+		Collection<Mark> marks = this.repository.findMarksByCodeAuditId(object.getId());
+		modeMark = MarkMode.findMode(marks);
+
 		dataset = super.unbind(object, "code", "execution", "type", "correctiveActions", "link", "draftMode");
-		dataset.put("project", objectProject.getTitle());
+		dataset.put("modeMark", modeMark);
+		dataset.put("project", projects.getSelected().getKey());
+		dataset.put("projects", projects);
 		dataset.put("types", choicesType);
 
 		super.getResponse().addData(dataset);

@@ -36,7 +36,7 @@ public class AuditRecord extends AbstractEntity {
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "^AU-[0-9]{4}-[0-9]{3}$")//, message = "{validation.record.code}")
+	@Pattern(regexp = "^AU-[0-9]{4}-[0-9]{3}$")
 	private String				code;
 
 	@PastOrPresent
@@ -44,7 +44,6 @@ public class AuditRecord extends AbstractEntity {
 	@NotNull
 	protected Date				initialMoment;
 
-	//TODO: restricion, at least one hour
 	@PastOrPresent
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull

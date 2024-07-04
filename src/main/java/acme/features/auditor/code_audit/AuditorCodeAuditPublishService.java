@@ -32,13 +32,15 @@ public class AuditorCodeAuditPublishService extends AbstractService<Auditor, Cod
 		boolean status;
 		CodeAudit object;
 		Principal principal;
+		Auditor auditor;
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findOneCodeAuditById(id);
 		principal = super.getRequest().getPrincipal();
+		auditor = object.getAuditor();
 
-		status = object != null && object.getAuditor().getId() == principal.getActiveRoleId();
+		status = object != null && principal.hasRole(auditor) && object.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -58,23 +60,22 @@ public class AuditorCodeAuditPublishService extends AbstractService<Auditor, Cod
 	public void bind(final CodeAudit object) {
 		assert object != null;
 
-		super.bind(object, "code", "execution", "type", "correctiveActions", "link");
+		super.bind(object, "code", "execution", "type", "correctiveActions", "link", "project");
 	}
 
 	@Override
 	public void validate(final CodeAudit object) {
-		final CodeAudit contract = this.repository.findOneCodeAuditById(object.getId());
-		final Collection<String> allCodes = this.repository.findAllCodeAuditsCode();
-		boolean isCodeChanged = false;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			CodeAudit exists;
+			exists = this.repository.findOneCodeAuditByCode(object.getCode());
+			final CodeAudit cA2 = object.getCode().equals("") || object.getCode().equals(null) ? null : this.repository.findOneCodeAuditById(object.getId());
+			super.state(exists == null || cA2.equals(exists), "code", "auditor.codeaudit.error.codeDuplicate");
+		}
 
 		String modeMark;
 		Collection<Mark> marks = this.repository.findMarksByCodeAuditId(object.getId());
 		modeMark = MarkMode.findMode(marks);
-
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			isCodeChanged = !contract.getCode().equals(object.getCode());
-			super.state(!isCodeChanged || !allCodes.contains(object.getCode()), "code", "auditor.codeaudit.error.codeDuplicate");
-		}
 
 		if (!super.getBuffer().getErrors().hasErrors("modeMark"))
 			if (modeMark != null) {
@@ -83,6 +84,10 @@ public class AuditorCodeAuditPublishService extends AbstractService<Auditor, Cod
 			} else
 				super.state(false, "modeMark", "validation.codeaudit.mode-less-than-c");
 
+		if (!super.getBuffer().getErrors().hasErrors("*")) {
+			Integer notPublishedAuditRecord = this.repository.countNotPublishedAuditRecordsOfCodeAudit(object.getId());
+			super.state(notPublishedAuditRecord == 0, "*", "validation.codeaudit.form.notAllAuditRecordArePublished");
+		}
 	}
 
 	@Override
@@ -98,10 +103,13 @@ public class AuditorCodeAuditPublishService extends AbstractService<Auditor, Cod
 		assert object != null;
 
 		Dataset dataset;
+
+		Collection<Project> allProjects;
+		SelectChoices projects;
+		allProjects = this.repository.findAllProjectsWithoutDraftMode();
+		projects = SelectChoices.from(allProjects, "code", object.getProject());
+
 		SelectChoices choicesType;
-
-		Project objectProject = object.getProject();
-
 		choicesType = SelectChoices.from(CodeAuditType.class, object.getType());
 
 		String modeMark;
@@ -109,7 +117,8 @@ public class AuditorCodeAuditPublishService extends AbstractService<Auditor, Cod
 		modeMark = MarkMode.findMode(marks);
 
 		dataset = super.unbind(object, "code", "execution", "type", "correctiveActions", "link", "draftMode");
-		dataset.put("project", objectProject.getTitle());
+		dataset.put("project", projects.getSelected().getKey());
+		dataset.put("projects", projects);
 		dataset.put("types", choicesType);
 		dataset.put("modeMark", modeMark);
 

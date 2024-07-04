@@ -7,13 +7,13 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.audits.CodeAudit;
 import acme.entities.audits.CodeAuditType;
+import acme.entities.audits.Mark;
 import acme.entities.project.Project;
 import acme.roles.Auditor;
 
@@ -30,14 +30,7 @@ public class AuditorCodeAuditCreateService extends AbstractService<Auditor, Code
 
 	@Override
 	public void authorise() {
-		boolean status = false;
-
-		Principal principal = super.getRequest().getPrincipal();
-
-		if (principal.hasRole(Auditor.class))
-			status = true;
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
@@ -60,14 +53,8 @@ public class AuditorCodeAuditCreateService extends AbstractService<Auditor, Code
 	@Override
 	public void bind(final CodeAudit object) {
 		assert object != null;
-		int id;
-		Project project;
 
-		id = super.getRequest().getData("project", int.class);
-		project = this.repository.findProjectById(id);
-
-		super.bind(object, "code", "execution", "type", "correctiveActions", "link");
-		object.setProject(project);
+		super.bind(object, "code", "execution", "type", "correctiveActions", "link", "project");
 	}
 
 	@Override
@@ -96,19 +83,23 @@ public class AuditorCodeAuditCreateService extends AbstractService<Auditor, Code
 		assert object != null;
 
 		Dataset dataset;
-		Collection<Project> projects;
-		SelectChoices choices;
+
+		Collection<Project> allProjects;
+		SelectChoices projects;
+		allProjects = this.repository.findAllProjectsWithoutDraftMode();
+		projects = SelectChoices.from(allProjects, "code", object.getProject());
 
 		SelectChoices choicesType;
-
-		projects = this.repository.findAllProjectsWithoutDraftMode();
-		choices = SelectChoices.from(projects, "title", object.getProject());
-
 		choicesType = SelectChoices.from(CodeAuditType.class, object.getType());
 
+		String modeMark;
+		Collection<Mark> marks = this.repository.findMarksByCodeAuditId(object.getId());
+		modeMark = MarkMode.findMode(marks);
+
 		dataset = super.unbind(object, "code", "execution", "type", "correctiveActions", "link", "draftMode");
-		dataset.put("project", choices.getSelected().getKey());
-		dataset.put("projects", choices);
+		dataset.put("modeMark", modeMark);
+		dataset.put("project", projects.getSelected().getKey());
+		dataset.put("projects", projects);
 		dataset.put("types", choicesType);
 
 		super.getResponse().addData(dataset);

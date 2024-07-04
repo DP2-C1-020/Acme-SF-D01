@@ -81,20 +81,46 @@ public class AuditorAuditRecordUpdateService extends AbstractService<Auditor, Au
 		allCodes = this.repository.findAllAuditRecordsCode();
 		auditRecord = this.repository.findOneAuditRecordById(object.getId());
 
+		Date pastMostDate = MomentHelper.parse("2000/01/01 00:00", "yyyy/MM/dd HH:mm");
+
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			isCodeChanged = !auditRecord.getCode().equals(object.getCode());
 			super.state(!isCodeChanged || !allCodes.contains(object.getCode()), "code", "validation.auditrecord.error.code.duplicated");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("initialMoment"))
-			super.state(MomentHelper.isAfter(object.getFinalMoment(), object.getInitialMoment()), "initialMoment", "validation.auditrecord.initial-after-final");
+		if (object.getInitialMoment() != null)
+			if (!super.getBuffer().getErrors().hasErrors("initialMoment"))
+				//				if (!this.isValidDateFormat(object.getInitialMoment()))
+				//					super.state(false, "initialMoment", "validation.auditrecord.initialMoment.invalid-format");
+				//				else
+				super.state(MomentHelper.isAfterOrEqual(object.getInitialMoment(), pastMostDate), "initialMoment", "validation.auditrecord.moment.minimum-date");
 
-		if (!super.getBuffer().getErrors().hasErrors("finalMoment")) {
-			Date minEnd;
-			minEnd = MomentHelper.deltaFromMoment(object.getInitialMoment(), 1, ChronoUnit.HOURS);
-			super.state(MomentHelper.isAfterOrEqual(object.getFinalMoment(), minEnd), "finalMoment", "validation.auditrecord.moment.minimum-one-hour");
+		if (object.getFinalMoment() != null)
+			if (!super.getBuffer().getErrors().hasErrors("finalMoment"))
+				//				if (!this.isValidDateFormat(object.getFinalMoment()))
+				//					super.state(false, "finalMoment", "validation.auditrecord.finalMoment.invalid-format");
+				//				else
+				super.state(MomentHelper.isAfterOrEqual(object.getFinalMoment(), pastMostDate), "finalMoment", "validation.auditrecord.moment.minimum-date");
+
+		if (object.getInitialMoment() != null && object.getFinalMoment() != null) {
+			if (!super.getBuffer().getErrors().hasErrors("initialMoment"))
+				super.state(MomentHelper.isAfter(object.getFinalMoment(), object.getInitialMoment()), "initialMoment", "validation.auditrecord.moment.initial-after-final");
+
+			if (!super.getBuffer().getErrors().hasErrors("finalMoment")) {
+				Date minimumEnd;
+				minimumEnd = MomentHelper.deltaFromMoment(object.getInitialMoment(), 1, ChronoUnit.HOURS);
+				super.state(MomentHelper.isAfterOrEqual(object.getFinalMoment(), minimumEnd), "finalMoment", "validation.auditrecord.moment.minimum-one-hour");
+			}
 		}
 	}
+
+	//	private boolean isValidDateFormat(final Date date) {
+	//		// Convert the Date to String and validate the format manually
+	//		String dateStr = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(date);
+	//		// Regular expression to validate date format "dd/MM/yyyy HH:mm"
+	//		String regex = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4} ([01]\\d|2[0-3]):[0-5]\\d$";
+	//		return dateStr.matches(regex);
+	//	}
 
 	@Override
 	public void perform(final AuditRecord object) {
