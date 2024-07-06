@@ -45,4 +45,5 @@ manager.project.form.error.children-contracts = El proyecto no puede ser elimina
 manager.project.form.error.children-sponsorships = El proyecto no puede ser eliminado porque tiene Patrocinios que dependen de él
 manager.project.form.error.children-training-modules = El proyecto no puede ser eliminado porque tiene Módulos de entrenamiento que dependen de él
 manager.project.form.error.currency-not-supported = Divisa no admitida.
+manager.project.form.error.excededCost = El coste de un proyecto no puede exceder 1000000000.00 unidades de cualquier tipo de divisa.
 

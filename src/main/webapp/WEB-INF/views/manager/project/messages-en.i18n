@@ -39,7 +39,8 @@ manager.project.form.error.children-contracts = The project cannot be deleted be
 manager.project.form.error.children-sponsorships = The project cannot be deleted because it has Sponsorhips that depend on it
 manager.project.form.error.children-training-modules = The project cannot be deleted because it has Training modules that depend on it
 manager.project.form.error.currency-not-supported= The currency is not supported
-
+manager.project.form.error.excededCost = The cost of a project can not exced 1000000000.00 units of any kind of currency.
+			
 manager.project.list.label.code = Code
 manager.project.list.label.title = Title
 manager.project.list.label.abstracto = Abstract
