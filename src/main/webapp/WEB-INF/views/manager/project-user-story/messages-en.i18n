@@ -18,6 +18,6 @@ manager.project-user-story.form.button.associate = associate
 manager.project-user-story.form.button.unassociate = unassociate
 
 manager.project-user-story.form.error.published = A published project cannot be updated
-manager.project-user-story.form.error.no-project = There is no project to unassociate
-
+manager.project-user-story.form.error.no-project-unassociate = There is no project to unassociate
+manager.project-user-story.form.error.no-project-associate = There is no project to associate
 manager.project-user-story.form.error.manager = The project and the user story should be under the same manager

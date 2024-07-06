@@ -60,8 +60,6 @@ public class ManagerUserStoryDeleteService extends AbstractService<Manager, User
 	public void validate(final UserStory object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("published"))
-			super.state(!object.isPublished(), "published", "manager.user-story.form.error.already-published");
 	}
 
 	@Override

@@ -84,7 +84,7 @@ public class ManagerProjectUpdateService extends AbstractService<Manager, Projec
 		}
 		if (!super.getBuffer().getErrors().hasErrors("cost")) {
 			super.state(object.getCost().getAmount() > 0, "cost", "manager.project.form.error.negative-cost");
-
+			super.state(object.getCost().getAmount() <= 1000000000, "cost", "manager.project.form.error.excededCost");
 			List<SystemConfiguration> sc = this.repository.findSystemConfiguration();
 			final boolean foundCurrency = Stream.of(sc.get(0).acceptedCurrencies.split(",")).anyMatch(c -> c.equals(object.getCost().getCurrency()));
 			super.state(foundCurrency, "cost", "manager.project.form.error.currency-not-supported");
