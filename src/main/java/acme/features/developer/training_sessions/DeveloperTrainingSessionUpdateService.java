@@ -37,7 +37,7 @@ public class DeveloperTrainingSessionUpdateService extends AbstractService<Devel
 		trainingModule = trainingSession.getTrainingModule();
 		myTrainingModules = this.repository.findAllTrainingModulesByDeveloperId(developerId);
 
-		status = trainingSession != null && trainingSession.getDraftMode() && super.getRequest().getPrincipal().hasRole(Developer.class) && myTrainingModules.contains(trainingModule);
+		status = trainingSession != null && trainingSession.isDraftMode() && super.getRequest().getPrincipal().hasRole(Developer.class) && myTrainingModules.contains(trainingModule);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -57,15 +57,22 @@ public class DeveloperTrainingSessionUpdateService extends AbstractService<Devel
 	public void bind(final TrainingSession object) {
 		assert object != null;
 
-		super.bind(object, "code", "startMoment", "finishMoment", "location", "instructor", "contactEmail", "link", "draftMode");
+		super.bind(object, "code", "startMoment", "finishMoment", "location", "instructor", "contactEmail", "link");
 	}
 
 	@Override
 	public void validate(final TrainingSession object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			TrainingSession existing;
+
+			existing = this.repository.findTrainingSessionByCode(object.getCode());
+			super.state(existing == null, "code", "developer.training-session.form.error.duplicateCode");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-			super.state(object.getDraftMode(), "draftMode", "developer.training-session.form.error.draftMode");
+			super.state(object.isDraftMode(), "draftMode", "developer.training-session.form.error.draftMode");
 
 		if (!super.getBuffer().getErrors().hasErrors("startMoment"))
 			super.state(MomentHelper.isAfter(object.getStartMoment(), object.getTrainingModule().getCreationMoment()), "startMoment", "developer.training-session.form.error.startBeforeCreate");

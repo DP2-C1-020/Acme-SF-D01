@@ -8,7 +8,7 @@
 	<acme:input-moment code="developer.training-module.form.label.creation-moment" path="creationMoment" readonly="true"/>
 	<acme:input-textbox code="developer.training-module.form.label.details" path="details"/>
 	<acme:input-select code="developer.training-module.form.label.difficulty-level" path="difficultyLevel" choices="${difficultyLevels}"/>
-	<acme:input-moment code="developer.training-module.form.label.update-moment" path="updateMoment"/>	
+	<acme:input-moment code="developer.training-module.form.label.update-moment" path="updateMoment" readonly="true"/>	
 	<acme:input-url code="developer.training-module.form.label.optional-link" path="link"/>
 	<acme:input-integer code="developer.training-module.form.label.total-time" path="totalTime"/>
 	

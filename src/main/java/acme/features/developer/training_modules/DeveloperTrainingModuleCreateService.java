@@ -25,7 +25,6 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 
 	@Override
 	public void authorise() {
-
 		Boolean status;
 
 		status = super.getRequest().getPrincipal().hasRole(Developer.class);
@@ -48,7 +47,7 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 		moment = MomentHelper.getCurrentMoment();
 		trainingModule.setCreationMoment(moment);
 		trainingModule.setDeveloper(developer);
-
+		trainingModule.setDraftMode(true);
 		super.getBuffer().addData(trainingModule);
 
 	}
@@ -63,21 +62,21 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 		id = super.getRequest().getData("project", int.class);
 		project = this.repository.findProjectById(id);
 		object.setProject(project);
-		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime", "draftMode");
+		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime");
 
 	}
 
 	@Override
 	public void validate(final TrainingModule object) {
 		assert object != null;
+
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			TrainingModule existing;
 
 			existing = this.repository.findTrainingModuleByCode(object.getCode());
 			super.state(existing == null, "code", "developer.training-module.form.error.duplicateCode");
 		}
-
-		if (!super.getBuffer().getErrors().hasErrors("updateMoment") && !super.getBuffer().getErrors().hasErrors("creationMoment") && object.getUpdateMoment() != null)
+		if (object.getUpdateMoment() != null && !super.getBuffer().getErrors().hasErrors("updateMoment") && !super.getBuffer().getErrors().hasErrors("creationMoment"))
 			super.state(MomentHelper.isAfter(object.getUpdateMoment(), object.getCreationMoment()), "updateMoment", "developer.training-module.form.error.updateBeforeCreate");
 
 	}
@@ -85,8 +84,6 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 	@Override
 	public void perform(final TrainingModule object) {
 		assert object != null;
-
-		object.setDraftMode(true);
 
 		this.repository.save(object);
 	}
@@ -102,7 +99,7 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 		Collection<Project> projects;
 		projects = this.repository.findAllProjectsWithoutDraftMode();
 
-		dataset = super.unbind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime", "draftMode");
+		dataset = super.unbind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime");
 		choices = SelectChoices.from(DifficultyLevel.class, object.getDifficultyLevel());
 		projectsChoices = SelectChoices.from(projects, "code", object.getProject());
 		dataset.put("project", projectsChoices.getSelected().getKey());

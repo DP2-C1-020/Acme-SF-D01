@@ -6,6 +6,7 @@ import java.time.temporal.ChronoUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
@@ -26,9 +27,14 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 		Boolean status;
 		int trainingModuleId;
 		TrainingModule trainingModule;
+		Principal principal;
+
 		trainingModuleId = super.getRequest().getData("trainingModuleId", int.class);
 		trainingModule = this.repository.findTrainingModuleById(trainingModuleId);
-		status = trainingModule != null && trainingModule.getDraftMode() && super.getRequest().getPrincipal().hasRole(Developer.class);
+		principal = super.getRequest().getPrincipal();
+
+		status = trainingModule != null && trainingModule.isDraftMode() && principal.hasRole(Developer.class) && principal.getActiveRoleId() == trainingModule.getDeveloper().getId();
+
 		super.getResponse().setAuthorised(status);
 
 	}
@@ -55,7 +61,7 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 	public void bind(final TrainingSession object) {
 		assert object != null;
 
-		super.bind(object, "code", "startMoment", "finishMoment", "location", "instructor", "contactEmail", "link", "draftMode");
+		super.bind(object, "code", "startMoment", "finishMoment", "location", "instructor", "contactEmail", "link");
 	}
 
 	@Override
@@ -69,8 +75,10 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 			super.state(existing == null, "code", "developer.training-session.form.error.duplicateCode");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("startMoment"))
+		if (!super.getBuffer().getErrors().hasErrors("startMoment")) {
 			super.state(MomentHelper.isAfter(object.getStartMoment(), object.getTrainingModule().getCreationMoment()), "startMoment", "developer.training-session.form.error.startBeforeCreate");
+			super.state(MomentHelper.isAfter(object.getStartMoment(), MomentHelper.deltaFromMoment(object.getTrainingModule().getCreationMoment(), 7, ChronoUnit.DAYS)), "startMoment", "developer.training-session.form.error.oneWeekFromTrainingModule");
+		}
 
 		if (!super.getBuffer().getErrors().hasErrors("startMoment") && !super.getBuffer().getErrors().hasErrors("finishMoment")) {
 			super.state(MomentHelper.isAfter(object.getFinishMoment(), object.getStartMoment()), "finishMoment", "developer.training-session.form.error.finishBeforeStart");
