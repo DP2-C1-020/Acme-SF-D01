@@ -1,0 +1,20 @@
+request-id,request-method,request-path,request-query,request-payload,response-status,response-content-type,response-payload,response-oops,pre-handle-timestamp,post-handle-timestamp,"after-completion-timestamp"
+"ea69b925-6ca5-e22f-bacc-6cea5afa0013",GET,/,"debug=true&language=en",,302,,,,393504427202500,393504505903000,393504510636700
+"0ee789e6-9cd3-c673-c1de-e11db2d6da18",GET,/any/system/welcome,,,200,text/html;charset=utf-8,banner=100,,393504548712400,393504559374800,393508442343900
+"c0e0b5b9-77e0-5d46-cc41-eb74caabb966",GET,"/libraries/fontawesome/5.2.0/css/all.min.css",,,200,text/css,,,393508684112800,393508698890600,393508700410000
+"d9e1657e-4c25-c1ec-f11c-0e27b9a11aa8",GET,"/libraries/bootstrap/4.1.3/css/bootstrap.min.css",,,200,text/css,,,393508708679500,393508712460500,393508713998500
+"67b0b626-bd00-bab1-5fca-ccdc233440aa",GET,"/libraries/datatables/1.10.18/css/datatables.min.css",,,200,text/css,,,393508728948100,393508732839300,393508734706500
+"474f94a3-69b5-dbdc-8aeb-62b09858dba1",GET,"/libraries/acme/css/acme.css",,,200,text/css,,,393508744785600,393508748495700,393508750545100
+"17cf08c9-c01d-2541-39db-bb239033e11f",GET,/images/banner.png,,,200,image/png,,,393508757648000,393508759822500,393508760977300
+"0d51458a-1c8b-39e9-ba82-0047f9949186",GET,/images/logo.png,,,200,image/png,,,393508772464100,393508774899000,393508776691200
+"6080f0a5-1795-32a4-5905-ba999d49b60a",GET,"/libraries/fontawesome/5.2.0/webfonts/fa-solid-900.woff2",,,200,application/font-woff2,,,393508806018100,393508809594100,393508811264200
+"8e4ce0f2-a9c4-9e2e-382d-83ca2e739044",GET,"/libraries/fontawesome/5.2.0/webfonts/fa-brands-400.woff2",,,200,application/font-woff2,,,393508834138200,393508838355300,393508840704900
+"2bbf66f5-c3a8-cb24-9a68-9a76d18575b2",POST,"/sponsor/sponsorship/create",,"id=163&version=0&code=FGR-898&moment=2022%2F07%2F30+00%3A00&amount=USD+341.56&startDate=2022%2F07%2F31+19%3A33&endDate=2022%2F10%2F28+07%3A02&type=IN_KIND&contact=acme%40phone.es&link=http%3A%2F%2Fwww.epsilon-ipsum.org%2Fdolor%2Fsit.html&project=39",500,text/html;charset=utf-8,banner=100,"Access is not authorised",393522931640300,393522959151400,393523670210500
+"a1b77a60-d1ad-e2c5-2848-87bec644327f",GET,"/libraries/fontawesome/5.2.0/css/all.min.css",,,200,text/css,,,393523849716400,393523852209700,393523853555800
+"2da5e738-2b4d-f5fe-6b39-477c9a31ad8d",GET,"/libraries/bootstrap/4.1.3/css/bootstrap.min.css",,,200,text/css,,,393523861810600,393523864152300,393523865274700
+"5945e689-cc14-068b-6204-8ca1e6dd7067",GET,"/libraries/datatables/1.10.18/css/datatables.min.css",,,200,text/css,,,393523873737200,393523875534400,393523876365600
+"c9a292ae-a02a-0512-30dd-3b43d0cb2849",GET,"/libraries/acme/css/acme.css",,,200,text/css,,,393523884354100,393523886946600,393523888013700
+"4a5955b8-6076-2264-2494-7bd441374731",GET,/images/banner.png,,,200,image/png,,,393523892641200,393523895227100,393523896346500
+"8567978b-9588-f63c-6964-98348fd4b6a2",GET,/images/logo.png,,,200,image/png,,,393523904037400,393523906132000,393523907057700
+"a2b8e0f4-e879-6a49-94c7-9f3c8399be67",GET,"/libraries/fontawesome/5.2.0/webfonts/fa-solid-900.woff2",,,200,application/font-woff2,,,393523916352700,393523919678400,393523920703100
+"f00eb055-593b-38e9-1d62-95c7a3d769fc",GET,"/libraries/fontawesome/5.2.0/webfonts/fa-brands-400.woff2",,,200,application/font-woff2,,,393523928071000,393523930399000,393523931204400

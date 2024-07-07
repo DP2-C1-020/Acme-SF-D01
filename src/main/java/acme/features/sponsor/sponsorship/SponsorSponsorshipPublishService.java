@@ -16,6 +16,7 @@ import acme.entities.project.Project;
 import acme.entities.sponsorships.Sponsorship;
 import acme.entities.sponsorships.SponsorshipType;
 import acme.roles.Sponsor;
+import acme.validators.ValidatorMoney;
 
 @Service
 public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, Sponsorship> {
@@ -23,7 +24,10 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 	// Internal state -------------------------------------------------------
 
 	@Autowired
-	private SponsorSponsorshipRepository repository;
+	private SponsorSponsorshipRepository	repository;
+
+	@Autowired
+	protected ValidatorMoney				validator;
 
 	// AbstractService interface --------------------------------------------
 
@@ -101,9 +105,13 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			Double sumTotalAmount = tempAmount != null ? tempAmount : 0.0;
 
 			super.state(sponsorship.getAmount().getAmount() > 0, "amount", "sponsor.sponsorship.form.error.negative-amount");
-
+			super.state(this.validator.moneyValidator(sponsorship.getAmount().getCurrency()), "amount", "sponsor.sponsorship.form.error.invalid-currency");
 			super.state(sumTotalAmount.equals(sponsorship.getAmount().getAmount()), "*", "sponsor.sponsorship.form.error.bad-amount");
 		}
+
+		Integer unpublishedInvoices;
+		unpublishedInvoices = this.repository.totalUnpublishedInvoices(sponsorship.getId());
+		super.state(unpublishedInvoices == 0, "*", "sponsor.sponsorship.form.error.unpublished-invoices");
 	}
 
 	@Override

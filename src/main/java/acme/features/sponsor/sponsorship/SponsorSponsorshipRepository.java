@@ -39,4 +39,7 @@ public interface SponsorSponsorshipRepository extends AbstractRepository {
 	@Query("select round(sum(i.quantity.amount * (1 + i.tax/100)), 2) from Invoice i where i.sponsorship.id = :sponsorshipId")
 	Double computeTotalAmountBySponsorshipId(int sponsorshipId);
 
+	@Query("select count(i) from Invoice i where i.sponsorship.id = :sponsorshipId and i.draftMode = true")
+	Integer totalUnpublishedInvoices(int sponsorshipId);
+
 }

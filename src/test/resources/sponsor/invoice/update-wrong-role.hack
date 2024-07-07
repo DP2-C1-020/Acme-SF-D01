@@ -1,0 +1,20 @@
+request-id,request-method,request-path,request-query,request-payload,response-status,response-content-type,response-payload,response-oops,pre-handle-timestamp,post-handle-timestamp,"after-completion-timestamp"
+"ea69b925-6ca5-e22f-bacc-6cea5afa0013",GET,/,"debug=true&language=en",,302,,,,340948611894800,340948695715500,340948700800700
+"0ee789e6-9cd3-c673-c1de-e11db2d6da18",GET,/any/system/welcome,,,200,text/html;charset=utf-8,banner=100,,340948764299600,340948773732700,340952818594400
+"c0e0b5b9-77e0-5d46-cc41-eb74caabb966",GET,"/libraries/fontawesome/5.2.0/css/all.min.css",,,200,text/css,,,340953031395600,340953042834900,340953044915600
+"d9e1657e-4c25-c1ec-f11c-0e27b9a11aa8",GET,"/libraries/bootstrap/4.1.3/css/bootstrap.min.css",,,200,text/css,,,340953053604800,340953057683000,340953059405200
+"67b0b626-bd00-bab1-5fca-ccdc233440aa",GET,"/libraries/datatables/1.10.18/css/datatables.min.css",,,200,text/css,,,340953069647700,340953071886800,340953074219600
+"474f94a3-69b5-dbdc-8aeb-62b09858dba1",GET,"/libraries/acme/css/acme.css",,,200,text/css,,,340953081775100,340953084158700,340953085586400
+"17cf08c9-c01d-2541-39db-bb239033e11f",GET,/images/banner.png,,,200,image/png,,,340953097395000,340953099937400,340953101137600
+"0d51458a-1c8b-39e9-ba82-0047f9949186",GET,/images/logo.png,,,200,image/png,,,340953110603600,340953113872100,340953115211500
+"6080f0a5-1795-32a4-5905-ba999d49b60a",GET,"/libraries/fontawesome/5.2.0/webfonts/fa-solid-900.woff2",,,200,application/font-woff2,,,340953166481000,340953169137700,340953170279100
+"8e4ce0f2-a9c4-9e2e-382d-83ca2e739044",GET,"/libraries/fontawesome/5.2.0/webfonts/fa-brands-400.woff2",,,200,application/font-woff2,,,340953182380000,340953185000100,340953186024200
+"2bbf66f5-c3a8-cb24-9a68-9a76d18575b2",POST,/sponsor/invoice/update,,"id=166&version=0&code=IN-1451-4512&registrationTime=2022%2F03%2F30+10%3A57&dueDate=2022%2F08%2F03+20%3A00&quantity=USD+5.65&tax=3.81&link=http%3A%2F%2Fexample.org%3Fa%26b&sponsorshipId=148",500,text/html;charset=utf-8,banner=100,"Access is not authorised",340977754772400,340977794343300,340978509439000
+"a1b77a60-d1ad-e2c5-2848-87bec644327f",GET,"/libraries/fontawesome/5.2.0/css/all.min.css",,,200,text/css,,,340978724727600,340978726884400,340978728126100
+"2da5e738-2b4d-f5fe-6b39-477c9a31ad8d",GET,"/libraries/datatables/1.10.18/css/datatables.min.css",,,200,text/css,,,340978732921500,340978735149400,340978736069000
+"5945e689-cc14-068b-6204-8ca1e6dd7067",GET,/images/logo.png,,,200,image/png,,,340978741846700,340978744226900,340978745323800
+"c9a292ae-a02a-0512-30dd-3b43d0cb2849",GET,"/libraries/bootstrap/4.1.3/css/bootstrap.min.css",,,200,text/css,,,340978753475300,340978757245600,340978759079900
+"4a5955b8-6076-2264-2494-7bd441374731",GET,"/libraries/acme/css/acme.css",,,200,text/css,,,340978770690200,340978773881500,340978775605100
+"8567978b-9588-f63c-6964-98348fd4b6a2",GET,/images/banner.png,,,200,image/png,,,340978790516700,340978801930000,340978803360400
+"a2b8e0f4-e879-6a49-94c7-9f3c8399be67",GET,"/libraries/fontawesome/5.2.0/webfonts/fa-solid-900.woff2",,,200,application/font-woff2,,,340978836972700,340978840215200,340978841465900
+"f00eb055-593b-38e9-1d62-95c7a3d769fc",GET,"/libraries/fontawesome/5.2.0/webfonts/fa-brands-400.woff2",,,200,application/font-woff2,,,340978850571900,340978853246300,340978854486300
