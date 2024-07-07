@@ -7,7 +7,7 @@ training-module-05,developer-01,project-01,TM-147,2021/07/01 17:15,Test test tes
 training-module-06,developer-01,project-01,TM-258,2021/11/03 16:22,Detallitos cortos,INTERMEDIATE,2021/12/24 12:00,https://www.x.com,true,21
 training-module-07,developer-01,project-01,TM-369,2021/09/16 12:34,Details text test,BASIC,2021/10/24 12:00,https://www.chess.com,true,1
 training-module-08,developer-01,project-01,TM-370,2022/07/29 23:00,Lorem ipsum,BASIC,,http://www.lorem-ipsum.org,true,50
-training-module-09,developer-01,project-01,TM-371,,L,BASIC,,,true,0
+training-module-09,developer-01,project-01,TM-371,,L,BASIC,,,true,654
 training-module-10,developer-01,project-01,TM-372,1999/12/31 23:59,Lo,BASIC,,ftp://,true,1
 training-module-11,developer-01,project-01,TM-373,2000/01/01 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore*",BASIC,,ftp://a,true,1000
 training-module-12,developer-01,project-01,TM-374,2000/01/01 00:01,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",BASIC,,ftp://a.b,true,1000

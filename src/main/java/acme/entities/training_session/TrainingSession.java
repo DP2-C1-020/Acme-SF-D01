@@ -12,7 +12,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -41,11 +40,9 @@ public class TrainingSession extends AbstractEntity {
 	@Column(unique = true)
 	private String				code;
 
-	@Past
 	@NotNull
 	private Date				startMoment;
 
-	@Past
 	@NotNull
 	private Date				finishMoment;
 
@@ -65,7 +62,7 @@ public class TrainingSession extends AbstractEntity {
 	@Column(nullable = true)
 	private String				link;
 
-	private Boolean				draftMode;
+	private boolean				draftMode;
 
 	// Relationships ----------------------------------------------------------
 

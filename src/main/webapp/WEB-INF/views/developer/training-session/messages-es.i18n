@@ -26,3 +26,4 @@ developer.training-session.form.error.duplicateCode = El código que has introdu
 developer.training-session.form.error.startBeforeCreate = La fecha de inicio de la sesión de entrenamiento debe ser posterior a la fecha de creación del módulo de entrenamiento
 developer.training-session.form.error.finishBeforeStart = La fecha de finalización debe ser posterior a la fecha de inicio
 developer.training-session.form.error.periodTooShort = La fecha de finalización debe ser al menos una semana posterior a la fecha de inicio
+developer.training-session.form.error.oneWeekFromTrainingModule = La fecha de inicio debe ser una semana posterior a la fecha de creación del módulo de entrenamiento

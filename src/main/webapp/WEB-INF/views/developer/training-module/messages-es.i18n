@@ -30,3 +30,4 @@ developer.training-module.form.error.duplicateCode = Ya hay un módulo de entren
 
 developer.training-module.form.error.training-session = El módulo de entrenamiento tiene que tener al menos una sesión de entrenamiento
 developer.training-module.form.error.not-published-trainingSessions = Las sesiones de entrenamiento de este módulo de entrenamiento deben estar publicadas
+developer.training-module.form.error.negativeTime = El tiempo total debe ser positivo

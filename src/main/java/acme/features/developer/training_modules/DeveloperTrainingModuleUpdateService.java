@@ -2,6 +2,7 @@
 package acme.features.developer.training_modules;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,7 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 
 	@Override
 	public void authorise() {
+
 		Boolean status;
 		int trainingModuleId;
 		Developer developer;
@@ -38,7 +40,7 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 		trainingModule = this.repository.findTrainingModuleById(trainingModuleId);
 		developer = trainingModule != null ? trainingModule.getDeveloper() : null;
 
-		status = trainingModule != null && trainingModule.getDraftMode() && super.getRequest().getPrincipal().hasRole(developer) && mytrainingModules.contains(trainingModule);
+		status = trainingModule != null && trainingModule.isDraftMode() && super.getRequest().getPrincipal().hasRole(developer) && mytrainingModules.contains(trainingModule);
 		super.getResponse().setAuthorised(status);
 
 	}
@@ -66,15 +68,22 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-			super.state(object.getDraftMode(), "draftMode", "developer.training-module.form.error.draftMode");
+			super.state(object.isDraftMode(), "draftMode", "developer.training-module.form.error.draftMode");
 
 		if (!super.getBuffer().getErrors().hasErrors("updateMoment") && !super.getBuffer().getErrors().hasErrors("creationMoment") && object.getUpdateMoment() != null)
 			super.state(MomentHelper.isAfter(object.getUpdateMoment(), object.getCreationMoment()), "updateMoment", "developer.training-module.form.error.updateBeforeCreate");
+
 	}
 
 	@Override
 	public void perform(final TrainingModule object) {
 		assert object != null;
+
+		Date moment;
+
+		moment = MomentHelper.getCurrentMoment();
+
+		object.setUpdateMoment(moment);
 
 		this.repository.save(object);
 
@@ -84,15 +93,14 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 	public void unbind(final TrainingModule object) {
 		assert object != null;
 
-		Dataset dataset;
 		SelectChoices choices;
+		Dataset dataset;
 
-		dataset = super.unbind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime", "draftMode");
 		choices = SelectChoices.from(DifficultyLevel.class, object.getDifficultyLevel());
+		dataset = super.unbind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime", "project", "draftMode");
 		dataset.put("difficultyLevels", choices);
 
-		super.getBuffer().addData(dataset);
-
+		super.getResponse().addData(dataset);
 	}
 
 }

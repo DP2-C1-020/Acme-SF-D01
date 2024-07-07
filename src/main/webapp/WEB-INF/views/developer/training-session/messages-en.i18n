@@ -26,3 +26,4 @@ developer.training-session.form.error.duplicateCode = The code you entered alrea
 developer.training-session.form.error.startBeforeCreate = The training session start moment must be after the training module's creation
 developer.training-session.form.error.finishBeforeStart = The finish moment must be later than the start moment
 developer.training-session.form.error.periodTooShort = The fininsh moment must be at least one week after the start moment
+developer.training-session.form.error.oneWeekFromTrainingModule = The start date must be one week after the training module creation date

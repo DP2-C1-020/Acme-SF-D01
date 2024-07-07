@@ -30,3 +30,4 @@ developer.training-module.form.error.duplicateCode = There is already a training
 
 developer.training-module.form.error.training-session = The training module must have at least one training session
 developer.training-module.form.error.not-published-trainingSessions = The training sessions of this trainig module must be published
+developer.training-module.form.error.negativeTime = Total time must have a positive value
