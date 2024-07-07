@@ -13,6 +13,7 @@ import acme.client.services.AbstractService;
 import acme.entities.invoices.Invoice;
 import acme.entities.sponsorships.Sponsorship;
 import acme.roles.Sponsor;
+import acme.validators.ValidatorMoney;
 
 @Service
 public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoice> {
@@ -20,14 +21,24 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 	// Internal state ------------------------------------------------------
 
 	@Autowired
-	protected SponsorInvoiceRepository repository;
+	protected SponsorInvoiceRepository	repository;
+
+	@Autowired
+	protected ValidatorMoney			validator;
 
 	// AbstractService interface -------------------------------------------
 
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		Sponsorship sponsorship;
+		int sponsorshipId;
+
+		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
+		sponsorship = this.repository.findOneSponsorshipById(sponsorshipId);
+		status = sponsorship.getSponsor().getId() == super.getRequest().getPrincipal().getActiveRoleId();
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -81,8 +92,11 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 			super.state(MomentHelper.isAfter(invoice.getDueDate(), minimumDueDate), "dueDate", "sponsor.invoice.form.error.less-than-month");
 
 		}
-		if (!super.getBuffer().getErrors().hasErrors("quantity"))
+		if (!super.getBuffer().getErrors().hasErrors("quantity")) {
+
+			super.state(this.validator.moneyValidator(invoice.getQuantity().getCurrency()), "quantity", "sponsor.invoice.form.error.invalid-currency");
 			super.state(invoice.getQuantity().getAmount() > 0, "quantity", "sponsor.invoice.form.error.negative-quantity");
+		}
 	}
 
 	@Override

@@ -16,6 +16,7 @@ import acme.entities.project.Project;
 import acme.entities.sponsorships.Sponsorship;
 import acme.entities.sponsorships.SponsorshipType;
 import acme.roles.Sponsor;
+import acme.validators.ValidatorMoney;
 
 @Service
 public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sponsorship> {
@@ -23,7 +24,10 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 	// Internal state ------------------------------------------------------
 
 	@Autowired
-	private SponsorSponsorshipRepository repository;
+	private SponsorSponsorshipRepository	repository;
+
+	@Autowired
+	protected ValidatorMoney				validator;
 
 	// AbstractService interface -------------------------------------------
 
@@ -95,8 +99,11 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 			}
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("amount"))
+		if (!super.getBuffer().getErrors().hasErrors("amount")) {
+
+			super.state(this.validator.moneyValidator(sponsorship.getAmount().getCurrency()), "amount", "sponsor.sponsorship.form.error.invalid-currency");
 			super.state(sponsorship.getAmount().getAmount() > 0, "amount", "sponsor.sponsorship.form.error.negative-amount");
+		}
 	}
 
 	@Override
@@ -114,7 +121,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 		Collection<Project> projects;
 		SelectChoices typeChoices;
 		SelectChoices projectChoices;
-	
+
 		typeChoices = SelectChoices.from(SponsorshipType.class, sponsorship.getType());
 		projects = this.repository.findAvailableProjects();
 		projectChoices = SelectChoices.from(projects, "code", sponsorship.getProject());

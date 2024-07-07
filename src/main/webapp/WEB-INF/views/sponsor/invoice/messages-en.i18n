@@ -32,3 +32,4 @@ sponsor.invoice.list.button.create = Create
 sponsor.invoice.form.error.duplicated = This code is taken by another Invoice
 sponsor.invoice.form.error.less-than-month = Due date must be at least one month ahead of registration time
 sponsor.invoice.form.error.negative-quantity = The quantity must be positive
+sponsor.invoice.form.error.invalid-currency = The currency is not valid. Only EUR, GBP and USD

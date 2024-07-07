@@ -42,3 +42,5 @@ sponsor.sponsorship.form.error.too-late = La fecha de inicio debe ser anterior a
 sponsor.sponsorship.form.error.negative-amount = La cantidad de dinero debe ser positiva
 sponsor.sponsorship.form.error.enter-start-date = Debe introducir primero la fecha de inicio para validad la fecha de fin
 sponsor.sponsorship.form.error.bad-amount = La cantidad del Patrocinio debe ser igual a la suma de sus Recibos
+sponsor.sponsorship.form.error.invalid-currency = La divisa no es válida. Debe ser EUR, GBP o USD
+sponsor.sponsorship.form.error.unpublished-invoices = Todos los Recibos asociados deben ser publicados antes de publicar el Patrocinio
