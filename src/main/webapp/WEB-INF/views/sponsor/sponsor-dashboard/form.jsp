@@ -26,81 +26,94 @@
 	</tr>
 </table>
 
-<h2>
-	<acme:message code="sponsor.dashboard.form.title.amount-sponsorship-indicators"/>
-</h2>
+<jstl:forEach var="currency" items="${supportedCurrencies}">	
 
-<table class="table table-sm">
-	<tr>
-		<th scope="row">
-			<acme:message code="sponsor.dashboard.form.label.avg-amount-sponsorship"/>
-		</th>
-		<td>
-			<acme:print value="${avgAmountSponsorship}"/>
-		</td>
-	</tr>	
-	<tr>
-		<th scope="row">
-			<acme:message code="sponsor.dashboard.form.label.dev-amount-sponsorship"/>
-		</th>
-		<td>
-			<acme:print value="${devAmountSponsorship}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="sponsor.dashboard.form.label.min-amount-sponsorship"/>
-		</th>
-		<td>
-			<acme:print value="${minAmountSponsorship}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="sponsor.dashboard.form.label.max-amount-sponsorship"/>
-		</th>
-		<td>
-			<acme:print value="${maxAmountSponsorship}"/>
-		</td>
-	</tr>
-</table>
+    <jstl:set var="existSponsorshipsWithCurrency" value="${avgAmountSponsorship[currency]}"/>
+    <jstl:set var="existInvoicesWithCurrency" value="${avgQuantityInvoice[currency]}"/>
+    
+	<jstl:if test="${not empty existSponsorshipsWithCurrency}">
+
+		<h2>
+			<acme:message code="sponsor.dashboard.form.title.amount-sponsorship-indicators"/>
+	        <acme:message code="${currency}"/>
+		</h2>
 	
-<h2>
-	<acme:message code="sponsor.dashboard.form.title.quantity-invoice-indicators"/>
-</h2>
-
-<table class="table table-sm">
-	<tr>
-		<th scope="row">
-			<acme:message code="sponsor.dashboard.form.label.avg-quantity-invoice"/>
-		</th>
-		<td>
-			<acme:print value="${avgQuantityInvoice}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="sponsor.dashboard.form.label.dev-quantity-invoice"/>
-		</th>
-		<td>
-			<acme:print value="${devQuantityInvoice}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="sponsor.dashboard.form.label.min-quantity-invoice"/>
-		</th>
-		<td>
-			<acme:print value="${minQuantityInvoice}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="sponsor.dashboard.form.label.max-quantity-invoice"/>
-		</th>
-		<td>
-			<acme:print value="${maxQuantityInvoice}"/>
-		</td>
-	</tr>
-</table>
+		<table class="table table-sm">
+			<tr>
+				<th scope="row">
+					<acme:message code="sponsor.dashboard.form.label.avg-amount-sponsorship"/>
+				</th>
+				<td>
+					<acme:print value="${avgAmountSponsorship[currency]}"/>
+				</td>
+			</tr>	
+			<tr>
+				<th scope="row">
+					<acme:message code="sponsor.dashboard.form.label.dev-amount-sponsorship"/>
+				</th>
+				<td>
+					<acme:print value="${devAmountSponsorship[currency]}"/>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">
+					<acme:message code="sponsor.dashboard.form.label.min-amount-sponsorship"/>
+				</th>
+				<td>
+					<acme:print value="${minAmountSponsorship[currency]}"/>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">
+					<acme:message code="sponsor.dashboard.form.label.max-amount-sponsorship"/>
+				</th>
+				<td>
+					<acme:print value="${maxAmountSponsorship[currency]}"/>
+				</td>
+			</tr>
+		</table>
+	</jstl:if>
+	
+	<jstl:if test="${not empty existInvoicesWithCurrency}">
+		<h2>
+			<acme:message code="sponsor.dashboard.form.title.quantity-invoice-indicators"/>
+			<acme:message code="${currency}"/>
+		</h2>
+		
+		<table class="table table-sm">
+			<tr>
+				<th scope="row">
+					<acme:message code="sponsor.dashboard.form.label.avg-quantity-invoice"/>
+				</th>
+				<td>
+					<acme:print value="${avgQuantityInvoice[currency]}"/>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">
+					<acme:message code="sponsor.dashboard.form.label.dev-quantity-invoice"/>
+				</th>
+				<td>
+					<acme:print value="${devQuantityInvoice[currency]}"/>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">
+					<acme:message code="sponsor.dashboard.form.label.min-quantity-invoice"/>
+				</th>
+				<td>
+					<acme:print value="${minQuantityInvoice[currency]}"/>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">
+					<acme:message code="sponsor.dashboard.form.label.max-quantity-invoice"/>
+				</th>
+				<td>
+					<acme:print value="${maxQuantityInvoice[currency]}"/>
+				</td>
+			</tr>
+		</table>
+	</jstl:if>
+</jstl:forEach>
 <acme:return/>
