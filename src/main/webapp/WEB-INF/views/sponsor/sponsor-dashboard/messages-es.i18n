@@ -11,8 +11,8 @@
 sponsor.sponsor-dashboard.form.title =  Panel de Patrocinador (Sólo Patrocinios y Recibos Publicados)
 
 sponsor.dashboard.form.title.general-indicators = Indicadores Generales
-sponsor.dashboard.form.title.amount-sponsorship-indicators = Indicadores de Importe de Patrocinio 
-sponsor.dashboard.form.title.quantity-invoice-indicators =  Indicadores de Cantidad de Recibos
+sponsor.dashboard.form.title.amount-sponsorship-indicators = Indicadores del Importe de Patrocinios en
+sponsor.dashboard.form.title.quantity-invoice-indicators =  Indicadores de la Cantidad de Recibos en 
 
 sponsor.dashboard.form.label.total-invoice-has-tax-less-equal-21 = Número de Recibos con un impuesto menor o igual al 21.00%
 sponsor.dashboard.form.label.total-sponsorship-has-link = Número de Patrocinios con un link 

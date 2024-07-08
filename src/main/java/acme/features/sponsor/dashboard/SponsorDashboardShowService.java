@@ -1,6 +1,10 @@
 
 package acme.features.sponsor.dashboard;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,6 +12,7 @@ import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.forms.SponsorDashboard;
 import acme.roles.Sponsor;
+import acme.validators.ValidatorMoneyRepository;
 
 @Service
 public class SponsorDashboardShowService extends AbstractService<Sponsor, SponsorDashboard> {
@@ -15,7 +20,10 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 	// Internal state --------------------------------------------------
 
 	@Autowired
-	private SponsorDashboardRepository repository;
+	private SponsorDashboardRepository	repository;
+
+	@Autowired
+	protected ValidatorMoneyRepository	validator;
 
 	// AbstractService interface ---------------------------------------
 
@@ -28,30 +36,28 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 	@Override
 	public void load() {
 		SponsorDashboard sponsorDashboard;
-		Integer totalInvoiceHasTaxLessEqual21;
-		Integer totalSponsorshipHasLink;
-		Double avgAmountSponsorship;
-		Double devAmountSponsorship;
-		Double minAmountSponsorship;
-		Double maxAmountSponsorship;
-		Double avgQuantityInvoice;
-		Double devQuantityInvoice;
-		Double minQuantityInvoice;
-		Double maxQuantityInvoice;
-		Integer sponsorId;
 
-		sponsorId = super.getRequest().getPrincipal().getActiveRoleId();
+		Integer sponsorId = super.getRequest().getPrincipal().getActiveRoleId();
+		Integer totalInvoiceHasTaxLessEqual21 = this.repository.totalInvoiceHasTaxLessEqual21(sponsorId);
+		Integer totalSponsorshipHasLink = this.repository.totalSponsorshipHasLink(sponsorId);
 
-		totalInvoiceHasTaxLessEqual21 = this.repository.totalInvoiceHasTaxLessEqual21(sponsorId);
-		totalSponsorshipHasLink = this.repository.totalSponsorshipHasLink(sponsorId);
-		avgAmountSponsorship = this.repository.avgAmountSponsorship(sponsorId);
-		devAmountSponsorship = this.repository.devAmountSponsorship(sponsorId);
-		minAmountSponsorship = this.repository.minAmountSponsorship(sponsorId);
-		maxAmountSponsorship = this.repository.maxAmountSponsorship(sponsorId);
-		avgQuantityInvoice = this.repository.avgQuantityInvoice(sponsorId);
-		devQuantityInvoice = this.repository.devQuantityInvoice(sponsorId);
-		minQuantityInvoice = this.repository.minQuantityInvoice(sponsorId);
-		maxQuantityInvoice = this.repository.maxQuantityInvoice(sponsorId);
+		List<Object[]> avgAmountSponsorshipByCurrency = this.repository.avgAmountSponsorshipByCurrency(sponsorId);
+		List<Object[]> devAmountSponsorshipByCurrency = this.repository.devAmountSponsorshipByCurrency(sponsorId);
+		List<Object[]> minAmountSponsorshipByCurrency = this.repository.minAmountSponsorshipByCurrency(sponsorId);
+		List<Object[]> maxAmountSponsorshipByCurrency = this.repository.maxAmountSponsorshipByCurrency(sponsorId);
+		List<Object[]> avgQuantityInvoiceByCurrency = this.repository.avgQuantityInvoiceByCurrency(sponsorId);
+		List<Object[]> devQuantityInvoiceByCurrency = this.repository.devQuantityInvoiceByCurrency(sponsorId);
+		List<Object[]> minQuantityInvoiceByCurrency = this.repository.minQuantityInvoiceByCurrency(sponsorId);
+		List<Object[]> maxQuantityInvoiceByCurrency = this.repository.maxQuantityInvoiceByCurrency(sponsorId);
+
+		Map<String, Double> avgAmountSponsorship = avgAmountSponsorshipByCurrency.stream().collect(Collectors.toMap(object -> (String) object[0], object -> (Double) object[1]));
+		Map<String, Double> devAmountSponsorship = devAmountSponsorshipByCurrency.stream().collect(Collectors.toMap(object -> (String) object[0], object -> (Double) object[1]));
+		Map<String, Double> minAmountSponsorship = minAmountSponsorshipByCurrency.stream().collect(Collectors.toMap(object -> (String) object[0], object -> (Double) object[1]));
+		Map<String, Double> maxAmountSponsorship = maxAmountSponsorshipByCurrency.stream().collect(Collectors.toMap(object -> (String) object[0], object -> (Double) object[1]));
+		Map<String, Double> avgQuantityInvoice = avgQuantityInvoiceByCurrency.stream().collect(Collectors.toMap(object -> (String) object[0], object -> (Double) object[1]));
+		Map<String, Double> devQuantityInvoice = devQuantityInvoiceByCurrency.stream().collect(Collectors.toMap(object -> (String) object[0], object -> (Double) object[1]));
+		Map<String, Double> minQuantityInvoice = minQuantityInvoiceByCurrency.stream().collect(Collectors.toMap(object -> (String) object[0], object -> (Double) object[1]));
+		Map<String, Double> maxQuantityInvoice = maxQuantityInvoiceByCurrency.stream().collect(Collectors.toMap(object -> (String) object[0], object -> (Double) object[1]));
 
 		sponsorDashboard = new SponsorDashboard();
 		sponsorDashboard.setTotalInvoiceHasTaxLessEqual21(totalInvoiceHasTaxLessEqual21);
@@ -71,12 +77,14 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 	@Override
 	public void unbind(final SponsorDashboard sponsorDashboard) {
 		Dataset dataset;
+		String acceptedCurrencies = this.validator.findAcceptedCurrencies();
+		String[] currencies = acceptedCurrencies.split(",\\s*");
 
 		dataset = super.unbind(sponsorDashboard, //
 			"totalInvoiceHasTaxLessEqual21", "totalSponsorshipHasLink", "avgAmountSponsorship", //
 			"devAmountSponsorship", "minAmountSponsorship", "maxAmountSponsorship", //
 			"avgQuantityInvoice", "devQuantityInvoice", "minQuantityInvoice", "maxQuantityInvoice");
-
+		dataset.put("supportedCurrencies", currencies);
 		super.getResponse().addData(dataset);
 	}
 }
