@@ -22,6 +22,7 @@ auditor.codeaudit.form.label.link = Link
 auditor.codeaudit.form.label.projects = Project
 
 auditor.codeaudit.error.codeDuplicate = Code Duplicate
+codeAudit.code.error = Invalid format. The code must start with 1 to 3 uppercase letters, followed by a hyphen, and end with exactly 3 digits. Example: ABC-123
 
 validation.codeaudit.mode.empty = This code audit does not have any audit records
 validation.codeaudit.mode-less-than-c = The mark must be at least C to be published
