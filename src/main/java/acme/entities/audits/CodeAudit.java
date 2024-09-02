@@ -29,9 +29,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "code"),//
-	@Index(columnList = "code, id"),//
-	@Index(columnList = "draftMode")
+	@Index(columnList = "auditor_id", name = "idx_codeAudit_auditor"),//
+	@Index(columnList = "draftMode", name = "idx_codeAudit_draftMode"),//
+	@Index(columnList = "code", name = "idx_codeAudit_code"),//
+	@Index(columnList = "project_id", name = "idx_codeAudit_project"),//
+	@Index(columnList = "type", name = "idx_codeAudit_type"),//
+	@Index(columnList = "auditor_id, type", name = "idx_codeAudit_auditor_type")
 })
 public class CodeAudit extends AbstractEntity {
 
