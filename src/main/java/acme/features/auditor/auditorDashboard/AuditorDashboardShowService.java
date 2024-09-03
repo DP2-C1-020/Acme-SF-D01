@@ -94,7 +94,7 @@ public class AuditorDashboardShowService extends AbstractService<Auditor, Audito
 	}
 
 	public Double computeDeviation(final Collection<Double> values) {
-		Double res = 0.0;
+		Double res = null;
 		if (!values.isEmpty()) {
 			Double average = this.calculateAverage(values);
 			double sumOfSquaredDifferences = 0.0;
