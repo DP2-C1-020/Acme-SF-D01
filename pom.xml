@@ -21,8 +21,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	
-	<artifactId>Acme-SF-D04</artifactId>
+	<artifactId>Acme-SF</artifactId>
 	<packaging>war</packaging>
+	<version>D04</version>
 	
 	<parent>
 		<groupId>Acme</groupId>
