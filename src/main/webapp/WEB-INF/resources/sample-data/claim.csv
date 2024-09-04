@@ -7,6 +7,6 @@ claim-05,C-1113,2022/07/30 00:00,This is a heading,This is a description,Archeol
 claim-06,C-1114,2018/01/01 11:12,This is a headingThis is a headingThis is a headingThis is a headingThis is,This is a description,Archeology,claim@acme.com,https://www.google.com/
 claim-07,C-1115,2018/01/01 11:12,This is a heading,This is a descriptionThis is a descriptionThis is a descriptionThis is a descriptionThis is a descri,Archeology,claim@acme.com,https://www.google.com/
 claim-08,C-1116,2018/01/01 11:12,This is a heading,This is a description,ArcheologyArcheologyArcheologyArcheologyArcheologyArcheologyArcheologyArcheologyArcheologyArcheology,claim@acme.com,https://www.google.com/
-claim-09,C-1117,2018/01/01 11:12,This is a heading,This is a description,Archeology,,https://www.google.com/
-claim-10,C-1118,2018/01/01 11:12,This is a heading,This is a description,Archeology,claim@acme.com,
-claim-11,C-1119,2018/01/01 11:12,This is a heading,This is a description,Archeology,,
+claim-09,C-1117,2018/01/01 11:12,This is a heading,This is a description,Archeology,null,https://www.google.com/
+claim-10,C-1118,2018/01/01 11:12,This is a heading,This is a description,Archeology,claim@acme.com,null
+claim-11,C-1119,2018/01/01 11:12,This is a heading,This is a description,Archeology,null,null
