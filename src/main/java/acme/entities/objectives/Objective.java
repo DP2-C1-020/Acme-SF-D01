@@ -31,9 +31,9 @@ public class Objective extends AbstractEntity {
 
 	// Attributes ------------------------------------------------------
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
-	@NotNull
 	private Date				instantiationMoment;
 
 	@NotBlank
@@ -49,12 +49,12 @@ public class Objective extends AbstractEntity {
 
 	private boolean				status;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				startDate;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				endDate;
 
 	@URL
