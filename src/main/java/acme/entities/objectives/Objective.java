@@ -47,20 +47,18 @@ public class Objective extends AbstractEntity {
 	@NotNull
 	private PriorityType		priority;
 
-	@NotNull
 	private boolean				status;
 
-	//TODO startDate must be after the instantiationMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	private Date				startDate;
 
-	//TODO endDate must be after the startDate
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	private Date				endDate;
 
 	@URL
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	// Derived attributes -----------------------------------------------
@@ -73,5 +71,4 @@ public class Objective extends AbstractEntity {
 		duration = MomentHelper.computeDuration(this.startDate, this.endDate);
 		return (int) duration.toDays();
 	}
-
 }
