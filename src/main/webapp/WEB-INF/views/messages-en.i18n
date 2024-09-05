@@ -8,5 +8,5 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-validation.claim.code = The code must start with a "C-" followed by 4 numbers between 0 and 9
-validation.risk.reference = The reference must start with a "R-" followed by 3 numbers between 0 and 9
+validation.claim.code = The code must be "C-<dddd>", where "<dddd>" denotes 4 digits between 0 and 9
+validation.risk.reference = The reference must be "R-<ddd>", where "<ddd>" denotes 3 digits between 0 and 9
