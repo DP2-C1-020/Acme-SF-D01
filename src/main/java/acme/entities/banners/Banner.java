@@ -41,28 +41,26 @@ public class Banner extends AbstractEntity {
 	@NotNull
 	private Date				instantiationMoment;
 
-	//TODO startDate must be after the instantiationMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	private Date				startDate;
 
-	//TODO endDate must be after the startDate
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	private Date				endDate;
 
-	@NotBlank
+	@NotNull
 	@URL
-	@Length(max = 250)
+	@Length(min = 7, max = 255)
 	private String				picture;
 
 	@NotBlank
 	@Length(max = 75)
 	private String				slogan;
 
-	@NotBlank
+	@NotNull
 	@URL
-	@Length(max = 250)
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	// Derived attributes -----------------------------------------------
