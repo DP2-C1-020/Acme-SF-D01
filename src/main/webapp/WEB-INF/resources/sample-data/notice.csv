@@ -5,6 +5,6 @@ notice-03,2022/07/30 00:00,This is a common title,Juan Ramón Jiménez,This is a
 notice-04,2018/01/01 11:12,This is a common titleThis is a common titleThis is a common titleThis is a,Juan Ramón Jiménez,This is a commom message,juanra@acme.com,https://www.google.com/
 notice-05,2018/01/01 11:12,This is a common title,Juan Ramón JiménezJuan Ramón JiménezJuan Ramón JiménezJuan Ramón JiménezJua,This is a commom message,juanra@acme.com,https://www.google.com/
 notice-06,2018/01/01 11:12,This is a common title,Juan Ramón Jiménez,This is a commom messageThis is a commom messageThis is a commom messageThis is a commom messageThis,juanra@acme.com,https://www.google.com/
-notice-07,2018/01/01 11:12,This is a common title,Juan Ramón Jiménez,This is a commom message,,https://www.google.com/
-notice-08,2018/01/01 11:12,This is a common title,Juan Ramón Jiménez,This is a commom message,juanra@acme.com,
-notice-09,2018/01/01 11:12,This is a common title,Juan Ramón Jiménez,This is a commom message,,
+notice-07,2018/01/01 11:12,This is a common title,Juan Ramón Jiménez,This is a commom message,null,https://www.google.com/
+notice-08,2018/01/01 11:12,This is a common title,Juan Ramón Jiménez,This is a commom message,juanra@acme.com,null
+notice-09,2018/01/01 11:12,This is a common title,Juan Ramón Jiménez,This is a commom message,null,null
