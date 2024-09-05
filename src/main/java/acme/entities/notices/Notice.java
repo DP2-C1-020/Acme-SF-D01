@@ -38,7 +38,6 @@ public class Notice extends AbstractEntity {
 	@Length(max = 75)
 	private String				title;
 
-	//TODO Custom restriction or derived attribute ==> author must be=〈username〉 - 〈surname, name〉
 	@NotBlank
 	@Length(max = 75)
 	private String				author;
@@ -48,9 +47,11 @@ public class Notice extends AbstractEntity {
 	private String				message;
 
 	@Email
+	@Length(min = 6, max = 254)
 	private String				email;
 
 	@URL
+	@Length(min = 7, max = 255)
 	private String				link;
 
 }
