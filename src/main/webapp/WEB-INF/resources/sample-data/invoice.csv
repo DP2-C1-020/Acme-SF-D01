@@ -1,6 +1,6 @@
 key,code,registrationTime,dueDate,quantity,tax,link,draftMode,key:sponsorship
 invoice-01,IN-0000-0000,2022/07/30 00:00,2022/08/30 00:00,USD 826446.28,21.00,http://www.lorem-ipsum.org,false,sponsorship-04
-invoice-02,IN-9999-9999,2022/07/29 23:59,2022/09/06 10:47,GBP 100.00,0.01,ftp://,true,sponsorship-02
+invoice-02,IN-9999-9999,2022/07/29 23:59,2022/09/06 10:47,GBP 100.00,0.01,ftp://w,true,sponsorship-02
 invoice-03,IN-0000-9999,2022/03/17 15:54,2022/07/30 01:00,USD 123.45,99.99,ftp://a,true,sponsorship-01
 invoice-04,IN-9999-0000,2022/05/16 00:00,2022/08/01 11:12,GBP 46.83,0.00,ftp://a.b,false,sponsorship-06
 invoice-05,IN-1111-8888,2018/07/31 00:00,2022/09/21 13:00,EUR 0.01,100.00,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/,false,sponsorship-11
@@ -13,4 +13,4 @@ invoice-11,IN-3321-0001,2022/07/30 00:00,2022/08/31 00:00,EUR 307.72,68.24,http:
 invoice-12,IN-9285-9375,2022/03/30 10:57,2022/08/03 20:00,USD 5.65,3.81,http://example.org?a&b,false,sponsorship-13
 invoice-13,IN-2948-0123,2020/06/30 16:54,2022/11/11 11:11,GBP 63704.81,25.00,http://example.org/a/b?a&b,false,sponsorship-15
 invoice-14,IN-9482-1039,2022/05/01 11:50,2022/07/30 00:01,GBP 93.46,73.77,http://example.org/a/b,false,sponsorship-09
-invoice-15,IN-8203-0593,2021/12/04 23:13,2022/08/05 20:19,GBP 24480.41,00.08,,false,sponsorship-12
+invoice-15,IN-8203-0593,2021/12/04 23:13,2022/08/05 20:19,GBP 24480.41,00.08,null,false,sponsorship-12

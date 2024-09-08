@@ -8,5 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-validation.claim.code = The code must be "C-<dddd>", where "<dddd>" denotes 4 digits between 0 and 9
-validation.risk.reference = The reference must be "R-<ddd>", where "<ddd>" denotes 3 digits between 0 and 9
+validation.claim.code = C-[0-9]{4}: The code must be "C-<dddd>", where "<dddd>" denotes 4 digits between 0 and 9
+validation.risk.reference = R-[0-9]{3}: The reference must be "R-<ddd>", where "<ddd>" denotes 3 digits between 0 and 9
+validation.invoice.code = IN-[0-9]{4}-[0-9]{4}: The code must be "IN-<dddd>-<dddd>", where "<dddd>" denotes 4 digits between 0 and 9 (8 digits in total)
+validation.sponsorship.code = [A-Z]{1,3}-[0-9]{3}: The code must start with 1 to 3 letters between A and Z, followed by a "-" and 3 digits between 0 and 9 
