@@ -9,9 +9,9 @@ sponsorship-07,A-000,2020/07/05 17:52,2022/08/15 14:43,2022/09/15 14:43,USD 345.
 sponsorship-08,XJ-019,2019/07/30 19:33,2021/07/23 19:33,2022/08/28 18:54,EUR 33.98,IN_KIND,acme@yahoo.es,http://www.lorem-ipsum.org/dolor/sit.html,false,project-05,sponsor-02
 sponsorship-09,Z-999,2022/02/22 16:30,2022/05/01 11:50,2022/07/30 00:01,GBP 435.25,FINANCIAL,usuario@prueba.com,http://www.lorem-ipsum.org/dolor/sit.html#dolor,true,project-07,sponsor-03
 sponsorship-10,WNR-117,2020/07/05 17:52,2020/07/23 14:00,2022/09/15 16:43,USD 14523.45,IN_KIND,exchange@money.org,http://example.org?a=1&b=2,true,project-14,sponsor-04
-sponsorship-11,A-999,2018/07/30 00:00,2018/07/31 00:00,2022/11/03 12:33,EUR 0.45,IN_KIND,,http://example.org/a/b?a&b,true,project-15,sponsor-05
-sponsorship-12,FEP-710,2019/12/04 22:13,2021/12/04 23:13,2022/12/15 22:39,GBP 24500.00,IN_KIND,acme@framework.es,,false,project-16,sponsor-02
-sponsorship-13,TQ-300,2022/02/28 00:00,2022/07/30 13:27,2022/08/30 20:00,USD 10.65,FINANCIAL,,,true,project-05,sponsor-01
+sponsorship-11,A-999,2018/07/30 00:00,2018/07/31 00:00,2022/11/03 12:33,EUR 0.45,IN_KIND,null,http://example.org/a/b?a&b,true,project-15,sponsor-05
+sponsorship-12,FEP-710,2019/12/04 22:13,2021/12/04 23:13,2022/12/15 22:39,GBP 24500.00,IN_KIND,acme@framework.es,null,false,project-16,sponsor-02
+sponsorship-13,TQ-300,2022/02/28 00:00,2022/07/30 13:27,2022/08/30 20:00,USD 10.65,FINANCIAL,null,null,true,project-05,sponsor-01
 sponsorship-14,Z-000,2021/05/11 23:55,2022/07/11 12:55,2022/12/25 14:43,EUR 999999.99,IN_KIND,act@me.com,http://example.org?a&b,false,project-07,sponsor-03
 sponsorship-15,DEF-121,2020/03/29 12:00,2020/06/30 11:00,2022/11/11 11:11,GBP 79631.01,FINANCIAL,contact@acme.com,http://example.org/a,false,project-18,sponsor-04
 sponsorship-16,WD-411,2022/06/16 14:54,2022/07/16 11:54,2022/08/26 00:00,USD 500.00,FINANCIAL,alfredo@alfredo.com,http://example.org/a/b?,false,project-19,sponsor-07

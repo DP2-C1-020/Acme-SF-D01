@@ -19,6 +19,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
@@ -33,7 +34,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "code")
+	@Index(columnList = "sponsor_id, link, draftMode"), //
+	@Index(columnList = "sponsor_id, draftMode, amount_currency")
 })
 public class Sponsorship extends AbstractEntity {
 
@@ -45,7 +47,7 @@ public class Sponsorship extends AbstractEntity {
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
+	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}", message = "{validation.sponsorship.code}")
 	private String				code;
 
 	@NotNull
@@ -69,9 +71,11 @@ public class Sponsorship extends AbstractEntity {
 	private SponsorshipType		type;
 
 	@Email
+	@Length(min = 6, max = 254)
 	private String				contact;
 
 	@URL
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	private boolean				draftMode;
