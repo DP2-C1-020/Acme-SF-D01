@@ -1,20 +1,54 @@
 key,key:manager,code,title,abstracto,fatalErrors,cost,link,draftMode
-project-01,manager-01,VWX-2340,This title is supossed to contain exactly 75 characters: so we can test it.,Abstracto with 100 characters: so we can test if the restrictions work as intended in edge values123,false,EUR 0.01,https://example.com/project1,true
-project-02,manager-02,YZA-5670,This title is supossed to contain exactly 74 characters: so we can test it,Abstracto with 99 characters: so we can test if the restrictions work as intended in edge values12,true,EUR 9999999.99,null,true
-project-03,manager-01,BCD-8900,Short Title 10,预计到达时间海象,false,USD 0.01,null,true
-project-04,manager-02,EFG-1230,زما ناریل خارش,Another Abstract 11,false,USD 9999999.99,FTP://example.com/project4,false
-project-05,manager-01,HIJ-4560,Title 5,A,true,GBP 0.01,https://example.com/project5,false
-project-06,manager-02,KLM-7890,Title 6,#,false,GBP 9999999.99,HTTP://example.com/project6,true
-project-07,manager-01,NOP-0120,Title 7,ღ•✠ⒽⒾⓉ☹☹☂☂☝☹☹➤❥✯,false,EUR 123456.78,HTTPS://example.com/project7,false
-project-08,manager-02,QRS-3450,T,Abstract 8,true,EUR 2345678.90,FTP://example.com/project8,true
-project-09,manager-01,TUV-2345,Social Media Strategy,Developing a comprehensive social media strategy to increase brand awareness and engagement.,true,USD 987654.32,null,true
-project-10,manager-02,WXY-6789,Product Development,Bringing a new product concept from ideation.,false,GBP 8765432.10,https://example.com/project10,true
-project-11,manager-01,XYZ-0123,Content Creation,Producing engaging content for various digital.,true,EUR 345678.90,https://example.com/project11,true
-project-12,manager-02,ABC-4567,Market Research,Conducting market research to identify consumer,false,USD 456789.01,null,true
-project-13,manager-01,DEF-8901,Training Program Development,Designing a training program for.,false,GBP 567890.12,null,true
-project-14,manager-02,GHI-2345,E-commerce Website Development,C,false,EUR 678901.23,https://example.com/project14,false
-project-15,manager-01,JKL-6789,Customer Satisfaction Survey,Gathering feedback from customers to improve products.,false,USD 789012.34,null,false
-project-16,manager-02,MNO-0123,Digital Marketing Campaign,Launching a targeted digital marketing campaign.,false,GBP 890123.45,https://example.com/project16,false
-project-17,manager-01,MNA-0123,Digital Marketing Campaign02,Launching a targeted digital marketing campaign02.,false,EUR 823.45,https://example.com/project17,false
-project-18,manager-01,MSA-0123,T18,A18,false,EUR 0.01,https://example.com/project18,false
-project-19,manager-01,MAA-0123,T19,A19,false,USD 40.01,https://example.com/project19,false
+project-01,manager-01,VWX-2340,This title is supossed to contain exactly 75 characters: so we can test it.,valid abstract,true,100,https://example.com/project1,true
+project-02,manager-01,YZA-5670,This title is supossed to contain exactly 74 characters: so we can test it,valid abstract,false,100,https://example.com/project2,true
+project-03,manager-01,BCD-8900,T,valid abstract,false,100,https://example.com/project3,false
+project-04,manager-01,EFG-1230,T4,valid abstract,false,100,FTP://example.com/project4,false
+project-05,manager-01,HIJ-4560,预计到达时间海象,valid abstract,true,100,https://example.com/project5,true
+project-06,manager-01,KLM-7890,ღ•✠ⒽⒾⓉ☹☹☂☂☝☹☹➤❥✯,valid abstract,false,100,HTTP://example.com/project6,true
+project-07,manager-01,NOP-0120,Ññ¨¨``,valid abstract,false,100,HTTPS://example.com/project7,true
+project-08,manager-01,QRS-3450,##@~€|´¿?&/()/%,valid abstract,true,100,FTP://example.com/project8,true
+project-09,manager-01,TUV-2345,SELECT * FROM Project WHERE ProjectId = 40 OR 1=1;,valid abstract,true,100,null,true
+project-10,manager-01,WXY-6789,<h1>Lorem ipsum</h1>,valid abstract,false,100,https://example.com/project10,true
+project-11,manager-01,XYZ-0123,<script>alert("Hello!")</script>,valid abstract,true, 100,https://example.com/project11,true
+project-12,manager-01,ABC-4567,12345.99,valid abstract,false, 100,null,true
+project-13,manager-01,DEF-8901,valid title,Abstracto with 100 characters: so we can test if the restrictions work as intended in edge values123,false, 100,https://example.com/project13,true
+project-14,manager-01,GHI-2345,valid title,Abstracto with 99 characters: so we can test if the restrictions work as intended in edge values123,false, 100,https://example.com/project14,true
+project-15,manager-01,JKL-6789,valid title,A,false, 100,https://example.com/project15,true
+project-16,manager-01,MNO-0123,valid title,AA,false,100,https://example.com/project16,true
+project-17,manager-01,MNA-0123,valid title,预计到达时间海象,false, 100,https://example.com/project17,false
+project-18,manager-01,MSA-0123,valid title,ღ•✠ⒽⒾⓉ☹☹☂☂☝☹☹➤❥✯,false,100,https://example.com/project18,true
+project-19,manager-01,AAA-0123,valid title,Ññ¨¨``,false,100,https://example.com/project19,true
+project-20,manager-01,AAB-0123,valid title,##@~€|´¿?&/()/% ,false,100,https://example.com/project20,true
+project-21,manager-01,AAC-0123,valid title,SELECT * FROM Projects WHERE ProjectId = 40 OR 1=1;,false,100,https://example.com/project21,true
+project-22,manager-01,AAD-0123,valid title,<h1>Lorem ipsum</h1>,false,100,https://example.com/project22,true
+project-23,manager-01,AAE-0123,valid title,<script>alert("Hello!")</script>,false,100,https://example.com/project23,true
+project-24,manager-01,AAF-0123,valid title,12345.99,false,100,https://example.com/project24,true
+project-25,manager-01,AAG-0123,valid title,valid abstract,true,	1000000000,https://example.com/project25,true
+project-26,manager-01,AAH-0123,valid title,valid abstract,false,999999999,https://example.com/project26,true
+project-27,manager-01,AAI-0123,valid title,valid abstract,true,0,https://example.com/project27,true
+project-28,manager-02,AAJ-0123,valid title,valid abstract,false,1,https://example.com/project28,true
+project-29,manager-02,AAK-0123,valid title,valid abstract,false,99,https://example.com/project29,false
+project-30,manager-02,AAL-0123,valid title,valid abstract,true,999,https://example.com/project30,true
+project-31,manager-02,AAM-0123,valid title,valid abstract,false,9999,https://example.com/project31,false
+project-32,manager-02,AAN-0123,valid title,valid abstract,false,99999,https://example.com/project32,true
+project-33,manager-02,ABA-0123,valid title,valid abstract,true,999999,https://example.com/project33,true
+project-34,manager-02,AAO-0123,valid title,valid abstract,false,9999999,https://example.com/project34,true
+project-35,manager-02,AAP-0123,valid title,valid abstract,false,99999999,https://example.com/project35,true
+project-36,manager-02,AAQ-0123,valid title,valid abstract,false,999999999,https://example.com/project35,true
+project-37,manager-02,AAR-0123,valid title,valid abstract,false,1,https://acme.com/a/b,true
+project-38,manager-02,AAS-0123,valid title,valid abstract,false,100,ftp://user:pass@acme.org,true
+project-39,manager-02,AAT-0123,valid title,valid abstract,false,344,http://a.b/c?d&e,true
+project-40,manager-02,AAU-0123,valid title,valid abstract,false,5000,file:///C:/Users/Usuario/Documentos/archivo.txt,true
+project-41,manager-02,AAV-0123,valid title,valid abstract,false,333,http://www.acme.com/a?b,true
+project-42,manager-02,AAW-0123,valid title,valid abstract,false,12345,null,true
+project-43,manager-02,AAX-0123,valid title,valid abstract,false,123456,http://localhost:8080/acme-sf-d04-24.5.0,true
+project-44,manager-02,AAY-0123,valid title,valid abstract,false,1234567,http://localhost:8080/acme-sf-d04-24.5.0/any/system/welcome,true
+project-45,manager-02,AAZ-0123,valid title,valid abstract,false,12345678,http://localhost:8080/acme-sf-d04-24.5.0/manager/project/list-mine,true
+project-46,manager-02,ABZ-0123,valid title,valid abstract,false,12345678,http://irc.example.com/channel,true
+project-47,manager-02,ACZ-0123,valid title,valid abstract,false,12345678,https://www.example.com/some-long-path/?query=12345&param=value&another_param=long_value&yet_another_param=another_value&final_param=final_value_that_is_very_long_so_the_url_can_reach_250_characters_in_length_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com,true
+project-48,manager-02,ADZ-0123,valid title,valid abstract,false,12345678,https://www.example.com/some-long-path/?query=12345&param=value&another_param=long_value&yet_another_param=another_value&final_param=final_value_that_is_very_long_so_the_url_can_reach_249_characters_in_length_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com,true
+project-49,manager-02,AEZ-0123,valid title,valid abstract,false,12345678,ftp://ftp.example.com/securefile.zip,true
+project-50,manager-02,AFZ-0123,valid title,valid abstract,false,12345678,file://user@example.com/home/user/file.txt,true
+project-51,manager-02,AGZ-0123,valid title,valid abstract,false,12345678,https://a.com,true
+project-52,manager-02,AHZ-0123,valid title,valid abstract,false,12345678,file://gopher.example.com/1/example,true
+project-53,manager-02,AIZ-0123,valid title,valid abstract,false,12345678,ftp://a.zip,true

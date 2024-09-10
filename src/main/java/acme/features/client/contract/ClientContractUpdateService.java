@@ -91,8 +91,9 @@ public class ClientContractUpdateService extends AbstractService<Client, Contrac
 			for (Contract contract : allContracts)
 				if (!contract.isDraftMode())
 					budgetTotal += contract.getBudget().getAmount();
-
-			double projectCost = object.getProject().getCost().getAmount();
+			// CAMBIO PARA QUE NO PETE PUES EL COSTE DE UN PROYECTO DEBE SER EN HORAS NO EN PRECIO 
+			// LO CUAL HACE QUE HAYA QUE CAMBIAR ESTO DE ALGUNA FORMA
+			int projectCost = object.getProject().getCost() * 20;
 			return projectCost >= budgetTotal + object.getBudget().getAmount();
 		}
 		return true;

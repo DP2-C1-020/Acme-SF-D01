@@ -1,7 +1,6 @@
 
 package acme.roles;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.Table;
@@ -40,7 +39,7 @@ public class Manager extends AbstractRole {
 	private String				certifications;
 
 	@URL
-	@Column(nullable = true)
+	@Length(max = 250)
 	private String				link;
 
 }

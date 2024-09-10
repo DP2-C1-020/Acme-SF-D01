@@ -7,7 +7,7 @@
 	<acme:input-textbox code="manager.project.form.label.code" path="code"/>	
 	<acme:input-textbox code="manager.project.form.label.title" path="title"/>	
 	<acme:input-textarea code="manager.project.form.label.abstracto" path="abstracto"/>
-	<acme:input-money code="manager.project.form.label.cost" path="cost"/>
+	<acme:input-integer code="manager.project.form.label.cost" path="cost"/>
 	<acme:input-url code="manager.project.form.label.link" path="link"/>
 	<acme:input-checkbox code="manager.project.form.label.fatalErrors" path="fatalErrors"/>
 	

@@ -1,33 +1,81 @@
 key,title,description,estimatedCost,acceptanceCriteria,priority,link,published,key:manager
-user-story-01,This title is supossed to contain exactly 75 characters: so we can test it.,Description with 100 characters: so we can test if the restrictions work as intended in edge values.,0,Acceptance Criteria with exactly 100 characters so we can test edge values and check if the restrict,MUST,https://example.com/story1,true,manager-01
-user-story-02,This title is supossed to contain exactly 74 characters: so we can test it,Description with 100 characters: so we can test if the restrictions work as intended in edge values,1,Acceptance Criteria with exactly 100 characters so we can test edge values and check if the restric,SHOULD,https://example.com/story2,true,manager-01
-user-story-03,خارشخارشخارشخارشخارش,•✠ⒽⒾⓉ☹•✠ⒽⒾⓉ☹,999999,Short Acceptance Criteria,COULD,null,false,manager-02
-user-story-04,T,D,5000,Acceptance Criteria 4,WONT,FTP://example.com/story4,true,manager-02
-user-story-05,"Title with special characters: é, @, #, $, %, ^?","Description with special characters: é, @, #, $, %, ^, &",0,"Acceptance Criteria with special characters: é, @, #, $, %, ^, &, *, (, ), _",MUST,https://example.com/story5,false,manager-01
-user-story-06,到达时到达时,Description 6,1,A,SHOULD,HTTP://example.com/story6,false,manager-01
-user-story-07,Title 7,Description 7,2,Acceptance Criteria 7,COULD,HTTPS://example.com/story7,true,manager-02
-user-story-08,Title 8,Description 8,3,Acceptance Criteria 8,MUST,null,true,manager-02
-user-story-09,T 9,D 9,20323,吸吸它,MUST,null,true,manager-01
-user-story-10,吸它,D 9,303241,它,MUST,null,false,manager-01
-user-story-11,ÑÑÑÑÑÑÑÑÑÑ,吸它吸它,341,吸它吸它吸它,MUST,null,false,manager-02
-user-story-12,آن را بمکد,吸它吸它吸它,999999,吸它吸它吸它,MUST,null,true,manager-02
-user-story-13,T 13,D 13,20,吸x1ºº它,MUST,null,true,manager-01
-user-story-14,T 14,D 14,203,askjdhf,MUST,null,true,manager-01
-user-story-15,T 15,D 15,2023,among us,MUST,null,true,manager-02
-user-story-16,T 16,D 16,3,它,MUST,null,true,manager-02
-user-story-17,Título 17,Descripción 17,5,Criterios de Aceptación 17,MUST,null,false,manager-01
-user-story-18,T 18,D 18,100,它它它,MUST,null,false,manager-01
-user-story-19,T 19,D 19,1234,吸它吸它吸它,MUST,null,true,manager-01
-user-story-20,Title 20,Description 20,42,它它,MUST,null,false,manager-01
-user-story-21,T 21,D 21,7,吸它,MUST,null,true,manager-01
-user-story-22,T 22,D 22,888,它吸它,MUST,null,false,manager-01
-user-story-23,Title 23,Description 23,999,吸吸吸吸,MUST,null,true,manager-01
-user-story-24,T 24,D 24,303,它它它它,MUST,null,false,manager-01
-user-story-25,Title 25,Description 25,15,吸它它它它,MUST,null,true,manager-01
-user-story-26,T 26,D 26,1500,吸吸吸吸吸吸,MUST,null,false,manager-02
-user-story-27,T 27,D 27,9999,它吸吸吸,MUST,null,true,manager-01
-user-story-28,Title 28,D 28,30,它吸它它,MUST,null,false,manager-02
-user-story-29,T 29,D 29,75,它它它它它,MUST,null,true,manager-01
-user-story-30,Title 30,D 30,500,吸吸吸吸吸,MUST,null,true,manager-02
-user-story-31,T 31,D 31,10,吸吸吸吸,MUST,null,true,manager-01
-user-story-32,T 32,D 32,25,它它它,MUST,null,true,manager-02
+user-story-01,This title is supossed to contain exactly 75 characters: so we can test it.,valid description,10,valid Acceptance Criteria,MUST,https://example.com/story1,true,manager-01
+user-story-02,This title is supossed to contain exactly 74 characters: so we can test it,valid description,10,valid Acceptance Criteria,MUST,https://example.com/story2,true,manager-01
+user-story-03,T,valid description,10,valid Acceptance Criteria,SHOULD,https://example.com/story3,false,manager-01
+user-story-04,T4,valid description,10,valid Acceptance Criteria,COULD,https://example.com/story4,false,manager-01
+user-story-05,预计到达时间海象,valid description,10,valid Acceptance Criteria,WONT,https://example.com/story5,false,manager-01
+user-story-06,ღ•✠ⒽⒾⓉ☹☹☂☂☝☹☹➤❥✯,valid description,10,valid Acceptance Criteria,MUST,https://example.com/story6,false,manager-01
+user-story-07,Ññ¨¨``,valid description,10,valid Acceptance Criteria,WONT,https://example.com/story7,true,manager-01
+user-story-08,##@~€|´¿?&/()/%,valid description,10,valid Acceptance Criteria,SHOULD,https://example.com/story8,false,manager-01
+user-story-09,SELECT us FROM UserStory us WHERE us.id = 145 OR 1=1;,valid description,10,valid Acceptance Criteria,SHOULD,https://example.com/story9,false,manager-01
+user-story-10,<h1>Lorem ipsum</h1>,valid description,10,valid Acceptance Criteria,COULD,https://example.com/story10,false,manager-01
+user-story-11,<script>alert("Hello!")</script>,valid description,10,valid Acceptance Criteria,COULD,https://example.com/story11,true,manager-01
+user-story-12,12345.99,valid description,10,valid Acceptance Criteria,MUST,https://example.com/story12,true,manager-01
+user-story-13,valid title,Description with 100 characters: so we can test if the restrictions work as intended in edge values.,10,valid Acceptance Criteria,MUST,https://example.com/story13,false,manager-01
+user-story-14,valid title,Description with 99 characters: so we can test if the restrictions work as intended in edge values.,10,valid Acceptance Criteria,MUST,https://example.com/story14,false,manager-01
+user-story-15,valid title,D,10,valid Acceptance Criteria,MUST,https://example.com/story15,true,manager-01
+user-story-16,valid title,DA,10,valid Acceptance Criteria,MUST,https://example.com/story16,true,manager-01
+user-story-17,valid title,预计到达时间海象,10,valid Acceptance Criteria,MUST,https://example.com/story17,true,manager-01
+user-story-18,valid title,ღ•✠ⒽⒾⓉ☹☹☂☂☝☹☹➤❥✯,10,valid Acceptance Criteria,MUST,https://example.com/story18,false,manager-01
+user-story-19,valid title,Ññ¨¨``,10,valid Acceptance Criteria,MUST,https://example.com/story19,false,manager-01
+user-story-20,valid title,##@~€|´¿?&/()/%,10,valid Acceptance Criteria,MUST,https://example.com/story20,false,manager-01
+user-story-21,valid title,SELECT us FROM UserStory us WHERE us.id = 145 OR 1=1;,10,valid Acceptance Criteria,MUST,https://example.com/story21,false,manager-01
+user-story-22,valid title,<h1>Lorem ipsum</h1>,10,valid Acceptance Criteria,MUST,https://example.com/story22,false,manager-01
+user-story-23,valid title,<script>alert("Hello!")</script>,10,valid Acceptance Criteria,MUST,https://example.com/story23,true,manager-01
+user-story-24,valid title,12345.99,10,valid Acceptance Criteria,MUST,https://example.com/story24,true,manager-01
+user-story-25,valid title,valid description,1,valid Acceptance Criteria,MUST,https://example.com/story25,true,manager-01
+user-story-26,valid title,valid description,2,valid Acceptance Criteria,MUST,https://example.com/story26,false,manager-01
+user-story-27,valid title,valid description,99,valid Acceptance Criteria,MUST,https://example.com/story27,false,manager-01
+user-story-28,valid title,valid description,999,valid Acceptance Criteria,MUST,https://example.com/story28,false,manager-01
+user-story-29,valid title,valid description,9999,valid Acceptance Criteria,MUST,https://example.com/story29,false,manager-01
+user-story-30,valid title,valid description,99999,valid Acceptance Criteria,MUST,https://example.com/story30,false,manager-02
+user-story-31,valid title,valid description,999999,valid Acceptance Criteria,MUST,https://example.com/story31,false,manager-02
+user-story-32,valid title,valid description,9999999,valid Acceptance Criteria,MUST,https://example.com/story32,false,manager-02
+user-story-33,valid title,valid description,10000000,valid Acceptance Criteria,MUST,https://example.com/story33,true,manager-02
+user-story-34,valid title,valid description,10,Acceptance Criteria with exactly 100 characters so we can test edge values and check if the restrict,MUST,https://example.com/story34,true,manager-02
+user-story-35,valid title,valid description,10,Acceptance Criteria with exactly 99 characters so we can test edge values and check if the restrict,MUST,https://example.com/story35,true,manager-02
+user-story-36,valid title,valid description,10,A,MUST,https://example.com/story36,false,manager-02
+user-story-37,valid title,valid description,10,AA,MUST,https://example.com/story37,false,manager-02
+user-story-38,valid title,valid description,10,预计到达时间海象,MUST,https://example.com/story38,false,manager-02
+user-story-39,valid title,valid description,10,ღ•✠ⒽⒾⓉ☹☹☂☂☝☹☹➤❥✯,MUST,https://example.com/story39,false,manager-02
+user-story-40,valid title,valid description,10,Ññ¨¨``,MUST,https://example.com/story40,false,manager-02
+user-story-41,valid title,valid description,10,##@~€|´¿?&/()/%,MUST,https://example.com/story41,false,manager-02
+user-story-42,valid title,valid description,10,SELECT us FROM UserStory us WHERE us.id = 145 OR 1=1;,MUST,https://example.com/story42,true,manager-02
+user-story-43,valid title,valid description,10,<h1>Lorem ipsum</h1>,MUST,https://example.com/story43,true,manager-02
+user-story-44,valid title,valid description,10,<script>alert("Hello!")</script>,MUST,https://example.com/story44,true,manager-02
+user-story-45,valid title,valid description,10,12345.99,MUST,https://example.com/story45,false,manager-02
+user-story-46,valid title,valid description,4,valid acceptance criteria,WONT,https://acme.com/a/b,false,manager-02
+user-story-47,valid title,valid description,6,valid acceptance criteria,SHOULD,ftp://user:pass@acme.org,true,manager-02
+user-story-48,valid title,valid description,7,valid acceptance criteria,COULD,http://a.b/c?d&e,false,manager-02
+user-story-49,valid title,valid description,76,valid acceptance criteria,MUST,file:///C:/Users/Usuario/Documentos/archivo.txt,false,manager-02
+user-story-50,valid title,valid description,4,valid acceptance criteria,COULD,http://www.acme.com/a?b,false,manager-02
+user-story-51,valid title,valid description,6,valid acceptance criteria,COULD,null,false,manager-02
+user-story-52,valid title,valid description,78,valid acceptance criteria,COULD,http://localhost:8080/acme-sf-d04-24.5.0,false,manager-02
+user-story-53,valid title,valid description,75,valid acceptance criteria,COULD,http://localhost:8080/acme-sf-d04-24.5.0/any/system/welcome,true,manager-02
+user-story-54,valid title,valid description,33,valid acceptance criteria,COULD,http://localhost:8080/acme-sf-d04-24.5.0/manager/project/list-mine,false,manager-02
+user-story-55,valid title,valid description,99,valid acceptance criteria,SHOULD,http://irc.example.com/channel,false,manager-02
+user-story-56,valid title,valid description,45,valid acceptance criteria,COULD,https://www.example.com/some-long-path/?query=12345&param=value&another_param=long_value&yet_another_param=another_value&final_param=final_value_that_is_very_long_so_the_url_can_reach_250_characters_in_length_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com,false,manager-02
+user-story-57,valid title,valid description,665,valid acceptance criteria,WONT,https://www.example.com/some-long-path/?query=12345&param=value&another_param=long_value&yet_another_param=another_value&final_param=final_value_that_is_very_long_so_the_url_can_reach_249_characters_in_length_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com,false,manager-02
+user-story-58,valid title,valid description,445,valid acceptance criteria,WONT,ftp://ftp.example.com/securefile.zip,false,manager-02
+user-story-59,valid title,valid description,133,valid acceptance criteria,COULD,file://user@example.com/home/user/file.txt,false,manager-02
+user-story-60,valid title,valid description,12,valid acceptance criteria,SHOULD,https://a.com,false,manager-02
+user-story-61,valid title,valid description,5432,valid acceptance criteria,COULD,file://gopher.example.com/1/example,false,manager-02
+user-story-62,valid title,valid description,454,valid acceptance criteria,WONT,ftp://a,true,manager-02
+user-story-63,valid title,valid description,123,valid acceptance criteria,WONT,file://a,true,manager-02
+user-story-64,valid title,valid description,12,valid acceptance criteria,WONT,http://a,true,manager-02
+user-story-65,valid title,valid description,23,valid acceptance criteria,WONT,https://a,true,manager-02
+user-story-66,valid title,valid description,98,valid acceptance criteria,MUST,ftp://a.zip,true,manager-02
+user-story-67,valid title,valid description,65,valid acceptance criteria,SHOULD,ftp://a.zip,true,manager-02
+user-story-68,valid title,valid description,67,valid acceptance criteria,COULD,ftp://a.zip,false,manager-02
+user-story-69,valid title,valid description,35,valid acceptance criteria,SHOULD,ftp://a.zip,false,manager-02
+user-story-70,valid title,valid description,55,valid acceptance criteria,SHOULD,ftp://a.zip,false,manager-02
+user-story-71,valid title,valid description,17,valid acceptance criteria,SHOULD,ftp://a.zip,false,manager-01
+user-story-72,valid title,valid description,16,valid acceptance criteria,SHOULD,ftp://a.zip,false,manager-01
+user-story-73,valid title,valid description,15,valid acceptance criteria,SHOULD,ftp://a.zip,false,manager-01
+user-story-74,valid title,valid description,14,valid acceptance criteria,COULD,ftp://a.zip,false,manager-01
+user-story-75,valid title,valid description,20,valid acceptance criteria,MUST,ftp://a.zip,false,manager-01
+user-story-76,valid title,valid description,90,valid acceptance criteria,MUST,ftp://a.zip,false,manager-01
+user-story-77,valid title,valid description,40,valid acceptance criteria,WONT,ftp://a.zip,true,manager-01
+user-story-78,valid title,valid description,30,valid acceptance criteria,WONT,ftp://a.zip,false,manager-01
+user-story-79,valid title,valid description,1,valid acceptance criteria,COULD,ftp://a.zip,false,manager-01
+user-story-80,valid title,valid description,120,valid acceptance criteria,COULD,ftp://a.zip,true,manager-01
