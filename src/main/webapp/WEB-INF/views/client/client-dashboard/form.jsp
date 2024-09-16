@@ -49,7 +49,7 @@
                     <acme:message code="client.clientDashboard.form.label.averageBudget"/>
                 </th>
                 <td class="align-right">
-                    <acme:print value="${averagePerCurrency[s]}"/>
+                    <acme:print value="${averageBudget[s]}"/>
                 </td>
             </tr>
             <tr>
