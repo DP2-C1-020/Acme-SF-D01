@@ -59,10 +59,10 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 		for (String currency : currencies)
 			listCurrencies.add(currency);
 
-		double totalLogsBelow25Percent = this.repository.findNumOfProgressLogsLess25(client);
-		double totalLogs25To50Percent = this.repository.findNumOfProgressLogsWithRate25to50(client);
-		double totalLogs50To75Percent = this.repository.findNumOfProgressLogsWithRate50to75(client);
-		double totalLogsAbove75Percent = this.repository.findNumOfProgressLogsWithRateOver75(client);
+		int totalLogsBelow25Percent = this.repository.findNumOfProgressLogsLess25(client);
+		int totalLogs25To50Percent = this.repository.findNumOfProgressLogsWithRate25to50(client);
+		int totalLogs50To75Percent = this.repository.findNumOfProgressLogsWithRate50to75(client);
+		int totalLogsAbove75Percent = this.repository.findNumOfProgressLogsWithRateOver75(client);
 
 		Map<String, Double> averagePerCurrency = this.calculateAveragePerCurrency(client, listCurrencies);
 		Map<String, Double> deviationBudget = this.calculateDeviationBudget(client, listCurrencies);

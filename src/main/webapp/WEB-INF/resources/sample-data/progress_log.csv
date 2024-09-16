@@ -1,11 +1,32 @@
 key,recordId,completeness,comment,registration_moment,responsible_person,draft_mode,key:contract
-progress_log-01,PG-A-0001,90.0,This is a short commentThis is a short commentThis is a short commentThis is a short commentThis is.,2021/01/01 00:00,john_doe,true,contract-01
-progress_log-02,PG-AB-0002,80.0,x,2021/01/02 00:00,jane_doe,true,contract-02
-progress_log-03,PG-B-0003,95.0,هذا تعليق قصير. هذا تعليق قصير. هذا تعليق قصير. هذا تعليق قصير. هذا تعليق قصير.,2021/01/03 00:00,alice_smith,true,contract-03
-progress_log-04,PG-C-0004,100.0,これは短いコメントです。これは短いコメントです。これは短いコメントです。これは短いコメントです。これは短いコメントです。,2021/01/04 00:00,bob_smith,false,contract-04
-progress_log-05,PG-AB-0005,85.0,This is an almost complete comment,2021/01/05 00:00,La persona responsable es John Doe.La persona responsable es John Doe.Es JD,false,contract-05
-progress_log-06,PG-C-0006,98.0,This is another complete comment,2021/01/06 00:00,Ответственное лицо - Джон Доу. Ответственное лицо - Джон Доу. Это ДжД.,true,contract-05
-progress_log-07,PG-B-0007,92.0,This is an in-progress comment,2021/01/07 00:00,J,true,contract-07
-progress_log-08,PG-AB-0008,87.0,This is a pending comment,2021/01/08 00:00,chris_doe,false,contract-08
-progress_log-09,PG-C-0009,96.0,This is a test comment,2021/01/09 00:00,alex_smith,false,contract-09
-progress_log-10,PG-B-0010,93.0,This is a sample comment,2021/01/10 00:00,sophia_johnson,true,contract-10
+#completeness
+progress_log-01,PG-C-0001,0.00,Lorem ipsum,2021/01/01 00:00,john_doe,true,contract-01
+progress_log-02,PG-C-0002,0.01,Lorem ipsum,2021/01/02 00:00,john_doe,true,contract-02
+progress_log-03,PG-C-0003,99.99,Lorem ipsum,2021/01/01 00:00,john_doe,false,contract-34
+progress_log-04,PG-C-0004,100.00,Lorem ipsum,2021/01/01 00:00,john_doe,true,contract-34
+#comment
+progress_log-05,PG-CC-1111,99.99,L,2021/01/03 00:00,john_doe,true,contract-03
+progress_log-06,PG-CC-1112,100.0,Lo,2021/01/04 00:00,john_doe,false,contract-34
+progress_log-07,PG-CC-1113,85.0,Lorem ipsum,2021/01/05 00:00,john_doe,false,contract-05
+progress_log-08,PG-CC-1114,98.0,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",2021/01/06 00:00,john_doe,true,contract-05
+progress_log-09,PG-CC-1115,0.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore*",2021/01/01 00:00,john_doe,true,contract-01
+progress_log-10,PG-CC-1116,92.0,<h1>!</h1>,2021/01/07 00:00,john_doe,true,contract-07
+progress_log-11,PG-CC-1117,87.0,' or 'A'='A,2021/01/08 00:00,john_doe,false,contract-08
+progress_log-12,PG-CC-1118,96.0,국민경제의 발전을,2021/01/09 00:00,john_doe,false,contract-09
+progress_log-13,PG-CC-1119,93.0,العظمى واعتلاء,2021/01/10 00:00,sophia_johnson,true,contract-10
+#registrationMoment
+progress_log-14,PG-RM-4444,0.00,Lorem ipsum,2022/07/29 23:59,john_doe,false,contract-34
+progress_log-15,PG-RM-4445,0.00,Lorem ipsum,2022/07/29 23:58,john_doe,false,contract-34
+progress_log-16,PG-RM-4446,0.00,Lorem ipsum,2020/02/29 00:00,john_doe,true,contract-01
+progress_log-17,PG-RM-4447,0.00,Lorem ipsum,2000/01/01 00:01,john_doe,true,contract-01
+progress_log-18,PG-RM-4448,0.00,Lorem ipsum,2000/01/01 00:00,john_doe,true,contract-01
+#responsiblePerson
+progress_log-19,PG-P-2221,0.00,Lorem ipsum,2021/01/01 00:00,L,true,contract-01
+progress_log-20,PG-P-2222,0.00,Lorem ipsum,2021/01/01 00:00,Lo,false,contract-34
+progress_log-21,PG-P-2223,0.00,Lorem ipsum,2021/01/01 00:00,Lorem ipsum,false,contract-34
+progress_log-22,PG-P-2224,0.00,Lorem ipsum,2021/01/01 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te",true,contract-01
+progress_log-23,PG-P-2225,0.00,Lorem ipsum,2021/01/01 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem",true,contract-01
+progress_log-24,PG-P-2226,0.00,Lorem ipsum,2021/01/01 00:00,<h1>!</h1>,true,contract-01
+progress_log-25,PG-P-2227,0.00,Lorem ipsum,2021/01/01 00:00,' or 'A'='A,true,contract-34
+progress_log-26,PG-P-2228,0.00,Lorem ipsum,2021/01/01 00:00,국민경제의 발전을,false,contract-34
+progress_log-27,PG-P-2229,0.00,Lorem ipsum,2021/01/01 00:00,العظمى واعتلاء,true,contract-01

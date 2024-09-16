@@ -13,10 +13,10 @@ public class ClientDashboard extends AbstractForm {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	double						totalLogsBelow25Percent;
-	double						totalLogs25To50Percent;
-	double						totalLogs50To75Percent;
-	double						totalLogsAbove75Percent;
+	int							totalLogsBelow25Percent;
+	int							totalLogs25To50Percent;
+	int							totalLogs50To75Percent;
+	int							totalLogsAbove75Percent;
 
 	Map<String, Double>			averageBudget;
 	Map<String, Double>			deviationBudget;

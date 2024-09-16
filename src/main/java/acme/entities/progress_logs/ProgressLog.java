@@ -30,7 +30,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "contract_id")
+	@Index(columnList = "recordId"), @Index(columnList = "id,recordId"), @Index(columnList = "contract_id,completeness"), @Index(columnList = "contract_id,draftMode")
 })
 public class ProgressLog extends AbstractEntity {
 

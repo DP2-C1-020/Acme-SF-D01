@@ -14,16 +14,16 @@ public interface ClientDashboardRepository extends AbstractRepository {
 	Client findOneClientByUserAccountId(int id);
 
 	@Query("select count(pl) from ProgressLog pl where pl.contract.client = :client and pl.completeness < 25 and pl.contract.draftMode = false")
-	double findNumOfProgressLogsLess25(Client client);
+	int findNumOfProgressLogsLess25(Client client);
 
 	@Query("select count(pl) from ProgressLog pl where pl.contract.client = :client and pl.completeness < 50 and 25 <= pl.completeness and pl.contract.draftMode = false")
-	double findNumOfProgressLogsWithRate25to50(Client client);
+	int findNumOfProgressLogsWithRate25to50(Client client);
 
 	@Query("select count(pl) from ProgressLog pl where pl.contract.client = :client and pl.completeness < 75 and 50 <= pl.completeness and pl.contract.draftMode = false")
-	double findNumOfProgressLogsWithRate50to75(Client client);
+	int findNumOfProgressLogsWithRate50to75(Client client);
 
 	@Query("select count(pl) from ProgressLog pl where pl.contract.client = :client and 75 <= pl.completeness and pl.contract.draftMode = false")
-	double findNumOfProgressLogsWithRateOver75(Client client);
+	int findNumOfProgressLogsWithRateOver75(Client client);
 
 	@Query("select avg(c.budget.amount) from Contract c where c.client = :client and c.draftMode = false and c.budget.currency = :s")
 	Double findAverageBudget(Client client, String s);
