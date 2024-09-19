@@ -46,6 +46,7 @@ public class Risk extends AbstractEntity {
 	private Date				identificationDate;
 
 	@Positive
+	@Max(100)
 	private double				impact;
 
 	@Digits(integer = 3, fraction = 2)
@@ -65,6 +66,8 @@ public class Risk extends AbstractEntity {
 
 
 	@Transient
+	@Min(0)
+	@Max(100)
 	public double getValue() {
 		double value;
 

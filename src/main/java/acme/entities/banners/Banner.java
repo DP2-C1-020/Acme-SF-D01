@@ -10,6 +10,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -67,7 +68,8 @@ public class Banner extends AbstractEntity {
 
 
 	@Transient
-	public Integer getDisplayPeriod() {
+	@Min(7)
+	public int getDisplayPeriod() {
 
 		Duration displayPeriod;
 		displayPeriod = MomentHelper.computeDuration(this.startDate, this.endDate);
