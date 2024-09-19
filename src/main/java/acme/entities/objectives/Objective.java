@@ -65,7 +65,7 @@ public class Objective extends AbstractEntity {
 
 
 	@Transient
-	public Integer getDuration() {
+	public int getDuration() {
 
 		Duration duration;
 		duration = MomentHelper.computeDuration(this.startDate, this.endDate);
