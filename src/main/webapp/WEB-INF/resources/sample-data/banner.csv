@@ -1,7 +1,54 @@
 key,instantiationMoment,startDate,endDate,picture,slogan,link
-banner-01,2022/05/29 23:59,2022/05/30 00:00,2022/06/30 00:00,https://prnews.io/es/blog/wp-content/uploads/2023/04/PRNews.io4_.jpg,Im lovin it,https://www.google.com/
-banner-02,2022/07/29 23:59,2022/07/30 00:00,2022/08/30 00:00,https://i.pinimg.com/564x/b3/c9/90/b3c99043905d61989dec7fceff09f079.jpg,Im lovin it,https://www.google.com/
-banner-03,2022/05/29 23:59,2022/06/30 00:00,2022/07/30 00:01,https://www.antevenio.com/wp-content/uploads/2016/04/20-ejemplos-de-banners-creativos.jpg,Im lovin it,https://www.google.com/
-banner-04,2022/07/29 23:59,2022/07/30 00:01,2022/08/30 00:00,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_3i-ek3Mht0S3eWcz5Jw0B75_m91l0ndMXTZFW_D1EA&s,Im lovin it,https://www.google.com/
-banner-05,2022/07/30 00:00,2022/07/30 00:01,2022/09/30 00:00,https://www.antevenio.com/wp-content/uploads/2016/04/coca-cola.png,Im lovin it,https://www.google.com/
-banner-06,2022/07/29 23:59,2022/07/30 00:00,2022/10/30 00:00,https://marketerosdehoy.com/wp-content/uploads/2019/04/banner-que-es-1280x720.png,Im lovin itIm lovin itIm lovin itIm lovin itIm lovin itvIm lovin itIm lovin,https://www.google.com/
+"# Base Banner #"
+banner-01,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+"# Possible values on InstantiationMoment #"
+banner-02,2000/01/01 00:00,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-03,2000/01/01 00:01,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-04,2011/04/16 00:00,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-05,2022/07/29 23:59,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-06,2022/07/30 00:00,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+"# Possible values on StartDate #"
+banner-07,2000/01/01 00:00,2000/01/01 00:01,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-08,2000/01/01 00:00,2000/01/01 00:02,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-09,2020/07/12 17:54,2050/01/01 00:00,2100/01/01 00:00,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-10,2020/07/12 17:54,2099/12/24 23:59,2100/01/01 00:00,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-11,2020/07/12 17:54,2099/12/25 00:00,2100/01/01 00:00,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+"# Possible values on EndDate #"
+banner-12,2000/01/01 00:00,2000/01/01 00:01,2000/01/08 00:01,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-13,2000/01/01 00:00,2000/01/01 00:01,2000/01/08 00:02,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-14,2020/07/12 17:54,2022/08/15 00:00,2050/01/04 00:00,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-15,2020/07/12 17:54,2022/08/15 00:00,2099/12/31 23:59,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-16,2020/07/12 17:54,2022/08/15 00:00,2100/01/01 00:00,https://i.imgur.com/X7hCsLY.png,Keep visiting us,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+"# Possible values on Picture-Link (regular URLs) #"
+"                   # Length #"
+banner-17,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,http://,Keep visiting us,http://
+banner-18,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,http://a,Keep visiting us,http://a
+banner-19,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magn.jpg,Keep visiting us,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/eli/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/ali
+banner-20,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/asu.jpg,Keep visiting us,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/du
+banner-21,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/asus.jpg,Keep visiting us,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/due
+"                   # Content #"
+banner-22,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,http://192.168.1.10:8081/path/a/imagen-con-acento_ñ.jpg,Keep visiting us,http://203.0.113.25:8080/path/con_caracteres-especiales/acción?query=valor%20extraño
+banner-23,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,https://www.dominio-raro.com:8443/subdir/foto_extraña_😊.png,Keep visiting us,https://subdominio.extravagante.dominio.com:4433/usuarios/nombres_con_simbolos?user=nombre_único
+banner-24,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,ftp://usuario@servidor.com:21/downloads/archivo%20espacio.gif,Keep visiting us,ftp://admin@192.168.10.5:21/directorio/subdirectorio/acción-descarga?file=excepción
+banner-25,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,http://[2001:db8::1]:9090/images/caracteres-especiales-ñü.bmp,Keep visiting us,https://[2001:db8::ff00:42:8329]:9090/página/de/contenido-único?lang=español
+"# Possible values on Slogan #"
+"         # Length #"
+banner-26,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,K,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-27,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Ke,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-28,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Keep visiting us and our lovely lands.,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-29,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Keep visiting us for fresh updates every day! There's always something new,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-30,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Keep visiting us for fresh updates every day! There's always something new!,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+"        # Content #"
+banner-31,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,Это пример строки на кириллице которая довольно длинная.,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-32,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,'; SELECT * FROM users WHERE '1'='1' --,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-33,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,<div><h2>¡Bienvenido a nuestra página web!</h2><p>Disfruta.</p></div>,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-34,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,🌟🚀🌈✨💻🔒🧬🎨🎉🎯💡🎈🌟🚀🌈✨💻🔒🧬🎨🎉🎯💡🎈,https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+banner-35,2020/07/12 17:54,2022/08/15 00:00,2024/12/31 14:23,https://i.imgur.com/X7hCsLY.png,os.system('rm -rf /'),https://es.wikipedia.org/wiki/Am%C3%A9rica_del_Sur
+"# Active banners to show on home page #"
+banner-36,2021/12/04 15:42,2022/01/14 14:00,2025/01/15 16:45,https://i.imgur.com/sNMZ1iS.png,Cyber Monday sales! Are you ready?,https://es.wikipedia.org/wiki/Ciberlunes
+banner-37,2019/09/26 03:45,2020/03/17 00:32,2023/10/31 00:00,https://i.imgur.com/oF84FrR.png,The best furniture in market,https://es.wikipedia.org/wiki/Mobiliario
+banner-38,2022/01/01 18:30,2022/06/01 23:10,2024/12/04 10:53,https://i.imgur.com/2LXiRla.png,What do you need to move?,https://es.wikipedia.org/wiki/Log%C3%ADstica
+banner-39,2018/02/28 17:00,2019/12/18 04:59,2022/11/13 19:31,https://i.imgur.com/7lbmrDA.png,Best quality jewelry!,https://es.wikipedia.org/wiki/Joyer%C3%ADa
+banner-40,2020/07/04 01:40,2021/02/13 15:00,2030/05/11 15:43,https://i.imgur.com/RlxXchS.png,Visit Maldives! Really exotic,https://es.wikipedia.org/wiki/Maldivas
+banner-41,2017/10/24 20:59,2020/12/04 13:55,2023/12/07 11:29,https://i.imgur.com/QRpiPab.png,Technology for everyone,https://es.wikipedia.org/wiki/Tecnolog%C3%ADa
+banner-42,2022/01/15 15:33,2022/01/18 09:51,2022/12/31 09:31,https://i.imgur.com/FdIGSA3.png,Gorgeous family house on sale!,https://es.wikipedia.org/wiki/Casa

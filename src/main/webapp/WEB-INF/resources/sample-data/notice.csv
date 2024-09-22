@@ -1,10 +1,54 @@
 key,instantiationMoment,title,author,message,email,link
-notice-01,2018/01/01 11:12,This is a common title,Juan Ramón Jiménez,This is a commom message,juanra@acme.com,https://www.google.com/
-notice-02,2022/07/29 23:59,This is a common title,Juan Ramón Jiménez,This is a commom message,juanra@acme.com,https://www.google.com/
-notice-03,2022/07/30 00:00,This is a common title,Juan Ramón Jiménez,This is a commom message,juanra@acme.com,https://www.google.com/
-notice-04,2018/01/01 11:12,This is a common titleThis is a common titleThis is a common titleThis is a,Juan Ramón Jiménez,This is a commom message,juanra@acme.com,https://www.google.com/
-notice-05,2018/01/01 11:12,This is a common title,Juan Ramón JiménezJuan Ramón JiménezJuan Ramón JiménezJuan Ramón JiménezJua,This is a commom message,juanra@acme.com,https://www.google.com/
-notice-06,2018/01/01 11:12,This is a common title,Juan Ramón Jiménez,This is a commom messageThis is a commom messageThis is a commom messageThis is a commom messageThis,juanra@acme.com,https://www.google.com/
-notice-07,2018/01/01 11:12,This is a common title,Juan Ramón Jiménez,This is a commom message,null,https://www.google.com/
-notice-08,2018/01/01 11:12,This is a common title,Juan Ramón Jiménez,This is a commom message,juanra@acme.com,null
-notice-09,2018/01/01 11:12,This is a common title,Juan Ramón Jiménez,This is a commom message,null,null
+"# Base Notice #"
+notice-01,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+"# Possibles values on InstantiationMoment #"
+notice-02,2000/01/01 00:00,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-03,2000/01/01 00:01,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-04,2011/04/16 00:00,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-05,2022/07/29 23:59,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-06,2022/07/30 00:00,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+"# Possible values on Title-Message (regular strings) #"
+"                      # Length #"
+notice-07,2019/10/04 14:54,S,"sponsor1 - Almensilla, Natalio",T,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-08,2019/10/04 14:54,Sp,"sponsor1 - Almensilla, Natalio",Th,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-09,2019/10/04 14:54,Sponsorship Meeting about Partnerships,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about sponsorships,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-10,2019/10/04 14:54,Sponsorship Meeting Scheduled to Discuss Strategy or Potential Partnership,"sponsor1 - Almensilla, Natalio",There will be a meeting scheduled to talk about the sponsorship and explore potential opportunities,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-11,2019/10/04 14:54,Sponsorship Meeting Scheduled to Discuss Strategy or Potential Partnerships,"sponsor1 - Almensilla, Natalio",There will be a meeting scheduled to talk about the sponsorship and explore potential opportunities.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+"                     # Content #"
+notice-12,2019/10/04 14:54,Запланирована встреча спонсоров для обсуждения стратегии и,"sponsor1 - Almensilla, Natalio",스폰서십에 대해 논의하고 잠재적인 기회를 모색하기 위한 회의가 예정되어 있습니다.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-13,2019/10/04 14:54,'; DROP TABLE users; INSERT INTO admins VALUES ('hacked'); --,"sponsor1 - Almensilla, Natalio",<script>document.write('Hacked by script injection');</script>,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-14,2019/10/04 14:54,"<table><tr><td>Row 1, Cell 1</td><td>Row 1, Cell 2</td></tr></table>","sponsor1 - Almensilla, Natalio",<img src='evilsite.com/image.jpg' onerror='alert(Hacked)' /><iframe src='phishing.com'></iframe>,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-15,2019/10/04 14:54,😊🎉👍💯🔥🤖👽👾💔😂😍🥳🐱‍👤🐉🚀❤️‍🔥🤯🥶😜🦄🐸🍕🍩🍟🌈🎈🎁🎂🎄🎃,"sponsor1 - Almensilla, Natalio",⟡⟠⟢⟣⟤⟥⟦⟧⟨⟩⟪⟫⟬⟭⟮⟯⟰⟱⟲⟳⟴⟵⟶⟷⟸⟹⟺⟻⟼⟽⟾,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-16,2019/10/04 14:54,echo 'Important data'; cd /etc; cat shadow; sudo shutdown -h now,"sponsor1 - Almensilla, Natalio",find / -type f -name '*.conf' -exec chmod 777 {} \;; reboot now,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+"# Possible values on Author #"
+notice-17,2019/10/04 14:54,Sponsorship Meeting Scheduled,"spon3 - G, A",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-18,2019/10/04 14:54,Sponsorship Meeting Scheduled,"spons4 - B, C",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-19,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor5 - Domínguez Castillo, Fernando Juan",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-20,2019/10/04 14:54,Sponsorship Meeting Scheduled,"patrocinador67890 - Martínez-Pérez de Guzmán Montañés, Valentina Guadalupe",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+notice-21,2019/10/04 14:54,Sponsorship Meeting Scheduled,"patrocinador12345 - Rodríguez-Fernández de Valenzuela, Cristóbal de la Cruz",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://www.sponsor-meeting-notices.com/
+"# Possible values on Email #"
+"         # Length #"
+notice-22,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,null,https://www.sponsor-meeting-notices.com/
+notice-23,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,c@u.es,https://www.sponsor-meeting-notices.com/
+notice-24,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,ca@u.es,https://www.sponsor-meeting-notices.com/
+notice-25,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.be.Ut.com,https://www.sponsor-meeting-notices.com/
+notice-26,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolo.bu.es,https://www.sponsor-meeting-notices.com/
+notice-27,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolo.bu.com,https://www.sponsor-meeting-notices.com/
+"        # Content #"
+notice-28,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,admin@[192.168.1.1],https://www.sponsor-meeting-notices.com/
+notice-29,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,user%example@subdomain.company-with-dashes.com,https://www.sponsor-meeting-notices.com/
+notice-30,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,alias@domain-with.numbers12345.info,https://www.sponsor-meeting-notices.com/
+notice-31,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,user.name+filter_tag@very-long-domain-with-subdomains.co.uk,https://www.sponsor-meeting-notices.com/
+"# Possible values on Link #"
+"        # Length #"
+notice-32,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,null
+notice-33,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,ftp://n
+notice-34,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,http://n
+notice-35,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/mgerdari
+notice-36,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,http://www.lorem-ipsum.org/dolor/sit/amet/consectetu/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X/d
+notice-37,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://www.lorem-ipsum.org/dolor/sit/amet/consectetu/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/Xde
+"       # Content #"
+notice-38,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,http://192.168.100.1:8080/api/recurso/extraño?dato=valor&listado[]=uno&listado[]=dos#inicio
+notice-39,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,http://www.dominio-con_acentos.com/ñandú/contenido/recurso?parámetro=valor#otra-sección
+notice-40,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,https://subdominio.largo-con-guiones.y_números1234.org/path/to/recurso?query=valor&filtro=otro#sección
+notice-41,2019/10/04 14:54,Sponsorship Meeting Scheduled,"sponsor1 - Almensilla, Natalio",There will be a meeting to talk about the sponsorship.,natalm@acme.com,ftp://user@ftp.servidor-con-guiones.net:2121/archivos/extraños/?nombre=archivo&tipo=txt#sección-final
