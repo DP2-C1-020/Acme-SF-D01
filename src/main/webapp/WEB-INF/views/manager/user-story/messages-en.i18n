@@ -31,3 +31,5 @@ manager.user-story.form.button.associate-project = Associate project
 manager.user-story.form.button.unassociate-project = Unassociate project
 
 manager.user-story.form.error.already-published = A published user story cannot be updated or deleted
+manager.user-story.form.error.exceededCost = The estimated cost of a user story can not exceed 10000000 hours.
+

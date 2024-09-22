@@ -92,7 +92,7 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 				if (!contract.isDraftMode())
 					budgetTotal += contract.getBudget().getAmount();
 
-			double projectCost = object.getProject().getCost().getAmount();
+			int projectCost = object.getProject().getCost() * 20;
 			return projectCost >= budgetTotal + object.getBudget().getAmount();
 		}
 		return true;
