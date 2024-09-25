@@ -39,7 +39,7 @@ public class AuthenticatedClientUpdateService extends AbstractService<Authentica
 		Principal principal;
 		int userAccountId;
 
-		principal = super.getRequest().getPrincipal();
+		principal = this.getRequest().getPrincipal();
 		userAccountId = principal.getAccountId();
 		client = this.repository.findClientByUserAccountId(userAccountId);
 
@@ -56,16 +56,26 @@ public class AuthenticatedClientUpdateService extends AbstractService<Authentica
 	@Override
 	public void validate(final Client object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("identification")) {
+			Client existing;
+
+			existing = this.repository.findClientByIdentification(object.getIdentification());
+			super.state(existing == null || existing.equals(object), "identification", "authenticated.client.form.error.duplicated");
+		}
 	}
 
 	@Override
 	public void perform(final Client object) {
+		assert object != null;
+
 		this.repository.save(object);
 	}
 
 	@Override
 	public void unbind(final Client object) {
 		assert object != null;
+
 		Dataset dataset;
 		SelectChoices choices;
 

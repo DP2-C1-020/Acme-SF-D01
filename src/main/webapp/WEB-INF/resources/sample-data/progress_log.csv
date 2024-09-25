@@ -15,8 +15,8 @@ progress_log-11,PG-CC-1117,87.0,' or 'A'='A,2021/01/08 00:00,john_doe,false,cont
 progress_log-12,PG-CC-1118,96.0,국민경제의 발전을,2021/01/09 00:00,john_doe,false,contract-09
 progress_log-13,PG-CC-1119,93.0,العظمى واعتلاء,2021/01/10 00:00,sophia_johnson,true,contract-10
 #registrationMoment
-progress_log-14,PG-RM-4444,0.00,Lorem ipsum,2022/07/29 23:59,john_doe,false,contract-34
-progress_log-15,PG-RM-4445,0.00,Lorem ipsum,2022/07/29 23:58,john_doe,false,contract-34
+progress_log-14,PG-RM-4444,0.00,Lorem ipsum,2022/07/30 00:00,john_doe,false,contract-34
+progress_log-15,PG-RM-4445,0.00,Lorem ipsum,2022/07/29 23:59,john_doe,false,contract-34
 progress_log-16,PG-RM-4446,0.00,Lorem ipsum,2020/02/29 00:00,john_doe,true,contract-01
 progress_log-17,PG-RM-4447,0.00,Lorem ipsum,2000/01/01 00:01,john_doe,true,contract-01
 progress_log-18,PG-RM-4448,0.00,Lorem ipsum,2000/01/01 00:00,john_doe,true,contract-01
