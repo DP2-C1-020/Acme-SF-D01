@@ -1,16 +1,54 @@
 key,code,registrationTime,dueDate,quantity,tax,link,draftMode,key:sponsorship
-invoice-01,IN-0000-0000,2022/07/30 00:00,2022/08/30 00:00,USD 826446.28,21.00,http://www.lorem-ipsum.org,false,sponsorship-04
-invoice-02,IN-9999-9999,2022/07/29 23:59,2022/09/06 10:47,GBP 100.00,0.01,ftp://w,true,sponsorship-02
-invoice-03,IN-0000-9999,2022/03/17 15:54,2022/07/30 01:00,USD 123.45,99.99,ftp://a,true,sponsorship-01
-invoice-04,IN-9999-0000,2022/05/16 00:00,2022/08/01 11:12,GBP 46.83,0.00,ftp://a.b,false,sponsorship-06
-invoice-05,IN-1111-8888,2018/07/31 00:00,2022/09/21 13:00,EUR 0.01,100.00,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/,false,sponsorship-11
-invoice-06,IN-4521-1234,2022/07/30 00:00,2022/08/30 00:01,EUR 321.28,50.00,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X,true,sponsorship-03
-invoice-07,IN-9304-6837,2021/07/15 14:43,2022/08/18 18:43,EUR 999999.99,0.00,https://www.lorem-ipsum.org,false,sponsorship-14
-invoice-08,IN-8625-0192,2021/07/23 19:33,2022/08/28 18:54,EUR 30.04,13.13,ftp://www.lorem-ipsum.org,false,sponsorship-08
-invoice-09,IN-3612-0933,2022/06/14 23:12,2022/10/15 11:32,EUR 0.01,0.00,http://www.lorem-ipsum.org/dolor/sit.html,true,sponsorship-05
-invoice-10,IN-6500-1115,2022/07/19 11:54,2022/08/26 00:00,USD 361.45,38.33,http://www.lorem-ipsum.org/dolor/sit.html#dolor,false,sponsorship-16
-invoice-11,IN-3321-0001,2022/07/30 00:00,2022/08/31 00:00,EUR 307.72,68.24,http://example.org?a=1&b=2,true,sponsorship-03
-invoice-12,IN-9285-9375,2022/03/30 10:57,2022/08/03 20:00,USD 5.65,3.81,http://example.org?a&b,false,sponsorship-13
-invoice-13,IN-2948-0123,2020/06/30 16:54,2022/11/11 11:11,GBP 63704.81,25.00,http://example.org/a/b?a&b,false,sponsorship-15
-invoice-14,IN-9482-1039,2022/05/01 11:50,2022/07/30 00:01,GBP 93.46,73.77,http://example.org/a/b,false,sponsorship-09
-invoice-15,IN-8203-0593,2021/12/04 23:13,2022/08/05 20:19,GBP 24480.41,00.08,null,false,sponsorship-12
+"# Base Invoice #"
+invoice-01,IN-3956-1251,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+"# Possible values on Code #"
+invoice-02,IN-0000-0000,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-03,IN-0000-0001,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-04,IN-5555-5555,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-05,IN-9999-9998,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-06,IN-9999-9999,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+"# Possible values on RegistrationTime #"
+invoice-07,IN-3956-1252,2000/01/01 00:00,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-08,IN-3956-1253,2000/01/01 00:01,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-09,IN-3956-1254,2011/04/16 12:00,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-10,IN-3956-1255,2022/07/29 23:59,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-11,IN-3956-1256,2022/07/30 00:00,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+"# Possible values on DueDate #"
+invoice-12,IN-3956-1257,2000/01/01 00:00,2000/01/31 00:00,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-13,IN-3956-1258,2000/01/01 00:00,2000/01/31 00:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-14,IN-3956-1259,2017/10/30 15:33,2050/01/16 12:00,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-15,IN-3956-1260,2017/10/30 15:33,2099/12/31 23:59,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-16,IN-3956-1261,2017/10/30 15:33,2100/01/01 00:00,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+"# Possible values on Quantity #"
+invoice-17,IN-3956-1262,2017/10/30 15:33,2024/12/04 10:01,EUR 0.01,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-18,IN-3956-1263,2017/10/30 15:33,2024/12/04 10:01,EUR 0.02,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-19,IN-3956-1264,2017/10/30 15:33,2024/12/04 10:01,EUR 500000.00,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-20,IN-3956-1265,2017/10/30 15:33,2024/12/04 10:01,EUR 999999.99,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-21,IN-3956-1266,2017/10/30 15:33,2024/12/04 10:01,EUR 1000000.00,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-22,IN-3956-1267,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-23,IN-3956-1268,2017/10/30 15:33,2024/12/04 10:01,GBP 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-24,IN-3956-1269,2017/10/30 15:33,2024/12/04 10:01,USD 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+"# Possible values on Tax #"
+invoice-25,IN-3956-1270,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,0.0,http://www.invoice-info.org,false,sponsorship-01
+invoice-26,IN-3956-1271,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,0.01,http://www.invoice-info.org,false,sponsorship-01
+invoice-27,IN-3956-1272,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,50.0,http://www.invoice-info.org,false,sponsorship-01
+invoice-28,IN-3956-1273,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,99.99,http://www.invoice-info.org,false,sponsorship-01
+invoice-29,IN-3956-1274,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,100.0,http://www.invoice-info.org,false,sponsorship-01
+"# Possible values on Link #"
+"          # Length #"
+invoice-30,IN-3956-1275,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,null,false,sponsorship-01
+invoice-31,IN-3956-1276,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://,false,sponsorship-01
+invoice-32,IN-3956-1277,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,https://,false,sponsorship-01
+invoice-33,IN-3956-1278,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/ab,false,sponsorship-01
+invoice-34,IN-3956-1279,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X,false,sponsorship-01
+invoice-35,IN-3956-1280,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/XY,false,sponsorship-01
+"          # Content #"
+invoice-36,IN-3956-1281,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://172.16.254.1:5050/api/v2/accion?usuario=admin&items[]=tres&items[]=cuatro#etapa-final,false,sponsorship-01
+invoice-37,IN-3956-1282,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.otro-ejemplo_muy_largo.org/seccion/articulo/nueva?tipo=noticia&tema=actualidad#parte-destacada,false,sponsorship-01
+invoice-38,IN-3956-1283,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,https://subdominio-con_numeros123.dominio-raro.com/path/recurso?opcion=opcion1&estado=activo#detalle-final,false,sponsorship-01
+invoice-39,IN-3956-1284,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,ftp://user2@servidor-ftp_con-puerto.com:6060/resources/imagenes/?tipo=icono&color=azul#subseccion,false,sponsorship-01
+"# Possible values on DraftMode #"
+invoice-40,IN-3956-1285,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-01
+invoice-41,IN-3956-1286,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,true,sponsorship-01
+"# Possible values on Sponsorship (1 Sponsorship - 1 Invoice, other value already done) #"
+invoice-42,IN-3956-1287,2017/10/30 15:33,2024/12/04 10:01,EUR 10.61,21.00,http://www.invoice-info.org,false,sponsorship-02
