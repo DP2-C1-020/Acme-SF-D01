@@ -14,6 +14,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 
@@ -30,7 +31,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "developer_id"), @Index(columnList = "id"), @Index(columnList = "code"), @Index(columnList = "draftMode"),
+	@Index(columnList = "code"), @Index(columnList = "update_moment"), @Index(columnList = "developer_id, update_moment")
 })
 public class TrainingModule extends AbstractEntity {
 
@@ -38,19 +39,20 @@ public class TrainingModule extends AbstractEntity {
 
 	//	Attributes
 
-	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
+	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}", message = "{validation.trainingModule.code}")
 	@NotBlank
 	@Column(unique = true)
 	private String				code;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
+	@PastOrPresent
 	private Date				creationMoment;
 
 	@NotBlank
 	@Length(max = 101)
 	private String				details;
 
+	@NotNull
 	private DifficultyLevel		difficultyLevel;
 
 	@Column(nullable = true)
@@ -59,12 +61,12 @@ public class TrainingModule extends AbstractEntity {
 	private Date				updateMoment;
 
 	@URL
-	@Column(nullable = true)
+	@Length(max = 255, min = 0)
 	private String				link;
 
 	@NotNull
 	@Positive
-	private Integer				totalTime;
+	private int					totalTime;
 
 	private boolean				draftMode;
 
