@@ -14,16 +14,16 @@ public class DeveloperDashboard extends AbstractForm {
 	 */
 	private static final long	serialVersionUID	= 1L;
 
-	private Integer				totalTrainingModulesWithUpdateMoment;
+	private int					totalTrainingModulesWithUpdateMoment;
 
-	private Integer				totalTrainingSessionWithLink;
+	private int					totalTrainingSessionWithLink;
 
-	private Double				trainingModulesAverageTime;
+	private double				trainingModulesAverageTime;
 
-	private Double				trainingModulesDeviationTime;
+	private double				trainingModulesDeviationTime;
 
-	private Integer				trainingModulesMinimumTime;
+	private int					trainingModulesMinimumTime;
 
-	private Integer				trainingModulesMaximumTime;
+	private int					trainingModulesMaximumTime;
 
 }
