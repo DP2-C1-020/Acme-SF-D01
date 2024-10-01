@@ -31,7 +31,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "code"), @Index(columnList = "update_moment"), @Index(columnList = "developer_id, update_moment")
+	@Index(columnList = "code"), @Index(columnList = "updateMoment"), @Index(columnList = "developer_id, updateMoment")
 })
 public class TrainingModule extends AbstractEntity {
 
@@ -44,8 +44,8 @@ public class TrainingModule extends AbstractEntity {
 	@Column(unique = true)
 	private String				code;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				creationMoment;
 
 	@NotBlank
