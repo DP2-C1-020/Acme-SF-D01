@@ -26,7 +26,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "training_module_id"), @Index(columnList = "draftMode"), @Index(columnList = "id"), @Index(columnList = "code")
+	@Index(columnList = "draftMode"), @Index(columnList = "link"), @Index(columnList = "code")
 })
 public class TrainingSession extends AbstractEntity {
 
@@ -35,7 +35,7 @@ public class TrainingSession extends AbstractEntity {
 	 */
 	private static final long	serialVersionUID	= 1L;
 
-	@Pattern(regexp = "TS-[A-Z]{1,3}-[0-9]{3}")
+	@Pattern(regexp = "TS-[A-Z]{1,3}-[0-9]{3}", message = "{validation.trainingSession.code}")
 	@NotBlank
 	@Column(unique = true)
 	private String				code;
@@ -59,7 +59,7 @@ public class TrainingSession extends AbstractEntity {
 	private String				contactEmail;
 
 	@URL
-	@Column(nullable = true)
+	@Length(max = 255, min = 0)
 	private String				link;
 
 	private boolean				draftMode;
