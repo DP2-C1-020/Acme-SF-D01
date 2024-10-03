@@ -1,8 +1,42 @@
 key,name,benefits,web_page,email_contact,key:userAccount
-sponsor-01,😀😃😄😁,¼½¾⅐⅑⅒,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es,user-account-sponsor-01
-sponsor-02,Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod te,▀▁▂▃▄▅▆▇█,http://www.lorem-ipsum.org/dolor/sit.html#dolor,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es,user-account-sponsor-02
-sponsor-03,Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tem,Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore*,ftp://a,a@b.esx,user-account-sponsor-03
-sponsor-04,<h1>!</h1>,Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore,http://example.org?a=1&b=2,a@b.es,user-account-sponsor-04
-sponsor-05,' or 'A'='A,"๑۞๑,¸¸,ø¤º°`°๑۩",https://www.example.com/ℜℵ💖𝄢🦄𠜎🍏🎨⛺📚/,acme@lorem-ipsum.org,user-account-sponsor-05
-sponsor-06,국민경제의 발전을,B,,sponsorawesome@acme.com,user-account-sponsor-06
-sponsor-07,العظمى واعتلاء,𑀇𑀈𑀉𑀊𑀋𑀌𑀇𑀈𑀉𑀊𑀋𑀌𑀇𑀈𑀉𑀊𑀋𑀌𑀇𑀈𑀉𑀊𑀋𑀌,http://example.org?,,user-account-sponsor-07
+"# Base Sponsor #"
+sponsor-01,Sponsorship S.A,We make really good sponsorships for everyone!,http://sponsorships-sa.com,sponsor.sa@acme.com,user-account-sponsor-01
+"# Possible values on Name-Benefits (regular strings) #"
+"                    # Length #"
+sponsor-02,S,W,http://sponsorships-sa.com,sponsor.sa@acme.com,user-account-sponsor-02
+sponsor-03,Sp,We,http://sponsorships-sa.com,sponsor.sa@acme.com,user-account-sponsor-03
+sponsor-04,Good Sponsorship for Every Project S.A,We make really fabolous sponsorships for projects!,http://sponsorships-sa.com,sponsor.sa@acme.com,user-account-sponsor-04
+sponsor-05,"Fabolous, Marvelous, Tremendous and Exceptional Sponsorship on Project S.A","We are experts, we guarantee a quality service and we always try to improve and challenge ourselves",http://sponsorships-sa.com,sponsor.sa@acme.com,user-account-sponsor-05
+sponsor-06,"Fabolous, Marvelous, Tremendous and Exceptional Sponsorship on Projects S.A","We are experts, we guarantee a quality service and we always try to improve and challenge ourselves.",http://sponsorships-sa.com,sponsor.sa@acme.com,user-account-sponsor-06
+"                   # Content #"
+sponsor-07,数据库测试中的示例文本,Пример текста на русском языке для тестирования,http://sponsorships-sa.com,sponsor.sa@acme.com,user-account-sponsor-07
+sponsor-08,"INSERT INTO accounts VALUES ('admin', 'password'); DROP TABLE accounts;",SELECT * FROM users WHERE id = 1; DROP DATABASE customers;,http://sponsorships-sa.com,sponsor.sa@acme.com,user-account-sponsor-08
+sponsor-09,<h2>Database Test</h2><p>This is a mock HTML input for testing.</p>,<span>Sample HTML Tag for Inserting in a Database</span>,http://sponsorships-sa.com,sponsor.sa@acme.com,user-account-sponsor-09
+sponsor-10,🐲👾💣🦊📜⚙️🧿🏴‍☠️🚩💀🕹🦄🍀📛,🦕⚔️📀🌌🎧📊🔫👀💡🍩🎤🌲🦕⚔️📀🌌🎧📊🔫👀💡🍩🎤🌲,http://sponsorships-sa.com,sponsor.sa@acme.com,user-account-sponsor-10
+sponsor-11,"system(""sudo shutdown now"")","import os; os.remove(""important_file.txt"")",http://sponsorships-sa.com,sponsor.sa@acme.com,user-account-sponsor-11
+"# Possible values on WebPage #"
+"          # Length #"
+sponsor-12,Sponsorship S.A,We make really good sponsorships for everyone!,null,sponsor.sa@acme.com,user-account-sponsor-12
+sponsor-13,Sponsorship S.A,We make really good sponsorships for everyone!,ftp://s,sponsor.sa@acme.com,user-account-sponsor-13
+sponsor-14,Sponsorship S.A,We make really good sponsorships for everyone!,http://s,sponsor.sa@acme.com,user-account-sponsor-14
+sponsor-15,Sponsorship S.A,We make really good sponsorships for everyone!,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/al,sponsor.sa@acme.com,user-account-sponsor-15
+sponsor-16,Sponsorship S.A,We make really good sponsorships for everyone!,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/XY,sponsor.sa@acme.com,user-account-sponsor-16
+sponsor-17,Sponsorship S.A,We make really good sponsorships for everyone!,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/XYZ,sponsor.sa@acme.com,user-account-sponsor-17
+"         # Content #"
+sponsor-18,Sponsorship S.A,We make really good sponsorships for everyone!,http://192.168.1.50:8080/api/info/nuevo?dato=123&valores[]=uno&valores[]=dos#final,sponsor.sa@acme.com,user-account-sponsor-18
+sponsor-19,Sponsorship S.A,We make really good sponsorships for everyone!,https://www.ejemplo-con-números.com/datos/documento?query=algo&cat[]=primero&cat[]=segundo#inicio-seccion,sponsor.sa@acme.com,user-account-sponsor-19
+sponsor-20,Sponsorship S.A,We make really good sponsorships for everyone!,http://api.dominio-nuevo_2024.net/servicio/recurso?opcion=true&lista[]=primero&lista[]=tercero#parte-2,sponsor.sa@acme.com,user-account-sponsor-20
+sponsor-21,Sponsorship S.A,We make really good sponsorships for everyone!,ftp://usuario@archivos.ftp-ejemplo567.org:3030/carpetas/extraño/?archivo=doc1&tipo=texto#detalle,sponsor.sa@acme.com,user-account-sponsor-21
+"# Possible values on EmailContact #"
+"          # Length #"
+sponsor-22,Sponsorship S.A,We make really good sponsorships for everyone!,http://sponsorships-sa.com,null,user-account-sponsor-22
+sponsor-23,Sponsorship S.A,We make really good sponsorships for everyone!,http://sponsorships-sa.com,s@a.es,user-account-sponsor-23
+sponsor-24,Sponsorship S.A,We make really good sponsorships for everyone!,http://sponsorships-sa.com,s@ac.es,user-account-sponsor-24
+sponsor-25,Sponsorship S.A,We make really good sponsorships for everyone!,http://sponsorships-sa.com,lorem-ipsum@dolor.sit.amet.consectetur.adicing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.pater.org,user-account-sponsor-25
+sponsor-26,Sponsorship S.A,We make really good sponsorships for everyone!,http://sponsorships-sa.com,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolore.org,user-account-sponsor-26
+sponsor-27,Sponsorship S.A,We make really good sponsorships for everyone!,http://sponsorships-sa.com,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolores.org,user-account-sponsor-27
+"          # Content #"
+sponsor-28,Sponsorship S.A,We make really good sponsorships for everyone!,http://sponsorships-sa.com,admin@[192.168.1.100],user-account-sponsor-28
+sponsor-29,Sponsorship S.A,We make really good sponsorships for everyone!,http://sponsorships-sa.com,user%info@sub-domain.with-numbers123.example.org,user-account-sponsor-29
+sponsor-30,Sponsorship S.A,We make really good sponsorships for everyone!,http://sponsorships-sa.com,service@custom-domain.with-special_chars123.info,user-account-sponsor-30
+sponsor-31,Sponsorship S.A,We make really good sponsorships for everyone!,http://sponsorships-sa.com,name.surname+alias@very-long-domain_with-variations-and-numbers123.com,user-account-sponsor-31

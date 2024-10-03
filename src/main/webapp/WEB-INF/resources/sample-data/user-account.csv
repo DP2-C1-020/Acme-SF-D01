@@ -21,3 +21,27 @@ user-account-sponsor-04,true,"UserIdentity{name: 'B', surname: 'C', email: 'anah
 user-account-sponsor-05,true,"UserIdentity{name: 'Fernando Juan', surname: 'Domínguez Castillo', email: 'manbom@acme.com'}",sponsor5,sponsor5
 user-account-sponsor-06,true,"UserIdentity{name: 'Valentina Guadalupe', surname: 'Martínez-Pérez de Guzmán Montañés', email: 'danso@acme.com'}",patrocinador67890,patrocinador67890
 user-account-sponsor-07,true,"UserIdentity{name: 'Cristóbal de la Cruz', surname: 'Rodríguez-Fernández de Valenzuela', email: 'dieort@acme.com'}",patrocinador12345,patrocinador12345
+user-account-sponsor-08,true,"UserIdentity{name: 'Manolito', surname: 'Pescanova', email: 'manpes@acme.com'}",sponsor8,sponsor8
+user-account-sponsor-09,true,"UserIdentity{name: 'Aurelio', surname: 'Caballa', email: 'aurcab@acme.com'}",sponsor9,sponsor9
+user-account-sponsor-10,true,"UserIdentity{name: 'Gabriel', surname: 'del Junco', email: 'gabdel@acme.com'}",sponsor10,sponsor10
+user-account-sponsor-11,true,"UserIdentity{name: 'Ariel', surname: 'Martínez', email: 'arimar@acme.com'}",sponsor11,sponsor11
+user-account-sponsor-12,true,"UserIdentity{name: 'Nicosio', surname: 'Diosdado', email: 'nicdio@acme.com'}",sponsor12,sponsor12
+user-account-sponsor-13,true,"UserIdentity{name: 'Álvaro', surname: 'Puertas', email: 'alvpue@acme.com'}",sponsor13,sponsor13
+user-account-sponsor-14,true,"UserIdentity{name: 'Conchita', surname: 'Idiazabal', email: 'conidi@acme.com'}",sponsor14,sponsor14
+user-account-sponsor-15,true,"UserIdentity{name: 'Julia', surname: 'Gutiérrez', email: 'julgut@acme.com'}",sponsor15,sponsor15
+user-account-sponsor-16,true,"UserIdentity{name: 'Gustavo', surname: 'Almendras', email: 'gusalm@acme.com'}",sponsor16,sponsor16
+user-account-sponsor-17,true,"UserIdentity{name: 'Manuela', surname: 'Alemanes', email: 'manale@acme.com'}",sponsor17,sponsor17
+user-account-sponsor-18,true,"UserIdentity{name: 'Nicolás', surname: 'del Puerto', email: 'nicdel@acme.com'}",sponsor18,sponsor18
+user-account-sponsor-19,true,"UserIdentity{name: 'Salvador', surname: 'Zamora', email: 'salzar@acme.com'}",sponsor19,sponsor19
+user-account-sponsor-20,true,"UserIdentity{name: 'Jonás', surname: 'Rodríguez', email: 'jonrod@acme.com'}",sponsor20,sponsor20
+user-account-sponsor-21,true,"UserIdentity{name: 'Antonio', surname: 'de la Cruz', email: 'antdel@acme.com'}",sponsor21,sponsor21
+user-account-sponsor-22,true,"UserIdentity{name: 'Juan José', surname: 'Caballo', email: 'juacab@acme.com'}",sponsor22,sponsor22
+user-account-sponsor-23,true,"UserIdentity{name: 'Estrella', surname: 'Camino', email: 'estcam@acme.com'}",sponsor23,sponsor23
+user-account-sponsor-24,true,"UserIdentity{name: 'Mikel', surname: 'Iniesta', email: 'mikini@acme.com'}",sponsor24,sponsor24
+user-account-sponsor-25,true,"UserIdentity{name: 'Dolores', surname: 'Delgado', email: 'doldel@acme.com'}",sponsor25,sponsor25
+user-account-sponsor-26,true,"UserIdentity{name: 'Asunción', surname: 'Jiménez', email: 'asujim@acme.com'}",sponsor26,sponsor26
+user-account-sponsor-27,true,"UserIdentity{name: 'Elisa', surname: 'Sánchez', email: 'elisan@acme.com'}",sponsor27,sponsor27
+user-account-sponsor-28,true,"UserIdentity{name: 'Lucía', surname: 'Gayoso', email: 'lucgay@acme.com'}",sponsor28,sponsor28
+user-account-sponsor-29,true,"UserIdentity{name: 'Daniel', surname: 'Rodríguez', email: 'danrod@acme.com'}",sponsor29,sponsor29
+user-account-sponsor-30,true,"UserIdentity{name: 'Maribel', surname: 'Márquez', email: 'marmar@acme.com'}",sponsor30,sponsor30
+user-account-sponsor-31,true,"UserIdentity{name: 'Elena', surname: 'Cabezas', email: 'elecab@acme.com'}",sponsor31,sponsor31
