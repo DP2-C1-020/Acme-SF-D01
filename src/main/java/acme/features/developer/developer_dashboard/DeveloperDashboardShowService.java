@@ -19,7 +19,6 @@ public class DeveloperDashboardShowService extends AbstractService<Developer, De
 	@Override
 	public void authorise() {
 		Boolean status;
-
 		status = super.getRequest().getPrincipal().hasRole(Developer.class);
 
 		super.getResponse().setAuthorised(status);
@@ -28,29 +27,41 @@ public class DeveloperDashboardShowService extends AbstractService<Developer, De
 	@Override
 	public void load() {
 		DeveloperDashboard developerDashboard;
-		int developerId;
+		Integer developerId;
 		Integer totalTrainingModulesWithUpdateMoment;
 		Integer totalTrainingSessionWithLink;
 		Double trainingModulesAverageTime;
 		Double trainingModulesDeviationTime;
 		Integer trainingModulesMinimumTime;
 		Integer trainingModulesMaximumTime;
+		Integer totalTrainingModules;
 
 		developerId = super.getRequest().getPrincipal().getActiveRoleId();
 
+		totalTrainingModules = this.repository.getTotalTrainigModulesByDeveloperId(developerId);
 		totalTrainingModulesWithUpdateMoment = this.repository.getTotalTrainingModulesWithUpdateMomentByDeveloperId(developerId);
 		totalTrainingSessionWithLink = this.repository.getTotalTrainingSessionWithLinkByDeveloperId(developerId);
-		trainingModulesAverageTime = this.repository.getTrainingModulesAverageTimeByDeveloperId(developerId);
-		trainingModulesDeviationTime = this.repository.getTrainingModulesDeviationTimeByDeveloperId(developerId);
-		trainingModulesMinimumTime = this.repository.getTrainingModulesMinimumTimeByDeveloperId(developerId);
-		trainingModulesMaximumTime = this.repository.getTrainingModulesMaximumTimeByDeveloperId(developerId);
+		trainingModulesAverageTime = this.repository.getTrainingModulesAverageTimeByDeveloperId(developerId).orElse(null);
+		trainingModulesDeviationTime = this.repository.getTrainingModulesDeviationTimeByDeveloperId(developerId).orElse(null);
+		trainingModulesMinimumTime = this.repository.getTrainingModulesMinimumTimeByDeveloperId(developerId).orElse(null);
+		trainingModulesMaximumTime = this.repository.getTrainingModulesMaximumTimeByDeveloperId(developerId).orElse(null);
 
 		developerDashboard = new DeveloperDashboard();
-		developerDashboard.setTotalTrainingModulesWithUpdateMoment(totalTrainingModulesWithUpdateMoment);
+
+		if (totalTrainingModulesWithUpdateMoment != null)
+			developerDashboard.setTotalTrainingModulesWithUpdateMoment(totalTrainingModulesWithUpdateMoment);
+
+		if (totalTrainingModules > 1)
+			developerDashboard.setTrainingModulesDeviationTime(trainingModulesDeviationTime);
+		else
+			developerDashboard.setTrainingModulesDeviationTime(null);
+
 		developerDashboard.setTotalTrainingSessionWithLink(totalTrainingSessionWithLink);
+
 		developerDashboard.setTrainingModulesAverageTime(trainingModulesAverageTime);
-		developerDashboard.setTrainingModulesDeviationTime(trainingModulesDeviationTime);
+
 		developerDashboard.setTrainingModulesMinimumTime(trainingModulesMinimumTime);
+
 		developerDashboard.setTrainingModulesMaximumTime(trainingModulesMaximumTime);
 
 		super.getBuffer().addData(developerDashboard);
