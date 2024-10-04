@@ -10,7 +10,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -50,8 +49,8 @@ public class Banner extends AbstractEntity {
 	@NotNull
 	private Date				endDate;
 
-	@NotNull
 	@URL
+	@NotNull
 	@Length(min = 7, max = 255)
 	private String				picture;
 
@@ -59,8 +58,8 @@ public class Banner extends AbstractEntity {
 	@Length(max = 75)
 	private String				slogan;
 
-	@NotNull
 	@URL
+	@NotNull
 	@Length(min = 7, max = 255)
 	private String				link;
 
@@ -68,7 +67,6 @@ public class Banner extends AbstractEntity {
 
 
 	@Transient
-	@Min(7)
 	public int getDisplayPeriod() {
 
 		Duration displayPeriod;
