@@ -85,16 +85,15 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 		assert object != null;
 
 		if (object.getProject() != null) {
-			Collection<Contract> allContracts = this.repository.findAllContractsWithProject(object.getProject().getId());
+			Collection<Contract> contratos = this.repository.findAllContractsWithProject(object.getProject().getId());
 
-			double budgetTotal = 0.0;
-			for (Contract contract : allContracts)
-				if (!contract.isDraftMode())
-					budgetTotal += contract.getBudget().getAmount();
+			Double budgetTotal = contratos.stream().filter(contract -> !contract.isDraftMode()).mapToDouble(contract -> contract.getBudget().getAmount()).sum();
 
-			int projectCost = object.getProject().getCost() * 20;
+			double projectCost = object.getProject().getCost();
+
 			return projectCost >= budgetTotal + object.getBudget().getAmount();
 		}
+
 		return true;
 	}
 

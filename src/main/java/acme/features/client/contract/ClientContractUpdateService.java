@@ -85,17 +85,15 @@ public class ClientContractUpdateService extends AbstractService<Client, Contrac
 		assert object != null;
 
 		if (object.getProject() != null) {
-			Collection<Contract> allContracts = this.repository.findAllContractsWithProject(object.getProject().getId());
+			Collection<Contract> contratos = this.repository.findAllContractsWithProject(object.getProject().getId());
 
-			double budgetTotal = 0.0;
-			for (Contract contract : allContracts)
-				if (!contract.isDraftMode())
-					budgetTotal += contract.getBudget().getAmount();
-			// CAMBIO PARA QUE NO PETE PUES EL COSTE DE UN PROYECTO DEBE SER EN HORAS NO EN PRECIO 
-			// LO CUAL HACE QUE HAYA QUE CAMBIAR ESTO DE ALGUNA FORMA
-			int projectCost = object.getProject().getCost() * 20;
+			Double budgetTotal = contratos.stream().filter(contract -> !contract.isDraftMode()).mapToDouble(contract -> contract.getBudget().getAmount()).sum();
+
+			double projectCost = object.getProject().getCost();
+
 			return projectCost >= budgetTotal + object.getBudget().getAmount();
 		}
+
 		return true;
 	}
 

@@ -82,12 +82,18 @@ public class ClientProgressLogsUpdateService extends AbstractService<Client, Pro
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("completeness")) {
-			Contract contract = object.getContract();
-			ProgressLog lastProgressLog = this.repository.findLastProgressLogByContractId(contract.getId());
+			ProgressLog lastProgressLog = this.repository.findLastProgressLogByRecordId(object.getRecordId());
 
 			if (lastProgressLog != null) {
-				boolean isCompletenessIncremental = object.getCompleteness() > lastProgressLog.getCompleteness();
-				super.state(isCompletenessIncremental, "completeness", "client.progressLog.error.completenessNotIncremental");
+				double lastCompleteness = lastProgressLog.getCompleteness();
+				boolean isCompletenessValid;
+
+				if (lastCompleteness == 100.00)
+					isCompletenessValid = object.getCompleteness() >= 100.00;
+				else
+					isCompletenessValid = object.getCompleteness() > lastCompleteness;
+
+				super.state(isCompletenessValid, "completeness", "client.progressLog.error.completenessNotIncremental");
 			}
 		}
 	}

@@ -1,6 +1,8 @@
 
 package acme.features.sponsor.invoice;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
@@ -58,6 +60,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 		assert invoice != null;
 
 		super.bind(invoice, "code", "dueDate", "quantity", "tax", "link");
+		invoice.setLink(invoice.getLink().isEmpty() ? null : invoice.getLink());
 	}
 
 	@Override
@@ -73,17 +76,26 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 
 		if (!super.getBuffer().getErrors().hasErrors("dueDate")) {
 			Date minimumDueDate;
+			Date maximumDueDate;
+			LocalDateTime maximumDueDateLDT;
 
-			minimumDueDate = MomentHelper.deltaFromMoment(invoice.getRegistrationTime(), 1, ChronoUnit.MONTHS);
+			maximumDueDateLDT = LocalDateTime.of(2100, 1, 1, 0, 1);
+
+			maximumDueDate = Date.from(maximumDueDateLDT.atZone(ZoneId.systemDefault()).toInstant());
+
+			minimumDueDate = MomentHelper.deltaFromMoment(invoice.getRegistrationTime(), 30, ChronoUnit.DAYS);
 			super.state(MomentHelper.isAfter(invoice.getDueDate(), minimumDueDate), "dueDate", "sponsor.invoice.form.error.less-than-month");
-
+			super.state(MomentHelper.isBefore(invoice.getDueDate(), maximumDueDate), "dueDate", "sponsor.invoice.form.error.maximum-due-date");
 		}
+
 		if (!super.getBuffer().getErrors().hasErrors("quantity")) {
 
 			super.state(this.validator.moneyValidator(invoice.getQuantity().getCurrency()), "quantity", "sponsor.invoice.form.error.invalid-currency");
 			super.state(invoice.getQuantity().getAmount() > 0, "quantity", "sponsor.invoice.form.error.negative-quantity");
+			super.state(invoice.getQuantity().getAmount() <= 1000000, "quantity", "sponsor.invoice.form.error.maximum-quantity");
 		}
 
+		super.state(invoice.getTotalAmount().getAmount() <= 1000000, "*", "sponsor.invoice.form.error.maximum-total-amount");
 	}
 
 	@Override

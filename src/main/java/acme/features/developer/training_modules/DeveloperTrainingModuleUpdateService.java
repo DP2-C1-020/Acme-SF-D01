@@ -59,13 +59,22 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 	@Override
 	public void bind(final TrainingModule object) {
 		assert object != null;
-		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime");
+		super.bind(object, "code", "details", "difficultyLevel", "link", "totalTime");
 
 	}
 
 	@Override
 	public void validate(final TrainingModule object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			final Collection<String> trainingModulesCodes = this.repository.findAllTrainingModulesCodes();
+			final TrainingModule trainingModule = this.repository.findTrainingModuleById(object.getId());
+
+			boolean isCodeValid = !trainingModulesCodes.contains(object.getCode()) || trainingModule.getCode().equals(object.getCode());
+
+			super.state(isCodeValid, "code", "developer.training-module.form.error.duplicateCode");
+		}
 
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
 			super.state(object.isDraftMode(), "draftMode", "developer.training-module.form.error.draftMode");

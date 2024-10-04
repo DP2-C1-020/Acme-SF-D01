@@ -36,10 +36,13 @@ sponsor.sponsorship.form.button.invoices = Invoices
 
 sponsor.sponsorship.form.error.duplicated = This code is taken by another Sponsorship
 sponsor.sponsorship.form.error.too-close = Start date must be after the moment of creation
+sponsor.sponsorship.form.error.maximum-start-date = Start date must be before 2099/12/02 00:00
 sponsor.sponsorship.form.error.less-than-month = End date must be at least one month ahead of start date
-sponsor.sponsorship.form.error.too-late = Start date must be before the end date
+sponsor.sponsorship.form.error.maximum-end-date = End date must be before 2100/01/01 00:01
 sponsor.sponsorship.form.error.negative-amount = The amount must be positive
+sponsor.sponsorship.form.error.maximum-amount = The amount must be lower than or equal to 1000000
 sponsor.sponsorship.form.error.enter-start-date = You must enter first a start date to validate the end date
 sponsor.sponsorship.form.error.bad-amount = The amount of Sponsorship must be equal to the sum of its Invoices
 sponsor.sponsorship.form.error.invalid-currency = The currency is not valid. Only EUR, GBP and USD
+sponsor.sponsorship.form.error.currency-mismatch = The currency from the Sponsorship and its related published Invoices must match
 sponsor.sponsorship.form.error.unpublished-invoices = All related Invoices must be published before publishing this Sponsorship

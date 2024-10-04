@@ -62,7 +62,7 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 		id = super.getRequest().getData("project", int.class);
 		project = this.repository.findProjectById(id);
 		object.setProject(project);
-		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime");
+		super.bind(object, "code", "details", "difficultyLevel", "link", "totalTime");
 
 	}
 

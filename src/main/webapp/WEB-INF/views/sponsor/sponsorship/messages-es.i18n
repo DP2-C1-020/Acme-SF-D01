@@ -15,7 +15,6 @@ sponsor.sponsorship.list.label.amount = Cantidad
 sponsor.sponsorship.list.label.code = Código 
 sponsor.sponsorship.list.label.project = Proyecto asociado
 
-
 sponsor.sponsorship.form.title = Patrocinio
 sponsor.sponsorship.form.label.code = Código
 sponsor.sponsorship.form.placeholder.code = [A-Z]{1,3}-[0-9]{3}
@@ -37,10 +36,13 @@ sponsor.sponsorship.form.button.invoices = Recibos
 
 sponsor.sponsorship.form.error.duplicated = Ya existe un Patrocinio con el mismo código
 sponsor.sponsorship.form.error.too-close = La fecha de inicio debe ser posterior a la de creación
+sponsor.sponsorship.form.error.maximum-start-date = La fecha de inicio debe ser anterior a 02/12/2099 00:00
 sponsor.sponsorship.form.error.less-than-month = La fecha de fin debe ser, al menos, un mes posterior a la de inicio
-sponsor.sponsorship.form.error.too-late = La fecha de inicio debe ser anterior a la de fin 
-sponsor.sponsorship.form.error.negative-amount = La cantidad de dinero debe ser positiva
+sponsor.sponsorship.form.error.maximum-end-date = La fecha de fin debe ser anterior a 01/01/2100 00:01
+sponsor.sponsorship.form.error.negative-amount = El importe debe ser positivo
+sponsor.sponsorship.form.error.maximum-amount = El importe debe ser menor o igual que 1000000
 sponsor.sponsorship.form.error.enter-start-date = Debe introducir primero la fecha de inicio para validad la fecha de fin
-sponsor.sponsorship.form.error.bad-amount = La cantidad del Patrocinio debe ser igual a la suma de sus Recibos
+sponsor.sponsorship.form.error.bad-amount = El importe del Patrocinio debe ser igual a la suma de sus Recibos
 sponsor.sponsorship.form.error.invalid-currency = La divisa no es válida. Debe ser EUR, GBP o USD
+sponsor.sponsorship.form.error.currency-mismatch = La divisa del Patrocinio y de sus Recibos publicados deben coincidir
 sponsor.sponsorship.form.error.unpublished-invoices = Todos los Recibos asociados deben ser publicados antes de publicar el Patrocinio

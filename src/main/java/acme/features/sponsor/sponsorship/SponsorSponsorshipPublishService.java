@@ -1,6 +1,8 @@
 
 package acme.features.sponsor.sponsorship;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
 import java.util.Date;
@@ -67,6 +69,8 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		project = this.repository.findOneProjectById(projectId);
 
 		super.bind(sponsorship, "code", "startDate", "endDate", "amount", "type", "contact", "link");
+		sponsorship.setContact(sponsorship.getContact().isEmpty() ? null : sponsorship.getContact());
+		sponsorship.setLink(sponsorship.getLink().isEmpty() ? null : sponsorship.getLink());
 		sponsorship.setProject(project);
 	}
 
@@ -83,29 +87,52 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 		if (!super.getBuffer().getErrors().hasErrors("startDate")) {
 			Date minimumStartDate;
+			Date maximumStartDate;
+			LocalDateTime maximumStartDateLDT;
+
+			maximumStartDateLDT = LocalDateTime.of(2099, 12, 2, 0, 0);
 
 			minimumStartDate = sponsorship.getMoment();
+			maximumStartDate = Date.from(maximumStartDateLDT.atZone(ZoneId.systemDefault()).toInstant());
 			super.state(MomentHelper.isAfter(sponsorship.getStartDate(), minimumStartDate), "startDate", "sponsor.sponsorship.form.error.too-close");
+			super.state(MomentHelper.isBefore(sponsorship.getStartDate(), maximumStartDate), "startDate", "sponsor.sponsorship.form.error.maximum-start-date");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("endDate")) {
 			Date minimumEndDate;
+			Date maximumEndDate;
+			LocalDateTime maximumEndDateLDT;
+
+			maximumEndDateLDT = LocalDateTime.of(2100, 1, 1, 0, 1);
+
+			maximumEndDate = Date.from(maximumEndDateLDT.atZone(ZoneId.systemDefault()).toInstant());
 
 			if (sponsorship.getStartDate() == null)
 				super.state(sponsorship.getStartDate() != null, "endDate", "sponsor.sponsorship.form.error.enter-start-date");
 			else {
-				minimumEndDate = MomentHelper.deltaFromMoment(sponsorship.getStartDate(), 1, ChronoUnit.MONTHS);
+				minimumEndDate = MomentHelper.deltaFromMoment(sponsorship.getStartDate(), 30, ChronoUnit.DAYS);
 				super.state(MomentHelper.isAfter(sponsorship.getEndDate(), minimumEndDate), "endDate", "sponsor.sponsorship.form.error.less-than-month");
+				super.state(MomentHelper.isBefore(sponsorship.getEndDate(), maximumEndDate), "endDate", "sponsor.sponsorship.form.error.maximum-end-date");
 			}
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("amount")) {
 
+			Collection<String> currencies;
+			String sponsorshipCurrency;
+			boolean allCurrenciesMatch;
+
+			currencies = this.repository.currenciesFromPublishedInvoicesBySponsorshipId(sponsorship.getId());
+			sponsorshipCurrency = sponsorship.getAmount().getCurrency();
+			allCurrenciesMatch = currencies.stream().allMatch(currency -> currency.equals(sponsorshipCurrency));
+
 			Double tempAmount = this.repository.computeTotalAmountBySponsorshipId(sponsorship.getId());
 			Double sumTotalAmount = tempAmount != null ? tempAmount : 0.0;
 
-			super.state(sponsorship.getAmount().getAmount() > 0, "amount", "sponsor.sponsorship.form.error.negative-amount");
 			super.state(this.validator.moneyValidator(sponsorship.getAmount().getCurrency()), "amount", "sponsor.sponsorship.form.error.invalid-currency");
+			super.state(sponsorship.getAmount().getAmount() > 0, "amount", "sponsor.sponsorship.form.error.negative-amount");
+			super.state(sponsorship.getAmount().getAmount() <= 1000000, "amount", "sponsor.sponsorship.form.error.maximum-amount");
+			super.state(allCurrenciesMatch, "amount", "sponsor.sponsorship.form.error.currency-mismatch");
 			super.state(sumTotalAmount.equals(sponsorship.getAmount().getAmount()), "*", "sponsor.sponsorship.form.error.bad-amount");
 		}
 

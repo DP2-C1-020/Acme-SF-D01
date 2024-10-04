@@ -2,6 +2,7 @@
 package acme.features.sponsor.sponsorship;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -21,8 +22,8 @@ public interface SponsorSponsorshipRepository extends AbstractRepository {
 	@Query("select sp from Sponsorship sp where sp.code = :code")
 	Sponsorship findOneSponsorshipByCode(String code);
 
-	@Query("select sp from Sponsorship sp where sp.sponsor.id = :sponsorId")
-	Collection<Sponsorship> findManySponsorshipsBySponsorId(int sponsorId);
+	@Query("select sp from Sponsorship sp where sp.sponsor.id = :sponsorId and sp.endDate >= :currentDate")
+	Collection<Sponsorship> findManyValidSponsorshipsBySponsorId(int sponsorId, Date currentDate);
 
 	@Query("select s from Sponsor s where s.id = :sponsorId")
 	Sponsor findOneSponsorById(int sponsorId);
@@ -35,6 +36,9 @@ public interface SponsorSponsorshipRepository extends AbstractRepository {
 
 	@Query("select i from Invoice i where i.sponsorship.id = :sponsorshipId")
 	Collection<Invoice> findManyInvoicesBySponsorshipId(int sponsorshipId);
+
+	@Query("select i.quantity.currency from Invoice i where i.sponsorship.id = :sponsorshipId and i.draftMode = false")
+	Collection<String> currenciesFromPublishedInvoicesBySponsorshipId(int sponsorshipId);
 
 	@Query("select round(sum(i.quantity.amount * (1 + i.tax/100)), 2) from Invoice i where i.sponsorship.id = :sponsorshipId")
 	Double computeTotalAmountBySponsorshipId(int sponsorshipId);
