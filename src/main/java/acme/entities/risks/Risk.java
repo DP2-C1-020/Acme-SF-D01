@@ -66,8 +66,6 @@ public class Risk extends AbstractEntity {
 
 
 	@Transient
-	@Min(0)
-	@Max(100)
 	public double getValue() {
 		double value;
 
