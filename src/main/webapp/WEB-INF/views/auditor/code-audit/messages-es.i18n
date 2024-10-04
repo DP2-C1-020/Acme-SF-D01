@@ -22,7 +22,9 @@ auditor.codeaudit.form.label.link = Enlace
 auditor.codeaudit.form.label.projects = Proyecto
 
 auditor.codeaudit.error.codeDuplicate = Código duplicado
-validation.codeaudit.mode.empty = Esta auditoría de código no tiene registros de auditoría
+codeAudit.code.error = Formato inválido. El código debe comenzar con 1 a 3 letras mayúsculas, seguido de un guion y terminar con exactamente 3 dígitos. Ejemplo: ABC-123
+
+validation.codeaudit.mode.empty = Esta auditoría de código no tiene registros de auditoría publicados todavía
 validation.codeaudit.mode-less-than-c = La nota debe ser como mínimo C para ser publicada
 validation.codeaudit.form.notAllAuditRecordArePublished = No todos los registros de auditoría se han publicado
 validation.codeaudit.error.publish = No puedes eliminar una Auditoría de Código ya publicada

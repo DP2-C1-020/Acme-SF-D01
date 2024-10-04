@@ -19,6 +19,8 @@ auditor.auditrecord.form.button.publish = Publish
 auditor.auditrecord.form.button.create = Create Audit Record
 
 validation.auditrecord.code.duplicate = Code Duplicate
+auditRecord.code.error = Invalid format. The code must start with 'AU-', followed by exactly 4 digits, another hyphen, and end with exactly 3 digits. Example: AU-1234-567
+
 validation.auditrecord.initial-after-final = Initial moment must be before the final moment
 validation.auditrecord.moment.initial-after-final = Initial moment must be before the final moment
 validation.auditrecord.moment.minimum-one-hour = Final moment must be at least one hour after the initial moment

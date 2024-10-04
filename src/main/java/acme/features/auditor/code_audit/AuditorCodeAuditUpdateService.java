@@ -60,17 +60,23 @@ public class AuditorCodeAuditUpdateService extends AbstractService<Auditor, Code
 	public void bind(final CodeAudit object) {
 		assert object != null;
 
-		super.bind(object, "code", "execution", "type", "correctiveActions", "link", "project");
+		super.bind(object, "code", "type", "correctiveActions", "link", "project");
 	}
 
 	@Override
 	public void validate(final CodeAudit object) {
 		assert object != null;
+		boolean status;
 
-		final Collection<String> allCodes = this.repository.findAllCodeAuditsCode();
-
-		if (!super.getBuffer().getErrors().hasErrors("code"))
-			super.state(!allCodes.contains(object.getCode()), "code", "auditor.codeaudit.error.codeDuplicate");
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			CodeAudit current;
+			current = this.repository.findOneCodeAuditByCode(object.getCode());
+			if (current != null)
+				status = current.getId() == object.getId();
+			else
+				status = false;
+			super.state(current == null || status, "code", "auditor.codeaudit.error.codeDuplicate");
+		}
 	}
 
 	@Override
