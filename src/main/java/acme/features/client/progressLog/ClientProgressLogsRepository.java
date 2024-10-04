@@ -29,7 +29,7 @@ public interface ClientProgressLogsRepository extends AbstractRepository {
 	@Query("select pl.contract from ProgressLog pl where pl.id = :id")
 	Contract findContractByProgressLogId(int id);
 
-	@Query("select pl from ProgressLog pl where pl.contract.id = :contractId and pl.registrationMoment = (select max(pl2.registrationMoment) from ProgressLog pl2 where pl2.contract.id = :contractId)")
-	ProgressLog findLastProgressLogByContractId(@Param("contractId") int contractId);
+	@Query("select pl from ProgressLog pl where pl.recordId = :recordId order by pl.registrationMoment desc")
+	ProgressLog findLastProgressLogByRecordId(@Param("recordId") String recordId);
 
 }
