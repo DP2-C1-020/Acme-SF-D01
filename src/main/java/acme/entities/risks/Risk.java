@@ -37,7 +37,7 @@ public class Risk extends AbstractEntity {
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "R-[0-9]{3}")
+	@Pattern(regexp = "R-[0-9]{3}", message = "{validation.risk.reference}")
 	private String				reference;
 
 	@Temporal(TemporalType.DATE)
@@ -46,13 +46,12 @@ public class Risk extends AbstractEntity {
 	private Date				identificationDate;
 
 	@Positive
-	@NotNull
+	@Max(100)
 	private double				impact;
 
 	@Digits(integer = 3, fraction = 2)
 	@Min(0)
 	@Max(100)
-	@NotNull
 	private double				probability;
 
 	@NotBlank
@@ -60,18 +59,20 @@ public class Risk extends AbstractEntity {
 	private String				description;
 
 	@URL
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	// Derived attributes -----------------------------------------------
 
 
-	@NotNull
 	@Transient
+	@Min(0)
+	@Max(100)
 	public double getValue() {
 		double value;
 
-		value = this.impact * this.probability;
-
+		value = this.impact * (this.probability / 100.0);
+		value = Math.round(value * 100.0) / 100.0;
 		return value;
 	}
 

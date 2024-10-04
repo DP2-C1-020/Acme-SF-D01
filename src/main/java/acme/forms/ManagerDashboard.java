@@ -4,6 +4,7 @@ package acme.forms;
 import java.util.Map;
 
 import acme.client.data.AbstractForm;
+import acme.entities.userstory.Priority;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,28 +15,24 @@ public class ManagerDashboard extends AbstractForm {
 	/**
 	 * 
 	 */
-	private static final long	serialVersionUID	= 1L;
+	private static final long		serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
+	// Numero total de historias de usuario segun prioridad
 
-	double						totalUserStoriesWithPriorityMust;
-	double						totalUserStoriesWithPriorityShould;
-	double						totalUserStoriesWithPriorityCould;
-	double						totalUserStoriesWithPriorityWont;
-	double						averageUserStoriesEstimatedCost;
-	double						deviationUserStoriesEstimatedCost;
-	double						minimumUserStoriesEstimatedCost;
-	double						maximumUserStoriesEstimatedCost;
+	private Map<Priority, Integer>	totalNumberUserStoriesByPriority;
 
-	Map<String, Double>			averageProjectCostPerCurrency;
-	Map<String, Double>			deviationProjectCostPerCurrency;
-	Map<String, Double>			minimumProjectCostPerCurrency;
-	Map<String, Double>			maximumProjectCostPerCurrency;
+	// Promedio, mínimo, máximo y desviación estándar del costo de los projectos
 
-	String[]					supportedCurrencies;
+	private Double					avgProjectCost;
+	private Integer					minProjectCost;
+	private Integer					maxProjectCost;
+	private Double					devProjectCost;
 
-	// Derived attributes -----------------------------------------------------
+	// Promedio, mínimo, máximo y desviación estándar del costo de las historias de usuario
 
-	// Relationships ----------------------------------------------------------
+	private Double					avgUserStoryCost;
+	private Integer					minUserStoryCost;
+	private Integer					maxUserStoryCost;
+	private Double					devUserStoryCost;
 
 }

@@ -1,10 +1,54 @@
 key,instantiationMoment,title,description,priority,status,startDate,endDate,link
-objective-01,2018/01/01 11:12,This is a common title,This is a commom description,LOW,true,2018/02/01 11:12,2018/03/01 11:12,https://www.google.com/
-objective-02,2022/07/29 23:59,This is a common title,This is a commom description,LOW,true,2022/08/29 23:59,2022/09/29 23:59,https://www.google.com/
-objective-03,2022/07/30 00:00,This is a common title,This is a commom description,LOW,true,2022/08/30 00:00,2022/09/30 00:00,https://www.google.com/
-objective-04,2018/01/01 11:12,This is a common titleThis is a common titleThis is a common titleThis is a,This is a commom description,LOW,true,2018/02/01 11:12,2018/03/01 11:12,https://www.google.com/
-objective-05,2018/01/01 11:12,This is a common title,This is a commom descriptionThis is a commom descriptionThis is a commom descriptionThis is a commom,LOW,true,2018/02/01 11:12,2018/03/01 11:12,https://www.google.com/
-objective-06,2018/01/01 11:12,This is a common title,This is a commom description,LOW,false,2018/02/01 11:12,2018/03/01 11:12,https://www.google.com/
-objective-07,2018/01/01 11:12,This is a common title,This is a commom description,LOW,true,2018/01/01 11:13,2018/03/01 11:12,https://www.google.com/
-objective-08,2018/01/01 11:12,This is a common title,This is a commom description,LOW,true,2018/02/01 11:12,2018/02/01 11:13,https://www.google.com/
-objective-09,2018/01/01 11:12,This is a common title,This is a commom description,LOW,true,2018/02/01 11:12,2018/03/01 11:12,
+"# Base Objective #"
+objective-01,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+"# Possible values on InstantiationMoment #"
+objective-02,2000/01/01 00:00,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-03,2000/01/01 00:01,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-04,2011/04/16 00:00,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-05,2022/07/29 23:59,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-06,2022/07/30 00:00,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+"# Possible values on Title-Description (regular strings) #"
+"                          # Length #"
+objective-07,2014/08/01 15:07,O,S,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-08,2014/08/01 15:07,Op,St,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-09,2014/08/01 15:07,Optimizing Process with New Technology,Improving efficiency with advanced tech solutions.,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-10,2014/08/01 15:07,Optimizing projects effectively through the emerging technologies of today,Streamlining processes through implementing cutting-edge technologies solutions for optimal results,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-11,2014/08/01 15:07,Optimizing processes effectively through the emerging technologies of today,Streamlining processes through implementing cutting-edge technologies solutions for optimal results.,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+"                         # Content #"
+objective-12,2014/08/01 15:07,你好，世界！我是一名人工智能你好，世界！我是一名人工智能,안녕하세요 세계! 나는 AI입니다안녕하세요 세계! 나는 AI입니다,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-13,2014/08/01 15:07,SELECT username password FROM users WHERE username='admin' -- comment,document.getElementById('myId').innerHTML = 'New Content';,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-14,2014/08/01 15:07,<style> body { background-color: #f0f0f0; } </style>,"<p style=""color: blue;"">This is a blue paragraph.</p>",MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-15,2014/08/01 15:07,😀🌍🚀✨💻😊🌈🔥🎉🥳⚡🎈😀🌍🚀✨💻😊🌈🔥🎉🥳⚡🎈,⍴✉✪✿✾✰❄❈✦✧✩✪⍴✉✪✿✾✰❄❈✦✧✩✪⍴✉✪✿✾✰❄❈✦✧✩✪,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-16,2014/08/01 15:07,git clone https://github.com/user/repo.git,rm -rf /path/to/directory/,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+"# Possible values on Priority #"
+objective-17,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,LOW,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-18,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-19,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,HIGH,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+"# Possible values on Status #"
+objective-20,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,false,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-21,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://www.additional-info-objectives.com/
+"# Possible values on StartDate #"
+objective-22,2000/01/01 00:00,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2000/01/01 00:01,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-23,2000/01/01 00:00,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2000/01/01 00:02,2024/10/31 18:52,https://www.additional-info-objectives.com/
+objective-24,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2049/12/31 00:00,2100/01/01 00:00,https://www.additional-info-objectives.com/
+objective-25,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2099/12/31 23:58,2100/01/01 00:00,https://www.additional-info-objectives.com/
+objective-26,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2099/12/31 23:59,2100/01/01 00:00,https://www.additional-info-objectives.com/
+"# Possible values on EndDate #"
+objective-27,2000/01/01 00:00,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2000/01/01 00:01,2000/01/01 00:02,https://www.additional-info-objectives.com/
+objective-28,2000/01/01 00:00,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2000/01/01 00:01,2000/01/01 00:03,https://www.additional-info-objectives.com/
+objective-29,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2050/01/01 00:00,https://www.additional-info-objectives.com/
+objective-30,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2099/12/31 23:59,https://www.additional-info-objectives.com/
+objective-31,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2100/01/01 00:00,https://www.additional-info-objectives.com/
+"# Possible values on Link #"
+"         # Length #"
+objective-32,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,null
+objective-33,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https:/
+objective-34,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://
+objective-35,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magic/ey
+objective-36,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/XY
+objective-37,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/XYZ
+"         # Content #"
+objective-38,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,http://10.0.0.2:9090/api/endpoint/diferente?query=valor&items[]=uno&items[]=dos#inicio
+objective-39,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,http://www.ejemplo-con_tildes.com/animal/contenido/recurso?atributo=valor#sección-diferente
+objective-40,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,https://otro-subdominio.largo-con-puntos_y_números5678.co/path/to/item?parametro=valor&filtro=otro#parte
+objective-41,2014/08/01 15:07,Optimizing Processes Through Emerging Technologies,Streamlining processes using cutting-edge technology solutions,MEDIUM,true,2018/12/04 14:12,2024/10/31 18:52,ftp://user@ftp.servidor-con_puntos.com:3030/files/archivos/?nombre=archivo&formato=pdf#final-sección

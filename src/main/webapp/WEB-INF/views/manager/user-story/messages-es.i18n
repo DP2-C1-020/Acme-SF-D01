@@ -31,3 +31,5 @@ manager.user-story.form.button.associate-project = Vincular proyecto
 manager.user-story.form.button.unassociate-project = Desvincular proyecto
 
 manager.user-story.form.error.already-published = No se puede editar o eliminar una historia de usuario ya publicada
+manager.user-story.form.error.exceededCost = El coste estimado no puede exceder las 10000000 horas
+

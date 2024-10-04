@@ -10,6 +10,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -41,35 +42,34 @@ public class Banner extends AbstractEntity {
 	@NotNull
 	private Date				instantiationMoment;
 
-	//TODO startDate must be after the instantiationMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	private Date				startDate;
 
-	//TODO endDate must be after the startDate
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	private Date				endDate;
 
-	@NotBlank
+	@NotNull
 	@URL
-	@Length(max = 250)
+	@Length(min = 7, max = 255)
 	private String				picture;
 
 	@NotBlank
 	@Length(max = 75)
 	private String				slogan;
 
-	@NotBlank
+	@NotNull
 	@URL
-	@Length(max = 250)
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	// Derived attributes -----------------------------------------------
 
 
 	@Transient
-	public Integer getDisplayPeriod() {
+	@Min(7)
+	public int getDisplayPeriod() {
 
 		Duration displayPeriod;
 		displayPeriod = MomentHelper.computeDuration(this.startDate, this.endDate);

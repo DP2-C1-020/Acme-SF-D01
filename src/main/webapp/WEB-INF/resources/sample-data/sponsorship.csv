@@ -1,17 +1,72 @@
 key,code,moment,start_date,end_date,amount,type,contact,link,draft_mode,key:project,key:sponsor
-sponsorship-01,AAA-000,2022/03/17 03:00,2022/03/17 03:01,2022/07/30 03:00,USD 246.89,FINANCIAL,a@b.es,http://www.lorem-ipsum.org,true,project-14,sponsor-02
-sponsorship-02,DXK-347,2022/01/06 14:56,2022/09/06 10:47,2022/10/07 10:47,GBP 101.00,FINANCIAL,a@b.esx,ftp://a,true,project-15,sponsor-01
-sponsorship-03,AAA-999,2022/07/30 00:00,2022/07/30 00:01,2022/08/30 00:01,EUR 999.63,FINANCIAL,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es,ftp://a.b,true,project-16,sponsor-03
-sponsorship-04,ZZZ-000,2022/07/29 23:59,2022/07/30 00:00,2022/09/30 15:02,USD 1000000.00,IN_KIND,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.org,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/,false,project-17,sponsor-04
-sponsorship-05,XY-014,2022/03/20 21:43,2022/06/14 23:12,2022/12/04 21:30,EUR 0.01,FINANCIAL,acme.password@lorem-ipsum.org,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X,true,project-18,sponsor-05
-sponsorship-06,ZZZ-999,2022/05/15 23:12,2022/05/15 23:13,2022/08/03 16:00,GBP 46.83,IN_KIND,acme@lorem-ipsum.org,https://www.lorem-ipsum.org,false,project-19,sponsor-06
-sponsorship-07,A-000,2020/07/05 17:52,2022/08/15 14:43,2022/09/15 14:43,USD 345.20,FINANCIAL,emailcontacto@g-mail.com,ftp://www.lorem-ipsum.org,true,project-04,sponsor-07
-sponsorship-08,XJ-019,2019/07/30 19:33,2021/07/23 19:33,2022/08/28 18:54,EUR 33.98,IN_KIND,acme@yahoo.es,http://www.lorem-ipsum.org/dolor/sit.html,false,project-05,sponsor-02
-sponsorship-09,Z-999,2022/02/22 16:30,2022/05/01 11:50,2022/07/30 00:01,GBP 435.25,FINANCIAL,usuario@prueba.com,http://www.lorem-ipsum.org/dolor/sit.html#dolor,true,project-07,sponsor-03
-sponsorship-10,WNR-117,2020/07/05 17:52,2020/07/23 14:00,2022/09/15 16:43,USD 14523.45,IN_KIND,exchange@money.org,http://example.org?a=1&b=2,true,project-14,sponsor-04
-sponsorship-11,A-999,2018/07/30 00:00,2018/07/31 00:00,2022/11/03 12:33,EUR 0.45,IN_KIND,,http://example.org/a/b?a&b,true,project-15,sponsor-05
-sponsorship-12,FEP-710,2019/12/04 22:13,2021/12/04 23:13,2022/12/15 22:39,GBP 24500.00,IN_KIND,acme@framework.es,,false,project-16,sponsor-02
-sponsorship-13,TQ-300,2022/02/28 00:00,2022/07/30 13:27,2022/08/30 20:00,USD 10.65,FINANCIAL,,,true,project-05,sponsor-01
-sponsorship-14,Z-000,2021/05/11 23:55,2022/07/11 12:55,2022/12/25 14:43,EUR 999999.99,IN_KIND,act@me.com,http://example.org?a&b,false,project-07,sponsor-03
-sponsorship-15,DEF-121,2020/03/29 12:00,2020/06/30 11:00,2022/11/11 11:11,GBP 79631.01,FINANCIAL,contact@acme.com,http://example.org/a,false,project-18,sponsor-04
-sponsorship-16,WD-411,2022/06/16 14:54,2022/07/16 11:54,2022/08/26 00:00,USD 500.00,FINANCIAL,alfredo@alfredo.com,http://example.org/a/b?,false,project-19,sponsor-07
+"# Base Sponsorship #"
+sponsorship-01,GK-491,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+"# Possible values on Code #"
+sponsorship-02,A-000,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-03,BB-001,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-04,MM-555,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-05,YY-998,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-06,ZZZ-999,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+"# Possible values on Moment #"
+sponsorship-07,GK-492,2000/01/01 00:00,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-08,GK-493,2000/01/01 00:01,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-09,GK-494,2011/04/16 12:00,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-10,GK-495,2022/07/29 23:59,2022/07/30 00:00,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-11,GK-496,2022/07/30 00:00,2022/07/30 00:01,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+"# Possible values on StartDate #"
+sponsorship-12,GK-497,2000/01/01 00:00,2000/01/01 00:01,2014/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-13,GK-498,2000/01/01 00:00,2000/01/01 00:02,2014/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-14,GK-499,2018/04/23 18:39,2049/12/17 12:00,2100/01/01 00:00,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-15,GK-500,2018/04/23 18:39,2099/12/01 23:58,2100/01/01 00:00,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-16,GK-501,2018/04/23 18:39,2099/12/01 23:59,2100/01/01 00:00,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+"# Possible values on EndDate #"
+sponsorship-17,GK-502,2000/01/01 00:00,2000/01/01 00:01,2000/01/31 00:02,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-18,GK-503,2000/01/01 00:00,2000/01/01 00:01,2000/01/31 00:03,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-19,GK-504,2018/04/23 18:39,2023/01/06 07:54,2050/01/16 12:00,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-20,GK-505,2018/04/23 18:39,2023/01/06 07:54,2099/12/31 23:59,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-21,GK-506,2018/04/23 18:39,2023/01/06 07:54,2100/01/01 00:00,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+"# Possible values on Amount #"
+sponsorship-22,GK-507,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 0.01,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-23,GK-508,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 0.02,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-24,GK-509,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 500000.00,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-25,GK-510,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 999999.99,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-26,GK-511,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 1000000.00,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-27,GK-512,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-28,GK-513,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,GBP 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-02
+sponsorship-29,GK-514,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,USD 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-02
+"# Possible values on Type #"
+sponsorship-30,GK-515,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-02
+sponsorship-31,GK-516,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,IN_KIND,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-02
+"# Possible values on Contact #"
+"          # Length #"
+sponsorship-32,GK-517,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,null,https://sponsorship-info.com,true,project-03,sponsor-02
+sponsorship-33,GK-518,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,s@a.es,https://sponsorship-info.com,true,project-03,sponsor-02
+sponsorship-34,GK-519,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,s@a.com,https://sponsorship-info.com,true,project-03,sponsor-02
+sponsorship-35,GK-520,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.en.org,https://sponsorship-info.com,true,project-03,sponsor-02
+sponsorship-36,GK-521,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irures.dolor.org,https://sponsorship-info.com,true,project-03,sponsor-02
+sponsorship-37,GK-522,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,lorems-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irures.dolor.org,https://sponsorship-info.com,true,project-03,sponsor-02
+"          # Content #"
+sponsorship-38,GK-523,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,admin@[192.168.1.100],https://sponsorship-info.com,true,project-03,sponsor-02
+sponsorship-39,GK-524,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,user%name@sub-example.unique-domain.com,https://sponsorship-info.com,true,project-03,sponsor-02
+sponsorship-40,GK-525,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,info@complex-domain.with-different_chars.net,https://sponsorship-info.com,true,project-03,sponsor-02
+sponsorship-41,GK-526,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,jane.doe+more-info@extended-long-domain-variations.com,https://sponsorship-info.com,true,project-03,sponsor-02
+"# Possible values on Link #"
+"          # Length #"
+sponsorship-42,GK-527,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,null,true,project-03,sponsor-02
+sponsorship-43,GK-528,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,http://,true,project-03,sponsor-02
+sponsorship-44,GK-529,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://,true,project-03,sponsor-02
+sponsorship-45,GK-530,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/ab,true,project-03,sponsor-02
+sponsorship-46,GK-531,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/XY,true,project-03,sponsor-02
+sponsorship-47,GK-532,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/XYZ,true,project-03,sponsor-02
+"          # Content #"
+sponsorship-48,GK-533,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,http://192.168.0.15:8080/api/nuevo?categoria=libro&tags[]=fiction&tags[]=nonfiction#comienzo,true,project-03,sponsor-02
+sponsorship-49,GK-534,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,http://www.ejemplo-con_caracteres-extraños.com/tema/nuevo_recurso?clave=valor#otra-seccion,true,project-03,sponsor-02
+sponsorship-50,GK-535,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://subdominío-raro_con-números9876.net/path/to/resource?opcion=seleccion&filtro=activo#etiqueta,true,project-03,sponsor-02
+sponsorship-51,GK-536,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,ftp://admin@ftp.servidor-diferente.org:4040/data/descargas/?archivo=imagen&extension=jpg#punto-final,true,project-03,sponsor-02
+"# Possible values on DraftMode #"
+sponsorship-52,GK-537,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-02
+sponsorship-53,GK-538,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,false,project-03,sponsor-02
+"# Possible values on Project (1 Project - 1 Sponsorship, other values already done) #"
+sponsorship-54,GK-539,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-04,sponsor-02
+"# Possible values on Sponsor (1 Sponsor - 1 Sponsorship, other values already done) #"
+sponsorship-55,GK-540,2018/04/23 18:39,2023/01/06 07:54,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-03

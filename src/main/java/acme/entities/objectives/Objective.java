@@ -31,9 +31,9 @@ public class Objective extends AbstractEntity {
 
 	// Attributes ------------------------------------------------------
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
-	@NotNull
 	private Date				instantiationMoment;
 
 	@NotBlank
@@ -47,31 +47,28 @@ public class Objective extends AbstractEntity {
 	@NotNull
 	private PriorityType		priority;
 
-	@NotNull
 	private boolean				status;
 
-	//TODO startDate must be after the instantiationMoment
-	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				startDate;
 
-	//TODO endDate must be after the startDate
-	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				endDate;
 
 	@URL
+	@Length(min = 7, max = 255)
 	private String				link;
 
 	// Derived attributes -----------------------------------------------
 
 
 	@Transient
-	public Integer getDuration() {
+	public int getDuration() {
 
 		Duration duration;
 		duration = MomentHelper.computeDuration(this.startDate, this.endDate);
 		return (int) duration.toDays();
 	}
-
 }

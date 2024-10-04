@@ -1,12 +1,10 @@
 
 package acme.entities.userstory;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Index;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import javax.validation.Valid;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -22,9 +20,6 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(indexes = {
-	@Index(columnList = "manager_id")
-})
 public class UserStory extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------
 
@@ -40,18 +35,18 @@ public class UserStory extends AbstractEntity {
 	@Length(max = 100)
 	private String				description;
 
-	@Min(0)
-	@NotNull
-	private Integer				estimatedCost;
+	@Min(1)
+	@Max(10000000)
+	private int					estimatedCost;
 
 	@NotBlank
 	@Length(max = 100)
 	private String				acceptanceCriteria;
 
+	@NotNull
 	private Priority			priority;
 
 	@URL
-	@Column(nullable = true)
 	@Length(max = 250)
 	private String				link;
 
