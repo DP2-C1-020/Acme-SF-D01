@@ -33,6 +33,7 @@
 			<acme:menu-suboption code="master.menu.any.codeaudits" action="/any/code-audit/list"/>
 			<acme:menu-suboption code="master.menu.any.projects" action="/any/project/list"/>
 			<acme:menu-suboption code="master.menu.any.contract" action="/any/contract/list"/>
+			<acme:menu-suboption code="master.menu.any.sponsorship" action="/any/sponsorship/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">

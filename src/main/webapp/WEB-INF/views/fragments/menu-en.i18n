@@ -21,6 +21,7 @@ master.menu.any.contract = Contracts
 master.menu.any = Any
 master.menu.any.codeaudits = List code audits
 master.menu.any.projects = List projects
+master.menu.any.sponsorship = List sponsorships
 
 # master.menu.anonymous #######################################################
 
