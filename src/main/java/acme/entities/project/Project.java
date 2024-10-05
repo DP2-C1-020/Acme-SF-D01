@@ -28,8 +28,8 @@ import lombok.Setter;
 @Table(indexes = {
 
 	@Index(columnList = "code"), //
-	@Index(columnList = "cost")
-
+	@Index(columnList = "draftMode"), //
+	@Index(columnList = "draftMode, manager_id")
 })
 public class Project extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------
