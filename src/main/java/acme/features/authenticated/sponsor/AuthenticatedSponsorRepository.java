@@ -6,11 +6,15 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.data.accounts.UserAccount;
 import acme.client.repositories.AbstractRepository;
+import acme.roles.Sponsor;
 
 @Repository
 public interface AuthenticatedSponsorRepository extends AbstractRepository {
 
 	@Query("select ua from UserAccount ua where ua.id = :userAccountId")
 	UserAccount findOneUserAccountById(int userAccountId);
+
+	@Query("select s from Sponsor s where s.userAccount.id = :userAccountId")
+	Sponsor findOneSponsorByUserAccountId(int userAccountId);
 
 }
