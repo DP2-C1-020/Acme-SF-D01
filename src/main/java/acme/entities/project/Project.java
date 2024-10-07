@@ -24,11 +24,11 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+
 @Table(indexes = {
-	@Index(columnList = "draft_mode"), //
-	@Index(columnList = "manager_id"), //
-	@Index(columnList = "code"), //
-	@Index(columnList = "id, manager_id, draft_mode")
+
+	@Index(columnList = "draftMode"), //
+	@Index(columnList = "draftMode, manager_id")
 })
 public class Project extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------
@@ -60,7 +60,6 @@ public class Project extends AbstractEntity {
 	@Length(max = 250)
 	private String				link;
 
-	@Column(name = "draft_mode")
 	private boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
