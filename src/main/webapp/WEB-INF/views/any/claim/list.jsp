@@ -9,4 +9,6 @@
 	<acme:list-column code="any.claim.list.label.heading" path="heading" width="70%"/>	
 </acme:list>
 
-<acme:button code="any.claim.list.button.create" action="/any/claim/create"/>
+<jstl:if test="${_command == 'list'}">
+	<acme:button code="any.claim.list.button.publish" action="/any/claim/publish"/>
+</jstl:if>

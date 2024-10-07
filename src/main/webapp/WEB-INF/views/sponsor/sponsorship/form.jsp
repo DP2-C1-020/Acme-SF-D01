@@ -22,8 +22,12 @@
 	<acme:input-moment code="sponsor.sponsorship.form.label.startDate" path="startDate"/>
 	<acme:input-moment code="sponsor.sponsorship.form.label.endDate" path="endDate"/>
 	<acme:input-select code="sponsor.sponsorship.form.label.type" path="type" choices="${types}"/>
+	<jstl:if test="${draftMode == true || contact != null}">
 	<acme:input-email code="sponsor.sponsorship.form.label.contact" path="contact"/>
+	</jstl:if>
+	<jstl:if test="${draftMode == true || link != null}">
 	<acme:input-url code="sponsor.sponsorship.form.label.link" path="link"/>
+	</jstl:if>
 	<acme:input-select code="sponsor.sponsorship.form.label.project" path="project" choices="${projects}"/>
 	
 	<jstl:choose>

@@ -33,8 +33,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "tax, draftMode"), //
-	@Index(columnList = "draftMode, quantity_currency"), //
+	@Index(columnList = "sponsorship_id, tax, draftMode"), //
+	@Index(columnList = "sponsorship_id, draftMode, quantity_currency"), //
 	@Index(columnList = "sponsorship_id, draftMode")
 })
 public class Invoice extends AbstractEntity {

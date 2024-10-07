@@ -23,6 +23,7 @@ master.menu.any = Cualquiera
 master.menu.any.codeaudits = Listar auditorías de código
 master.menu.any.projects = Listar proyectos
 master.menu.any.sponsorship = Listar patrocinios
+master.menu.any.claim = Listar reclamaciones
 
 # master.menu.anonymous #######################################################
 
@@ -33,7 +34,6 @@ master.menu.anonymous.favourite-link-gabvacgoy = 77940667S: Vacaro Goytia, Gabri
 master.menu.anonymous.favourite-link-alvcarber1 = 47565631K: Carrera Bernal, Álvaro
 master.menu.anonymous.favourite-link-jesmarver = 47561989J: Martín Vergara, Jesús
 master.menu.anonymous.favourite-link-diegonqui = 29539782P: González Quintanilla, Diego
-master.menu.anonymous.all-claims = Todas las reclamaciones
 
 
 # master.menu.administrator ###################################################

@@ -34,6 +34,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
+	@Index(columnList = "draftMode"), // 
 	@Index(columnList = "sponsor_id, link, draftMode"), //
 	@Index(columnList = "sponsor_id, draftMode, amount_currency"), //
 	@Index(columnList = "sponsor_id, endDate")
