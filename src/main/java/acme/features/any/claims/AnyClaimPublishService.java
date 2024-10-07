@@ -13,7 +13,7 @@ import acme.client.services.AbstractService;
 import acme.entities.claims.Claim;
 
 @Service
-public class AnyClaimCreateService extends AbstractService<Any, Claim> {
+public class AnyClaimPublishService extends AbstractService<Any, Claim> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -43,6 +43,7 @@ public class AnyClaimCreateService extends AbstractService<Any, Claim> {
 		object.setDepartment("");
 		object.setEmail("");
 		object.setLink("");
+		object.setDraftMode(true);
 
 		super.getBuffer().addData(object);
 	}
@@ -51,7 +52,9 @@ public class AnyClaimCreateService extends AbstractService<Any, Claim> {
 	public void bind(final Claim object) {
 		assert object != null;
 
-		super.bind(object, "code", "heading", "description", "department", "email", "link");
+		super.bind(object, "code", "instantiationMoment", "heading", "description", "department", "email", "link");
+		object.setEmail(object.getEmail().isEmpty() ? null : object.getEmail());
+		object.setLink(object.getLink().isEmpty() ? null : object.getLink());
 	}
 
 	@Override
@@ -61,7 +64,14 @@ public class AnyClaimCreateService extends AbstractService<Any, Claim> {
 		boolean confirmation;
 
 		confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
+		super.state(confirmation, "confirmation", "any.claim.form.error.confirmation-needed");
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Claim existing;
+
+			existing = this.repository.findOneClaimByCode(object.getCode());
+			super.state(existing == null, "code", "any.claim.form.error.duplicated");
+		}
 	}
 
 	@Override
@@ -72,6 +82,7 @@ public class AnyClaimCreateService extends AbstractService<Any, Claim> {
 
 		moment = MomentHelper.getCurrentMoment();
 		object.setInstantiationMoment(moment);
+		object.setDraftMode(false);
 		this.repository.save(object);
 	}
 
@@ -80,9 +91,8 @@ public class AnyClaimCreateService extends AbstractService<Any, Claim> {
 		assert object != null;
 		Dataset dataset;
 
-		dataset = super.unbind(object, "code", "heading", "description", "department", "email", "link");
+		dataset = super.unbind(object, "code", "instantiationMoment", "heading", "description", "department", "email", "link", "draftMode");
 		dataset.put("confirmation", false);
-		dataset.put("readonly", false);
 
 		super.getResponse().addData(dataset);
 	}

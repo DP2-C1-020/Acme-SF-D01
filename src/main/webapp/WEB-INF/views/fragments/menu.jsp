@@ -26,7 +26,6 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-alvcarber1" action="https://www.instagram.com/salseodelaljarafe/?hl=es"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-jesmarver" action="https://www.youtube.com/watch?v=3o0ThauuN1E"/>
 		    <acme:menu-suboption code="master.menu.anonymous.favourite-link-diegonqui" action="https://www.youtube.com/watch?v=AWM5ZNdWlqw"/>
-		    <acme:menu-suboption code="master.menu.anonymous.all-claims" action="/any/claim/list"/>	
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.any">
@@ -34,6 +33,7 @@
 			<acme:menu-suboption code="master.menu.any.projects" action="/any/project/list"/>
 			<acme:menu-suboption code="master.menu.any.contract" action="/any/contract/list"/>
 			<acme:menu-suboption code="master.menu.any.sponsorship" action="/any/sponsorship/list"/>
+			<acme:menu-suboption code="master.menu.any.claim" action="/any/claim/list"/>	
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">

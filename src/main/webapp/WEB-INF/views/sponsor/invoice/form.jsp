@@ -21,7 +21,9 @@
 	<acme:input-moment code="sponsor.invoice.form.label.dueDate" path="dueDate"/>
 	<acme:input-money code="sponsor.invoice.form.label.quantity" path="quantity"/>
 	<acme:input-double code="sponsor.invoice.form.label.tax" path="tax"/>
+	<jstl:if test="${draftMode == true || link != null}">
 	<acme:input-url code="sponsor.invoice.form.label.link" path="link"/>
+	</jstl:if>
 	
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
