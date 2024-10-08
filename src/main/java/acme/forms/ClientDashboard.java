@@ -11,17 +11,16 @@ import lombok.Setter;
 @Setter
 public class ClientDashboard extends AbstractForm {
 
-	// Serialisation identifier -----------------------------------------------
+	protected static final long	serialVersionUID	= 1L;
 
-	private static final long		serialVersionUID	= 1L;
+	int							totalLogsBelow25Percent;
+	int							totalLogs25To50Percent;
+	int							totalLogs50To75Percent;
+	int							totalLogsAbove75Percent;
 
-	// Attributes -------------------------------------------------------------
-
-	private Map<String, Integer>	progressLogByCompletenessRate;
-
-	private Double					averageBudget;
-	private Double					deviationBudget;
-	private Double					minBudget;
-	private Double					maxBudget;
+	Map<String, Double>			averageBudget;
+	Map<String, Double>			deviationBudget;
+	Map<String, Double>			minBudget;
+	Map<String, Double>			maxBudget;
 
 }
