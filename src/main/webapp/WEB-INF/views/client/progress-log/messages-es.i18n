@@ -6,6 +6,8 @@ client.progressLog.list.label.draftMode = Modo borrador
 client.progress-log.list.title = Registros de Progreso
 client.progressLog.list.button.create = Nuevo registro de progreso
 
+client.progress-log.form.title = Detalles Registro de progresos
+
 client.progressLog.form.label.recordId = Id de Registro
 client.progressLog.form.label.completeness = Completitud
 client.progressLog.form.label.comment = Comentario
