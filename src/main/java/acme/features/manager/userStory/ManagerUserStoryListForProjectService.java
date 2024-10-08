@@ -2,6 +2,7 @@
 package acme.features.manager.userStory;
 
 import java.util.Collection;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,6 +57,13 @@ public class ManagerUserStoryListForProjectService extends AbstractService<Manag
 		Dataset dataset;
 
 		dataset = super.unbind(object, "published", "title", "priority");
+
+		if (object.isPublished()) {
+			final Locale local = super.getRequest().getLocale();
+
+			dataset.put("published", local.equals(Locale.ENGLISH) ? "Yes" : "Sí");
+		} else
+			dataset.put("published", "No");
 
 		super.getResponse().addData(dataset);
 	}

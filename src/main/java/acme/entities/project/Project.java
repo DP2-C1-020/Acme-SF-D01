@@ -50,7 +50,7 @@ public class Project extends AbstractEntity {
 	@Length(max = 100)
 	private String				abstracto;
 
-	private Boolean				fatalErrors;
+	private boolean				fatalErrors;
 
 	@Min(0)
 	@Max(1000000000)

@@ -2,6 +2,7 @@
 package acme.features.manager.project;
 
 import java.util.Collection;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +47,20 @@ public class ManagerProjectListMineService extends AbstractService<Manager, Proj
 		Dataset dataset;
 
 		dataset = super.unbind(object, "code", "title", "abstracto", "fatalErrors", "cost", "link", "draftMode");
+
+		if (object.isDraftMode()) {
+			final Locale local = super.getRequest().getLocale();
+
+			dataset.put("draftMode", local.equals(Locale.ENGLISH) ? "Yes" : "Sí");
+		} else
+			dataset.put("draftMode", "No");
+
+		if (object.isFatalErrors()) {
+			final Locale local = super.getRequest().getLocale();
+
+			dataset.put("fatalErrors", local.equals(Locale.ENGLISH) ? "Yes" : "Sí");
+		} else
+			dataset.put("fatalErrors", "No");
 
 		super.getResponse().addData(dataset);
 	}
