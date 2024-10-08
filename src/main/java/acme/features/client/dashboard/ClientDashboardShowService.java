@@ -1,11 +1,11 @@
 
 package acme.features.client.dashboard;
 
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,24 +15,29 @@ import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.forms.ClientDashboard;
 import acme.roles.Client;
+import acme.validators.ValidatorMoneyRepository;
 
 @Service
 public class ClientDashboardShowService extends AbstractService<Client, ClientDashboard> {
 
-	// Internal state ---------------------------------------------------------
 	@Autowired
-	protected ClientDashboardRepository repository;
+	protected ClientDashboardRepository	repository;
 
-	// AbstractService Interface ----------------------------------------------
+	@Autowired
+	protected ValidatorMoneyRepository	validator;
 
 
 	@Override
 	public void authorise() {
 		boolean status;
+		Principal principal;
+		int id;
+		Client client;
 
-		Principal principal = super.getRequest().getPrincipal();
-		int id = principal.getAccountId();
-		Client client = this.repository.findClientById(id);
+		principal = super.getRequest().getPrincipal();
+		id = principal.getAccountId();
+
+		client = this.repository.findOneClientByUserAccountId(id);
 		status = client != null && principal.hasRole(Client.class);
 
 		super.getResponse().setAuthorised(status);
@@ -40,27 +45,37 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 
 	@Override
 	public void load() {
-		final Principal principal = super.getRequest().getPrincipal();
-		int clientId = principal.getActiveRoleId();
+		Client client;
+		ClientDashboard dashboard = new ClientDashboard();
+		Principal principal;
+		int userAccountId;
 
-		Collection<Double> budgets = this.repository.findBudgetAmountsByClientId(clientId);
+		principal = super.getRequest().getPrincipal();
+		userAccountId = principal.getAccountId();
+		client = this.repository.findOneClientByUserAccountId(userAccountId);
 
-		Collection<Double> progressLogs = this.repository.findProgressLogsCompletenessByClientId(clientId);
-		Map<String, Integer> progressMap = new HashMap<>();
+		String acceptedCurrencies = this.validator.findAcceptedCurrencies();
+		String[] currencies = acceptedCurrencies.split(",\\s*");
+		List<String> listCurrencies = new ArrayList<>();
+		for (String currency : currencies)
+			listCurrencies.add(currency);
 
-		progressMap.put("25", this.countProgressLogs(progressLogs, 0, 25));
-		progressMap.put("50", this.countProgressLogs(progressLogs, 25, 50));
-		progressMap.put("75", this.countProgressLogs(progressLogs, 50, 75));
-		progressMap.put("100", this.countProgressLogs(progressLogs, 75, 100));
+		int totalLogsBelow25Percent = this.repository.findNumOfProgressLogsLess25(client);
+		int totalLogs25To50Percent = this.repository.findNumOfProgressLogsWithRate25to50(client);
+		int totalLogs50To75Percent = this.repository.findNumOfProgressLogsWithRate50to75(client);
+		int totalLogsAbove75Percent = this.repository.findNumOfProgressLogsWithRateOver75(client);
 
-		Double averageBudget = this.calculateAverage(budgets);
-		Double deviationBudget = this.calculateStandardDeviation(budgets);
-		Double minBudget = this.calculateMinBudget(budgets);
-		Double maxBudget = this.calculateMaxBudget(budgets);
+		Map<String, Double> averagePerCurrency = this.calculateAveragePerCurrency(client, listCurrencies);
+		Map<String, Double> deviationBudget = this.calculateDeviationBudget(client, listCurrencies);
+		Map<String, Double> minBudget = this.calculateMinBudget(client, listCurrencies);
+		Map<String, Double> maxBudget = this.calculateMaxBudget(client, listCurrencies);
 
-		final ClientDashboard dashboard = new ClientDashboard();
-		dashboard.setProgressLogByCompletenessRate(progressMap);
-		dashboard.setAverageBudget(averageBudget);
+		dashboard.setTotalLogsBelow25Percent(totalLogsBelow25Percent);
+		dashboard.setTotalLogs25To50Percent(totalLogs25To50Percent);
+		dashboard.setTotalLogs50To75Percent(totalLogs50To75Percent);
+		dashboard.setTotalLogsAbove75Percent(totalLogsAbove75Percent);
+
+		dashboard.setAverageBudget(averagePerCurrency);
 		dashboard.setDeviationBudget(deviationBudget);
 		dashboard.setMinBudget(minBudget);
 		dashboard.setMaxBudget(maxBudget);
@@ -68,44 +83,60 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 		super.getBuffer().addData(dashboard);
 	}
 
+	private Map<String, Double> calculateAveragePerCurrency(final Client client, final List<String> currencies) {
+		Map<String, Double> averagePerCurrency = new HashMap<>();
+		for (String currency : currencies) {
+			Double averageBudgetOfContracts = this.repository.findAverageBudget(client, currency);
+			averagePerCurrency.put(currency, averageBudgetOfContracts != null ? averageBudgetOfContracts : null);
+		}
+		return averagePerCurrency;
+	}
+
+	private Map<String, Double> calculateDeviationBudget(final Client client, final List<String> currencies) {
+		Map<String, Double> deviationPerCurrency = new HashMap<>();
+		for (String currency : currencies) {
+			Double deviationBudgetPerCurrency = this.repository.findDeviationBudget(client, currency);
+			deviationPerCurrency.put(currency, deviationBudgetPerCurrency != null ? deviationBudgetPerCurrency : null);
+		}
+		return deviationPerCurrency;
+	}
+
+	private Map<String, Double> calculateMinBudget(final Client client, final List<String> currencies) {
+		Map<String, Double> minimunBudgetOfContracts = new HashMap<>();
+		for (String currency : currencies) {
+			Double minContract = this.repository.findMinBudget(client, currency);
+			minimunBudgetOfContracts.put(currency, minContract != null ? minContract : null);
+		}
+		return minimunBudgetOfContracts;
+	}
+
+	private Map<String, Double> calculateMaxBudget(final Client client, final List<String> currencies) {
+		Map<String, Double> maximumBudgetOfContracts = new HashMap<>();
+		for (String currency : currencies) {
+			Double maxContract = this.repository.findMaxBudget(client, currency);
+			maximumBudgetOfContracts.put(currency, maxContract != null ? maxContract : null);
+		}
+		return maximumBudgetOfContracts;
+	}
+
 	@Override
 	public void unbind(final ClientDashboard object) {
-		String emptyMessage;
-		Locale local = super.getRequest().getLocale();
+		assert object != null;
+		Dataset dataset;
 
-		emptyMessage = local.equals(Locale.ENGLISH) ? "No Data" : "Sin Datos";
+		String nullValues;
+		Locale local;
 
-		Dataset dataset = super.unbind(object, "progressLogByCompletenessRate", "averageBudget", "deviationBudget", "minBudget", "maxBudget");
+		local = super.getRequest().getLocale();
+		nullValues = local.equals(Locale.ENGLISH) ? "No Data" : "Sin Datos";
 
-		dataset.put("emptyMessage", emptyMessage);
+		String acceptedCurrencies = this.validator.findAcceptedCurrencies();
+		String[] currencies = acceptedCurrencies.split(",\\s*");
+
+		dataset = super.unbind(object, "totalLogsBelow25Percent", "totalLogs25To50Percent", "totalLogs50To75Percent", "totalLogsAbove75Percent", "averageBudget", "deviationBudget", "minBudget", "maxBudget");
+		dataset.put("nullValues", nullValues);
 
 		super.getResponse().addData(dataset);
-	}
-
-	private Integer countProgressLogs(final Collection<Double> progressLogsCompleteness, final double lowerBound, final double upperBound) {
-		long count = progressLogsCompleteness.stream().filter(log -> log >= lowerBound / 100 && log < upperBound / 100).count();
-		return (int) count;
-	}
-
-	private Double calculateAverage(final Collection<Double> budgets) {
-		return budgets.isEmpty() ? null : budgets.stream().collect(Collectors.averagingDouble(budget -> budget));
-	}
-
-	private Double calculateStandardDeviation(final Collection<Double> budgets) {
-		if (budgets.isEmpty())
-			return null;
-		double mean = this.calculateAverage(budgets);
-		double temp = 0;
-		for (Double budget : budgets)
-			temp += (budget - mean) * (budget - mean);
-		return Math.sqrt(temp / budgets.size());
-	}
-
-	private Double calculateMinBudget(final Collection<Double> budgets) {
-		return budgets.stream().min(Double::compare).orElse(null);
-	}
-
-	private Double calculateMaxBudget(final Collection<Double> budgets) {
-		return budgets.stream().max(Double::compare).orElse(null);
+		super.getResponse().addGlobal("currency", currencies);
 	}
 }
