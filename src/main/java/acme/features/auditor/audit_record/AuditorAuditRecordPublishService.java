@@ -1,9 +1,11 @@
 
 package acme.features.auditor.audit_record;
 
+import java.text.SimpleDateFormat;
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -88,41 +90,62 @@ public class AuditorAuditRecordPublishService extends AbstractService<Auditor, A
 			super.state(!isCodeChanged || !allCodes.contains(object.getCode()), "code", "validation.auditrecord.error.code.duplicated");
 		}
 
-		if (object.getInitialMoment() != null)
-			if (!super.getBuffer().getErrors().hasErrors("initialMoment"))
-				//				if (!this.isValidDateFormat(object.getInitialMoment()))
-				//					super.state(false, "initialMoment", "validation.auditrecord.initialMoment.invalid-format");
-				//				else
-				super.state(MomentHelper.isAfterOrEqual(object.getInitialMoment(), pastMostDate), "initialMoment", "validation.auditrecord.moment.minimum-date");
+		// Obtener el idioma actual de la página
+		Locale currentLocale = super.getRequest().getLocale();
+		boolean isSpanish = currentLocale.getLanguage().equals("es");
 
-		if (object.getFinalMoment() != null)
-			if (!super.getBuffer().getErrors().hasErrors("finalMoment"))
-				//				if (!this.isValidDateFormat(object.getFinalMoment()))
-				//					super.state(false, "finalMoment", "validation.auditrecord.finalMoment.invalid-format");
-				//				else
-				super.state(MomentHelper.isAfterOrEqual(object.getFinalMoment(), pastMostDate), "finalMoment", "validation.auditrecord.moment.minimum-date");
+		// Validar el formato de la fecha dependiendo del idioma de la página
+		String expectedFormat = isSpanish ? "dd/MM/yyyy HH:mm" : "yyyy/MM/dd HH:mm";
 
-		if (object.getInitialMoment() != null && object.getFinalMoment() != null) {
-			if (!super.getBuffer().getErrors().hasErrors("initialMoment"))
-				super.state(MomentHelper.isAfter(object.getFinalMoment(), object.getInitialMoment()), "initialMoment", "validation.auditrecord.moment.initial-after-final");
-
-			if (!super.getBuffer().getErrors().hasErrors("finalMoment")) {
-				Date minimumEnd;
-				minimumEnd = MomentHelper.deltaFromMoment(object.getInitialMoment(), 1, ChronoUnit.HOURS);
-				super.state(MomentHelper.isAfterOrEqual(object.getFinalMoment(), minimumEnd), "finalMoment", "validation.auditrecord.moment.minimum-one-hour");
-			}
+		// Validar si el initialMoment es nulo o tiene un formato incorrecto
+		String initialMomentStr = super.getRequest().getData("initialMoment", String.class);
+		if (initialMomentStr == null || initialMomentStr.isEmpty())
+			super.state(false, "initialMoment", "validation.auditrecord.initialMoment.invalid-format");
+		else if (!this.isValidDateString(initialMomentStr, expectedFormat))
+			super.state(false, "initialMoment", "validation.auditrecord.initialMoment.invalid-format");
+		else {
+			// Validar que la fecha sea posterior o igual a la fecha mínima
+			Date initialMoment = MomentHelper.parse(initialMomentStr, expectedFormat);
+			super.state(MomentHelper.isAfterOrEqual(initialMoment, pastMostDate), "initialMoment", "validation.auditrecord.moment.minimum-date");
 		}
 
+		// Validar si el finalMoment es nulo o tiene un formato incorrecto
+		String finalMomentStr = super.getRequest().getData("finalMoment", String.class);
+		if (finalMomentStr == null || finalMomentStr.isEmpty())
+			super.state(false, "finalMoment", "validation.auditrecord.finalMoment.invalid-format");
+		else if (!this.isValidDateString(finalMomentStr, expectedFormat))
+			super.state(false, "finalMoment", "validation.auditrecord.finalMoment.invalid-format");
+		else {
+			// Validar que la fecha sea posterior o igual a la fecha mínima
+			Date finalMoment = MomentHelper.parse(finalMomentStr, expectedFormat);
+			super.state(MomentHelper.isAfterOrEqual(finalMoment, pastMostDate), "finalMoment", "validation.auditrecord.moment.minimum-date");
+		}
+
+		// Validar la relación entre initialMoment y finalMoment
+		if (initialMomentStr != null && finalMomentStr != null && this.isValidDateString(initialMomentStr, expectedFormat) && this.isValidDateString(finalMomentStr, expectedFormat)) {
+			Date initialMoment = MomentHelper.parse(initialMomentStr, expectedFormat);
+			Date finalMoment = MomentHelper.parse(finalMomentStr, expectedFormat);
+			if (!super.getBuffer().getErrors().hasErrors("initialMoment"))
+				super.state(MomentHelper.isAfter(finalMoment, initialMoment), "initialMoment", "validation.auditrecord.moment.initial-after-final");
+
+			if (!super.getBuffer().getErrors().hasErrors("finalMoment")) {
+				Date minimumEnd = MomentHelper.deltaFromMoment(initialMoment, 1, ChronoUnit.HOURS);
+				super.state(MomentHelper.isAfterOrEqual(finalMoment, minimumEnd), "finalMoment", "validation.auditrecord.moment.minimum-one-hour");
+			}
+		}
 	}
 
-	//	private boolean isValidDateFormat(final Date date) {
-	//		// Convert the Date to String and validate the format manually
-	//		String dateStr = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(date);
-	//		// Regular expression to validate date format "dd/MM/yyyy HH:mm"
-	//		String regex = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4} ([01]\\d|2[0-3]):[0-5]\\d$";
-	//		return dateStr.matches(regex);
-	//	}
-
+	// Función para validar si una cadena de fecha coincide con el formato esperado
+	private boolean isValidDateString(final String dateStr, final String format) {
+		SimpleDateFormat sdf = new SimpleDateFormat(format);
+		sdf.setLenient(false);
+		try {
+			sdf.parse(dateStr);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 	@Override
 	public void perform(final AuditRecord object) {
 		assert object != null;

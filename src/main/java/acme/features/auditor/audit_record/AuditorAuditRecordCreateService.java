@@ -86,19 +86,19 @@ public class AuditorAuditRecordCreateService extends AbstractService<Auditor, Au
 			super.state(isCodeUnique == null, "code", "validation.auditrecord.code.duplicate");
 		}
 
-		if (object.getInitialMoment() != null)
-			if (!super.getBuffer().getErrors().hasErrors("initialMoment"))
-				//				if (!this.isValidDateFormat(object.getInitialMoment()))
-				//					super.state(false, "initialMoment", "validation.auditrecord.initialMoment.invalid-format");
-				//				else
-				super.state(MomentHelper.isAfterOrEqual(object.getInitialMoment(), pastMostDate), "initialMoment", "validation.auditrecord.moment.minimum-date");
+		// Validar si el initialMoment es nulo o inválido
+		if (object.getInitialMoment() == null)
+			super.state(false, "initialMoment", "validation.auditrecord.initialMoment.invalid-format");
+		else if (!super.getBuffer().getErrors().hasErrors("initialMoment"))
+			// Validar que la fecha sea posterior o igual a la fecha mínima
+			super.state(MomentHelper.isAfterOrEqual(object.getInitialMoment(), pastMostDate), "initialMoment", "validation.auditrecord.moment.minimum-date");
 
-		if (object.getFinalMoment() != null)
-			if (!super.getBuffer().getErrors().hasErrors("finalMoment"))
-				//				if (!this.isValidDateFormat(object.getFinalMoment()))
-				//					super.state(false, "finalMoment", "validation.auditrecord.finalMoment.invalid-format");
-				//				else
-				super.state(MomentHelper.isAfterOrEqual(object.getFinalMoment(), pastMostDate), "finalMoment", "validation.auditrecord.moment.minimum-date");
+		// Validar si el finalMoment es nulo o inválido
+		if (object.getFinalMoment() == null)
+			super.state(false, "finalMoment", "validation.auditrecord.finalMoment.invalid-format");
+		else if (!super.getBuffer().getErrors().hasErrors("finalMoment"))
+			// Validar que la fecha sea posterior o igual a la fecha mínima
+			super.state(MomentHelper.isAfterOrEqual(object.getFinalMoment(), pastMostDate), "finalMoment", "validation.auditrecord.moment.minimum-date");
 
 		if (object.getInitialMoment() != null && object.getFinalMoment() != null) {
 			if (!super.getBuffer().getErrors().hasErrors("initialMoment"))
@@ -111,14 +111,6 @@ public class AuditorAuditRecordCreateService extends AbstractService<Auditor, Au
 			}
 		}
 	}
-
-	//	private boolean isValidDateFormat(final Date date) {
-	//		// Convert the Date to String and validate the format manually
-	//		String dateStr = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(date);
-	//		// Regular expression to validate date format "dd/MM/yyyy HH:mm"
-	//		String regex = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4} ([01]\\d|2[0-3]):[0-5]\\d$";
-	//		return dateStr.matches(regex);
-	//	}
 
 	@Override
 	public void perform(final AuditRecord object) {
