@@ -68,7 +68,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("fatalErrors"))
-			super.state(!object.getFatalErrors(), "fatalErrors", "manager.project.form.error.existing-fatal-errors");
+			super.state(!object.isFatalErrors(), "fatalErrors", "manager.project.form.error.existing-fatal-errors");
 
 		{
 			Collection<UserStory> userStories;
