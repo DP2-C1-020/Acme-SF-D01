@@ -6,6 +6,8 @@ auditor.auditrecord.form.label.finalMoment = Momento Final
 auditor.auditrecord.form.label.link = Enlace
 auditor.auditrecord.form.label.mark = Nota
 
+auditor.auditrecord.form.placeholder.date = dd/MM/yyyy HH:mm
+
 auditor.audit-record.list.title = Registros de Auditoría
 auditor.auditrecord.list.label.code = Código
 auditor.auditrecord.list.label.mark = Nota
