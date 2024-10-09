@@ -31,7 +31,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "code"), @Index(columnList = "updateMoment"), @Index(columnList = "developer_id, updateMoment")
+	@Index(columnList = "updateMoment"), @Index(columnList = "developer_id, updateMoment")
 })
 public class TrainingModule extends AbstractEntity {
 
