@@ -64,7 +64,12 @@ public class DeveloperTrainingSessionPublishService extends AbstractService<Deve
 	public void validate(final TrainingSession object) {
 		assert object != null;
 
-		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			TrainingSession existing;
+
+			existing = this.repository.findTrainingSessionByCode(object.getCode());
+			super.state(existing == null, "code", "developer.training-session.form.error.duplicateCode");
+		}
 
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
 			super.state(object.isDraftMode(), "draftMode", "developer.training-session.form.error.draftMode");
