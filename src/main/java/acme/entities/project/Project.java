@@ -37,7 +37,7 @@ public class Project extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Pattern(regexp = "[A-Z]{3}-[0-9]{4}")
+	@Pattern(regexp = "[A-Z]{3}-[0-9]{4}", message = "{validation.project.code}")
 	@NotBlank
 	@Column(unique = true)
 	private String				code;

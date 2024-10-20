@@ -41,6 +41,8 @@ manager.project.form.error.children-training-modules = The project cannot be del
 manager.project.form.error.currency-not-supported= The currency is not supported
 manager.project.form.error.exceededCost = The cost of a project can not exceed 1000000000 hours.
 			
+validation.project.code = The code must begin with 3 letters between A and Z, followed by a "-" and 4 digits between 0 and 9 "[A-Z]{3}-[0-9]{4}"
+			
 manager.project.list.label.code = Code
 manager.project.list.label.title = Title
 manager.project.list.label.abstracto = Abstract
