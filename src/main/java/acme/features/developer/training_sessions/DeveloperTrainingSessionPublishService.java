@@ -65,10 +65,12 @@ public class DeveloperTrainingSessionPublishService extends AbstractService<Deve
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			TrainingSession existing;
+			final Collection<String> trainingSessionCodes = this.repository.findAllTrainingSessionsCodes();
+			final TrainingSession trainingSession = this.repository.findTrainingSessionById(object.getId());
 
-			existing = this.repository.findTrainingSessionByCode(object.getCode());
-			super.state(existing == null, "code", "developer.training-session.form.error.duplicateCode");
+			boolean isCodeValid = !trainingSessionCodes.contains(object.getCode()) || trainingSession.getCode().equals(object.getCode());
+
+			super.state(isCodeValid, "code", "developer.training-session.form.error.duplicateCode");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
