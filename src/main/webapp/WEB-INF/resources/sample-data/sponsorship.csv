@@ -14,14 +14,14 @@ sponsorship-09,GK-494,2011/04/16 12:00,2023/01/06 07:54,2024/12/04 23:51,EUR 723
 sponsorship-10,GK-495,2022/07/29 23:59,2022/07/30 00:00,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
 sponsorship-11,GK-496,2022/07/30 00:00,2022/07/30 00:01,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
 "# Possible values on StartDate #"
-sponsorship-12,GK-497,2000/01/01 00:00,2000/01/01 00:01,2014/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
-sponsorship-13,GK-498,2000/01/01 00:00,2000/01/01 00:02,2014/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-12,GK-497,2000/01/01 00:00,2000/01/01 00:01,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-13,GK-498,2000/01/01 00:00,2000/01/01 00:02,2024/12/04 23:51,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
 sponsorship-14,GK-499,2018/04/23 18:39,2049/12/17 12:00,2100/01/01 00:00,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
-sponsorship-15,GK-500,2018/04/23 18:39,2099/12/01 23:58,2100/01/01 00:00,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
-sponsorship-16,GK-501,2018/04/23 18:39,2099/12/01 23:59,2100/01/01 00:00,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-15,GK-500,2018/04/23 18:39,2099/12/01 23:59,2100/01/01 00:00,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-16,GK-501,2018/04/23 18:39,2099/12/02 00:00,2100/01/01 00:00,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
 "# Possible values on EndDate #"
-sponsorship-17,GK-502,2000/01/01 00:00,2000/01/01 00:01,2000/01/31 00:02,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
-sponsorship-18,GK-503,2000/01/01 00:00,2000/01/01 00:01,2000/01/31 00:03,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-17,GK-502,2000/01/01 00:00,2000/01/01 00:01,2000/01/31 00:01,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
+sponsorship-18,GK-503,2000/01/01 00:00,2000/01/01 00:01,2000/01/31 00:02,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
 sponsorship-19,GK-504,2018/04/23 18:39,2023/01/06 07:54,2050/01/16 12:00,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
 sponsorship-20,GK-505,2018/04/23 18:39,2023/01/06 07:54,2099/12/31 23:59,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01
 sponsorship-21,GK-506,2018/04/23 18:39,2023/01/06 07:54,2100/01/01 00:00,EUR 723.29,FINANCIAL,spinfo@acme.com,https://sponsorship-info.com,true,project-03,sponsor-01

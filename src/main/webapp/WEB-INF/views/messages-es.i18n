@@ -10,7 +10,7 @@
 
 validation.claim.code = C-[0-9]{4}: El código debe ser de la forma "C-<dddd>", donde "<dddd>" denota 4 dígitos comprendidos entre 0 y 9
 validation.risk.reference = R-[0-9]{3}: La referencia debe ser de la forma "R-<ddd>", donde "<ddd>" denota 3 dígitos comprendidos entre 0 y 9
-validation.invoice.code = IN-[0-9]{4}-[0-9]{4}: El código debe ser de la forma "IN-<dddd>-<dddd>", donde "<dddd>" denota 4 dígitos comprendidos entre 0 y 9 (8 dígitos en total)
-validation.sponsorship.code = [A-Z]{1,3}-[0-9]{3}: El código debe empezar por 1 a 3 letras entre la A y la Z, seguidas de un "-" y 3 dígitos comprendidos entre 0 y 9 
+validation.invoice.code = IN-[0-9]{4}-[0-9]{4}: El código debe ser de la forma "IN-<dddd>-<dddd>", donde "IN" está en mayúsculas y "<dddd>" denota 4 dígitos comprendidos entre 0 y 9 (8 dígitos en total)
+validation.sponsorship.code = [A-Z]{1,3}-[0-9]{3}: El código debe empezar por 1 a 3 letras entre la A y la Z en mayúsculas (Ñ excluida), seguidas de un "-" y 3 dígitos comprendidos entre 0 y 9 
 validation.trainingModule.code = [A-Z]{1,3}-[0-9]{3}: El código debe empezar por 1 a 3 letras entre la A y la Z (Ñ excluida), seguidas de un "-" y 3 dígitos comprendidos entre 0 y 9
 validation.trainingSession.code = TS-[A-Z]{1,3}-[0-9]{3}: El código debe empezar por "TS-" seguido por 1 a 3 letras entre la A y la Z (Ñ excluida), seguidas de un "-" y 3 dígitos comprendidos entre 0 y 9

@@ -34,12 +34,15 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 	@Override
 	public void authorise() {
 		boolean status;
+		boolean isValid;
 		Sponsorship sponsorship;
 		int sponsorshipId;
 
 		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
 		sponsorship = this.repository.findOneSponsorshipById(sponsorshipId);
-		status = sponsorship.getSponsor().getId() == super.getRequest().getPrincipal().getActiveRoleId();
+		isValid = MomentHelper.isAfterOrEqual(sponsorship.getEndDate(), MomentHelper.getCurrentMoment());
+		status = sponsorship.getSponsor().getId() == super.getRequest().getPrincipal().getActiveRoleId() && //
+			isValid && sponsorship.isDraftMode();
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -98,7 +101,7 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 			maximumDueDate = Date.from(maximumDueDateLDT.atZone(ZoneId.systemDefault()).toInstant());
 
 			minimumDueDate = MomentHelper.deltaFromMoment(invoice.getRegistrationTime(), 30, ChronoUnit.DAYS);
-			super.state(MomentHelper.isAfter(invoice.getDueDate(), minimumDueDate), "dueDate", "sponsor.invoice.form.error.less-than-month");
+			super.state(MomentHelper.isAfterOrEqual(invoice.getDueDate(), minimumDueDate), "dueDate", "sponsor.invoice.form.error.less-than-month");
 			super.state(MomentHelper.isBefore(invoice.getDueDate(), maximumDueDate), "dueDate", "sponsor.invoice.form.error.maximum-due-date");
 		}
 
@@ -107,9 +110,8 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 			super.state(this.validator.moneyValidator(invoice.getQuantity().getCurrency()), "quantity", "sponsor.invoice.form.error.invalid-currency");
 			super.state(invoice.getQuantity().getAmount() > 0, "quantity", "sponsor.invoice.form.error.negative-quantity");
 			super.state(invoice.getQuantity().getAmount() <= 1000000, "quantity", "sponsor.invoice.form.error.maximum-quantity");
+			super.state(invoice.getTotalAmount().getAmount() <= 1000000, "*", "sponsor.invoice.form.error.maximum-total-amount");
 		}
-
-		super.state(invoice.getTotalAmount().getAmount() <= 1000000, "*", "sponsor.invoice.form.error.maximum-total-amount");
 	}
 
 	@Override

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.project.Project;
@@ -28,12 +29,14 @@ public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Spon
 	@Override
 	public void authorise() {
 		boolean status;
+		boolean isValid;
 		int sponsorshipId;
 		Sponsorship sponsorship;
 
 		sponsorshipId = super.getRequest().getData("id", int.class);
 		sponsorship = this.repository.findOneSponsorshipById(sponsorshipId);
-		status = sponsorship != null && super.getRequest().getPrincipal().hasRole(sponsorship.getSponsor());
+		isValid = MomentHelper.isAfterOrEqual(sponsorship.getEndDate(), MomentHelper.getCurrentMoment());
+		status = sponsorship != null && isValid && super.getRequest().getPrincipal().hasRole(sponsorship.getSponsor());
 
 		super.getResponse().setAuthorised(status);
 	}

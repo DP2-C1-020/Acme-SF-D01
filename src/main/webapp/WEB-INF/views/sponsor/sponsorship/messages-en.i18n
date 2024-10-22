@@ -38,6 +38,7 @@ sponsor.sponsorship.form.error.duplicated = This code is taken by another Sponso
 sponsor.sponsorship.form.error.too-close = Start date must be after the moment of creation
 sponsor.sponsorship.form.error.maximum-start-date = Start date must be before 2099/12/02 00:00
 sponsor.sponsorship.form.error.less-than-month = End date must be at least one month ahead of start date
+sponsor.sponsorship.form.error.expired-date = End date must be after or equal to the current date
 sponsor.sponsorship.form.error.maximum-end-date = End date must be before 2100/01/01 00:01
 sponsor.sponsorship.form.error.negative-amount = The amount must be positive
 sponsor.sponsorship.form.error.maximum-amount = The amount must be lower than or equal to 1000000

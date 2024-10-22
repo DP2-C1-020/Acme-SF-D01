@@ -2,6 +2,7 @@
 package acme.features.sponsor.invoice;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,8 +17,8 @@ public interface SponsorInvoiceRepository extends AbstractRepository {
 	@Query("select sp from Sponsorship sp where sp.id = :sponsorshipId")
 	Sponsorship findOneSponsorshipById(int sponsorshipId);
 
-	@Query("select i from Invoice i where i.sponsorship.id = :sponsorshipId")
-	Collection<Invoice> findManyInvoicesBySponsorshipId(int sponsorshipId);
+	@Query("select i from Invoice i where i.sponsorship.id = :sponsorshipId and i.dueDate >= :currentDate")
+	Collection<Invoice> findManyValidInvoicesBySponsorshipId(int sponsorshipId, Date currentDate);
 
 	@Query("select i from Invoice i where i.id = :invoiceId")
 	Invoice findOneInvoiceById(int invoiceId);

@@ -34,16 +34,16 @@ public interface SponsorSponsorshipRepository extends AbstractRepository {
 	@Query("select p from Project p where p.id = :projectId")
 	Project findOneProjectById(int projectId);
 
-	@Query("select i from Invoice i where i.sponsorship.id = :sponsorshipId")
-	Collection<Invoice> findManyInvoicesBySponsorshipId(int sponsorshipId);
+	@Query("select i from Invoice i where i.sponsorship.id = :sponsorshipId and i.dueDate >= :currentDate")
+	Collection<Invoice> findManyValidInvoicesBySponsorshipId(int sponsorshipId, Date currentDate);
 
-	@Query("select i.quantity.currency from Invoice i where i.sponsorship.id = :sponsorshipId and i.draftMode = false")
-	Collection<String> currenciesFromPublishedInvoicesBySponsorshipId(int sponsorshipId);
+	@Query("select i.quantity.currency from Invoice i where i.sponsorship.id = :sponsorshipId and i.draftMode = false and i.dueDate >= :currentDate")
+	Collection<String> currenciesFromPublishedValidInvoicesBySponsorshipId(int sponsorshipId, Date currentDate);
 
-	@Query("select round(sum(i.quantity.amount * (1 + i.tax/100)), 2) from Invoice i where i.sponsorship.id = :sponsorshipId")
-	Double computeTotalAmountBySponsorshipId(int sponsorshipId);
+	@Query("select round(sum(i.quantity.amount * (1 + i.tax/100)), 2) from Invoice i where i.sponsorship.id = :sponsorshipId and i.dueDate >= :currentDate")
+	Double computeValidTotalAmountBySponsorshipId(int sponsorshipId, Date currentDate);
 
-	@Query("select count(i) from Invoice i where i.sponsorship.id = :sponsorshipId and i.draftMode = true")
-	Integer totalUnpublishedInvoices(int sponsorshipId);
+	@Query("select count(i) from Invoice i where i.sponsorship.id = :sponsorshipId and i.draftMode = true and i.dueDate >= :currentDate")
+	Integer totalUnpublishedValidInvoices(int sponsorshipId, Date currentDate);
 
 }

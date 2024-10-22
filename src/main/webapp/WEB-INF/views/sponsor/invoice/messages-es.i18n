@@ -31,6 +31,7 @@ sponsor.invoice.list.button.create = Crear
 
 sponsor.invoice.form.error.duplicated = Ya existe un Recibo con el mismo código
 sponsor.invoice.form.error.less-than-month = La fecha de vencimiento debe ser, al menos, un mes posterior a la de registro
+sponsor.invoice.form.error.expired-date = La fecha de vencimiento debe ser posterior o igual a la fecha actual
 sponsor.invoice.form.error.maximum-due-date = La fecha de vencimiento debe ser anterior a 01/01/2100 00:01
 sponsor.invoice.form.error.negative-quantity = La cantidad de dinero debe ser positiva
 sponsor.invoice.form.error.maximum-quantity = La cantidad debe ser menor o igual que 1000000

@@ -2,10 +2,12 @@
 package acme.features.sponsor.sponsorship;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.invoices.Invoice;
 import acme.entities.project.Project;
@@ -26,12 +28,14 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 	@Override
 	public void authorise() {
 		boolean status;
+		boolean isValid;
 		int sponsorshipId;
 		Sponsorship sponsorship;
 
 		sponsorshipId = super.getRequest().getData("id", int.class);
 		sponsorship = this.repository.findOneSponsorshipById(sponsorshipId);
-		status = sponsorship != null && sponsorship.isDraftMode() && super.getRequest().getPrincipal().hasRole(sponsorship.getSponsor());
+		isValid = MomentHelper.isAfterOrEqual(sponsorship.getEndDate(), MomentHelper.getCurrentMoment());
+		status = sponsorship != null && isValid && sponsorship.isDraftMode() && super.getRequest().getPrincipal().hasRole(sponsorship.getSponsor());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -69,10 +73,10 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 	@Override
 	public void perform(final Sponsorship sponsorship) {
 		assert sponsorship != null;
-
+		Date currentDate = MomentHelper.getCurrentMoment();
 		Collection<Invoice> invoices;
 
-		invoices = this.repository.findManyInvoicesBySponsorshipId(sponsorship.getId());
+		invoices = this.repository.findManyValidInvoicesBySponsorshipId(sponsorship.getId(), currentDate);
 		this.repository.deleteAll(invoices);
 		this.repository.delete(sponsorship);
 	}
