@@ -47,3 +47,4 @@ manager.project.form.error.children-training-modules = El proyecto no puede ser 
 manager.project.form.error.currency-not-supported = Divisa no admitida.
 manager.project.form.error.excededCost = El coste de un proyecto no puede exceder 1000000000.00 unidades de cualquier tipo de divisa.
 
+validation.project.code = [A-Z]{3}-[0-9]{4}: El código debe comenzar por 3 letras entre la A y la Z (Ñ no valida), seguidas de un "-" y 4 dígitos comprendidos entre 0 y 9 
