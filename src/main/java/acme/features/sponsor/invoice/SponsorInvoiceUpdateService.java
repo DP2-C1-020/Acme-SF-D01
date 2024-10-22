@@ -13,6 +13,7 @@ import acme.client.data.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.invoices.Invoice;
+import acme.entities.sponsorships.Sponsorship;
 import acme.roles.Sponsor;
 import acme.validators.ValidatorMoney;
 
@@ -33,12 +34,18 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 	@Override
 	public void authorise() {
 		boolean status;
+		boolean isSponsorshipValid;
+		boolean isInvoiceValid;
 		int invoiceId;
 		Invoice invoice;
+		Sponsorship sponsorship;
 
 		invoiceId = super.getRequest().getData("id", int.class);
 		invoice = this.repository.findOneInvoiceById(invoiceId);
-		status = invoice != null && invoice.isDraftMode() && // 
+		sponsorship = this.repository.findOneSponsorshipById(invoice.getSponsorship().getId());
+		isSponsorshipValid = MomentHelper.isAfterOrEqual(sponsorship.getEndDate(), MomentHelper.getCurrentMoment());
+		isInvoiceValid = MomentHelper.isAfterOrEqual(invoice.getDueDate(), MomentHelper.getCurrentMoment());
+		status = invoice != null && isSponsorshipValid && isInvoiceValid && invoice.isDraftMode() && // 
 			super.getRequest().getPrincipal().hasRole(invoice.getSponsorship().getSponsor());
 
 		super.getResponse().setAuthorised(status);
@@ -84,7 +91,8 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 			maximumDueDate = Date.from(maximumDueDateLDT.atZone(ZoneId.systemDefault()).toInstant());
 
 			minimumDueDate = MomentHelper.deltaFromMoment(invoice.getRegistrationTime(), 30, ChronoUnit.DAYS);
-			super.state(MomentHelper.isAfter(invoice.getDueDate(), minimumDueDate), "dueDate", "sponsor.invoice.form.error.less-than-month");
+			super.state(MomentHelper.isAfterOrEqual(invoice.getDueDate(), minimumDueDate), "dueDate", "sponsor.invoice.form.error.less-than-month");
+			super.state(MomentHelper.isAfterOrEqual(invoice.getDueDate(), MomentHelper.getCurrentMoment()), "dueDate", "sponsor.invoice.form.error.expired-date");
 			super.state(MomentHelper.isBefore(invoice.getDueDate(), maximumDueDate), "dueDate", "sponsor.invoice.form.error.maximum-due-date");
 		}
 
@@ -93,9 +101,8 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 			super.state(this.validator.moneyValidator(invoice.getQuantity().getCurrency()), "quantity", "sponsor.invoice.form.error.invalid-currency");
 			super.state(invoice.getQuantity().getAmount() > 0, "quantity", "sponsor.invoice.form.error.negative-quantity");
 			super.state(invoice.getQuantity().getAmount() <= 1000000, "quantity", "sponsor.invoice.form.error.maximum-quantity");
+			super.state(invoice.getTotalAmount().getAmount() <= 1000000, "*", "sponsor.invoice.form.error.maximum-total-amount");
 		}
-
-		super.state(invoice.getTotalAmount().getAmount() <= 1000000, "*", "sponsor.invoice.form.error.maximum-total-amount");
 	}
 
 	@Override

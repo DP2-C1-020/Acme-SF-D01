@@ -31,6 +31,7 @@ sponsor.invoice.list.button.create = Create
 
 sponsor.invoice.form.error.duplicated = This code is taken by another Invoice
 sponsor.invoice.form.error.less-than-month = Due date must be at least one month ahead of registration time
+sponsor.invoice.form.error.expired-date = Due date must be after or equal to the current date
 sponsor.invoice.form.error.maximum-due-date = Due date must be before 2100/01/01 00:01
 sponsor.invoice.form.error.negative-quantity = The quantity must be positive
 sponsor.invoice.form.error.maximum-quantity = The quantity must be lower than or equal to 1000000 

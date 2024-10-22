@@ -89,7 +89,7 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 			Date maximumStartDate;
 			LocalDateTime maximumStartDateLDT;
 
-			maximumStartDateLDT = LocalDateTime.of(2099, 12, 2, 0, 0);
+			maximumStartDateLDT = LocalDateTime.of(2099, 12, 2, 0, 1);
 
 			minimumStartDate = sponsorship.getMoment();
 			maximumStartDate = Date.from(maximumStartDateLDT.atZone(ZoneId.systemDefault()).toInstant());
@@ -110,7 +110,7 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 				super.state(sponsorship.getStartDate() != null, "endDate", "sponsor.sponsorship.form.error.enter-start-date");
 			else {
 				minimumEndDate = MomentHelper.deltaFromMoment(sponsorship.getStartDate(), 30, ChronoUnit.DAYS);
-				super.state(MomentHelper.isAfter(sponsorship.getEndDate(), minimumEndDate), "endDate", "sponsor.sponsorship.form.error.less-than-month");
+				super.state(MomentHelper.isAfterOrEqual(sponsorship.getEndDate(), minimumEndDate), "endDate", "sponsor.sponsorship.form.error.less-than-month");
 				super.state(MomentHelper.isBefore(sponsorship.getEndDate(), maximumEndDate), "endDate", "sponsor.sponsorship.form.error.maximum-end-date");
 			}
 		}

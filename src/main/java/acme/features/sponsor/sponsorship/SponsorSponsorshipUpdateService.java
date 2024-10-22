@@ -37,12 +37,14 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 	@Override
 	public void authorise() {
 		boolean status;
+		boolean isValid;
 		int sponsorshipId;
 		Sponsorship sponsorship;
 
 		sponsorshipId = super.getRequest().getData("id", int.class);
 		sponsorship = this.repository.findOneSponsorshipById(sponsorshipId);
-		status = sponsorship != null && sponsorship.isDraftMode() && super.getRequest().getPrincipal().hasRole(sponsorship.getSponsor());
+		isValid = MomentHelper.isAfterOrEqual(sponsorship.getEndDate(), MomentHelper.getCurrentMoment());
+		status = sponsorship != null && isValid && sponsorship.isDraftMode() && super.getRequest().getPrincipal().hasRole(sponsorship.getSponsor());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -77,6 +79,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 	@Override
 	public void validate(final Sponsorship sponsorship) {
 		assert sponsorship != null;
+		Date currentDate = MomentHelper.getCurrentMoment();
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Sponsorship existing;
@@ -90,7 +93,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 			Date maximumStartDate;
 			LocalDateTime maximumStartDateLDT;
 
-			maximumStartDateLDT = LocalDateTime.of(2099, 12, 2, 0, 0);
+			maximumStartDateLDT = LocalDateTime.of(2099, 12, 2, 0, 1);
 
 			minimumStartDate = sponsorship.getMoment();
 			maximumStartDate = Date.from(maximumStartDateLDT.atZone(ZoneId.systemDefault()).toInstant());
@@ -104,14 +107,14 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 			LocalDateTime maximumEndDateLDT;
 
 			maximumEndDateLDT = LocalDateTime.of(2100, 1, 1, 0, 1);
-
 			maximumEndDate = Date.from(maximumEndDateLDT.atZone(ZoneId.systemDefault()).toInstant());
 
 			if (sponsorship.getStartDate() == null)
 				super.state(sponsorship.getStartDate() != null, "endDate", "sponsor.sponsorship.form.error.enter-start-date");
 			else {
 				minimumEndDate = MomentHelper.deltaFromMoment(sponsorship.getStartDate(), 30, ChronoUnit.DAYS);
-				super.state(MomentHelper.isAfter(sponsorship.getEndDate(), minimumEndDate), "endDate", "sponsor.sponsorship.form.error.less-than-month");
+				super.state(MomentHelper.isAfterOrEqual(sponsorship.getEndDate(), minimumEndDate), "endDate", "sponsor.sponsorship.form.error.less-than-month");
+				super.state(MomentHelper.isAfterOrEqual(sponsorship.getEndDate(), MomentHelper.getCurrentMoment()), "endDate", "sponsor.sponsorship.form.error.expired-date");
 				super.state(MomentHelper.isBefore(sponsorship.getEndDate(), maximumEndDate), "endDate", "sponsor.sponsorship.form.error.maximum-end-date");
 			}
 		}
@@ -122,7 +125,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 			String sponsorshipCurrency;
 			boolean allCurrenciesMatch;
 
-			currencies = this.repository.currenciesFromPublishedInvoicesBySponsorshipId(sponsorship.getId());
+			currencies = this.repository.currenciesFromPublishedValidInvoicesBySponsorshipId(sponsorship.getId(), currentDate);
 			sponsorshipCurrency = sponsorship.getAmount().getCurrency();
 			allCurrenciesMatch = currencies.stream().allMatch(currency -> currency.equals(sponsorshipCurrency));
 
